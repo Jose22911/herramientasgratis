@@ -3,654 +3,638 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
 
-<title>HerramientasGratis - Herramientas Online Gratis</title>
+<title>HerramientasGratis 9.0 | Herramientas online gratis</title>
 
-<meta name="description" content="HerramientasGratis: calculadoras, conversores, herramientas de texto, seguridad, productividad y mucho más. Gratis, rápido y sin registros.">
+<meta name="description"
+content="HerramientasGratis: herramientas online gratuitas para cálculos, conversiones, texto, productividad, seguridad, diseño y mucho más.">
 
 <meta name="robots" content="index, follow">
 
-<meta name="theme-color" content="#2563eb">
-
 <style>
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
 :root{
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --secondary:#7c3aed;
-    --bg:#f5f7fb;
-    --card:#ffffff;
-    --text:#172033;
-    --muted:#64748b;
-    --border:#e2e8f0;
-    --success:#16a34a;
-    --shadow:0 10px 30px rgba(15,23,42,.08);
+--primary:#2563eb;
+--primary-dark:#1d4ed8;
+--secondary:#7c3aed;
+--success:#16a34a;
+--danger:#dc2626;
+--dark:#0f172a;
+--text:#1e293b;
+--muted:#64748b;
+--bg:#f8fafc;
+--card:#ffffff;
+--border:#e2e8f0;
+--shadow:0 10px 30px rgba(15,23,42,.08);
+--radius:18px;
 }
 
-body.dark{
-    --bg:#0f172a;
-    --card:#1e293b;
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --border:#334155;
-    --shadow:0 10px 30px rgba(0,0,0,.3);
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.5;
-    transition:.25s;
+font-family:
+Inter,
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
+
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
 }
 
 button,
 input,
 textarea,
 select{
-    font:inherit;
+font:inherit;
 }
 
 button{
-    cursor:pointer;
+cursor:pointer;
+}
+
+a{
+text-decoration:none;
+color:inherit;
 }
 
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    box-shadow:0 5px 20px rgba(0,0,0,.18);
+position:sticky;
+top:0;
+z-index:1000;
+
+background:rgba(255,255,255,.94);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid var(--border);
 }
 
-.nav{
-    max-width:1250px;
-    margin:auto;
-    padding:15px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.navbar{
+width:min(1200px,92%);
+margin:auto;
+
+min-height:72px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+gap:20px;
 }
 
 .logo{
-    font-size:23px;
-    font-weight:800;
-    white-space:nowrap;
+font-size:1.45rem;
+font-weight:900;
+letter-spacing:-.7px;
+
+color:var(--primary);
 }
 
 .logo span{
-    color:#facc15;
+color:var(--dark);
 }
 
-.menu{
-    display:flex;
-    gap:20px;
-    align-items:center;
+.nav-links{
+display:flex;
+align-items:center;
+gap:25px;
 }
 
-.menu a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:bold;
+.nav-links a{
+font-weight:700;
+color:#475569;
+
+transition:.2s;
 }
 
-.menu a:hover{
-    opacity:.8;
+.nav-links a:hover{
+color:var(--primary);
 }
 
-.nav-actions{
-    display:flex;
-    gap:8px;
-}
+.menu-button{
+display:none;
 
-.nav-btn{
-    border:0;
-    background:rgba(255,255,255,.15);
-    color:white;
-    padding:9px 12px;
-    border-radius:10px;
+border:none;
+background:none;
+
+font-size:1.7rem;
 }
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
-    background:
-    radial-gradient(circle at top left,rgba(37,99,235,.16),transparent 35%),
-    radial-gradient(circle at top right,rgba(124,58,237,.16),transparent 35%);
+background:
+linear-gradient(
+135deg,
+#eff6ff 0%,
+#ffffff 55%,
+#f5f3ff 100%
+);
+
+padding:80px 0 65px;
 }
 
-.hero-inner{
-    max-width:1000px;
-    margin:auto;
-    text-align:center;
-    padding:75px 20px 65px;
+.container{
+width:min(1200px,92%);
+margin:auto;
+}
+
+.hero-grid{
+display:grid;
+
+grid-template-columns:
+1.4fr
+.8fr;
+
+gap:45px;
+
+align-items:center;
 }
 
 .badge{
-    display:inline-block;
-    background:#dbeafe;
-    color:#1d4ed8;
-    padding:7px 15px;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:18px;
-}
+display:inline-flex;
 
-body.dark .badge{
-    background:#172554;
-    color:#93c5fd;
+align-items:center;
+
+gap:8px;
+
+background:#dbeafe;
+
+color:#1d4ed8;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:.9rem;
+
+font-weight:800;
 }
 
 .hero h1{
-    font-size:52px;
-    line-height:1.1;
-    margin-bottom:20px;
+font-size:
+clamp(2.5rem,6vw,5rem);
+
+line-height:1.02;
+
+letter-spacing:-3px;
+
+margin:20px 0;
 }
 
 .hero h1 span{
-    color:var(--primary);
+color:var(--primary);
 }
 
-.hero p{
-    max-width:720px;
-    margin:0 auto 30px;
-    color:var(--muted);
-    font-size:18px;
-}
+.hero-description{
+font-size:1.15rem;
 
-.search{
-    max-width:720px;
-    margin:auto;
-    position:relative;
-}
+color:var(--muted);
 
-.search input{
-    width:100%;
-    padding:19px 55px 19px 22px;
-    border:2px solid var(--border);
-    border-radius:18px;
-    background:var(--card);
-    color:var(--text);
-    outline:none;
-    box-shadow:var(--shadow);
-}
+max-width:700px;
 
-.search input:focus{
-    border-color:var(--primary);
-}
-
-.search-icon{
-    position:absolute;
-    right:20px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:22px;
+margin-bottom:25px;
 }
 
 /* =========================
-   CONTAINER
+SEARCH
 ========================= */
 
-.container{
-    max-width:1250px;
-    margin:auto;
-    padding:0 20px 70px;
+.search-box{
+display:flex;
+
+max-width:700px;
+
+background:white;
+
+border:1px solid var(--border);
+
+padding:8px;
+
+border-radius:16px;
+
+box-shadow:var(--shadow);
+}
+
+.search-box input{
+flex:1;
+
+border:none;
+
+outline:none;
+
+padding:13px;
+
+font-size:1rem;
+}
+
+.primary-button{
+border:none;
+
+background:var(--primary);
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:12px;
+
+font-weight:800;
+
+transition:.2s;
+}
+
+.primary-button:hover{
+background:var(--primary-dark);
+
+transform:translateY(-1px);
 }
 
 /* =========================
-   STATS
+HERO CARD
 ========================= */
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-top:-25px;
-    position:relative;
+.hero-card{
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:24px;
+
+padding:28px;
+
+box-shadow:var(--shadow);
+}
+
+.hero-card h2{
+margin-bottom:18px;
 }
 
 .stat{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:17px;
-    padding:20px;
-    text-align:center;
-    box-shadow:var(--shadow);
+display:flex;
+
+justify-content:space-between;
+
+gap:15px;
+
+padding:14px 0;
+
+border-bottom:1px solid var(--border);
 }
 
-.stat-number{
-    font-size:28px;
-    color:var(--primary);
-    font-weight:800;
+.stat:last-child{
+border-bottom:none;
 }
 
-.stat-label{
-    color:var(--muted);
-    font-size:13px;
+.stat strong{
+color:var(--primary);
 }
 
 /* =========================
-   SECTION
+AD SPACE
+========================= */
+
+.ad-container{
+width:min(1200px,92%);
+
+margin:25px auto;
+}
+
+.ad-box{
+background:white;
+
+border:2px dashed #cbd5e1;
+
+border-radius:18px;
+
+padding:28px;
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:.9rem;
+}
+
+/* =========================
+SECTIONS
 ========================= */
 
 .section{
-    margin-top:45px;
+padding:65px 0;
 }
 
-.section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:18px;
+.section-title{
+text-align:center;
+
+margin-bottom:35px;
 }
 
-.section-header h2{
-    font-size:26px;
+.section-title h2{
+font-size:2.2rem;
+
+margin-bottom:8px;
+}
+
+.section-title p{
+color:var(--muted);
 }
 
 /* =========================
-   CATEGORIES
+CATEGORIES
 ========================= */
 
 .categories{
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    padding-bottom:8px;
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-bottom:30px;
 }
 
 .category{
-    white-space:nowrap;
-    padding:10px 16px;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    border-radius:30px;
+border:1px solid var(--border);
+
+background:white;
+
+color:#475569;
+
+padding:9px 15px;
+
+border-radius:999px;
+
+font-weight:750;
+
+transition:.2s;
 }
 
 .category:hover,
 .category.active{
-    background:var(--primary);
-    color:white;
-    border-color:var(--primary);
+background:var(--primary);
+
+border-color:var(--primary);
+
+color:white;
 }
 
 /* =========================
-   TOOLS
+TOOLS
 ========================= */
 
-.tools{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.tools-grid{
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
 }
 
-.tool{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:22px;
-    box-shadow:var(--shadow);
-    transition:.2s;
+.tool-card{
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+padding:22px;
+
+display:flex;
+
+flex-direction:column;
+
+min-height:220px;
+
+box-shadow:
+0 5px 20px rgba(15,23,42,.04);
+
+transition:.25s;
 }
 
-.tool:hover{
-    transform:translateY(-5px);
+.tool-card:hover{
+transform:translateY(-5px);
+
+box-shadow:var(--shadow);
 }
 
 .tool-icon{
-    width:55px;
-    height:55px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#eff6ff;
-    font-size:28px;
-    margin-bottom:15px;
+font-size:2.2rem;
+
+margin-bottom:10px;
 }
 
-body.dark .tool-icon{
-    background:#172554;
+.tool-card h3{
+margin-bottom:8px;
 }
 
-.tool h3{
-    font-size:18px;
-    margin-bottom:7px;
+.tool-card p{
+color:var(--muted);
+
+font-size:.93rem;
+
+margin-bottom:18px;
 }
 
-.tool-category{
-    color:var(--primary);
-    font-size:12px;
-    font-weight:bold;
-    margin-bottom:10px;
+.tool-button{
+margin-top:auto;
+
+width:max-content;
+
+border:none;
+
+background:#eff6ff;
+
+color:var(--primary);
+
+padding:10px 15px;
+
+border-radius:11px;
+
+font-weight:800;
 }
 
-.tool p{
-    color:var(--muted);
-    font-size:14px;
-    margin-bottom:18px;
+.tool-button:hover{
+background:var(--primary);
+
+color:white;
 }
 
-.tool-buttons{
-    display:flex;
-    gap:8px;
-}
+.no-results{
+display:none;
 
-.primary{
-    border:0;
-    background:var(--primary);
-    color:white;
-    padding:10px 15px;
-    border-radius:10px;
-    font-weight:bold;
-}
+text-align:center;
 
-.primary:hover{
-    background:var(--primary-dark);
-}
+padding:40px;
 
-.secondary{
-    border:0;
-    background:#e2e8f0;
-    color:#172033;
-    padding:10px 15px;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-body.dark .secondary{
-    background:#334155;
-    color:white;
+color:var(--muted);
 }
 
 /* =========================
-   BENEFITS
+ABOUT
 ========================= */
 
-.benefits{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.about-grid{
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:25px;
 }
 
-.benefit{
-    text-align:center;
-    padding:30px 20px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    box-shadow:var(--shadow);
+.info-card{
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:20px;
+
+padding:28px;
+
+box-shadow:0 5px 20px rgba(15,23,42,.04);
 }
 
-.benefit-icon{
-    font-size:38px;
-    margin-bottom:10px;
+.info-card h3{
+margin-bottom:10px;
 }
 
-.benefit h3{
-    margin-bottom:7px;
-}
-
-.benefit p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* =========================
-   FAQ
-========================= */
-
-.faq{
-    max-width:850px;
-    margin:auto;
-}
-
-.faq-item{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:14px;
-    margin-bottom:10px;
-    overflow:hidden;
-}
-
-.faq-question{
-    width:100%;
-    padding:17px;
-    border:0;
-    background:none;
-    color:var(--text);
-    text-align:left;
-    font-weight:bold;
-}
-
-.faq-answer{
-    display:none;
-    padding:0 17px 17px;
-    color:var(--muted);
-}
-
-.faq-item.open .faq-answer{
-    display:block;
+.info-card p{
+color:var(--muted);
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
-    background:#0f172a;
-    color:#cbd5e1;
-    padding:50px 20px 30px;
+background:var(--dark);
+
+color:#cbd5e1;
+
+padding:55px 0;
 }
 
 .footer-grid{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
+display:grid;
+
+grid-template-columns:
+2fr
+1fr
+1fr;
+
+gap:35px;
 }
 
-footer h3{
-    color:white;
-    margin-bottom:12px;
+footer h3,
+footer h4{
+color:white;
+
+margin-bottom:15px;
 }
 
-footer p,
 footer a{
-    color:#94a3b8;
-    font-size:14px;
+display:block;
+
+margin:8px 0;
+
+color:#cbd5e1;
 }
 
-footer a{
-    display:block;
-    text-decoration:none;
-    margin-bottom:7px;
+footer a:hover{
+color:white;
 }
 
 .footer-bottom{
-    max-width:1100px;
-    margin:35px auto 0;
-    padding-top:20px;
-    border-top:1px solid #334155;
-    text-align:center;
-    font-size:13px;
+margin-top:35px;
+
+padding-top:20px;
+
+border-top:1px solid #334155;
+
+text-align:center;
+
+font-size:.9rem;
 }
 
 /* =========================
-   MODAL
+RESPONSIVE
 ========================= */
 
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    z-index:5000;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+@media(max-width:950px){
+
+.tools-grid{
+grid-template-columns:
+repeat(2,1fr);
 }
 
-.modal.show{
-    display:flex;
+.hero-grid{
+grid-template-columns:1fr;
 }
-
-.modal-box{
-    width:100%;
-    max-width:650px;
-    max-height:90vh;
-    overflow:auto;
-    background:var(--card);
-    color:var(--text);
-    border-radius:20px;
-    padding:25px;
-}
-
-.modal-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-}
-
-.close{
-    border:0;
-    background:none;
-    color:var(--text);
-    font-size:28px;
-}
-
-.form{
-    margin-bottom:15px;
-}
-
-.form label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:7px;
-}
-
-.form input,
-.form textarea,
-.form select{
-    width:100%;
-    padding:12px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    background:var(--bg);
-    color:var(--text);
-}
-
-.form textarea{
-    min-height:150px;
-    resize:vertical;
-}
-
-.result{
-    margin-top:15px;
-    padding:16px;
-    background:var(--bg);
-    border:1px solid var(--border);
-    border-radius:12px;
-}
-
-.big-result{
-    text-align:center;
-    font-size:30px;
-    font-weight:bold;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1000px){
-
-    .tools{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
 
 }
 
 @media(max-width:700px){
 
-    .menu{
-        display:none;
-    }
-
-    .hero-inner{
-        padding:50px 15px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .container{
-        padding:0 15px 50px;
-    }
-
-    .tools{
-        grid-template-columns:1fr;
-    }
-
-    .benefits{
-        grid-template-columns:1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
+.nav-links{
+display:none;
 }
 
-@media(max-width:500px){
+.menu-button{
+display:block;
+}
 
-    .logo{
-        font-size:19px;
-    }
+.tools-grid{
+grid-template-columns:1fr;
+}
 
-    .nav{
-        padding:12px 14px;
-    }
+.about-grid{
+grid-template-columns:1fr;
+}
 
-    .stats{
-        gap:8px;
-    }
+.footer-grid{
+grid-template-columns:1fr;
+}
 
-    .stat{
-        padding:15px 8px;
-    }
+.search-box{
+flex-direction:column;
+}
+
+.search-box .primary-button{
+width:100%;
+}
+
+.hero{
+padding:55px 0;
+}
+
+.hero h1{
+letter-spacing:-2px;
+}
 
 }
 
@@ -661,61 +645,123 @@ footer a{
 
 <header>
 
-<div class="nav">
+<div class="navbar">
 
-<div class="logo">
-🛠️ Herramientas<span>Gratis</span>
-</div>
+<a href="#inicio" class="logo">
+Herramientas<span>Gratis</span> 🚀
+</a>
 
-<nav class="menu">
+<nav class="nav-links">
+
+<a href="#inicio">Inicio</a>
+
 <a href="#herramientas">Herramientas</a>
-<a href="#categorias">Categorías</a>
-<a href="#faq">FAQ</a>
+
+<a href="#nosotros">Nosotros</a>
+
+<a href="#contacto">Contacto</a>
+
 </nav>
 
-<div class="nav-actions">
+<button
+class="menu-button"
+onclick="toggleMenu()"
+aria-label="Abrir menú">
 
-<button class="nav-btn" onclick="toggleDark()">
-🌙
+☰
+
 </button>
-
-</div>
 
 </div>
 
 </header>
 
 
+<main id="inicio">
+
 <section class="hero">
 
-<div class="hero-inner">
+<div class="container hero-grid">
 
-<div class="badge">
-✨ Gratis · Rápido · Sin registros
-</div>
+<div>
 
-<h1>
-Herramientas útiles,
-<span>gratis y online.</span>
-</h1>
-
-<p>
-Calcula, convierte, escribe, crea y resuelve tareas
-diarias con herramientas gratuitas directamente desde tu navegador.
-</p>
-
-<div class="search">
-
-<input
-id="search"
-type="search"
-placeholder="🔎 ¿Qué herramienta necesitas?"
-oninput="filterTools()">
-
-<span class="search-icon">
-🔍
+<span class="badge">
+✨ 100% gratis · rápido · fácil
 </span>
 
+<h1>
+Tus herramientas online
+<span>gratis.</span>
+</h1>
+
+<p class="hero-description">
+
+Calcula, convierte, escribe, genera y organiza tus tareas
+desde un solo lugar. Herramientas online fáciles de utilizar
+desde tu celular o computador.
+
+</p>
+
+<div class="search-box">
+
+<input
+id="searchInput"
+type="search"
+placeholder="Busca una herramienta..."
+oninput="filterTools()"
+>
+
+<button
+class="primary-button"
+onclick="goTools()">
+
+Buscar
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<h2>🚀 HerramientasGratis 9.0</h2>
+
+<div class="stat">
+
+<span>Herramientas</span>
+
+<strong id="toolCounter">
+20+
+</strong>
+
+</div>
+
+<div class="stat">
+
+<span>Registro</span>
+
+<strong>No</strong>
+
+</div>
+
+<div class="stat">
+
+<span>Precio</span>
+
+<strong>Gratis</strong>
+
+</div>
+
+<div class="stat">
+
+<span>Dispositivos</span>
+
+<strong>Todos</strong>
+
+</div>
+
 </div>
 
 </div>
@@ -723,134 +769,98 @@ oninput="filterTools()">
 </section>
 
 
-<main class="container">
+<div class="ad-container">
 
+<div class="ad-box">
 
-<section class="stats">
+📢 ESPACIO PUBLICITARIO
 
-<div class="stat">
+<br>
 
-<div class="stat-number">
-30+
-</div>
+<small>
+Aquí podremos colocar publicidad cuando el sitio
+esté preparado para monetización.
+</small>
 
-<div class="stat-label">
-Herramientas
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-number">
-6
-</div>
-
-<div class="stat-label">
-Categorías
 </div>
 
 </div>
 
 
-<div class="stat">
+<section
+class="section"
+id="herramientas">
 
-<div class="stat-number">
-100%
-</div>
+<div class="container">
 
-<div class="stat-label">
-Gratis
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-number">
-24/7
-</div>
-
-<div class="stat-label">
-Disponible
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="categorias">
-
-<div class="section-header">
+<div class="section-title">
 
 <h2>
-🗂️ Categorías
+🧰 Herramientas populares
 </h2>
 
+<p>
+Selecciona una herramienta y empieza a utilizarla.
+</p>
+
 </div>
+
 
 <div class="categories">
 
-<button class="category active" onclick="categoryFilter('Todas',this)">
+<button
+class="category active"
+onclick="setCategory('Todas',this)">
 Todas
 </button>
 
-<button class="category" onclick="categoryFilter('Calculadoras',this)">
-🧮 Calculadoras
+<button
+class="category"
+onclick="setCategory('Calculo',this)">
+🧮 Cálculo
 </button>
 
-<button class="category" onclick="categoryFilter('Texto',this)">
+<button
+class="category"
+onclick="setCategory('Texto',this)">
 📝 Texto
 </button>
 
-<button class="category" onclick="categoryFilter('Conversores',this)">
-🔄 Conversores
+<button
+class="category"
+onclick="setCategory('Conversion',this)">
+🔄 Conversión
 </button>
 
-<button class="category" onclick="categoryFilter('Seguridad',this)">
+<button
+class="category"
+onclick="setCategory('Seguridad',this)">
 🔐 Seguridad
 </button>
 
-<button class="category" onclick="categoryFilter('Productividad',this)">
+<button
+class="category"
+onclick="setCategory('Productividad',this)">
 ⚡ Productividad
 </button>
 
-<button class="category" onclick="categoryFilter('Diseño',this)">
-🎨 Diseño
-</button>
-
-</div>
-
-</section>
-
-
-<section class="section" id="herramientas">
-
-<div class="section-header">
-
-<h2>
-🔥 Herramientas populares
-</h2>
-
-<span id="toolCount">
-30 herramientas
-</span>
-
 </div>
 
 
-<div class="tools" id="tools">
+<div
+class="tools-grid"
+id="toolsGrid">
 
 
-<div class="tool" data-category="Calculadoras" data-name="calculadora">
+<!-- CALCULADORA -->
 
-<div class="tool-icon">🧮</div>
+<article
+class="tool-card"
+data-category="Calculo"
+data-search="calculadora matematicas suma resta multiplicar dividir">
 
-<div class="tool-category">
-CALCULADORAS
+<div class="tool-icon">
+🧮
 </div>
 
 <h3>
@@ -858,72 +868,89 @@ Calculadora
 </h3>
 
 <p>
-Realiza operaciones matemáticas rápidamente.
+Realiza operaciones matemáticas básicas rápidamente.
 </p>
 
-<div class="tool-buttons">
+<button
+class="tool-button"
+onclick="openCalculator()">
 
-<button class="primary" onclick="openCalculator()">
-Abrir
+Abrir herramienta
+
 </button>
 
-</div>
-
-</div>
+</article>
 
 
-<div class="tool" data-category="Calculadoras" data-name="porcentaje">
+<!-- PORCENTAJE -->
 
-<div class="tool-icon">📊</div>
+<article
+class="tool-card"
+data-category="Calculo"
+data-search="porcentaje descuento aumento calcular">
 
-<div class="tool-category">
-CALCULADORAS
+<div class="tool-icon">
+📊
 </div>
 
 <h3>
-Calculadora de porcentaje
+Porcentaje
 </h3>
 
 <p>
-Calcula porcentajes de manera sencilla.
+Calcula porcentajes, descuentos y aumentos.
 </p>
 
-<button class="primary" onclick="openPercentage()">
-Abrir
+<button
+class="tool-button"
+onclick="openPercentage()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Calculadoras" data-name="descuento">
+<!-- REGLA DE TRES -->
 
-<div class="tool-icon">💰</div>
+<article
+class="tool-card"
+data-category="Calculo"
+data-search="regla tres proporcionalidad">
 
-<div class="tool-category">
-CALCULADORAS
+<div class="tool-icon">
+📐
 </div>
 
 <h3>
-Calculadora de descuentos
+Regla de tres
 </h3>
 
 <p>
-Calcula descuentos y precios finales.
+Resuelve reglas de tres simples.
 </p>
 
-<button class="primary" onclick="openDiscount()">
-Abrir
+<button
+class="tool-button"
+onclick="openRuleThree()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Calculadoras" data-name="edad">
+<!-- EDAD -->
 
-<div class="tool-icon">🎂</div>
+<article
+class="tool-card"
+data-category="Calculo"
+data-search="edad fecha nacimiento">
 
-<div class="tool-category">
-CALCULADORAS
+<div class="tool-icon">
+🎂
 </div>
 
 <h3>
@@ -931,22 +958,119 @@ Calculadora de edad
 </h3>
 
 <p>
-Calcula tu edad exacta rápidamente.
+Calcula la edad utilizando una fecha de nacimiento.
 </p>
 
-<button class="primary" onclick="openAge()">
-Abrir
+<button
+class="tool-button"
+onclick="openAge()">
+
+Abrir herramienta
+
 </button>
 
+</article>
+
+
+<!-- TEMPERATURA -->
+
+<article
+class="tool-card"
+data-category="Conversion"
+data-search="temperatura celsius fahrenheit kelvin">
+
+<div class="tool-icon">
+🌡️
 </div>
 
+<h3>
+Temperatura
+</h3>
 
-<div class="tool" data-category="Texto" data-name="contador palabras">
+<p>
+Convierte Celsius, Fahrenheit y Kelvin.
+</p>
 
-<div class="tool-icon">📝</div>
+<button
+class="tool-button"
+onclick="openTemperature()">
 
-<div class="tool-category">
-TEXTO
+Abrir herramienta
+
+</button>
+
+</article>
+
+
+<!-- LONGITUD -->
+
+<article
+class="tool-card"
+data-category="Conversion"
+data-search="longitud metros kilometros millas pies">
+
+<div class="tool-icon">
+📏
+</div>
+
+<h3>
+Longitud
+</h3>
+
+<p>
+Convierte metros, kilómetros, millas y pies.
+</p>
+
+<button
+class="tool-button"
+onclick="openLength()">
+
+Abrir herramienta
+
+</button>
+
+</article>
+
+
+<!-- PESO -->
+
+<article
+class="tool-card"
+data-category="Conversion"
+data-search="peso masa kilos gramos libras">
+
+<div class="tool-icon">
+⚖️
+</div>
+
+<h3>
+Peso y masa
+</h3>
+
+<p>
+Convierte kilogramos, gramos y libras.
+</p>
+
+<button
+class="tool-button"
+onclick="openWeight()">
+
+Abrir herramienta
+
+</button>
+
+</article>
+
+
+<!-- TEXTO -->
+
+<article
+class="tool-card"
+data-category="Texto"
+data-search="contador palabras caracteres">
+
+<div class="tool-icon">
+🔢
 </div>
 
 <h3>
@@ -957,88 +1081,86 @@ Contador de palabras
 Cuenta palabras, caracteres y líneas.
 </p>
 
-<button class="primary" onclick="openWordCounter()">
-Abrir
+<button
+class="tool-button"
+onclick="openWordCounter()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Texto" data-name="mayusculas">
+<!-- MAYUSCULAS -->
 
-<div class="tool-icon">🔤</div>
+<article
+class="tool-card"
+data-category="Texto"
+data-search="mayusculas minusculas transformar texto">
 
-<div class="tool-category">
-TEXTO
+<div class="tool-icon">
+🔠
 </div>
 
 <h3>
-Conversor de texto
+Mayúsculas y minúsculas
 </h3>
 
 <p>
-Convierte texto a mayúsculas y minúsculas.
+Transforma tu texto rápidamente.
 </p>
 
-<button class="primary" onclick="openTextCase()">
-Abrir
+<button
+class="tool-button"
+onclick="openCaseTool()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Texto" data-name="limpiar texto">
+<!-- LIMPIAR TEXTO -->
 
-<div class="tool-icon">🧹</div>
+<article
+class="tool-card"
+data-category="Texto"
+data-search="limpiar texto espacios">
 
-<div class="tool-category">
-TEXTO
+<div class="tool-icon">
+🧹
 </div>
 
 <h3>
-Limpiador de texto
+Limpiar texto
 </h3>
 
 <p>
-Elimina espacios y líneas innecesarias.
+Elimina espacios innecesarios de tu texto.
 </p>
 
-<button class="primary" onclick="openCleaner()">
-Abrir
+<button
+class="tool-button"
+onclick="openCleanText()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Texto" data-name="bloc texto">
+<!-- PASSWORD -->
 
-<div class="tool-icon">📋</div>
+<article
+class="tool-card"
+data-category="Seguridad"
+data-search="password contraseña segura">
 
-<div class="tool-category">
-TEXTO
-</div>
-
-<h3>
-Bloc de texto
-</h3>
-
-<p>
-Escribe y copia textos rápidamente.
-</p>
-
-<button class="primary" onclick="openTextBlock()">
-Abrir
-</button>
-
-</div>
-
-
-<div class="tool" data-category="Seguridad" data-name="contraseña">
-
-<div class="tool-icon">🔐</div>
-
-<div class="tool-category">
-SEGURIDAD
+<div class="tool-icon">
+🔐
 </div>
 
 <h3>
@@ -1046,137 +1168,59 @@ Generador de contraseñas
 </h3>
 
 <p>
-Crea contraseñas aleatorias y seguras.
+Genera contraseñas aleatorias.
 </p>
 
-<button class="primary" onclick="openPassword()">
-Abrir
+<button
+class="tool-button"
+onclick="openPassword()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Productividad" data-name="numero aleatorio">
+<!-- UUID -->
 
-<div class="tool-icon">🎲</div>
+<article
+class="tool-card"
+data-category="Seguridad"
+data-search="uuid identificador">
 
-<div class="tool-category">
-PRODUCTIVIDAD
+<div class="tool-icon">
+🆔
 </div>
 
 <h3>
-Número aleatorio
+Generador UUID
 </h3>
 
 <p>
-Genera un número entre dos valores.
+Genera identificadores únicos.
 </p>
 
-<button class="primary" onclick="openRandom()">
-Abrir
+<button
+class="tool-button"
+onclick="openUUID()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Productividad" data-name="url">
+<!-- CRONOMETRO -->
 
-<div class="tool-icon">🔗</div>
+<article
+class="tool-card"
+data-category="Productividad"
+data-search="cronometro tiempo">
 
-<div class="tool-category">
-PRODUCTIVIDAD
-</div>
-
-<h3>
-Codificador URL
-</h3>
-
-<p>
-Codifica y decodifica texto para URLs.
-</p>
-
-<button class="primary" onclick="openURL()">
-Abrir
-</button>
-
-</div>
-
-
-<div class="tool" data-category="Diseño" data-name="color">
-
-<div class="tool-icon">🎨</div>
-
-<div class="tool-category">
-DISEÑO
-</div>
-
-<h3>
-Selector de colores
-</h3>
-
-<p>
-Selecciona colores y obtén su código HEX.
-</p>
-
-<button class="primary" onclick="openColor()">
-Abrir
-</button>
-
-</div>
-
-
-<div class="tool" data-category="Conversores" data-name="temperatura">
-
-<div class="tool-icon">🌡️</div>
-
-<div class="tool-category">
-CONVERSORES
-</div>
-
-<h3>
-Conversor de temperatura
-</h3>
-
-<p>
-Convierte Celsius, Fahrenheit y Kelvin.
-</p>
-
-<button class="primary" onclick="openTemperature()">
-Abrir
-</button>
-
-</div>
-
-
-<div class="tool" data-category="Conversores" data-name="longitud">
-
-<div class="tool-icon">📏</div>
-
-<div class="tool-category">
-CONVERSORES
-</div>
-
-<h3>
-Conversor de longitud
-</h3>
-
-<p>
-Convierte metros, kilómetros, millas y más.
-</p>
-
-<button class="primary" onclick="openLength()">
-Abrir
-</button>
-
-</div>
-
-
-<div class="tool" data-category="Productividad" data-name="cronometro">
-
-<div class="tool-icon">⏱️</div>
-
-<div class="tool-category">
-PRODUCTIVIDAD
+<div class="tool-icon">
+⏱️
 </div>
 
 <h3>
@@ -1184,103 +1228,58 @@ Cronómetro
 </h3>
 
 <p>
-Mide el tiempo de tus actividades.
+Mide el tiempo fácilmente.
 </p>
 
-<button class="primary" onclick="openStopwatch()">
-Abrir
+<button
+class="tool-button"
+onclick="openStopwatch()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
-<div class="tool" data-category="Productividad" data-name="temporizador">
+<!-- COLOR -->
 
-<div class="tool-icon">⏲️</div>
+<article
+class="tool-card"
+data-category="Productividad"
+data-search="color hexadecimal diseño">
 
-<div class="tool-category">
-PRODUCTIVIDAD
+<div class="tool-icon">
+🎨
 </div>
 
 <h3>
-Temporizador
+Selector de color
 </h3>
 
 <p>
-Crea cuentas regresivas fácilmente.
+Selecciona un color y obtén su código HEX.
 </p>
 
-<button class="primary" onclick="openTimer()">
-Abrir
+<button
+class="tool-button"
+onclick="openColor()">
+
+Abrir herramienta
+
 </button>
 
-</div>
+</article>
 
 
 </div>
 
-</section>
 
+<div
+id="noResults"
+class="no-results">
 
-<section class="section">
-
-<div class="section-header">
-
-<h2>
-✨ ¿Por qué HerramientasGratis?
-</h2>
-
-</div>
-
-<div class="benefits">
-
-<div class="benefit">
-
-<div class="benefit-icon">
-⚡
-</div>
-
-<h3>
-Rápido
-</h3>
-
-<p>
-Herramientas diseñadas para funcionar rápidamente desde cualquier dispositivo.
-</p>
-
-</div>
-
-
-<div class="benefit">
-
-<div class="benefit-icon">
-🔒
-</div>
-
-<h3>
-Privacidad
-</h3>
-
-<p>
-Muchas herramientas funcionan directamente en tu navegador sin enviar tus datos.
-</p>
-
-</div>
-
-
-<div class="benefit">
-
-<div class="benefit-icon">
-💯
-</div>
-
-<h3>
-Gratis
-</h3>
-
-<p>
-Utiliza nuestras herramientas sin registros ni pagos.
-</p>
+😕 No encontramos ninguna herramienta.
 
 </div>
 
@@ -1289,70 +1288,95 @@ Utiliza nuestras herramientas sin registros ni pagos.
 </section>
 
 
-<section class="section" id="faq">
+<section
+class="section"
+id="nosotros">
 
-<div class="section-header">
+<div class="container">
+
+<div class="section-title">
 
 <h2>
-❓ Preguntas frecuentes
+💙 Sobre HerramientasGratis
 </h2>
 
-</div>
-
-<div class="faq">
-
-
-<div class="faq-item">
-
-<button class="faq-question" onclick="toggleFAQ(this)">
-¿HerramientasGratis es gratis?
-</button>
-
-<div class="faq-answer">
-Sí. Nuestro objetivo es ofrecer herramientas útiles que puedan utilizarse gratuitamente desde el navegador.
-</div>
+<p>
+Una plataforma sencilla para resolver tareas online.
+</p>
 
 </div>
 
 
-<div class="faq-item">
+<div class="about-grid">
 
-<button class="faq-question" onclick="toggleFAQ(this)">
-¿Necesito crear una cuenta?
-</button>
+<div class="info-card">
 
-<div class="faq-answer">
-No. Las herramientas principales están diseñadas para utilizarse sin crear una cuenta.
-</div>
+<h3>
+🚀 Nuestra misión
+</h3>
 
-</div>
+<p>
 
+Crear herramientas online fáciles de utilizar,
+gratuitas y accesibles desde cualquier dispositivo.
 
-<div class="faq-item">
-
-<button class="faq-question" onclick="toggleFAQ(this)">
-¿Funciona desde el celular?
-</button>
-
-<div class="faq-answer">
-Sí. El sitio está diseñado para funcionar en teléfonos, tablets y computadores.
-</div>
+</p>
 
 </div>
 
 
-<div class="faq-item">
+<div class="info-card">
 
-<button class="faq-question" onclick="toggleFAQ(this)">
-¿Van a agregar más herramientas?
-</button>
+<h3>
+🌎 Para todos
+</h3>
 
-<div class="faq-answer">
-Sí. HerramientasGratis está diseñado para crecer con nuevas calculadoras, conversores y herramientas útiles.
+<p>
+
+Estudiantes, trabajadores, emprendedores,
+creadores de contenido y cualquier persona
+puede utilizar nuestras herramientas.
+
+</p>
+
 </div>
 
 </div>
 
+</div>
+
+</section>
+
+
+<section
+class="section"
+id="contacto">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+📩 Contacto
+</h2>
+
+<p>
+¿Tienes una idea para una nueva herramienta?
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<p>
+
+Puedes personalizar esta sección posteriormente
+con tu correo electrónico y redes sociales.
+
+</p>
+
+</div>
 
 </div>
 
@@ -1363,16 +1387,19 @@ Sí. HerramientasGratis está diseñado para crecer con nuevas calculadoras, con
 
 <footer>
 
-<div class="footer-grid">
+<div class="container footer-grid">
 
 <div>
 
 <h3>
-🛠️ HerramientasGratis
+HerramientasGratis 🚀
 </h3>
 
 <p>
-Herramientas online gratuitas, sencillas y útiles para todos.
+
+Herramientas online gratuitas,
+rápidas y fáciles de utilizar.
+
 </p>
 
 </div>
@@ -1380,20 +1407,24 @@ Herramientas online gratuitas, sencillas y útiles para todos.
 
 <div>
 
-<h3>
-Explorar
-</h3>
+<h4>
+Enlaces
+</h4>
+
+<a href="#inicio">
+Inicio
+</a>
 
 <a href="#herramientas">
 Herramientas
 </a>
 
-<a href="#categorias">
-Categorías
+<a href="#nosotros">
+Nosotros
 </a>
 
-<a href="#faq">
-Preguntas frecuentes
+<a href="#contacto">
+Contacto
 </a>
 
 </div>
@@ -1401,24 +1432,20 @@ Preguntas frecuentes
 
 <div>
 
-<h3>
+<h4>
 Información
-</h3>
-
-<a href="#">
-Sobre nosotros
-</a>
-
-<a href="#">
-Contacto
-</a>
+</h4>
 
 <a href="#">
 Privacidad
 </a>
 
 <a href="#">
-Términos de uso
+Términos
+</a>
+
+<a href="#">
+Cookies
 </a>
 
 </div>
@@ -1426,1031 +1453,1383 @@ Términos de uso
 </div>
 
 
-<div class="footer-bottom">
+<div class="container footer-bottom">
 
-© 2026 HerramientasGratis · Todos los derechos reservados.
+© <span id="year"></span>
+HerramientasGratis · Todos los derechos reservados.
 
 </div>
 
 </footer>
 
 
-<div class="modal" id="modal">
-
-<div class="modal-box">
-
-<div class="modal-header">
-
-<h2 id="modalTitle">
-Herramienta
-</h2>
-
-<button class="close" onclick="closeModal()">
-✕
-</button>
-
-</div>
-
-<div id="modalContent"></div>
-
-</div>
-
-</div>
-
-
 <script>
 
 /* =========================
-   MODAL
+MENU
 ========================= */
 
-function openModal(title,content){
+function toggleMenu(){
 
-document.getElementById("modalTitle").textContent=title;
+const menu =
+document.querySelector(".nav-links");
 
-document.getElementById("modalContent").innerHTML=content;
+if(
+menu.style.display === "flex"
+){
 
-document.getElementById("modal").classList.add("show");
-
-}
-
-function closeModal(){
-
-document.getElementById("modal").classList.remove("show");
-
-}
-
-document.getElementById("modal").addEventListener("click",function(e){
-
-if(e.target===this){
-closeModal();
-}
-
-});
-
-
-/* =========================
-   DARK MODE
-========================= */
-
-function toggleDark(){
-
-document.body.classList.toggle("dark");
-
-localStorage.setItem(
-"hg9dark",
-document.body.classList.contains("dark")
-);
-
-}
-
-if(localStorage.getItem("hg9dark")==="true"){
-
-document.body.classList.add("dark");
-
-}
-
-
-/* =========================
-   BUSCADOR
-========================= */
-
-let currentCategory="Todas";
-
-function filterTools(){
-
-const search=document.getElementById("search").value.toLowerCase();
-
-const cards=document.querySelectorAll(".tool");
-
-let count=0;
-
-cards.forEach(card=>{
-
-const name=card.dataset.name.toLowerCase();
-
-const category=card.dataset.category;
-
-const matchSearch=name.includes(search);
-
-const matchCategory=
-currentCategory==="Todas" ||
-category===currentCategory;
-
-if(matchSearch && matchCategory){
-
-card.style.display="block";
-
-count++;
+menu.style.display = "none";
 
 }else{
 
-card.style.display="none";
+menu.style.display = "flex";
+
+menu.style.flexDirection =
+"column";
+
+menu.style.position =
+"absolute";
+
+menu.style.top =
+"72px";
+
+menu.style.right =
+"4%";
+
+menu.style.background =
+"white";
+
+menu.style.padding =
+"20px";
+
+menu.style.borderRadius =
+"15px";
+
+menu.style.boxShadow =
+"0 10px 30px rgba(0,0,0,.15)";
+
+}
+
+}
+
+
+/* =========================
+YEAR
+========================= */
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+/* =========================
+SEARCH
+========================= */
+
+function filterTools(){
+
+const query =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+const tools =
+document.querySelectorAll(".tool-card");
+
+let visible = 0;
+
+tools.forEach(tool=>{
+
+const text =
+(
+tool.innerText +
+" " +
+tool.dataset.search
+)
+.toLowerCase();
+
+if(text.includes(query)){
+
+tool.style.display =
+"flex";
+
+visible++;
+
+}else{
+
+tool.style.display =
+"none";
 
 }
 
 });
 
-document.getElementById("toolCount").textContent=
-count+" herramientas";
+document.getElementById("noResults")
+.style.display =
+visible === 0
+? "block"
+: "none";
 
 }
 
 
-function categoryFilter(category,button){
+/* =========================
+CATEGORY
+========================= */
 
-currentCategory=category;
+function setCategory(category,button){
 
-document.querySelectorAll(".category").forEach(x=>{
-x.classList.remove("active");
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+btn.classList.remove("active");
 });
 
 button.classList.add("active");
 
-filterTools();
+const tools =
+document.querySelectorAll(".tool-card");
+
+let visible=0;
+
+tools.forEach(tool=>{
+
+if(
+category === "Todas" ||
+tool.dataset.category === category
+){
+
+tool.style.display="flex";
+
+visible++;
+
+}else{
+
+tool.style.display="none";
+
+}
+
+});
+
+document.getElementById("noResults")
+.style.display =
+visible === 0
+? "block"
+: "none";
 
 }
 
 
 /* =========================
-   FAQ
+SCROLL
 ========================= */
 
-function toggleFAQ(button){
+function goTools(){
 
-button.parentElement.classList.toggle("open");
+document
+.getElementById("herramientas")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+setTimeout(()=>{
+
+document
+.getElementById("searchInput")
+.focus();
+
+},500);
 
 }
 
 
 /* =========================
-   CALCULADORA
+MODAL
+========================= */
+
+function createModal(title,content){
+
+const modal =
+document.createElement("div");
+
+modal.style.position="fixed";
+modal.style.inset="0";
+modal.style.background="rgba(15,23,42,.7)";
+modal.style.display="flex";
+modal.style.alignItems="center";
+modal.style.justifyContent="center";
+modal.style.padding="20px";
+modal.style.zIndex="9999";
+
+modal.innerHTML=`
+
+<div style="
+background:white;
+width:min(650px,100%);
+max-height:90vh;
+overflow:auto;
+border-radius:22px;
+padding:28px;
+">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+">
+
+<h2>${title}</h2>
+
+<button
+onclick="this.closest('div[style]').parentElement.remove()"
+style="
+border:none;
+background:#f1f5f9;
+padding:8px 12px;
+border-radius:10px;
+font-size:20px;
+">
+×
+</button>
+
+</div>
+
+${content}
+
+</div>
+`;
+
+modal.addEventListener("click",e=>{
+
+if(e.target===modal){
+modal.remove();
+}
+
+});
+
+document.body.appendChild(modal);
+
+}
+
+
+/* =========================
+CALCULADORA
 ========================= */
 
 function openCalculator(){
 
-openModal(
+createModal(
 "🧮 Calculadora",
 `
 
 <input
-id="calc"
-class="search"
-style="width:100%;padding:15px;font-size:25px;text-align:right"
-readonly
-value="0">
+id="calcA"
+type="number"
+placeholder="Primer número"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-margin-top:12px;
-">
+<select
+id="calcOperation"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-${["7","8","9","/","4","5","6","*","1","2","3","-","0",".","C","+","="]
-.map(x=>`
+<option value="+">Sumar</option>
+<option value="-">Restar</option>
+<option value="*">Multiplicar</option>
+<option value="/">Dividir</option>
+
+</select>
+
+<input
+id="calcB"
+type="number"
+placeholder="Segundo número"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
 <button
-class="${x==="="||["/","*","-","+"].includes(x)?"primary":"secondary"}"
-style="padding:15px"
-onclick="calcPress('${x}')">
-${x==="*"?"×":x}
-</button>
-`).join("")}
+class="primary-button"
+onclick="calculate()"
+style="margin-top:10px;">
 
+Calcular
+
+</button>
+
+<div
+id="calcResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
 </div>
-`
+
+`);
+}
+
+
+function calculate(){
+
+const a =
+parseFloat(
+document.getElementById("calcA").value
 );
 
-window.calcExpression="";
+const b =
+parseFloat(
+document.getElementById("calcB").value
+);
+
+const op =
+document.getElementById("calcOperation")
+.value;
+
+let result;
+
+if(isNaN(a)||isNaN(b)){
+
+result="Introduce ambos números.";
+
+}else if(op==="/" && b===0){
+
+result="No se puede dividir entre cero.";
+
+}else{
+
+if(op==="+") result=a+b;
+if(op==="-") result=a-b;
+if(op==="*") result=a*b;
+if(op==="/") result=a/b;
 
 }
 
-
-function calcPress(value){
-
-const display=document.getElementById("calc");
-
-if(value==="C"){
-
-window.calcExpression="";
-
-display.value="0";
-
-return;
-
-}
-
-if(value==="="){
-
-try{
-
-if(!/^[0-9+\-*/.() ]+$/.test(window.calcExpression)){
-throw new Error();
-}
-
-display.value=
-Function(
-'"use strict";return ('+
-window.calcExpression+
-')'
-)();
-
-window.calcExpression=display.value;
-
-}catch{
-
-display.value="Error";
-
-window.calcExpression="";
-
-}
-
-return;
-
-}
-
-window.calcExpression+=value;
-
-display.value=window.calcExpression;
+document.getElementById("calcResult")
+.textContent=
+"Resultado: "+result;
 
 }
 
 
 /* =========================
-   PORCENTAJE
+PORCENTAJE
 ========================= */
 
 function openPercentage(){
 
-openModal(
+createModal(
 "📊 Calculadora de porcentaje",
 `
 
-<div class="form">
-<label>Valor</label>
-<input id="pvalue" type="number" placeholder="500">
-</div>
+<input
+id="percentage"
+type="number"
+placeholder="Porcentaje"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<div class="form">
-<label>Porcentaje</label>
-<input id="ppercent" type="number" placeholder="20">
-</div>
+<input
+id="percentageNumber"
+type="number"
+placeholder="Número"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<button class="primary" onclick="calculatePercentage()">
+<button
+class="primary-button"
+onclick="calculatePercentage()">
+
 Calcular
+
 </button>
 
-<div class="result big-result" id="presult">
-Resultado
+<div
+id="percentageResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
 </div>
-`
-);
 
+`);
 }
 
 
 function calculatePercentage(){
 
-const value=parseFloat(document.getElementById("pvalue").value);
+const p =
+parseFloat(
+document.getElementById("percentage").value
+);
 
-const percent=parseFloat(document.getElementById("ppercent").value);
+const n =
+parseFloat(
+document.getElementById("percentageNumber").value
+);
 
-if(isNaN(value)||isNaN(percent)){
+const result =
+p*n/100;
+
+document.getElementById(
+"percentageResult"
+).textContent=
+"Resultado: "+result;
+
+}
+
+
+/* =========================
+REGLA DE TRES
+========================= */
+
+function openRuleThree(){
+
+createModal(
+"📐 Regla de tres",
+`
+
+<p>
+Si A corresponde a B,
+¿cuánto corresponde a C?
+</p>
+
+<input
+id="ruleA"
+type="number"
+placeholder="A"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
+<input
+id="ruleB"
+type="number"
+placeholder="B"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
+<input
+id="ruleC"
+type="number"
+placeholder="C"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
+<button
+class="primary-button"
+onclick="calculateRule()">
+
+Calcular X
+
+</button>
+
+<div
+id="ruleResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
+</div>
+
+`);
+}
+
+
+function calculateRule(){
+
+const a =
+parseFloat(document.getElementById("ruleA").value);
+
+const b =
+parseFloat(document.getElementById("ruleB").value);
+
+const c =
+parseFloat(document.getElementById("ruleC").value);
+
+if(a===0){
+
+document.getElementById("ruleResult")
+.textContent=
+"No se puede dividir entre cero.";
 
 return;
 
 }
 
-document.getElementById("presult").textContent=
-(value*percent/100).toLocaleString("es-CO");
+document.getElementById("ruleResult")
+.textContent=
+"X = "+(b*c/a);
 
 }
 
 
 /* =========================
-   DESCUENTO
-========================= */
-
-function openDiscount(){
-
-openModal(
-"💰 Calculadora de descuentos",
-`
-
-<div class="form">
-<label>Precio</label>
-<input id="dprice" type="number">
-</div>
-
-<div class="form">
-<label>Descuento %</label>
-<input id="dpercent" type="number">
-</div>
-
-<button class="primary" onclick="calculateDiscount()">
-Calcular
-</button>
-
-<div class="result" id="dresult">
-Resultado
-</div>
-`
-);
-
-}
-
-
-function calculateDiscount(){
-
-const price=parseFloat(document.getElementById("dprice").value);
-
-const percent=parseFloat(document.getElementById("dpercent").value);
-
-if(isNaN(price)||isNaN(percent))return;
-
-const saving=price*percent/100;
-
-const finalPrice=price-saving;
-
-document.getElementById("dresult").innerHTML=
-`
-<strong>Ahorro:</strong> ${saving.toLocaleString("es-CO")}
-<br><br>
-<strong>Precio final:</strong> ${finalPrice.toLocaleString("es-CO")}
-`;
-
-}
-
-
-/* =========================
-   EDAD
+EDAD
 ========================= */
 
 function openAge(){
 
-openModal(
+createModal(
 "🎂 Calculadora de edad",
 `
 
-<div class="form">
-<label>Fecha de nacimiento</label>
-<input id="birth" type="date">
-</div>
+<label>
+Fecha de nacimiento
+</label>
 
-<button class="primary" onclick="calculateAge()">
-Calcular
+<input
+id="birthDate"
+type="date"
+style="
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateAge()">
+
+Calcular edad
+
 </button>
 
-<div class="result big-result" id="ageresult">
-Edad
+<div
+id="ageResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
 </div>
-`
-);
 
+`);
 }
 
 
 function calculateAge(){
 
-const birth=new Date(document.getElementById("birth").value);
+const birth =
+new Date(
+document.getElementById("birthDate").value
+);
 
-if(isNaN(birth))return;
+const today =
+new Date();
 
-const today=new Date();
+if(isNaN(birth.getTime())){
 
-let age=
-today.getFullYear()-
+document.getElementById("ageResult")
+.textContent=
+"Selecciona una fecha.";
+
+return;
+
+}
+
+let age =
+today.getFullYear() -
 birth.getFullYear();
 
-const month=
-today.getMonth()-
+const month =
+today.getMonth() -
 birth.getMonth();
 
 if(
 month<0 ||
-(month===0 && today.getDate()<birth.getDate())
+(
+month===0 &&
+today.getDate()<birth.getDate()
+)
 ){
 
 age--;
 
 }
 
-document.getElementById("ageresult").textContent=
-age+" años";
+document.getElementById("ageResult")
+.textContent=
+"Tu edad es: "+age+" años.";
 
 }
 
 
 /* =========================
-   CONTADOR
-========================= */
-
-function openWordCounter(){
-
-openModal(
-"📝 Contador de palabras",
-`
-
-<textarea
-id="counter"
-placeholder="Escribe o pega tu texto..."
-oninput="updateCounter()"
-style="width:100%;min-height:180px;padding:12px">
-</textarea>
-
-<div class="result" id="counterResult">
-Palabras: 0<br>
-Caracteres: 0<br>
-Líneas: 0
-</div>
-`
-);
-
-}
-
-
-function updateCounter(){
-
-const text=document.getElementById("counter").value;
-
-const words=
-text.trim()?
-text.trim().split(/\s+/).length:0;
-
-const chars=text.length;
-
-const lines=
-text?text.split("\n").length:0;
-
-document.getElementById("counterResult").innerHTML=
-`
-Palabras: <strong>${words}</strong><br>
-Caracteres: <strong>${chars}</strong><br>
-Líneas: <strong>${lines}</strong>
-`;
-
-}
-
-
-/* =========================
-   MAYÚSCULAS
-========================= */
-
-function openTextCase(){
-
-openModal(
-"🔤 Conversor de texto",
-`
-
-<textarea
-id="caseText"
-style="width:100%;min-height:180px;padding:12px"
-placeholder="Escribe tu texto...">
-</textarea>
-
-<br><br>
-
-<button class="primary"
-onclick="document.getElementById('caseText').value=document.getElementById('caseText').value.toUpperCase()">
-MAYÚSCULAS
-</button>
-
-<button class="secondary"
-onclick="document.getElementById('caseText').value=document.getElementById('caseText').value.toLowerCase()">
-minúsculas
-</button>
-`
-);
-
-}
-
-
-/* =========================
-   LIMPIADOR
-========================= */
-
-function openCleaner(){
-
-openModal(
-"🧹 Limpiador de texto",
-`
-
-<textarea
-id="cleanText"
-style="width:100%;min-height:180px;padding:12px"
-placeholder="Pega tu texto...">
-</textarea>
-
-<br><br>
-
-<button class="primary" onclick="cleanText()">
-Limpiar
-</button>
-
-<div class="result">
-<textarea
-id="cleanResult"
-style="width:100%;min-height:150px;padding:10px">
-</textarea>
-</div>
-`
-);
-
-}
-
-
-function cleanText(){
-
-const input=document.getElementById("cleanText").value;
-
-const result=input
-.split("\n")
-.map(x=>x.trim())
-.filter(Boolean)
-.join("\n")
-.replace(/[ \t]+/g," ");
-
-document.getElementById("cleanResult").value=result;
-
-}
-
-
-/* =========================
-   BLOC
-========================= */
-
-function openTextBlock(){
-
-openModal(
-"📋 Bloc de texto",
-`
-
-<textarea
-id="blockText"
-style="width:100%;min-height:220px;padding:12px"
-placeholder="Escribe aquí...">
-</textarea>
-
-<br><br>
-
-<button class="primary" onclick="copyText('blockText')">
-📋 Copiar
-</button>
-`
-);
-
-}
-
-
-function copyText(id){
-
-navigator.clipboard.writeText(
-document.getElementById(id).value
-);
-
-alert("Texto copiado");
-
-}
-
-
-/* =========================
-   CONTRASEÑA
-========================= */
-
-function openPassword(){
-
-openModal(
-"🔐 Generador de contraseñas",
-`
-
-<div class="form">
-
-<label>Longitud</label>
-
-<input
-id="passLength"
-type="number"
-value="16"
-min="4"
-max="100">
-
-</div>
-
-<button class="primary" onclick="generatePassword()">
-Generar
-</button>
-
-<div class="result" id="passwordResult"></div>
-
-<br>
-
-<button class="secondary" onclick="copyTextContent('passwordResult')">
-📋 Copiar
-</button>
-`
-);
-
-generatePassword();
-
-}
-
-
-function generatePassword(){
-
-let length=
-parseInt(document.getElementById("passLength").value)||16;
-
-const chars=
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
-
-let password="";
-
-for(let i=0;i<length;i++){
-
-password+=chars[
-Math.floor(Math.random()*chars.length)
-];
-
-}
-
-document.getElementById("passwordResult").textContent=password;
-
-}
-
-
-function copyTextContent(id){
-
-navigator.clipboard.writeText(
-document.getElementById(id).textContent
-);
-
-alert("Copiado");
-
-}
-
-
-/* =========================
-   RANDOM
-========================= */
-
-function openRandom(){
-
-openModal(
-"🎲 Número aleatorio",
-`
-
-<div class="form">
-<label>Mínimo</label>
-<input id="randomMin" type="number" value="1">
-</div>
-
-<div class="form">
-<label>Máximo</label>
-<input id="randomMax" type="number" value="100">
-</div>
-
-<button class="primary" onclick="generateRandom()">
-Generar
-</button>
-
-<div class="result big-result" id="randomResult">
-?
-</div>
-`
-);
-
-}
-
-
-function generateRandom(){
-
-let min=parseInt(document.getElementById("randomMin").value);
-
-let max=parseInt(document.getElementById("randomMax").value);
-
-if(min>max)[min,max]=[max,min];
-
-const number=
-Math.floor(Math.random()*(max-min+1))+min;
-
-document.getElementById("randomResult").textContent=number;
-
-}
-
-
-/* =========================
-   URL
-========================= */
-
-function openURL(){
-
-openModal(
-"🔗 Codificador URL",
-`
-
-<textarea
-id="urlText"
-style="width:100%;min-height:150px;padding:12px"
-placeholder="Texto o URL">
-</textarea>
-
-<br><br>
-
-<button class="primary" onclick="encodeURL()">
-Codificar
-</button>
-
-<button class="secondary" onclick="decodeURL()">
-Decodificar
-</button>
-`
-);
-
-}
-
-
-function encodeURL(){
-
-const el=document.getElementById("urlText");
-
-el.value=encodeURIComponent(el.value);
-
-}
-
-
-function decodeURL(){
-
-const el=document.getElementById("urlText");
-
-try{
-
-el.value=decodeURIComponent(el.value);
-
-}catch{
-
-alert("Texto inválido");
-
-}
-
-}
-
-
-/* =========================
-   COLOR
-========================= */
-
-function openColor(){
-
-openModal(
-"🎨 Selector de colores",
-`
-
-<input
-id="colorInput"
-type="color"
-value="#2563eb"
-style="width:100%;height:70px">
-
-<div
-id="colorPreview"
-style="height:120px;border-radius:15px;margin-top:15px">
-</div>
-
-<div class="result" id="colorCode">
-#2563EB
-</div>
-`
-);
-
-const input=document.getElementById("colorInput");
-
-input.addEventListener("input",function(){
-
-document.getElementById("colorPreview").style.background=this.value;
-
-document.getElementById("colorCode").textContent=
-this.value.toUpperCase();
-
-});
-
-input.dispatchEvent(new Event("input"));
-
-}
-
-
-/* =========================
-   TEMPERATURA
+TEMPERATURA
 ========================= */
 
 function openTemperature(){
 
-openModal(
+createModal(
 "🌡️ Conversor de temperatura",
 `
 
-<div class="form">
-<label>Valor</label>
-<input id="tempValue" type="number" value="0">
-</div>
+<input
+id="tempValue"
+type="number"
+placeholder="Valor"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<div class="form">
-<label>Desde</label>
+<select
+id="tempFrom"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<select id="tempFrom">
-
-<option value="C">Celsius</option>
-<option value="F">Fahrenheit</option>
-<option value="K">Kelvin</option>
-
-</select>
-</div>
-
-<div class="form">
-
-<label>Hacia</label>
-
-<select id="tempTo">
-
-<option value="F">Fahrenheit</option>
-<option value="C">Celsius</option>
-<option value="K">Kelvin</option>
+<option>Celsius</option>
+<option>Fahrenheit</option>
+<option>Kelvin</option>
 
 </select>
 
-</div>
+<select
+id="tempTo"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<button class="primary" onclick="convertTemperature()">
+<option>Fahrenheit</option>
+<option>Celsius</option>
+<option>Kelvin</option>
+
+</select>
+
+<button
+class="primary-button"
+onclick="convertTemperature()">
+
 Convertir
+
 </button>
 
-<div class="result big-result" id="tempResult">
-Resultado
+<div
+id="tempResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
 </div>
-`
-);
 
+`);
 }
 
 
 function convertTemperature(){
 
-const value=parseFloat(document.getElementById("tempValue").value);
+const value =
+parseFloat(
+document.getElementById("tempValue").value
+);
 
-const from=document.getElementById("tempFrom").value;
+const from =
+document.getElementById("tempFrom").value;
 
-const to=document.getElementById("tempTo").value;
+const to =
+document.getElementById("tempTo").value;
 
-let c;
+let celsius;
 
-if(from==="C")c=value;
+if(from==="Celsius")
+celsius=value;
 
-if(from==="F")c=(value-32)*5/9;
+if(from==="Fahrenheit")
+celsius=(value-32)*5/9;
 
-if(from==="K")c=value-273.15;
+if(from==="Kelvin")
+celsius=value-273.15;
 
 let result;
 
-if(to==="C")result=c;
+if(to==="Celsius")
+result=celsius;
 
-if(to==="F")result=c*9/5+32;
+if(to==="Fahrenheit")
+result=celsius*9/5+32;
 
-if(to==="K")result=c+273.15;
+if(to==="Kelvin")
+result=celsius+273.15;
 
-document.getElementById("tempResult").textContent=
-result.toFixed(2);
+document.getElementById("tempResult")
+.textContent=
+result+" "+to;
 
 }
 
 
 /* =========================
-   LONGITUD
+LONGITUD
 ========================= */
 
 function openLength(){
 
-openModal(
+createModal(
 "📏 Conversor de longitud",
 `
 
-<div class="form">
-<label>Valor</label>
-<input id="lengthValue" type="number" value="1">
-</div>
+<input
+id="lengthValue"
+type="number"
+placeholder="Valor"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<div class="form">
+<select
+id="lengthFrom"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<label>Desde</label>
-
-<select id="lengthFrom">
-
-<option value="m">Metros</option>
-<option value="km">Kilómetros</option>
-<option value="cm">Centímetros</option>
-<option value="mi">Millas</option>
-<option value="ft">Pies</option>
-
-</select>
-
-</div>
-
-<div class="form">
-
-<label>Hacia</label>
-
-<select id="lengthTo">
-
-<option value="km">Kilómetros</option>
-<option value="m">Metros</option>
-<option value="cm">Centímetros</option>
-<option value="mi">Millas</option>
-<option value="ft">Pies</option>
+<option>Metros</option>
+<option>Kilómetros</option>
+<option>Millas</option>
+<option>Pies</option>
 
 </select>
 
-</div>
+<select
+id="lengthTo"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
 
-<button class="primary" onclick="convertLength()">
+<option>Metros</option>
+<option>Kilómetros</option>
+<option>Millas</option>
+<option>Pies</option>
+
+</select>
+
+<button
+class="primary-button"
+onclick="convertLength()">
+
 Convertir
+
 </button>
 
-<div class="result big-result" id="lengthResult">
-Resultado
+<div
+id="lengthResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
 </div>
-`
-);
 
+`);
 }
 
 
 function convertLength(){
 
-const value=parseFloat(document.getElementById("lengthValue").value);
+const v =
+parseFloat(
+document.getElementById("lengthValue").value
+);
 
-const from=document.getElementById("lengthFrom").value;
+const from =
+document.getElementById("lengthFrom").value;
 
-const to=document.getElementById("lengthTo").value;
+const to =
+document.getElementById("lengthTo").value;
 
-const units={
-m:1,
-km:1000,
-cm:.01,
-mi:1609.344,
-ft:.3048
+const factors={
+
+"Metros":1,
+
+"Kilómetros":1000,
+
+"Millas":1609.344,
+
+"Pies":0.3048
+
 };
 
-const result=
-value*units[from]/units[to];
+const meters =
+v*factors[from];
 
-document.getElementById("lengthResult").textContent=
-result.toLocaleString("es-CO");
+const result =
+meters/factors[to];
+
+document.getElementById("lengthResult")
+.textContent=
+result+" "+to;
 
 }
 
 
 /* =========================
-   CRONÓMETRO
+PESO
 ========================= */
 
-let stopwatchSeconds=0;
+function openWeight(){
+
+createModal(
+"⚖️ Conversor de peso",
+`
+
+<input
+id="weightValue"
+type="number"
+placeholder="Valor"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
+<select
+id="weightFrom"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
+<option>Kilogramos</option>
+<option>Gramos</option>
+<option>Libras</option>
+
+</select>
+
+<select
+id="weightTo"
+style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;"
+>
+
+<option>Kilogramos</option>
+<option>Gramos</option>
+<option>Libras</option>
+
+</select>
+
+<button
+class="primary-button"
+onclick="convertWeight()">
+
+Convertir
+
+</button>
+
+<div
+id="weightResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+Resultado:
+</div>
+
+`);
+}
+
+
+function convertWeight(){
+
+const v =
+parseFloat(
+document.getElementById("weightValue").value
+);
+
+const from =
+document.getElementById("weightFrom").value;
+
+const to =
+document.getElementById("weightTo").value;
+
+const factors={
+
+"Kilogramos":1,
+
+"Gramos":0.001,
+
+"Libras":0.45359237
+
+};
+
+const kg =
+v*factors[from];
+
+const result =
+kg/factors[to];
+
+document.getElementById("weightResult")
+.textContent=
+result+" "+to;
+
+}
+
+
+/* =========================
+CONTADOR DE PALABRAS
+========================= */
+
+function openWordCounter(){
+
+createModal(
+"🔢 Contador de palabras",
+`
+
+<textarea
+id="wordText"
+rows="9"
+placeholder="Escribe o pega aquí tu texto..."
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+resize:vertical;
+"
+oninput="countText()"
+></textarea>
+
+<div
+id="wordResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Palabras: 0
+<br>
+Caracteres: 0
+<br>
+Líneas: 0
+
+</div>
+
+`);
+}
+
+
+function countText(){
+
+const text =
+document.getElementById("wordText").value;
+
+const words =
+text.trim()
+? text.trim().split(/\s+/).length
+: 0;
+
+const chars =
+text.length;
+
+const lines =
+text
+? text.split("\n").length
+: 0;
+
+document.getElementById("wordResult")
+.innerHTML=
+
+"Palabras: "+words+
+"<br>Caracteres: "+chars+
+"<br>Líneas: "+lines;
+
+}
+
+
+/* =========================
+MAYUSCULAS
+========================= */
+
+function openCaseTool(){
+
+createModal(
+"🔠 Transformador de texto",
+`
+
+<textarea
+id="caseText"
+rows="9"
+placeholder="Escribe tu texto..."
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+"
+></textarea>
+
+<br><br>
+
+<button
+class="primary-button"
+onclick="toUpperCaseText()">
+
+MAYÚSCULAS
+
+</button>
+
+<button
+class="tool-button"
+onclick="toLowerCaseText()">
+
+minúsculas
+
+</button>
+
+`);
+}
+
+
+function toUpperCaseText(){
+
+const text =
+document.getElementById("caseText");
+
+text.value =
+text.value.toUpperCase();
+
+}
+
+
+function toLowerCaseText(){
+
+const text =
+document.getElementById("caseText");
+
+text.value =
+text.value.toLowerCase();
+
+}
+
+
+/* =========================
+LIMPIAR TEXTO
+========================= */
+
+function openCleanText(){
+
+createModal(
+"🧹 Limpiar texto",
+`
+
+<textarea
+id="cleanTextInput"
+rows="9"
+placeholder="Pega aquí tu texto..."
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+"
+></textarea>
+
+<br><br>
+
+<button
+class="primary-button"
+onclick="cleanText()">
+
+Limpiar texto
+
+</button>
+
+`);
+}
+
+
+function cleanText(){
+
+const input =
+document.getElementById("cleanTextInput");
+
+input.value =
+input.value
+.replace(/[ \t]+/g," ")
+.replace(/\n\s*\n+/g,"\n")
+.trim();
+
+}
+
+
+/* =========================
+PASSWORD
+========================= */
+
+function openPassword(){
+
+createModal(
+"🔐 Generador de contraseñas",
+`
+
+<label>
+Longitud
+</label>
+
+<input
+id="passwordLength"
+type="range"
+min="6"
+max="64"
+value="16"
+style="width:100%;"
+oninput="document.getElementById('passwordSize').textContent=this.value"
+>
+
+<p>
+Longitud:
+<strong id="passwordSize">
+16
+</strong>
+</p>
+
+<button
+class="primary-button"
+onclick="generatePassword()">
+
+Generar contraseña
+
+</button>
+
+<div
+id="passwordResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+word-break:break-all;
+">
+</div>
+
+`);
+}
+
+
+function generatePassword(){
+
+const chars=
+"ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*-_";
+
+const length =
+parseInt(
+document.getElementById("passwordLength").value
+);
+
+let password="";
+
+for(
+let i=0;
+i<length;
+i++
+){
+
+password+=
+chars[
+Math.floor(
+Math.random()*chars.length
+)
+];
+
+}
+
+document.getElementById("passwordResult")
+.textContent=
+password;
+
+}
+
+
+/* =========================
+UUID
+========================= */
+
+function openUUID(){
+
+createModal(
+"🆔 Generador UUID",
+`
+
+<button
+class="primary-button"
+onclick="generateUUID()">
+
+Generar UUID
+
+</button>
+
+<div
+id="uuidResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+word-break:break-all;
+">
+
+Pulsa el botón para generar.
+
+</div>
+
+`);
+}
+
+
+function generateUUID(){
+
+let uuid;
+
+if(
+typeof crypto !== "undefined" &&
+crypto.randomUUID
+){
+
+uuid=crypto.randomUUID();
+
+}else{
+
+uuid=
+"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+.replace(
+/[xy]/g,
+function(c){
+
+const r =
+Math.random()*16|0;
+
+const v =
+c==="x"
+?r
+:(r&0x3|0x8);
+
+return v.toString(16);
+
+}
+);
+
+}
+
+document.getElementById("uuidResult")
+.textContent=
+uuid;
+
+}
+
+
+/* =========================
+CRONOMETRO
+========================= */
+
 let stopwatchInterval=null;
+let stopwatchSeconds=0;
 
 function openStopwatch(){
 
-openModal(
+createModal(
 "⏱️ Cronómetro",
 `
 
 <div
-id="stopwatch"
-class="big-result"
-style="font-size:50px;margin:25px">
+id="stopwatchDisplay"
+style="
+text-align:center;
+font-size:3rem;
+font-weight:900;
+margin:20px 0;
+">
+
 00:00:00
+
 </div>
 
-<button class="primary" onclick="startStopwatch()">
-▶ Iniciar
+<div style="text-align:center;">
+
+<button
+class="primary-button"
+onclick="startStopwatch()">
+
+Iniciar
+
 </button>
 
-<button class="secondary" onclick="pauseStopwatch()">
-⏸ Pausar
+<button
+class="tool-button"
+onclick="pauseStopwatch()">
+
+Pausar
+
 </button>
 
-<button class="secondary" onclick="resetStopwatch()">
-↻ Reiniciar
+<button
+class="tool-button"
+onclick="resetStopwatch()">
+
+Reiniciar
+
 </button>
-`
+
+</div>
+
+`);
+}
+
+
+function updateStopwatch(){
+
+const hours =
+Math.floor(
+stopwatchSeconds/3600
 );
 
-updateStopwatch();
+const minutes =
+Math.floor(
+(stopwatchSeconds%3600)/60
+);
+
+const seconds =
+stopwatchSeconds%60;
+
+document.getElementById(
+"stopwatchDisplay"
+).textContent=
+
+String(hours).padStart(2,"0")+
+":"+
+String(minutes).padStart(2,"0")+
+":"+
+String(seconds).padStart(2,"0");
 
 }
 
 
 function startStopwatch(){
 
-if(stopwatchInterval)return;
+if(stopwatchInterval)
+return;
 
-stopwatchInterval=setInterval(()=>{
+stopwatchInterval=
+setInterval(()=>{
 
 stopwatchSeconds++;
 
@@ -2481,94 +2860,576 @@ updateStopwatch();
 }
 
 
-function updateStopwatch(){
+/* =========================
+COLOR
+========================= */
 
-const el=document.getElementById("stopwatch");
+function openColor(){
 
-if(!el)return;
+createModal(
+"🎨 Selector de color",
+`
 
-const h=Math.floor(stopwatchSeconds/3600);
+<input
+id="colorPicker"
+type="color"
+value="#2563eb"
+style="
+width:100%;
+height:100px;
+border:none;
+"
+oninput="updateColor()"
+>
 
-const m=Math.floor((stopwatchSeconds%3600)/60);
+<div
+id="colorResult"
+style="
+margin-top:20px;
+padding:20px;
+border-radius:12px;
+background:#eff6ff;
+font-weight:800;
+">
 
-const s=stopwatchSeconds%60;
+#2563EB
 
-el.textContent=
-String(h).padStart(2,"0")+":"+
-String(m).padStart(2,"0")+":"+
-String(s).padStart(2,"0");
+</div>
+
+`);
+}
+
+
+function updateColor(){
+
+const color =
+document.getElementById("colorPicker").value;
+
+const result =
+document.getElementById("colorResult");
+
+result.textContent=
+color.toUpperCase();
+
+result.style.background=
+color;
+
+}
+
+<script>
+
+/* =====================================================
+   HERRAMIENTAS ADICIONALES - HERRAMIENTASGRATIS 9.0
+   ===================================================== */
+
+
+/* =====================================================
+   GENERADOR DE TEXTO
+   ===================================================== */
+
+function openTextGenerator(){
+
+createModal(
+"✍️ Generador de texto",
+`
+
+<label>
+Cantidad de párrafos
+</label>
+
+<input
+id="paragraphCount"
+type="number"
+min="1"
+max="10"
+value="3"
+style="
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="generateText()">
+
+Generar texto
+
+</button>
+
+<div
+id="generatedText"
+style="
+margin-top:20px;
+padding:18px;
+background:#f8fafc;
+border:1px solid #e2e8f0;
+border-radius:12px;
+white-space:pre-line;
+">
+
+Aquí aparecerá el texto generado.
+
+</div>
+
+`);
+}
+
+
+function generateText(){
+
+const paragraphs =
+parseInt(
+document.getElementById(
+"paragraphCount"
+).value
+) || 3;
+
+const text = [
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, sapien non malesuada posuere, justo neque tincidunt massa, vitae tincidunt augue nisl eget libero.",
+
+"Praesent commodo, libero eget consectetur consequat, lorem ipsum tincidunt nisl, vitae interdum neque lectus at justo. Donec tincidunt sem vitae erat facilisis, sed aliquet purus interdum.",
+
+"Integer consectetur augue at libero tincidunt, sed malesuada magna malesuada. Curabitur vitae lorem sed neque consequat vestibulum.",
+
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+
+"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+
+];
+
+let result="";
+
+for(
+let i=0;
+i<paragraphs;
+i++
+){
+
+result+=
+text[i % text.length]+"\n\n";
+
+}
+
+document.getElementById(
+"generatedText"
+).textContent=
+result.trim();
 
 }
 
 
-/* =========================
-   TEMPORIZADOR
-========================= */
+/* =====================================================
+   CONVERSOR DE DATOS
+   ===================================================== */
 
-let timerSeconds=0;
+function openDataConverter(){
+
+createModal(
+"💾 Conversor de datos",
+`
+
+<input
+id="dataValue"
+type="number"
+placeholder="Valor"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<select
+id="dataFrom"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option>Bytes</option>
+<option>KB</option>
+<option>MB</option>
+<option>GB</option>
+<option>TB</option>
+
+</select>
+
+<select
+id="dataTo"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option>Bytes</option>
+<option>KB</option>
+<option>MB</option>
+<option>GB</option>
+<option>TB</option>
+
+</select>
+
+<button
+class="primary-button"
+onclick="convertData()">
+
+Convertir
+
+</button>
+
+<div
+id="dataResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function convertData(){
+
+const value =
+parseFloat(
+document.getElementById("dataValue").value
+);
+
+const from =
+document.getElementById("dataFrom").value;
+
+const to =
+document.getElementById("dataTo").value;
+
+const units={
+
+Bytes:1,
+
+KB:1024,
+
+MB:1024*1024,
+
+GB:1024*1024*1024,
+
+TB:1024*1024*1024*1024
+
+};
+
+const bytes =
+value*units[from];
+
+const result =
+bytes/units[to];
+
+document.getElementById(
+"dataResult"
+).textContent=
+result+" "+to;
+
+}
+
+
+/* =====================================================
+   CONVERSOR DE TIEMPO
+   ===================================================== */
+
+function openTimeConverter(){
+
+createModal(
+"🕐 Conversor de tiempo",
+`
+
+<input
+id="timeValue"
+type="number"
+placeholder="Valor"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<select
+id="timeFrom"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option>Segundos</option>
+<option>Minutos</option>
+<option>Horas</option>
+<option>Días</option>
+
+</select>
+
+<select
+id="timeTo"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option>Segundos</option>
+<option>Minutos</option>
+<option>Horas</option>
+<option>Días</option>
+
+</select>
+
+<button
+class="primary-button"
+onclick="convertTime()">
+
+Convertir
+
+</button>
+
+<div
+id="timeResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function convertTime(){
+
+const value =
+parseFloat(
+document.getElementById("timeValue").value
+);
+
+const from =
+document.getElementById("timeFrom").value;
+
+const to =
+document.getElementById("timeTo").value;
+
+const units={
+
+Segundos:1,
+
+Minutos:60,
+
+Horas:3600,
+
+Días:86400
+
+};
+
+const seconds =
+value*units[from];
+
+const result =
+seconds/units[to];
+
+document.getElementById(
+"timeResult"
+).textContent=
+result+" "+to;
+
+}
+
+
+/* =====================================================
+   TEMPORIZADOR
+   ===================================================== */
+
 let timerInterval=null;
+let timerSeconds=0;
+
 
 function openTimer(){
 
-openModal(
-"⏲️ Temporizador",
+createModal(
+"⏳ Temporizador",
 `
 
-<div class="form">
-<label>Minutos</label>
-<input id="timerMin" type="number" value="1" min="0">
-</div>
+<div
+style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+">
 
-<div class="form">
-<label>Segundos</label>
-<input id="timerSec" type="number" value="0" min="0" max="59">
+<input
+id="timerMinutes"
+type="number"
+min="0"
+placeholder="Minutos"
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="timerSeconds"
+type="number"
+min="0"
+max="59"
+placeholder="Segundos"
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
 </div>
 
 <div
 id="timerDisplay"
-class="big-result"
-style="font-size:50px;margin:25px">
-01:00
+style="
+text-align:center;
+font-size:3rem;
+font-weight:900;
+margin:25px 0;
+">
+
+00:00
+
 </div>
 
-<button class="primary" onclick="startTimer()">
-▶ Iniciar
+<div style="text-align:center;">
+
+<button
+class="primary-button"
+onclick="startTimer()">
+
+Iniciar
+
 </button>
 
-<button class="secondary" onclick="pauseTimer()">
-⏸ Pausar
+<button
+class="tool-button"
+onclick="pauseTimer()">
+
+Pausar
+
 </button>
 
-<button class="secondary" onclick="resetTimer()">
-↻ Reiniciar
+<button
+class="tool-button"
+onclick="resetTimer()">
+
+Reiniciar
+
 </button>
-`
+
+</div>
+
+`);
+}
+
+
+function updateTimer(){
+
+const minutes =
+Math.floor(
+timerSeconds/60
 );
 
-resetTimer();
+const seconds =
+timerSeconds%60;
+
+document.getElementById(
+"timerDisplay"
+).textContent=
+
+String(minutes).padStart(2,"0")
++
+":"
++
+String(seconds).padStart(2,"0");
 
 }
 
 
 function startTimer(){
 
-if(timerInterval)return;
+if(timerInterval)
+return;
 
-timerInterval=setInterval(()=>{
+if(timerSeconds<=0){
+
+const minutes =
+parseInt(
+document.getElementById(
+"timerMinutes"
+).value
+) || 0;
+
+const seconds =
+parseInt(
+document.getElementById(
+"timerSeconds"
+).value
+) || 0;
+
+timerSeconds =
+minutes*60+
+seconds;
+
+}
+
+if(timerSeconds<=0)
+return;
+
+timerInterval=
+setInterval(()=>{
+
+timerSeconds--;
+
+updateTimer();
 
 if(timerSeconds<=0){
 
 pauseTimer();
 
-alert("⏰ ¡Tiempo terminado!");
-
-return;
+alert(
+"⏰ ¡Tiempo terminado!"
+);
 
 }
-
-timerSeconds--;
-
-updateTimer();
 
 },1000);
 
@@ -2588,35 +3449,1570 @@ function resetTimer(){
 
 pauseTimer();
 
-const min=
-parseInt(document.getElementById("timerMin")?.value)||0;
-
-const sec=
-parseInt(document.getElementById("timerSec")?.value)||0;
-
-timerSeconds=min*60+sec;
+timerSeconds=0;
 
 updateTimer();
 
 }
 
 
-function updateTimer(){
+/* =====================================================
+   NOTAS
+   ===================================================== */
 
-const el=document.getElementById("timerDisplay");
+function openNotes(){
 
-if(!el)return;
+createModal(
+"📋 Bloc de notas",
+`
 
-const m=Math.floor(timerSeconds/60);
+<textarea
+id="notesArea"
+rows="12"
+placeholder="Escribe aquí tus notas..."
+style="
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+resize:vertical;
+"
+></textarea>
 
-const s=timerSeconds%60;
+<br><br>
 
-el.textContent=
-String(m).padStart(2,"0")+":"+
-String(s).padStart(2,"0");
+<button
+class="primary-button"
+onclick="saveNotes()">
+
+💾 Guardar
+
+</button>
+
+<button
+class="tool-button"
+onclick="loadNotes()">
+
+📂 Cargar
+
+</button>
+
+<button
+class="tool-button"
+onclick="clearNotes()">
+
+🗑️ Borrar
+
+</button>
+
+<div
+id="notesMessage"
+style="
+margin-top:15px;
+padding:12px;
+background:#eff6ff;
+border-radius:10px;
+">
+
+Las notas se guardan únicamente en este navegador.
+
+</div>
+
+`);
+}
+
+
+function saveNotes(){
+
+const text =
+document.getElementById(
+"notesArea"
+).value;
+
+localStorage.setItem(
+"herramientasgratis_notes",
+text
+);
+
+document.getElementById(
+"notesMessage"
+).textContent=
+"✅ Notas guardadas correctamente.";
 
 }
 
+
+function loadNotes(){
+
+const text =
+localStorage.getItem(
+"herramientasgratis_notes"
+) || "";
+
+document.getElementById(
+"notesArea"
+).value=
+text;
+
+document.getElementById(
+"notesMessage"
+).textContent=
+"📂 Notas cargadas.";
+
+}
+
+
+function clearNotes(){
+
+document.getElementById(
+"notesArea"
+).value="";
+
+}
+
+
+/* =====================================================
+   GENERADOR DE GRADIENTES
+   ===================================================== */
+
+function openGradient(){
+
+createModal(
+"🌈 Generador de gradientes",
+`
+
+<div
+style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+">
+
+<div>
+
+<label>
+Color 1
+</label>
+
+<input
+id="gradientColor1"
+type="color"
+value="#2563eb"
+style="
+width:100%;
+height:70px;
+">
+
+</div>
+
+<div>
+
+<label>
+Color 2
+</label>
+
+<input
+id="gradientColor2"
+type="color"
+value="#7c3aed"
+style="
+width:100%;
+height:70px;
+">
+
+</div>
+
+</div>
+
+<br>
+
+<button
+class="primary-button"
+onclick="generateGradient()">
+
+Generar gradiente
+
+</button>
+
+<div
+id="gradientPreview"
+style="
+height:160px;
+margin-top:20px;
+border-radius:16px;
+background:linear-gradient(
+135deg,
+#2563eb,
+#7c3aed
+);
+">
+</div>
+
+<div
+id="gradientCode"
+style="
+margin-top:15px;
+padding:15px;
+background:#0f172a;
+color:white;
+border-radius:12px;
+font-family:monospace;
+">
+
+background: linear-gradient(135deg,#2563eb,#7c3aed);
+
+</div>
+
+`);
+}
+
+
+function generateGradient(){
+
+const color1 =
+document.getElementById(
+"gradientColor1"
+).value;
+
+const color2 =
+document.getElementById(
+"gradientColor2"
+).value;
+
+const gradient=
+`linear-gradient(135deg, ${color1}, ${color2})`;
+
+document.getElementById(
+"gradientPreview"
+).style.background=
+gradient;
+
+document.getElementById(
+"gradientCode"
+).textContent=
+"background: "+gradient+";";
+
+}
+
+
+/* =====================================================
+   CALCULADORA DE DESCUENTOS
+   ===================================================== */
+
+function openDiscount(){
+
+createModal(
+"🏷️ Calculadora de descuento",
+`
+
+<input
+id="originalPrice"
+type="number"
+placeholder="Precio original"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="discountPercent"
+type="number"
+placeholder="Descuento (%)"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateDiscount()">
+
+Calcular
+
+</button>
+
+<div
+id="discountResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculateDiscount(){
+
+const price =
+parseFloat(
+document.getElementById(
+"originalPrice"
+).value
+);
+
+const discount =
+parseFloat(
+document.getElementById(
+"discountPercent"
+).value
+);
+
+const saved =
+price*discount/100;
+
+const finalPrice =
+price-saved;
+
+document.getElementById(
+"discountResult"
+).innerHTML=
+
+"Ahorras: $"+saved.toFixed(2)+
+"<br><br>"+
+"Precio final: $"+
+finalPrice.toFixed(2);
+
+}
+
+
+/* =====================================================
+   CALCULADORA DE IMC
+   ===================================================== */
+
+function openBMI(){
+
+createModal(
+"⚖️ Calculadora de IMC",
+`
+
+<input
+id="bmiWeight"
+type="number"
+placeholder="Peso en kg"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="bmiHeight"
+type="number"
+step="0.01"
+placeholder="Altura en metros"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateBMI()">
+
+Calcular IMC
+
+</button>
+
+<div
+id="bmiResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+<p
+style="
+margin-top:15px;
+font-size:.85rem;
+color:#64748b;
+">
+
+El resultado es orientativo y no sustituye una valoración profesional.
+
+</p>
+
+`);
+}
+
+
+function calculateBMI(){
+
+const weight =
+parseFloat(
+document.getElementById(
+"bmiWeight"
+).value
+);
+
+const height =
+parseFloat(
+document.getElementById(
+"bmiHeight"
+).value
+);
+
+if(
+!weight ||
+!height ||
+height<=0
+){
+
+document.getElementById(
+"bmiResult"
+).textContent=
+"Introduce datos válidos.";
+
+return;
+
+}
+
+const bmi =
+weight/(height*height);
+
+let category;
+
+if(bmi<18.5)
+category="Bajo peso";
+
+else if(bmi<25)
+category="Rango normal";
+
+else if(bmi<30)
+category="Sobrepeso";
+
+else
+category="Obesidad";
+
+document.getElementById(
+"bmiResult"
+).innerHTML=
+
+"IMC: "+
+bmi.toFixed(2)+
+"<br>"+
+"Categoría: "+
+category;
+
+}
+
+
+/* =====================================================
+   GENERADOR DE NÚMEROS
+   ===================================================== */
+
+function openRandomNumber(){
+
+createModal(
+"🎲 Generador de números aleatorios",
+`
+
+<input
+id="randomMin"
+type="number"
+placeholder="Mínimo"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="randomMax"
+type="number"
+placeholder="Máximo"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="generateRandomNumber()">
+
+Generar
+
+</button>
+
+<div
+id="randomResult"
+style="
+margin-top:20px;
+padding:20px;
+background:#eff6ff;
+border-radius:12px;
+font-size:2rem;
+font-weight:900;
+text-align:center;
+">
+
+?
+
+</div>
+
+`);
+}
+
+
+function generateRandomNumber(){
+
+const min =
+parseInt(
+document.getElementById(
+"randomMin"
+).value
+);
+
+const max =
+parseInt(
+document.getElementById(
+"randomMax"
+).value
+);
+
+if(
+isNaN(min) ||
+isNaN(max) ||
+min>max
+){
+
+document.getElementById(
+"randomResult"
+).textContent=
+"Valores inválidos.";
+
+return;
+
+}
+
+const result =
+Math.floor(
+Math.random()*
+(max-min+1)
+)+min;
+
+document.getElementById(
+"randomResult"
+).textContent=
+result;
+
+}
+
+
+/* =====================================================
+   COPIAR TEXTO
+   ===================================================== */
+
+function copyToClipboard(text){
+
+if(
+navigator.clipboard
+){
+
+navigator.clipboard.writeText(text);
+
+}
+
+}
+
+
+/* =====================================================
+   CONTADOR DE CARACTERES
+   ===================================================== */
+
+function openCharacterCounter(){
+
+createModal(
+"🔤 Contador de caracteres",
+`
+
+<textarea
+id="characterText"
+rows="10"
+placeholder="Escribe o pega tu texto..."
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+"
+oninput="updateCharacterCounter()"
+></textarea>
+
+<div
+id="characterResult"
+style="
+margin-top:15px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Caracteres: 0
+
+</div>
+
+`);
+}
+
+
+function updateCharacterCounter(){
+
+const text =
+document.getElementById(
+"characterText"
+).value;
+
+document.getElementById(
+"characterResult"
+).textContent=
+"Caracteres: "+text.length;
+
+}
+
+
+/* =====================================================
+   CONEXIONES DE NUEVAS HERRAMIENTAS
+   HERRAMIENTASGRATIS 9.0
+   ===================================================== */
+
+function addNewTools(){
+
+const grid = document.getElementById("toolsGrid");
+
+const tools = [
+
+{
+icon:"🏷️",
+name:"Calculadora de descuento",
+category:"Calculo",
+search:"descuento precio oferta rebaja",
+action:"openDiscount()",
+description:"Calcula cuánto ahorras y cuál será el precio final."
+},
+
+{
+icon:"⚖️",
+name:"Calculadora de IMC",
+category:"Calculo",
+search:"imc peso altura indice masa corporal",
+action:"openBMI()",
+description:"Calcula tu índice de masa corporal."
+},
+
+{
+icon:"🎲",
+name:"Número aleatorio",
+category:"Productividad",
+search:"numero aleatorio random azar",
+action:"openRandomNumber()",
+description:"Genera un número aleatorio entre dos valores."
+},
+
+{
+icon:"💾",
+name:"Conversor de datos",
+category:"Conversion",
+search:"bytes kb mb gb tb almacenamiento",
+action:"openDataConverter()",
+description:"Convierte Bytes, KB, MB, GB y TB."
+},
+
+{
+icon:"🕐",
+name:"Conversor de tiempo",
+category:"Conversion",
+search:"segundos minutos horas dias tiempo",
+action:"openTimeConverter()",
+description:"Convierte segundos, minutos, horas y días."
+},
+
+{
+icon:"⏳",
+name:"Temporizador",
+category:"Productividad",
+search:"temporizador cuenta regresiva cronometro",
+action:"openTimer()",
+description:"Configura una cuenta regresiva."
+},
+
+{
+icon:"📋",
+name:"Bloc de notas",
+category:"Productividad",
+search:"notas bloc escribir guardar",
+action:"openNotes()",
+description:"Guarda tus notas directamente en el navegador."
+},
+
+{
+icon:"🌈",
+name:"Generador de gradientes",
+category:"Productividad",
+search:"gradiente colores css diseño",
+action:"openGradient()",
+description:"Crea gradientes CSS para tus proyectos."
+},
+
+{
+icon:"✍️",
+name:"Generador de texto",
+category:"Texto",
+search:"texto lorem generador parrafos",
+action:"openTextGenerator()",
+description:"Genera texto de prueba rápidamente."
+},
+
+{
+icon:"🔤",
+name:"Contador de caracteres",
+category:"Texto",
+search:"caracteres contar letras texto",
+action:"openCharacterCounter()",
+description:"Cuenta los caracteres de cualquier texto."
+}
+
+];
+
+tools.forEach(tool=>{
+
+const article =
+document.createElement("article");
+
+article.className="tool-card";
+
+article.dataset.category=
+tool.category;
+
+article.dataset.search=
+tool.search;
+
+article.innerHTML=`
+
+<div class="tool-icon">
+${tool.icon}
+</div>
+
+<h3>
+${tool.name}
+</h3>
+
+<p>
+${tool.description}
+</p>
+
+<button
+class="tool-button"
+onclick="${tool.action}">
+
+Abrir herramienta
+
+</button>
+
+`;
+
+grid.appendChild(article);
+
+});
+
+updateToolCounter();
+
+}
+
+
+function updateToolCounter(){
+
+const count =
+document.querySelectorAll(
+".tool-card"
+).length;
+
+document.getElementById(
+"toolCounter"
+).textContent=
+count+"+";
+
+}
+
+
+/* =====================================================
+   BUSCADOR MEJORADO
+   ===================================================== */
+
+function filterTools(){
+
+const query =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+const tools =
+document.querySelectorAll(
+".tool-card"
+);
+
+let visible=0;
+
+tools.forEach(tool=>{
+
+const text =
+(
+tool.innerText+
+" "+
+(tool.dataset.search||"")
+)
+.toLowerCase();
+
+if(
+text.includes(query)
+){
+
+tool.style.display="flex";
+
+visible++;
+
+}else{
+
+tool.style.display="none";
+
+}
+
+});
+
+document.getElementById(
+"noResults"
+).style.display=
+visible===0
+?"block"
+:"none";
+
+}
+
+
+/* =====================================================
+   FILTRO POR CATEGORÍA MEJORADO
+   ===================================================== */
+
+function setCategory(category,button){
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+
+btn.classList.remove("active");
+
+});
+
+button.classList.add("active");
+
+const tools =
+document.querySelectorAll(
+".tool-card"
+);
+
+let visible=0;
+
+tools.forEach(tool=>{
+
+if(
+category==="Todas" ||
+tool.dataset.category===category
+){
+
+tool.style.display="flex";
+
+visible++;
+
+}else{
+
+tool.style.display="none";
+
+}
+
+});
+
+document.getElementById(
+"noResults"
+).style.display=
+visible===0
+?"block"
+:"none";
+
+}
+
+
+/* =====================================================
+   INICIALIZAR NUEVAS HERRAMIENTAS
+   ===================================================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+addNewTools();
+
+updateToolCounter();
+
+}
+);
+/* =====================================================
+   HERRAMIENTASGRATIS 9.0
+   PARTE 4 — MEJORAS DEL SISTEMA
+   ===================================================== */
+
+
+/* =====================================================
+   COPIAR RESULTADOS
+   ===================================================== */
+
+function copyResult(elementId){
+
+const element =
+document.getElementById(elementId);
+
+if(!element)
+return;
+
+const text =
+element.innerText ||
+element.value ||
+"";
+
+if(
+navigator.clipboard &&
+navigator.clipboard.writeText
+){
+
+navigator.clipboard
+.writeText(text)
+.then(()=>{
+
+alert("✅ Resultado copiado.");
+
+})
+.catch(()=>{
+
+alert("No se pudo copiar.");
+
+});
+
+}else{
+
+alert("Tu navegador no permite copiar automáticamente.");
+
+}
+
+}
+
+
+/* =====================================================
+   COMPARTIR PÁGINA
+   ===================================================== */
+
+function sharePage(){
+
+const shareData={
+
+title:"HerramientasGratis",
+
+text:"Prueba HerramientasGratis: herramientas online gratuitas.",
+
+url:window.location.href
+
+};
+
+if(
+navigator.share
+){
+
+navigator.share(shareData)
+.catch(()=>{});
+
+}else{
+
+copyToClipboard(
+window.location.href
+);
+
+alert(
+"🔗 Enlace copiado. Ahora puedes compartirlo."
+);
+
+}
+
+}
+
+
+/* =====================================================
+   MODO OSCURO
+   ===================================================== */
+
+function toggleDarkMode(){
+
+document.body.classList.toggle(
+"dark-mode"
+);
+
+const enabled =
+document.body.classList.contains(
+"dark-mode"
+);
+
+localStorage.setItem(
+"herramientasgratis_dark",
+enabled
+?"1"
+:"0"
+);
+
+}
+
+
+/* =====================================================
+   CARGAR MODO OSCURO
+   ===================================================== */
+
+function loadDarkMode(){
+
+const enabled =
+localStorage.getItem(
+"herramientasgratis_dark"
+);
+
+if(enabled==="1"){
+
+document.body.classList.add(
+"dark-mode"
+);
+
+}
+
+}
+
+
+/* =====================================================
+   FAVORITOS
+   ===================================================== */
+
+function toggleFavorite(name){
+
+let favorites =
+JSON.parse(
+localStorage.getItem(
+"herramientasgratis_favorites"
+) || "[]"
+);
+
+if(
+favorites.includes(name)
+){
+
+favorites =
+favorites.filter(
+item=>item!==name
+);
+
+alert(
+"⭐ Eliminado de favoritos."
+);
+
+}else{
+
+favorites.push(name);
+
+alert(
+"⭐ Añadido a favoritos."
+);
+
+}
+
+localStorage.setItem(
+"herramientasgratis_favorites",
+JSON.stringify(favorites)
+);
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN DE APARICIÓN
+   ===================================================== */
+
+function animateTools(){
+
+const cards =
+document.querySelectorAll(
+".tool-card"
+);
+
+cards.forEach(
+(card,index)=>{
+
+card.style.opacity="0";
+
+card.style.transform=
+"translateY(15px)";
+
+setTimeout(()=>{
+
+card.style.transition=
+"opacity .4s ease, transform .4s ease";
+
+card.style.opacity="1";
+
+card.style.transform=
+"translateY(0)";
+
+},
+index*35);
+
+});
+
+}
+
+
+/* =====================================================
+   BOTÓN VOLVER ARRIBA
+   ===================================================== */
+
+function createBackToTop(){
+
+const button =
+document.createElement("button");
+
+button.id=
+"backToTop";
+
+button.innerHTML="↑";
+
+button.setAttribute(
+"aria-label",
+"Volver arriba"
+);
+
+button.style.cssText=`
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+font-size:22px;
+
+font-weight:900;
+
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+z-index:900;
+
+display:none;
+
+`;
+
+button.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+document.body.appendChild(button);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(window.scrollY>500){
+
+button.style.display="block";
+
+}else{
+
+button.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* =====================================================
+   BOTÓN COMPARTIR
+   ===================================================== */
+
+function createShareButton(){
+
+const button =
+document.createElement("button");
+
+button.innerHTML=
+"📤 Compartir";
+
+button.className=
+"primary-button";
+
+button.style.position=
+"fixed";
+
+button.style.left="20px";
+
+button.style.bottom="20px";
+
+button.style.zIndex="900";
+
+button.onclick=
+sharePage;
+
+document.body.appendChild(
+button
+);
+
+}
+
+
+/* =====================================================
+   MODAL DE BIENVENIDA
+   ===================================================== */
+
+function showWelcome(){
+
+const visited =
+localStorage.getItem(
+"herramientasgratis_visited"
+);
+
+if(visited)
+return;
+
+setTimeout(()=>{
+
+createModal(
+"🚀 Bienvenido a HerramientasGratis",
+`
+
+<div style="
+text-align:center;
+">
+
+<div style="
+font-size:4rem;
+margin-bottom:15px;
+">
+🎉
+</div>
+
+<h3>
+Más de 20 herramientas gratuitas
+</h3>
+
+<p style="
+color:#64748b;
+margin:15px 0;
+">
+
+Calculadoras, conversores,
+herramientas de texto,
+productividad y mucho más.
+
+</p>
+
+<button
+class="primary-button"
+onclick="
+this.closest('[style*=fixed]').remove()
+">
+
+Comenzar
+
+</button>
+
+</div>
+
+`);
+
+localStorage.setItem(
+"herramientasgratis_visited",
+"1"
+);
+
+},1200);
+
+}
+
+
+/* =====================================================
+   DETECTAR CONEXIÓN
+   ===================================================== */
+
+function connectionStatus(){
+
+const indicator =
+document.createElement("div");
+
+indicator.id=
+"connectionStatus";
+
+indicator.style.cssText=`
+
+position:fixed;
+
+top:82px;
+
+right:15px;
+
+padding:8px 12px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:800;
+
+z-index:800;
+
+display:none;
+
+`;
+
+document.body.appendChild(
+indicator
+);
+
+window.addEventListener(
+"offline",
+()=>{
+
+indicator.style.display=
+"block";
+
+indicator.textContent=
+"📡 Sin conexión";
+
+indicator.style.background=
+"#fee2e2";
+
+indicator.style.color=
+"#991b1b";
+
+});
+
+window.addEventListener(
+"online",
+()=>{
+
+indicator.style.display=
+"block";
+
+indicator.textContent=
+"🌐 Conectado";
+
+indicator.style.background=
+"#dcfce7";
+
+indicator.style.color=
+"#166534";
+
+setTimeout(()=>{
+
+indicator.style.display=
+"none";
+
+},2500);
+
+});
+
+}
+
+
+/* =====================================================
+   ESTADÍSTICAS LOCALES
+   ===================================================== */
+
+function registerToolUsage(name){
+
+let stats =
+JSON.parse(
+localStorage.getItem(
+"herramientasgratis_stats"
+) || "{}"
+);
+
+if(!stats[name])
+stats[name]=0;
+
+stats[name]++;
+
+localStorage.setItem(
+"herramientasgratis_stats",
+JSON.stringify(stats)
+);
+
+}
+
+
+/* =====================================================
+   EVENTOS DE LAS TARJETAS
+   ===================================================== */
+
+function activateUsageTracking(){
+
+document
+.addEventListener(
+"click",
+function(event){
+
+const button =
+event.target.closest(
+".tool-button"
+);
+
+if(!button)
+return;
+
+const card =
+button.closest(
+".tool-card"
+);
+
+if(!card)
+return;
+
+const title =
+card.querySelector("h3");
+
+if(title){
+
+registerToolUsage(
+title.textContent.trim()
+);
+
+}
+
+});
+
+}
+
+
+/* =====================================================
+   MEJORAR BOTONES
+   ===================================================== */
+
+function improveButtons(){
+
+document
+.querySelectorAll(
+".tool-button"
+)
+.forEach(button=>{
+
+button.addEventListener(
+"mouseenter",
+()=>{
+
+button.style.transform=
+"translateY(-1px)";
+
+});
+
+button.addEventListener(
+"mouseleave",
+()=>{
+
+button.style.transform=
+"translateY(0)";
+
+});
+
+});
+
+}
+
+
+/* =====================================================
+   INICIO GENERAL
+   ===================================================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+loadDarkMode();
+
+createBackToTop();
+
+createShareButton();
+
+connectionStatus();
+
+activateUsageTracking();
+
+setTimeout(()=>{
+
+animateTools();
+
+},300);
+
+showWelcome();
+
+setTimeout(()=>{
+
+improveButtons();
+
+},500);
+
+});
 </script>
 
 </body>
