@@ -4,620 +4,636 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HerramientasGratis - Herramientas online gratis</title>
+<title>HerramientasGratis | Herramientas online gratis</title>
 
-<meta name="description" content="Herramientas online gratis para calcular, convertir, generar y trabajar desde cualquier dispositivo.">
+<meta name="description" content="HerramientasGratis: calculadoras, conversores, herramientas de texto, fechas, seguridad y mucho más gratis online.">
 
 <style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --secondary:#7c3aed;
-    --background:#f5f7fb;
-    --card:#ffffff;
-    --text:#172033;
-    --muted:#64748b;
-    --border:#e2e8f0;
-    --success:#16a34a;
-    --danger:#dc2626;
-    --warning:#f59e0b;
+ --primary:#2563eb;
+ --primary2:#7c3aed;
+ --bg:#f5f7fb;
+ --card:#fff;
+ --text:#172033;
+ --muted:#64748b;
+ --border:#e2e8f0;
+ --success:#16a34a;
+ --danger:#dc2626;
+ --warning:#f59e0b;
+ --shadow:0 8px 25px rgba(15,23,42,.08)
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--background);
-    color:var(--text);
-    line-height:1.5;
-    transition:.3s;
+ font-family:Arial,Helvetica,sans-serif;
+ background:var(--bg);
+ color:var(--text);
+ line-height:1.5;
+ transition:.3s
 }
 
 body.dark{
-    --background:#0f172a;
-    --card:#1e293b;
-    --text:#f8fafc;
-    --muted:#cbd5e1;
-    --border:#334155;
+ --bg:#0f172a;
+ --card:#1e293b;
+ --text:#f8fafc;
+ --muted:#cbd5e1;
+ --border:#334155;
+ --shadow:0 8px 25px rgba(0,0,0,.25)
 }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
-}
+button,input,select,textarea{font:inherit}
 
-/* =========================
-   HEADER
-========================= */
+button{cursor:pointer}
+
+/* HEADER */
 
 header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    padding:16px 5%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 4px 18px rgba(0,0,0,.15);
+ position:sticky;
+ top:0;
+ z-index:1000;
+ background:linear-gradient(135deg,var(--primary),var(--primary2));
+ color:white;
+ box-shadow:0 4px 18px rgba(0,0,0,.18)
 }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+.nav{
+ max-width:1250px;
+ margin:auto;
+ padding:15px 20px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:20px
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
-    white-space:nowrap;
+ font-size:25px;
+ font-weight:800;
+ white-space:nowrap
 }
 
-.logo span{
-    color:#facc15;
+.logo span{color:#facc15}
+
+.nav-actions{
+ display:flex;
+ gap:8px
 }
 
-.nav-buttons{
-    display:flex;
-    gap:8px;
+.nav-actions button{
+ border:0;
+ background:rgba(255,255,255,.16);
+ color:white;
+ padding:9px 13px;
+ border-radius:10px
 }
 
-.nav-buttons button{
-    border:0;
-    background:rgba(255,255,255,.18);
-    color:white;
-    padding:9px 13px;
-    border-radius:9px;
-    cursor:pointer;
-    font-size:14px;
+.nav-actions button:hover{
+ background:rgba(255,255,255,.28)
 }
 
-.nav-buttons button:hover{
-    background:rgba(255,255,255,.3);
-}
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-    text-align:center;
-    padding:65px 20px 50px;
-    background:linear-gradient(180deg,#eef4ff,#f5f7fb);
+ padding:75px 20px 65px;
+ text-align:center;
+ background:linear-gradient(180deg,#eaf1ff,var(--bg))
 }
 
 .dark .hero{
-    background:#111827;
+ background:linear-gradient(180deg,#111827,var(--bg))
 }
 
 .hero h1{
-    font-size:44px;
-    margin-bottom:15px;
+ font-size:48px;
+ line-height:1.1;
+ margin-bottom:18px
 }
 
 .hero h1 span{
-    color:var(--primary);
+ color:var(--primary)
 }
 
 .hero p{
-    max-width:720px;
-    margin:auto;
-    color:var(--muted);
-    font-size:18px;
+ max-width:720px;
+ margin:auto;
+ color:var(--muted);
+ font-size:18px
 }
 
-.search-box{
-    max-width:650px;
-    margin:30px auto 0;
+.search{
+ max-width:700px;
+ margin:30px auto 0;
+ position:relative
 }
 
-.search-box input{
-    width:100%;
-    padding:17px 20px;
-    border:2px solid var(--border);
-    border-radius:15px;
-    font-size:16px;
-    outline:none;
-    background:var(--card);
-    color:var(--text);
+.search input{
+ width:100%;
+ padding:18px 22px;
+ border:2px solid var(--border);
+ border-radius:16px;
+ outline:none;
+ background:var(--card);
+ color:var(--text);
+ font-size:17px;
+ box-shadow:var(--shadow)
 }
 
-.search-box input:focus{
-    border-color:var(--primary);
+.search input:focus{
+ border-color:var(--primary)
 }
 
-/* =========================
-   MAIN
-========================= */
+/* STATS */
+
+.stats{
+ max-width:1000px;
+ margin:-25px auto 0;
+ padding:0 20px;
+ position:relative
+}
+
+.stats-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px
+}
+
+.stat{
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:16px;
+ padding:20px;
+ text-align:center;
+ box-shadow:var(--shadow)
+}
+
+.stat strong{
+ display:block;
+ font-size:28px;
+ color:var(--primary)
+}
+
+.stat span{
+ color:var(--muted);
+ font-size:14px
+}
+
+/* MAIN */
 
 main{
-    max-width:1200px;
-    margin:auto;
-    padding:45px 20px;
+ max-width:1250px;
+ margin:auto;
+ padding:50px 20px
+}
+
+.section{
+ margin-bottom:50px
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:30px;
+ text-align:center;
+ margin-bottom:25px
 }
 
 .section-title h2{
-    font-size:30px;
-    margin-bottom:8px;
+ font-size:30px;
+ margin-bottom:7px
 }
 
 .section-title p{
-    color:var(--muted);
+ color:var(--muted)
 }
 
-/* =========================
-   CATEGORIES
-========================= */
+/* CATEGORIES */
 
 .categories{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:35px;
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:9px;
+ margin-bottom:30px
 }
 
-.category-btn{
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    padding:10px 16px;
-    border-radius:20px;
-    cursor:pointer;
+.category{
+ border:1px solid var(--border);
+ background:var(--card);
+ color:var(--text);
+ padding:10px 15px;
+ border-radius:25px
 }
 
-.category-btn:hover,
-.category-btn.active{
-    background:var(--primary);
-    color:white;
-    border-color:var(--primary);
+.category.active,
+.category:hover{
+ background:var(--primary);
+ color:white;
+ border-color:var(--primary)
 }
 
-/* =========================
-   TOOLS GRID
-========================= */
+/* TOOLS */
 
-.tools-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
-    gap:20px;
+.tools{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px
 }
 
-.tool-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:23px;
-    cursor:pointer;
-    transition:.25s;
-    box-shadow:0 4px 12px rgba(0,0,0,.05);
+.tool{
+ position:relative;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:18px;
+ padding:23px;
+ box-shadow:var(--shadow);
+ transition:.2s;
+ cursor:pointer
 }
 
-.tool-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
-    border-color:var(--primary);
+.tool:hover{
+ transform:translateY(-5px);
+ border-color:var(--primary)
 }
 
-.tool-icon{
-    font-size:38px;
-    margin-bottom:12px;
+.icon{
+ font-size:38px;
+ margin-bottom:10px
 }
 
-.tool-card h3{
-    margin-bottom:7px;
+.tool h3{
+ margin-bottom:7px
 }
 
-.tool-card p{
-    color:var(--muted);
-    font-size:14px;
+.tool p{
+ color:var(--muted);
+ font-size:14px
+}
+
+.tool-top{
+ display:flex;
+ justify-content:space-between;
+ align-items:start
+}
+
+.favorite{
+ border:0;
+ background:transparent;
+ font-size:21px;
+ color:#94a3b8
+}
+
+.favorite.active{
+ color:#ef4444
 }
 
 .badge{
-    display:inline-block;
-    margin-top:12px;
-    background:#dbeafe;
-    color:#1d4ed8;
-    padding:4px 8px;
-    border-radius:8px;
-    font-size:11px;
-    font-weight:bold;
+ display:inline-block;
+ margin-top:12px;
+ padding:4px 8px;
+ border-radius:7px;
+ background:#dbeafe;
+ color:#1d4ed8;
+ font-size:11px;
+ font-weight:bold
 }
 
-/* =========================
-   TOOL AREA
-========================= */
-
-.tool-area{
-    display:none;
-    margin-top:40px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
+.dark .badge{
+ background:#172554;
+ color:#93c5fd
 }
 
-.tool-area.active{
-    display:block;
+/* TOOL PANEL */
+
+.tool-panel{
+ display:none;
+ margin-top:40px;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:20px;
+ padding:30px;
+ box-shadow:var(--shadow)
 }
 
-.tool-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-    gap:15px;
+.tool-panel.active{
+ display:block
 }
 
-.tool-header h2{
-    font-size:27px;
+.tool-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+ margin-bottom:25px
 }
 
-.close-tool{
-    background:var(--danger);
-    color:white;
-    border:0;
-    padding:9px 15px;
-    border-radius:9px;
-    cursor:pointer;
+.tool-head h2{
+ font-size:27px
 }
 
-/* =========================
-   FORMS
-========================= */
-
-.form-group{
-    margin-bottom:18px;
+.close{
+ border:0;
+ background:var(--danger);
+ color:white;
+ padding:9px 15px;
+ border-radius:9px
 }
 
-.form-group label{
-    display:block;
-    margin-bottom:7px;
-    font-weight:bold;
+/* FORMS */
+
+.field{
+ margin-bottom:17px
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:13px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    font-size:16px;
-    background:var(--card);
-    color:var(--text);
+.field label{
+ display:block;
+ font-weight:bold;
+ margin-bottom:7px
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-    outline:none;
-    border-color:var(--primary);
+input,select,textarea{
+ width:100%;
+ padding:13px;
+ border:1px solid var(--border);
+ border-radius:10px;
+ background:var(--card);
+ color:var(--text)
 }
 
 textarea{
-    min-height:190px;
-    resize:vertical;
+ min-height:190px;
+ resize:vertical
+}
+
+input:focus,select:focus,textarea:focus{
+ outline:none;
+ border-color:var(--primary)
 }
 
 .btn{
-    background:var(--primary);
-    color:white;
-    border:0;
-    padding:12px 18px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:15px;
-    margin:4px;
+ border:0;
+ padding:11px 17px;
+ border-radius:10px;
+ background:var(--primary);
+ color:white;
+ margin:4px
 }
 
-.btn:hover{
-    background:var(--primary-dark);
-}
-
-.btn.green{
-    background:var(--success);
-}
-
-.btn.red{
-    background:var(--danger);
-}
-
-.btn.orange{
-    background:var(--warning);
-}
+.btn:hover{filter:brightness(.92)}
+.btn.green{background:var(--success)}
+.btn.red{background:var(--danger)}
+.btn.orange{background:var(--warning)}
 
 .result{
-    margin-top:20px;
-    background:var(--background);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:18px;
-    font-size:18px;
-    word-break:break-word;
+ margin-top:18px;
+ padding:18px;
+ background:var(--bg);
+ border:1px solid var(--border);
+ border-radius:12px;
+ font-size:17px;
+ word-break:break-word
 }
 
-/* =========================
-   CALCULATOR
-========================= */
+/* CALCULATOR */
 
 .calculator{
-    max-width:360px;
-    margin:auto;
+ max-width:370px;
+ margin:auto
 }
 
 .calc-display{
-    width:100%;
-    font-size:28px;
-    text-align:right;
-    margin-bottom:10px;
+ text-align:right;
+ font-size:28px;
+ margin-bottom:10px
 }
 
-.calc-buttons{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
+.calc-grid{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:8px
 }
 
-.calc-buttons button{
-    padding:19px 5px;
-    border:0;
-    border-radius:10px;
-    font-size:20px;
-    cursor:pointer;
-    background:var(--background);
-    color:var(--text);
+.calc-grid button{
+ border:0;
+ padding:20px 5px;
+ border-radius:10px;
+ background:var(--bg);
+ color:var(--text);
+ font-size:19px
 }
 
-.calc-buttons button:hover{
-    background:#dbeafe;
+.calc-grid button:hover{
+ background:#dbeafe
 }
 
-/* =========================
-   COLOR
-========================= */
-
-.color-preview{
-    width:100%;
-    height:100px;
-    border-radius:15px;
-    margin:15px 0;
-    border:1px solid var(--border);
-}
-
-/* =========================
-   STOPWATCH
-========================= */
+/* TIMER */
 
 .timer-display{
-    text-align:center;
-    font-size:52px;
-    font-weight:bold;
-    margin:20px;
+ text-align:center;
+ font-size:52px;
+ font-weight:bold;
+ margin:20px
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* COLOR */
+
+.color-preview{
+ height:110px;
+ border-radius:15px;
+ margin:15px 0;
+ border:1px solid var(--border)
+}
+
+/* NO RESULTS */
+
+.no-results{
+ display:none;
+ text-align:center;
+ padding:40px;
+ color:var(--muted)
+}
+
+/* FOOTER */
 
 footer{
-    margin-top:50px;
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
-
-footer h2{
-    margin-bottom:10px;
+ background:#111827;
+ color:white;
+ text-align:center;
+ padding:45px 20px
 }
 
 footer p{
-    color:#cbd5e1;
-    margin:7px;
+ color:#cbd5e1;
+ margin-top:8px
 }
 
-.footer-links{
-    margin-top:18px;
+.footer-categories{
+ margin-top:18px;
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:10px
 }
 
-.footer-links span{
-    margin:0 8px;
+.footer-categories span{
+ background:#1f2937;
+ padding:7px 10px;
+ border-radius:8px;
+ font-size:13px
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* MOBILE */
 
 @media(max-width:700px){
 
-    header{
-        position:relative;
-    }
+ .nav{
+  flex-direction:column
+ }
 
-    .navbar{
-        flex-direction:column;
-    }
+ .hero{
+  padding:50px 18px
+ }
 
-    .hero{
-        padding:45px 18px;
-    }
+ .hero h1{
+  font-size:34px
+ }
 
-    .hero h1{
-        font-size:32px;
-    }
+ .hero p{
+  font-size:16px
+ }
 
-    .hero p{
-        font-size:16px;
-    }
+ .stats-grid{
+  grid-template-columns:1fr
+ }
 
-    .tool-area{
-        padding:20px;
-    }
+ .tool-panel{
+  padding:20px
+ }
 
-    .tool-header{
-        align-items:flex-start;
-        flex-direction:column;
-    }
+ .tool-head{
+  flex-direction:column;
+  align-items:flex-start
+ }
 
-    .timer-display{
-        font-size:40px;
-    }
+ .timer-display{
+  font-size:40px
+ }
 
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
-<div class="navbar">
+<div class="nav">
 
 <div class="logo">
 🛠️ Herramientas<span>Gratis</span>
 </div>
 
-<div class="nav-buttons">
-
-<button onclick="scrollToTools()">
-🧰 Herramientas
-</button>
-
-<button onclick="toggleDark()">
-🌙 Modo
-</button>
-
+<div class="nav-actions">
+<button onclick="goTools()">🧰 Herramientas</button>
+<button onclick="showFavorites()">❤️ Favoritos</button>
+<button onclick="toggleDark()">🌙</button>
 </div>
 
 </div>
-
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
 <h1>
-Herramientas <span>Gratis</span>
+Todo lo que necesitas,
+<span>gratis.</span>
 </h1>
 
 <p>
-Herramientas online rápidas, fáciles y gratuitas.
-Calcula, convierte, genera y trabaja directamente desde tu navegador.
+Calculadoras, conversores, herramientas de texto,
+seguridad, fechas y mucho más, directamente desde tu navegador.
 </p>
 
-<div class="search-box">
-
+<div class="search">
 <input
-type="text"
 id="search"
-placeholder="🔎 Buscar una herramienta..."
+type="text"
+placeholder="🔎 ¿Qué herramienta necesitas?"
 oninput="searchTools()">
+</div>
+
+</section>
+
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<strong id="toolCount">0</strong>
+<span>Herramientas disponibles</span>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<span>Gratis</span>
+</div>
+
+<div class="stat">
+<strong>📱</strong>
+<span>Compatible con celular</span>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     MAIN
-========================= -->
-
 <main>
 
-<div class="section-title" id="toolsSection">
+<section class="section" id="toolsSection">
 
-<h2>
-🧰 Todas las herramientas
-</h2>
+<div class="section-title">
+
+<h2>🧰 Explora nuestras herramientas</h2>
 
 <p>
-Elige una herramienta y empieza a utilizarla.
+Encuentra rápidamente la herramienta que necesitas.
 </p>
 
 </div>
 
 
-<!-- CATEGORÍAS -->
-
 <div class="categories">
 
-<button
-class="category-btn active"
+<button class="category active"
 onclick="filterCategory('all',this)">
 Todas
 </button>
 
-<button
-class="category-btn"
+<button class="category"
 onclick="filterCategory('math',this)">
 🧮 Matemáticas
 </button>
 
-<button
-class="category-btn"
+<button class="category"
+onclick="filterCategory('finance',this)">
+💰 Finanzas
+</button>
+
+<button class="category"
 onclick="filterCategory('convert',this)">
 🔄 Conversores
 </button>
 
-<button
-class="category-btn"
+<button class="category"
 onclick="filterCategory('text',this)">
 📝 Texto
 </button>
 
-<button
-class="category-btn"
+<button class="category"
 onclick="filterCategory('date',this)">
 📅 Fechas
 </button>
 
-<button
-class="category-btn"
+<button class="category"
 onclick="filterCategory('utility',this)">
 🛠️ Utilidades
 </button>
@@ -625,305 +641,420 @@ onclick="filterCategory('utility',this)">
 </div>
 
 
-<!-- =========================
-     TOOLS
-========================= -->
-
-<div class="tools-grid" id="toolsGrid">
+<div class="tools" id="tools">
 
 
 <!-- CALCULADORA -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="math"
-data-name="calculadora matematicas operaciones"
-onclick="openTool('calculator')">
+data-name="calculadora matematicas operaciones">
 
-<div class="tool-icon">🧮</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">🧮</div>
 <h3>Calculadora</h3>
-
-<p>Realiza operaciones matemáticas.</p>
-
+<p>Realiza operaciones matemáticas rápidamente.</p>
 <span class="badge">POPULAR</span>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'calculator')">♡</button>
+
+</div>
+
+<div onclick="openTool('calculator')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
-<!-- PORCENTAJE -->
+<!-- PORCENTAJES -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="math"
-data-name="porcentaje descuentos aumentos"
-onclick="openTool('percentage')">
+data-name="porcentaje porcentajes descuento aumento">
 
-<div class="tool-icon">💰</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">💰</div>
 <h3>Porcentajes</h3>
-
 <p>Calcula porcentajes, descuentos y aumentos.</p>
+</div>
 
-<span class="badge">POPULAR</span>
+<button class="favorite"
+onclick="favorite(event,this,'percentage')">♡</button>
+
+</div>
+
+<div onclick="openTool('percentage')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- INTERÉS -->
 
-<div
-class="tool-card"
-data-category="math"
-data-name="interes financiero banco dinero"
-onclick="openTool('interest')">
+<div class="tool"
+data-category="finance"
+data-name="interes simple financiero dinero banco">
 
-<div class="tool-icon">🏦</div>
+<div class="tool-top">
 
-<h3>Interés</h3>
+<div>
+<div class="icon">🏦</div>
+<h3>Interés simple</h3>
+<p>Calcula intereses sobre un capital.</p>
+</div>
 
-<p>Calcula interés simple sobre un capital.</p>
+<button class="favorite"
+onclick="favorite(event,this,'interest')">♡</button>
+
+</div>
+
+<div onclick="openTool('interest')" style="position:absolute;inset:0"></div>
+
+</div>
+
+
+<!-- PROPINA -->
+
+<div class="tool"
+data-category="finance"
+data-name="propina restaurante cuenta porcentaje">
+
+<div class="tool-top">
+
+<div>
+<div class="icon">🍽️</div>
+<h3>Calculadora de propina</h3>
+<p>Calcula la propina y divide una cuenta.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'tip')">♡</button>
+
+</div>
+
+<div onclick="openTool('tip')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- LONGITUD -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="convert"
-data-name="longitud metros kilometros centimetros"
-onclick="openTool('length')">
+data-name="longitud metros kilometros centimetros millas">
 
-<div class="tool-icon">📏</div>
+<div class="tool-top">
 
-<h3>Conversor de longitud</h3>
+<div>
+<div class="icon">📏</div>
+<h3>Longitud</h3>
+<p>Convierte kilómetros, metros, centímetros y millas.</p>
+</div>
 
-<p>Convierte metros, kilómetros, centímetros y millas.</p>
+<button class="favorite"
+onclick="favorite(event,this,'length')">♡</button>
+
+</div>
+
+<div onclick="openTool('length')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- PESO -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="convert"
-data-name="peso kilos gramos libras"
-onclick="openTool('weight')">
+data-name="peso kilos gramos libras onzas">
 
-<div class="tool-icon">⚖️</div>
+<div class="tool-top">
 
-<h3>Conversor de peso</h3>
-
+<div>
+<div class="icon">⚖️</div>
+<h3>Peso</h3>
 <p>Convierte kilos, gramos, libras y onzas.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'weight')">♡</button>
+
+</div>
+
+<div onclick="openTool('weight')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- TEMPERATURA -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="convert"
-data-name="temperatura celsius fahrenheit kelvin"
-onclick="openTool('temperature')">
+data-name="temperatura celsius fahrenheit kelvin">
 
-<div class="tool-icon">🌡️</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">🌡️</div>
 <h3>Temperatura</h3>
-
 <p>Convierte Celsius, Fahrenheit y Kelvin.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'temperature')">♡</button>
+
+</div>
+
+<div onclick="openTool('temperature')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- EDAD -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="date"
-data-name="edad fecha nacimiento cumpleaños"
-onclick="openTool('age')">
+data-name="edad nacimiento cumpleaños">
 
-<div class="tool-icon">🎂</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">🎂</div>
 <h3>Calculadora de edad</h3>
-
-<p>Calcula tu edad exacta.</p>
-
+<p>Calcula años, meses y días.</p>
 <span class="badge">POPULAR</span>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'age')">♡</button>
 
 </div>
 
-
-<!-- PALABRAS -->
-
-<div
-class="tool-card"
-data-category="text"
-data-name="contador palabras caracteres texto"
-onclick="openTool('counter')">
-
-<div class="tool-icon">📝</div>
-
-<h3>Contador de palabras</h3>
-
-<p>Cuenta palabras y caracteres.</p>
-
-</div>
-
-
-<!-- MAYÚSCULAS -->
-
-<div
-class="tool-card"
-data-category="text"
-data-name="mayusculas minusculas texto convertir"
-onclick="openTool('uppercase')">
-
-<div class="tool-icon">🔤</div>
-
-<h3>Mayúsculas y minúsculas</h3>
-
-<p>Transforma rápidamente tu texto.</p>
-
-</div>
-
-
-<!-- PASSWORD -->
-
-<div
-class="tool-card"
-data-category="utility"
-data-name="contraseña password seguridad"
-onclick="openTool('password')">
-
-<div class="tool-icon">🔐</div>
-
-<h3>Contraseñas seguras</h3>
-
-<p>Genera contraseñas aleatorias.</p>
-
-<span class="badge">POPULAR</span>
-
-</div>
-
-
-<!-- NÚMEROS -->
-
-<div
-class="tool-card"
-data-category="math"
-data-name="numeros aleatorios random"
-onclick="openTool('random')">
-
-<div class="tool-icon">🎲</div>
-
-<h3>Números aleatorios</h3>
-
-<p>Genera números aleatorios.</p>
-
-</div>
-
-
-<!-- COLOR -->
-
-<div
-class="tool-card"
-data-category="utility"
-data-name="colores color hex diseño"
-onclick="openTool('color')">
-
-<div class="tool-icon">🎨</div>
-
-<h3>Selector de colores</h3>
-
-<p>Obtén códigos HEX de colores.</p>
+<div onclick="openTool('age')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- FECHAS -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="date"
-data-name="dias fechas diferencia calendario"
-onclick="openTool('dateDifference')">
+data-name="dias entre fechas diferencia fechas">
 
-<div class="tool-icon">📅</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">📅</div>
 <h3>Días entre fechas</h3>
-
 <p>Calcula la diferencia entre dos fechas.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'dateDifference')">♡</button>
+
+</div>
+
+<div onclick="openTool('dateDifference')" style="position:absolute;inset:0"></div>
+
+</div>
+
+
+<!-- CONTADOR -->
+
+<div class="tool"
+data-category="text"
+data-name="contador palabras caracteres texto">
+
+<div class="tool-top">
+
+<div>
+<div class="icon">📝</div>
+<h3>Contador de palabras</h3>
+<p>Cuenta palabras y caracteres.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'counter')">♡</button>
+
+</div>
+
+<div onclick="openTool('counter')" style="position:absolute;inset:0"></div>
+
+</div>
+
+
+<!-- TEXTO -->
+
+<div class="tool"
+data-category="text"
+data-name="mayusculas minusculas convertir texto">
+
+<div class="tool-top">
+
+<div>
+<div class="icon">🔤</div>
+<h3>Convertidor de texto</h3>
+<p>Convierte texto a mayúsculas o minúsculas.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'textTransform')">♡</button>
+
+</div>
+
+<div onclick="openTool('textTransform')" style="position:absolute;inset:0"></div>
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div class="tool"
+data-category="utility"
+data-name="password contraseña seguridad generar">
+
+<div class="tool-top">
+
+<div>
+<div class="icon">🔐</div>
+<h3>Contraseña segura</h3>
+<p>Genera contraseñas aleatorias.</p>
+<span class="badge">POPULAR</span>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'password')">♡</button>
+
+</div>
+
+<div onclick="openTool('password')" style="position:absolute;inset:0"></div>
+
+</div>
+
+
+<!-- NÚMEROS -->
+
+<div class="tool"
+data-category="math"
+data-name="numero aleatorio random generar">
+
+<div class="tool-top">
+
+<div>
+<div class="icon">🎲</div>
+<h3>Número aleatorio</h3>
+<p>Genera un número dentro de un rango.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'random')">♡</button>
+
+</div>
+
+<div onclick="openTool('random')" style="position:absolute;inset:0"></div>
+
+</div>
+
+
+<!-- COLOR -->
+
+<div class="tool"
+data-category="utility"
+data-name="color colores hex diseño">
+
+<div class="tool-top">
+
+<div>
+<div class="icon">🎨</div>
+<h3>Selector de colores</h3>
+<p>Obtén códigos HEX de colores.</p>
+</div>
+
+<button class="favorite"
+onclick="favorite(event,this,'color')">♡</button>
+
+</div>
+
+<div onclick="openTool('color')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- CRONÓMETRO -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="utility"
-data-name="cronometro tiempo stopwatch"
-onclick="openTool('stopwatch')">
+data-name="cronometro tiempo stopwatch">
 
-<div class="tool-icon">⏱️</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">⏱️</div>
 <h3>Cronómetro</h3>
+<p>Mide el tiempo.</p>
+</div>
 
-<p>Mide el tiempo con precisión.</p>
+<button class="favorite"
+onclick="favorite(event,this,'stopwatch')">♡</button>
+
+</div>
+
+<div onclick="openTool('stopwatch')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 <!-- TEMPORIZADOR -->
 
-<div
-class="tool-card"
+<div class="tool"
 data-category="utility"
-data-name="temporizador cuenta atras timer"
-onclick="openTool('timer')">
+data-name="temporizador cuenta atras timer">
 
-<div class="tool-icon">⏲️</div>
+<div class="tool-top">
 
+<div>
+<div class="icon">⏲️</div>
 <h3>Temporizador</h3>
+<p>Cuenta regresiva personalizada.</p>
+</div>
 
-<p>Configura una cuenta regresiva.</p>
+<button class="favorite"
+onclick="favorite(event,this,'timer')">♡</button>
+
+</div>
+
+<div onclick="openTool('timer')" style="position:absolute;inset:0"></div>
 
 </div>
 
 
 </div>
 
+<div class="no-results" id="noResults">
+<h3>😕 No encontramos esa herramienta</h3>
+<p>Prueba con otra palabra.</p>
+</div>
 
-<!-- =========================
-     CALCULADORA
-========================= -->
+</section>
 
-<div class="tool-area" id="calculator">
 
-<div class="tool-header">
+<!-- ================= CALCULADORA ================= -->
 
+<div class="tool-panel" id="calculator">
+
+<div class="tool-head">
 <h2>🧮 Calculadora</h2>
-
-<button class="close-tool" onclick="closeTools()">
-Cerrar
-</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
 <div class="calculator">
 
-<input
-class="calc-display"
-id="calcDisplay"
-readonly
-value="0">
+<input class="calc-display" id="calcDisplay" readonly value="0">
 
-<div class="calc-buttons">
-
+<div class="calc-grid">
 <button onclick="calcClear()">C</button>
 <button onclick="calcDelete()">⌫</button>
 <button onclick="calcInput('/')">÷</button>
@@ -946,53 +1077,32 @@ value="0">
 
 <button onclick="calcInput('0')">0</button>
 <button onclick="calcInput('.')">.</button>
-
 </div>
 
 </div>
-
 </div>
 
 
-<!-- =========================
-     PORCENTAJE
-========================= -->
+<!-- PORCENTAJES -->
 
-<div class="tool-area" id="percentage">
+<div class="tool-panel" id="percentage">
 
-<div class="tool-header">
-
-<h2>💰 Calculadora de porcentajes</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<div class="tool-head">
+<h2>💰 Porcentajes</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Porcentaje (%)</label>
-
-<input
-type="number"
-id="percentValue"
-placeholder="Ejemplo: 20">
-
+<input type="number" id="percentValue" placeholder="20">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Valor</label>
-
-<input
-type="number"
-id="baseValue"
-placeholder="Ejemplo: 500000">
-
+<input type="number" id="baseValue" placeholder="500000">
 </div>
 
-<button class="btn" onclick="calculatePercentage()">
-Calcular
-</button>
+<button class="btn" onclick="calculatePercentage()">Calcular</button>
 
 <div class="result" id="percentageResult">
 Resultado aparecerá aquí.
@@ -1001,56 +1111,31 @@ Resultado aparecerá aquí.
 </div>
 
 
-<!-- =========================
-     INTERÉS
-========================= -->
+<!-- INTERÉS -->
 
-<div class="tool-area" id="interest">
+<div class="tool-panel" id="interest">
 
-<div class="tool-header">
-
-<h2>🏦 Calculadora de interés simple</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<div class="tool-head">
+<h2>🏦 Interés simple</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Capital inicial</label>
-
-<input
-type="number"
-id="interestCapital"
-placeholder="Ejemplo: 1000000">
-
+<input type="number" id="interestCapital" placeholder="1000000">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Tasa anual (%)</label>
-
-<input
-type="number"
-id="interestRate"
-placeholder="Ejemplo: 8">
-
+<input type="number" id="interestRate" placeholder="8">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Tiempo en años</label>
-
-<input
-type="number"
-id="interestYears"
-placeholder="Ejemplo: 2">
-
+<input type="number" id="interestYears" placeholder="2">
 </div>
 
-<button class="btn" onclick="calculateInterest()">
-Calcular
-</button>
+<button class="btn" onclick="calculateInterest()">Calcular</button>
 
 <div class="result" id="interestResult">
 Resultado aparecerá aquí.
@@ -1059,66 +1144,76 @@ Resultado aparecerá aquí.
 </div>
 
 
-<!-- =========================
-     LONGITUD
-========================= -->
+<!-- PROPINA -->
 
-<div class="tool-area" id="length">
+<div class="tool-panel" id="tip">
 
-<div class="tool-header">
+<div class="tool-head">
+<h2>🍽️ Calculadora de propina</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
+</div>
 
+<div class="field">
+<label>Total de la cuenta</label>
+<input type="number" id="bill" placeholder="100000">
+</div>
+
+<div class="field">
+<label>Propina (%)</label>
+<input type="number" id="tipPercent" value="10">
+</div>
+
+<div class="field">
+<label>Número de personas</label>
+<input type="number" id="people" value="1" min="1">
+</div>
+
+<button class="btn" onclick="calculateTip()">Calcular</button>
+
+<div class="result" id="tipResult">
+Resultado aparecerá aquí.
+</div>
+
+</div>
+
+
+<!-- LONGITUD -->
+
+<div class="tool-panel" id="length">
+
+<div class="tool-head">
 <h2>📏 Conversor de longitud</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Valor</label>
-
-<input
-type="number"
-id="lengthValue"
-value="1">
-
+<input type="number" id="lengthValue" value="1">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Desde</label>
-
 <select id="lengthFrom">
-
 <option value="km">Kilómetros</option>
 <option value="m">Metros</option>
 <option value="cm">Centímetros</option>
 <option value="mm">Milímetros</option>
 <option value="mile">Millas</option>
-
 </select>
-
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Hasta</label>
-
 <select id="lengthTo">
-
 <option value="km">Kilómetros</option>
 <option value="m">Metros</option>
 <option value="cm">Centímetros</option>
 <option value="mm">Milímetros</option>
 <option value="mile">Millas</option>
-
 </select>
-
 </div>
 
-<button class="btn" onclick="convertLength()">
-Convertir
-</button>
+<button class="btn" onclick="convertLength()">Convertir</button>
 
 <div class="result" id="lengthResult">
 Resultado aparecerá aquí.
@@ -1127,64 +1222,41 @@ Resultado aparecerá aquí.
 </div>
 
 
-<!-- =========================
-     PESO
-========================= -->
+<!-- PESO -->
 
-<div class="tool-area" id="weight">
+<div class="tool-panel" id="weight">
 
-<div class="tool-header">
-
+<div class="tool-head">
 <h2>⚖️ Conversor de peso</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Valor</label>
-
-<input
-type="number"
-id="weightValue"
-value="1">
-
+<input type="number" id="weightValue" value="1">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Desde</label>
-
 <select id="weightFrom">
-
 <option value="kg">Kilogramos</option>
 <option value="g">Gramos</option>
 <option value="lb">Libras</option>
 <option value="oz">Onzas</option>
-
 </select>
-
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Hasta</label>
-
 <select id="weightTo">
-
 <option value="kg">Kilogramos</option>
 <option value="g">Gramos</option>
 <option value="lb">Libras</option>
 <option value="oz">Onzas</option>
-
 </select>
-
 </div>
 
-<button class="btn" onclick="convertWeight()">
-Convertir
-</button>
+<button class="btn" onclick="convertWeight()">Convertir</button>
 
 <div class="result" id="weightResult">
 Resultado aparecerá aquí.
@@ -1193,62 +1265,39 @@ Resultado aparecerá aquí.
 </div>
 
 
-<!-- =========================
-     TEMPERATURA
-========================= -->
+<!-- TEMPERATURA -->
 
-<div class="tool-area" id="temperature">
+<div class="tool-panel" id="temperature">
 
-<div class="tool-header">
-
-<h2>🌡️ Conversor de temperatura</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<div class="tool-head">
+<h2>🌡️ Temperatura</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Valor</label>
-
-<input
-type="number"
-id="tempValue"
-value="0">
-
+<input type="number" id="tempValue" value="0">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Desde</label>
-
 <select id="tempFrom">
-
 <option value="c">Celsius</option>
 <option value="f">Fahrenheit</option>
 <option value="k">Kelvin</option>
-
 </select>
-
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Hasta</label>
-
 <select id="tempTo">
-
 <option value="c">Celsius</option>
 <option value="f">Fahrenheit</option>
 <option value="k">Kelvin</option>
-
 </select>
-
 </div>
 
-<button class="btn" onclick="convertTemperature()">
-Convertir
-</button>
+<button class="btn" onclick="convertTemperature()">Convertir</button>
 
 <div class="result" id="tempResult">
 Resultado aparecerá aquí.
@@ -1257,33 +1306,21 @@ Resultado aparecerá aquí.
 </div>
 
 
-<!-- =========================
-     EDAD
-========================= -->
+<!-- EDAD -->
 
-<div class="tool-area" id="age">
+<div class="tool-panel" id="age">
 
-<div class="tool-header">
-
+<div class="tool-head">
 <h2>🎂 Calculadora de edad</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Fecha de nacimiento</label>
-
-<input
-type="date"
-id="birthDate">
-
+<input type="date" id="birthDate">
 </div>
 
-<button class="btn" onclick="calculateAge()">
-Calcular edad
-</button>
+<button class="btn" onclick="calculateAge()">Calcular edad</button>
 
 <div class="result" id="ageResult">
 Selecciona tu fecha de nacimiento.
@@ -1292,238 +1329,26 @@ Selecciona tu fecha de nacimiento.
 </div>
 
 
-<!-- =========================
-     CONTADOR
-========================= -->
+<!-- FECHAS -->
 
-<div class="tool-area" id="counter">
+<div class="tool-panel" id="dateDifference">
 
-<div class="tool-header">
-
-<h2>📝 Contador de palabras</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<textarea
-id="textCounter"
-placeholder="Escribe o pega tu texto aquí..."
-oninput="countText()"></textarea>
-
-<div class="result" id="counterResult">
-
-Palabras: 0<br>
-Caracteres: 0<br>
-Caracteres sin espacios: 0
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     MAYÚSCULAS
-========================= -->
-
-<div class="tool-area" id="uppercase">
-
-<div class="tool-header">
-
-<h2>🔤 Convertidor de texto</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<textarea
-id="textTransform"
-placeholder="Escribe o pega tu texto aquí..."></textarea>
-
-<br>
-
-<button class="btn" onclick="toUpper()">
-MAYÚSCULAS
-</button>
-
-<button class="btn" onclick="toLower()">
-minúsculas
-</button>
-
-<button class="btn orange" onclick="capitalizeText()">
-Primera letra
-</button>
-
-<button class="btn green" onclick="copyTransform()">
-📋 Copiar
-</button>
-
-</div>
-
-
-<!-- =========================
-     PASSWORD
-========================= -->
-
-<div class="tool-area" id="password">
-
-<div class="tool-header">
-
-<h2>🔐 Generador de contraseñas</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="form-group">
-
-<label>Longitud</label>
-
-<input
-type="number"
-id="passLength"
-min="4"
-max="50"
-value="16">
-
-</div>
-
-<button class="btn" onclick="generatePassword()">
-Generar
-</button>
-
-<button class="btn green" onclick="copyPassword()">
-📋 Copiar
-</button>
-
-<div class="result" id="passwordResult">
-Tu contraseña aparecerá aquí.
-</div>
-
-</div>
-
-
-<!-- =========================
-     NÚMEROS ALEATORIOS
-========================= -->
-
-<div class="tool-area" id="random">
-
-<div class="tool-header">
-
-<h2>🎲 Números aleatorios</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="form-group">
-
-<label>Número mínimo</label>
-
-<input
-type="number"
-id="randomMin"
-value="1">
-
-</div>
-
-<div class="form-group">
-
-<label>Número máximo</label>
-
-<input
-type="number"
-id="randomMax"
-value="100">
-
-</div>
-
-<button class="btn" onclick="generateRandom()">
-Generar número
-</button>
-
-<div class="result" id="randomResult">
-Resultado aparecerá aquí.
-</div>
-
-</div>
-
-
-<!-- =========================
-     COLOR
-========================= -->
-
-<div class="tool-area" id="color">
-
-<div class="tool-header">
-
-<h2>🎨 Selector de colores</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<input
-type="color"
-id="colorPicker"
-value="#2563eb"
-oninput="showColor"
-style="height:70px;cursor:pointer;">
-
-<div
-class="color-preview"
-id="colorPreview">
-</div>
-
-<div class="result" id="colorResult">
-HEX: #2563EB
-</div>
-
-<button class="btn green" onclick="copyColor()">
-📋 Copiar
-</button>
-
-</div>
-
-
-<!-- =========================
-     FECHAS
-========================= -->
-
-<div class="tool-area" id="dateDifference">
-
-<div class="tool-header">
-
+<div class="tool-head">
 <h2>📅 Días entre fechas</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Fecha inicial</label>
-
-<input
-type="date"
-id="dateOne">
-
+<input type="date" id="dateOne">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Fecha final</label>
-
-<input
-type="date"
-id="dateTwo">
-
+<input type="date" id="dateTwo">
 </div>
 
-<button class="btn" onclick="calculateDateDifference()">
-Calcular
-</button>
+<button class="btn" onclick="calculateDateDifference()">Calcular</button>
 
 <div class="result" id="dateResult">
 Resultado aparecerá aquí.
@@ -1532,18 +1357,135 @@ Resultado aparecerá aquí.
 </div>
 
 
-<!-- =========================
-     CRONÓMETRO
-========================= -->
+<!-- CONTADOR -->
 
-<div class="tool-area" id="stopwatch">
+<div class="tool-panel" id="counter">
 
-<div class="tool-header">
+<div class="tool-head">
+<h2>📝 Contador de palabras</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
+</div>
 
+<textarea
+id="textCounter"
+placeholder="Escribe o pega tu texto..."
+oninput="countText()"></textarea>
+
+<div class="result" id="counterResult">
+Palabras: 0<br>
+Caracteres: 0<br>
+Sin espacios: 0
+</div>
+
+</div>
+
+
+<!-- TEXTO -->
+
+<div class="tool-panel" id="textTransform">
+
+<div class="tool-head">
+<h2>🔤 Convertidor de texto</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
+</div>
+
+<textarea
+id="transformText"
+placeholder="Escribe o pega tu texto..."></textarea>
+
+<button class="btn" onclick="upperText()">MAYÚSCULAS</button>
+<button class="btn" onclick="lowerText()">minúsculas</button>
+<button class="btn orange" onclick="capitalizeText()">Primera letra</button>
+<button class="btn green" onclick="copyTransform()">📋 Copiar</button>
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div class="tool-panel" id="password">
+
+<div class="tool-head">
+<h2>🔐 Contraseña segura</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
+</div>
+
+<div class="field">
+<label>Longitud</label>
+<input type="number" id="passLength" value="16" min="4" max="60">
+</div>
+
+<button class="btn" onclick="generatePassword()">Generar</button>
+<button class="btn green" onclick="copyPassword()">📋 Copiar</button>
+
+<div class="result" id="passwordResult">
+Tu contraseña aparecerá aquí.
+</div>
+
+</div>
+
+
+<!-- RANDOM -->
+
+<div class="tool-panel" id="random">
+
+<div class="tool-head">
+<h2>🎲 Número aleatorio</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
+</div>
+
+<div class="field">
+<label>Mínimo</label>
+<input type="number" id="randomMin" value="1">
+</div>
+
+<div class="field">
+<label>Máximo</label>
+<input type="number" id="randomMax" value="100">
+</div>
+
+<button class="btn" onclick="generateRandom()">Generar</button>
+
+<div class="result" id="randomResult">
+Resultado aparecerá aquí.
+</div>
+
+</div>
+
+
+<!-- COLOR -->
+
+<div class="tool-panel" id="color">
+
+<div class="tool-head">
+<h2>🎨 Selector de colores</h2>
+<button class="close" onclick="closeTools()">Cerrar</button>
+</div>
+
+<input
+type="color"
+id="colorPicker"
+value="#2563eb"
+style="height:70px;cursor:pointer">
+
+<div class="color-preview" id="colorPreview"></div>
+
+<div class="result" id="colorResult">
+HEX: #2563EB
+</div>
+
+<button class="btn green" onclick="copyColor()">📋 Copiar</button>
+
+</div>
+
+
+<!-- CRONÓMETRO -->
+
+<div class="tool-panel" id="stopwatch">
+
+<div class="tool-head">
 <h2>⏱️ Cronómetro</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
 <div class="timer-display" id="stopwatchDisplay">
@@ -1552,60 +1494,32 @@ Resultado aparecerá aquí.
 
 <div style="text-align:center">
 
-<button class="btn green" onclick="startStopwatch()">
-▶ Iniciar
-</button>
-
-<button class="btn orange" onclick="pauseStopwatch()">
-⏸ Pausar
-</button>
-
-<button class="btn red" onclick="resetStopwatch()">
-↻ Reiniciar
-</button>
+<button class="btn green" onclick="startStopwatch()">▶ Iniciar</button>
+<button class="btn orange" onclick="pauseStopwatch()">⏸ Pausar</button>
+<button class="btn red" onclick="resetStopwatch()">↻ Reiniciar</button>
 
 </div>
 
 </div>
 
 
-<!-- =========================
-     TEMPORIZADOR
-========================= -->
+<!-- TEMPORIZADOR -->
 
-<div class="tool-area" id="timer">
+<div class="tool-panel" id="timer">
 
-<div class="tool-header">
-
+<div class="tool-head">
 <h2>⏲️ Temporizador</h2>
-
-<button class="close-tool" onclick="closeTools()">Cerrar</button>
-
+<button class="close" onclick="closeTools()">Cerrar</button>
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Minutos</label>
-
-<input
-type="number"
-id="timerMinutes"
-min="0"
-value="1">
-
+<input type="number" id="timerMinutes" value="1" min="0">
 </div>
 
-<div class="form-group">
-
+<div class="field">
 <label>Segundos</label>
-
-<input
-type="number"
-id="timerSeconds"
-min="0"
-max="59"
-value="0">
-
+<input type="number" id="timerSeconds" value="0" min="0" max="59">
 </div>
 
 <div class="timer-display" id="timerDisplay">
@@ -1614,17 +1528,9 @@ value="0">
 
 <div style="text-align:center">
 
-<button class="btn green" onclick="startTimer()">
-▶ Iniciar
-</button>
-
-<button class="btn orange" onclick="pauseTimer()">
-⏸ Pausar
-</button>
-
-<button class="btn red" onclick="resetTimer()">
-↻ Reiniciar
-</button>
+<button class="btn green" onclick="startTimer()">▶ Iniciar</button>
+<button class="btn orange" onclick="pauseTimer()">⏸ Pausar</button>
+<button class="btn red" onclick="resetTimer()">↻ Reiniciar</button>
 
 </div>
 
@@ -1634,32 +1540,24 @@ value="0">
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-<h2>
-🛠️ HerramientasGratis
-</h2>
+<h2>🛠️ HerramientasGratis</h2>
 
 <p>
-Herramientas útiles, rápidas y gratuitas.
+Herramientas útiles, rápidas y gratuitas para todos.
 </p>
 
-<p>
-Hecho para facilitar tus tareas diarias.
-</p>
-
-<div class="footer-links">
+<div class="footer-categories">
 <span>🧮 Matemáticas</span>
-<span>📝 Texto</span>
+<span>💰 Finanzas</span>
 <span>🔄 Conversores</span>
-<span>🛠️ Utilidades</span>
+<span>📝 Texto</span>
+<span>📅 Fechas</span>
+<span>🔐 Seguridad</span>
 </div>
 
-<p style="margin-top:20px;">
+<p style="margin-top:22px">
 © 2026 HerramientasGratis
 </p>
 
@@ -1668,987 +1566,809 @@ Hecho para facilitar tus tareas diarias.
 
 <script>
 
-/* =========================
-   NAVEGACIÓN
-========================= */
+/* CONTADOR DE HERRAMIENTAS */
 
-function scrollToTools(){
+document.getElementById("toolCount").textContent =
+document.querySelectorAll(".tool").length;
 
-document
-.getElementById("toolsSection")
-.scrollIntoView({
-behavior:"smooth"
-});
 
+/* NAVEGACIÓN */
+
+function goTools(){
+ document.getElementById("toolsSection")
+ .scrollIntoView({behavior:"smooth"});
 }
 
 
-/* =========================
-   BUSCADOR
-========================= */
+/* BUSCADOR */
 
 function searchTools(){
 
-let search=document
-.getElementById("search")
-.value
-.toLowerCase()
-.trim();
+ const q=document.getElementById("search")
+ .value.toLowerCase().trim();
 
-let cards=document
-.querySelectorAll(".tool-card");
+ let visible=0;
 
-cards.forEach(card=>{
+ document.querySelectorAll(".tool").forEach(card=>{
 
-let name=card.dataset.name.toLowerCase();
+  const name=card.dataset.name.toLowerCase();
 
-card.style.display=
-name.includes(search)
-?"block"
-:"none";
+  if(name.includes(q)){
+   card.style.display="block";
+   visible++;
+  }else{
+   card.style.display="none";
+  }
 
-});
+ });
 
+ document.getElementById("noResults").style.display =
+ visible===0 ? "block" : "none";
 }
 
 
-/* =========================
-   CATEGORÍAS
-========================= */
+/* CATEGORÍAS */
 
 function filterCategory(category,button){
 
-document
-.querySelectorAll(".category-btn")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+ document.querySelectorAll(".category")
+ .forEach(b=>b.classList.remove("active"));
 
-button.classList.add("active");
+ button.classList.add("active");
 
-document
-.querySelectorAll(".tool-card")
-.forEach(card=>{
+ let visible=0;
 
-if(
-category==="all" ||
-card.dataset.category===category
-){
+ document.querySelectorAll(".tool").forEach(card=>{
 
-card.style.display="block";
+  if(category==="all" ||
+     card.dataset.category===category){
 
-}else{
+   card.style.display="block";
+   visible++;
 
-card.style.display="none";
+  }else{
+   card.style.display="none";
+  }
 
-}
+ });
 
-});
-
+ document.getElementById("noResults").style.display =
+ visible===0 ? "block" : "none";
 }
 
 
-/* =========================
-   ABRIR HERRAMIENTA
-========================= */
+/* ABRIR */
 
 function openTool(id){
 
-closeTools();
+ closeTools();
 
-let tool=document.getElementById(id);
+ const panel=document.getElementById(id);
 
-if(!tool)return;
+ if(!panel)return;
 
-tool.classList.add("active");
+ panel.classList.add("active");
 
-setTimeout(()=>{
-
-tool.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-},100);
-
+ setTimeout(()=>{
+  panel.scrollIntoView({
+   behavior:"smooth",
+   block:"start"
+  });
+ },80);
 }
 
 
-/* =========================
-   CERRAR
-========================= */
+/* CERRAR */
 
 function closeTools(){
 
-document
-.querySelectorAll(".tool-area")
-.forEach(tool=>{
-tool.classList.remove("active");
-});
+ document.querySelectorAll(".tool-panel")
+ .forEach(p=>p.classList.remove("active"));
 
 }
 
 
-/* =========================
-   MODO OSCURO
-========================= */
+/* OSCURO */
 
 function toggleDark(){
 
-document.body.classList.toggle("dark");
+ document.body.classList.toggle("dark");
 
-localStorage.setItem(
-"darkMode",
-document.body.classList.contains("dark")
-);
-
+ localStorage.setItem(
+  "darkMode",
+  document.body.classList.contains("dark")
+ );
 }
 
-if(
-localStorage.getItem("darkMode")==="true"
-){
-
-document.body.classList.add("dark");
-
+if(localStorage.getItem("darkMode")==="true"){
+ document.body.classList.add("dark");
 }
 
 
-/* =========================
-   CALCULADORA
-========================= */
+/* FAVORITOS */
 
-let calcExpression="";
+function favorite(event,button,id){
+
+ event.stopPropagation();
+
+ let favorites=
+ JSON.parse(localStorage.getItem("favorites")||"[]");
+
+ if(favorites.includes(id)){
+
+  favorites=favorites.filter(x=>x!==id);
+  button.classList.remove("active");
+  button.textContent="♡";
+
+ }else{
+
+  favorites.push(id);
+  button.classList.add("active");
+  button.textContent="♥";
+
+ }
+
+ localStorage.setItem(
+  "favorites",
+  JSON.stringify(favorites)
+ );
+}
+
+
+function loadFavorites(){
+
+ let favorites=
+ JSON.parse(localStorage.getItem("favorites")||"[]");
+
+ document.querySelectorAll(".favorite")
+ .forEach(button=>{
+
+  const card=button.closest(".tool");
+  const onclick=button.getAttribute("onclick");
+  const match=onclick.match(/'([^']+)'/);
+
+  if(match && favorites.includes(match[1])){
+   button.classList.add("active");
+   button.textContent="♥";
+  }
+
+ });
+}
+
+
+function showFavorites(){
+
+ const favorites=
+ JSON.parse(localStorage.getItem("favorites")||"[]");
+
+ document.querySelectorAll(".tool").forEach(card=>{
+  card.style.display="none";
+ });
+
+ let count=0;
+
+ document.querySelectorAll(".tool").forEach(card=>{
+
+  const button=card.querySelector(".favorite");
+  const onclick=button.getAttribute("onclick");
+  const match=onclick.match(/'([^']+)'/);
+
+  if(match && favorites.includes(match[1])){
+
+   card.style.display="block";
+   count++;
+
+  }
+
+ });
+
+ document.getElementById("noResults").style.display=
+ count===0 ? "block":"none";
+
+ document.getElementById("toolsSection")
+ .scrollIntoView({behavior:"smooth"});
+}
+
+
+/* CALCULADORA */
+
+let expression="";
 
 function calcInput(value){
 
-calcExpression+=value;
+ expression+=value;
 
-document
-.getElementById("calcDisplay")
-.value=calcExpression;
-
+ document.getElementById("calcDisplay").value=expression;
 }
 
 function calcClear(){
 
-calcExpression="";
+ expression="";
 
-document
-.getElementById("calcDisplay")
-.value="0";
-
+ document.getElementById("calcDisplay").value="0";
 }
 
 function calcDelete(){
 
-calcExpression=
-calcExpression.slice(0,-1);
+ expression=expression.slice(0,-1);
 
-document
-.getElementById("calcDisplay")
-.value=
-calcExpression || "0";
-
+ document.getElementById("calcDisplay").value=
+ expression||"0";
 }
 
 function calculate(){
 
-try{
+ try{
 
-let result=Function(
-'"use strict";return ('+
-calcExpression+
-')'
-)();
+  if(!expression)return;
 
-calcExpression=String(result);
+  const result=Function(
+   '"use strict";return ('+
+   expression+
+   ')'
+  )();
 
-document
-.getElementById("calcDisplay")
-.value=result;
+  expression=String(result);
 
-}catch{
+  document.getElementById("calcDisplay")
+  .value=result;
 
-document
-.getElementById("calcDisplay")
-.value="Error";
+ }catch{
 
-calcExpression="";
-
-}
-
+  expression="";
+  document.getElementById("calcDisplay")
+  .value="Error";
+ }
 }
 
 
-/* =========================
-   PORCENTAJE
-========================= */
+/* PORCENTAJES */
 
 function calculatePercentage(){
 
-let percent=parseFloat(
-document.getElementById("percentValue").value
-);
+ const p=parseFloat(
+  document.getElementById("percentValue").value
+ );
 
-let value=parseFloat(
-document.getElementById("baseValue").value
-);
+ const value=parseFloat(
+  document.getElementById("baseValue").value
+ );
 
-if(isNaN(percent)||isNaN(value)){
+ if(isNaN(p)||isNaN(value)){
 
-document
-.getElementById("percentageResult")
-.textContent=
-"Introduce valores válidos.";
+  document.getElementById("percentageResult")
+  .textContent="Introduce valores válidos.";
 
-return;
+  return;
+ }
 
-}
+ const result=value*p/100;
 
-let result=(percent/100)*value;
-
-document
-.getElementById("percentageResult")
-.innerHTML=
-"<strong>"+
-percent+
-"% de "+
-value.toLocaleString("es-CO")+
-" = "+
-result.toLocaleString("es-CO")+
-"</strong>";
-
+ document.getElementById("percentageResult")
+ .innerHTML=
+ `<strong>${p}% de ${value.toLocaleString("es-CO")}
+ = ${result.toLocaleString("es-CO")}</strong>`;
 }
 
 
-/* =========================
-   INTERÉS
-========================= */
+/* INTERÉS */
 
 function calculateInterest(){
 
-let capital=parseFloat(
-document.getElementById("interestCapital").value
-);
+ const capital=parseFloat(
+  document.getElementById("interestCapital").value
+ );
 
-let rate=parseFloat(
-document.getElementById("interestRate").value
-);
+ const rate=parseFloat(
+  document.getElementById("interestRate").value
+ );
 
-let years=parseFloat(
-document.getElementById("interestYears").value
-);
+ const years=parseFloat(
+  document.getElementById("interestYears").value
+ );
 
-if(
-isNaN(capital) ||
-isNaN(rate) ||
-isNaN(years)
-){
+ if([capital,rate,years].some(isNaN)){
 
-document
-.getElementById("interestResult")
-.textContent=
-"Introduce todos los valores.";
+  document.getElementById("interestResult")
+  .textContent="Completa todos los campos.";
 
-return;
+  return;
+ }
 
-}
+ const interest=capital*(rate/100)*years;
+ const total=capital+interest;
 
-let interest=
-capital*(rate/100)*years;
-
-let total=
-capital+interest;
-
-document
-.getElementById("interestResult")
-.innerHTML=
-"Interés generado: <strong>"+
-interest.toLocaleString("es-CO")+
-"</strong><br><br>"+
-"Capital final: <strong>"+
-total.toLocaleString("es-CO")+
-"</strong>";
-
+ document.getElementById("interestResult")
+ .innerHTML=
+ `Interés: <strong>${interest.toLocaleString("es-CO")}</strong>
+ <br><br>
+ Capital final: <strong>${total.toLocaleString("es-CO")}</strong>`;
 }
 
 
-/* =========================
-   LONGITUD
-========================= */
+/* PROPINA */
+
+function calculateTip(){
+
+ const bill=parseFloat(
+  document.getElementById("bill").value
+ );
+
+ const percent=parseFloat(
+  document.getElementById("tipPercent").value
+ );
+
+ const people=parseInt(
+  document.getElementById("people").value
+ );
+
+ if([bill,percent,people].some(x=>isNaN(x)) ||
+    people<1){
+
+  document.getElementById("tipResult")
+  .textContent="Introduce valores válidos.";
+
+  return;
+ }
+
+ const tip=bill*percent/100;
+ const total=bill+tip;
+ const each=total/people;
+
+ document.getElementById("tipResult")
+ .innerHTML=
+ `Propina: <strong>${tip.toLocaleString("es-CO")}</strong>
+ <br><br>
+ Total: <strong>${total.toLocaleString("es-CO")}</strong>
+ <br><br>
+ Por persona: <strong>${each.toLocaleString("es-CO")}</strong>`;
+}
+
+
+/* LONGITUD */
 
 function convertLength(){
 
-let value=parseFloat(
-document.getElementById("lengthValue").value
-);
+ const value=parseFloat(
+  document.getElementById("lengthValue").value
+ );
 
-let from=
-document.getElementById("lengthFrom").value;
+ const from=document.getElementById("lengthFrom").value;
+ const to=document.getElementById("lengthTo").value;
 
-let to=
-document.getElementById("lengthTo").value;
+ const factor={
+  km:1000,
+  m:1,
+  cm:.01,
+  mm:.001,
+  mile:1609.344
+ };
 
-const factors={
+ const result=value*factor[from]/factor[to];
 
-km:1000,
-m:1,
-cm:0.01,
-mm:0.001,
-mile:1609.344
-
-};
-
-let meters=
-value*factors[from];
-
-let result=
-meters/factors[to];
-
-document
-.getElementById("lengthResult")
-.textContent=
-value+
-" "+from+
-" = "+
-result+
-" "+to;
-
+ document.getElementById("lengthResult")
+ .textContent=
+ `${value} ${from} = ${result} ${to}`;
 }
 
 
-/* =========================
-   PESO
-========================= */
+/* PESO */
 
 function convertWeight(){
 
-let value=parseFloat(
-document.getElementById("weightValue").value
-);
+ const value=parseFloat(
+  document.getElementById("weightValue").value
+ );
 
-let from=
-document.getElementById("weightFrom").value;
+ const from=document.getElementById("weightFrom").value;
+ const to=document.getElementById("weightTo").value;
 
-let to=
-document.getElementById("weightTo").value;
+ const factor={
+  kg:1,
+  g:.001,
+  lb:.45359237,
+  oz:.0283495231
+ };
 
-const factors={
+ const result=value*factor[from]/factor[to];
 
-kg:1,
-g:0.001,
-lb:0.45359237,
-oz:0.0283495231
-
-};
-
-let kg=value*factors[from];
-
-let result=kg/factors[to];
-
-document
-.getElementById("weightResult")
-.textContent=
-value+
-" "+from+
-" = "+
-result+
-" "+to;
-
+ document.getElementById("weightResult")
+ .textContent=
+ `${value} ${from} = ${result} ${to}`;
 }
 
 
-/* =========================
-   TEMPERATURA
-========================= */
+/* TEMPERATURA */
 
 function convertTemperature(){
 
-let value=parseFloat(
-document.getElementById("tempValue").value
-);
+ const value=parseFloat(
+  document.getElementById("tempValue").value
+ );
 
-let from=
-document.getElementById("tempFrom").value;
+ const from=document.getElementById("tempFrom").value;
+ const to=document.getElementById("tempTo").value;
 
-let to=
-document.getElementById("tempTo").value;
+ if(isNaN(value))return;
 
-if(isNaN(value)){
+ let c;
 
-document
-.getElementById("tempResult")
-.textContent=
-"Introduce un valor.";
+ if(from==="c") c=value;
+ else if(from==="f") c=(value-32)*5/9;
+ else c=value-273.15;
 
-return;
+ let result;
 
-}
+ if(to==="c") result=c;
+ else if(to==="f") result=c*9/5+32;
+ else result=c+273.15;
 
-let celsius;
-
-if(from==="c"){
-
-celsius=value;
-
-}else if(from==="f"){
-
-celsius=(value-32)*5/9;
-
-}else{
-
-celsius=value-273.15;
-
-}
-
-let result;
-
-if(to==="c"){
-
-result=celsius;
-
-}else if(to==="f"){
-
-result=(celsius*9/5)+32;
-
-}else{
-
-result=celsius+273.15;
-
-}
-
-document
-.getElementById("tempResult")
-.textContent=
-value+
-"° "+from.toUpperCase()+
-" = "+
-result.toFixed(2)+
-"° "+to.toUpperCase();
-
+ document.getElementById("tempResult")
+ .textContent=
+ `${value}° ${from.toUpperCase()} = ${result.toFixed(2)}° ${to.toUpperCase()}`;
 }
 
 
-/* =========================
-   EDAD
-========================= */
+/* EDAD */
 
 function calculateAge(){
 
-let value=
-document.getElementById("birthDate").value;
+ const value=document.getElementById("birthDate").value;
 
-if(!value){
+ if(!value){
 
-document
-.getElementById("ageResult")
-.textContent=
-"Selecciona una fecha.";
+  document.getElementById("ageResult")
+  .textContent="Selecciona una fecha.";
 
-return;
+  return;
+ }
 
-}
+ const birth=new Date(value+"T00:00:00");
+ const today=new Date();
 
-let birth=new Date(value);
+ let years=today.getFullYear()-birth.getFullYear();
+ let months=today.getMonth()-birth.getMonth();
+ let days=today.getDate()-birth.getDate();
 
-let today=new Date();
+ if(days<0){
 
-let years=
-today.getFullYear()-
-birth.getFullYear();
+  months--;
 
-let months=
-today.getMonth()-
-birth.getMonth();
+  const lastMonth=new Date(
+   today.getFullYear(),
+   today.getMonth(),
+   0
+  );
 
-let days=
-today.getDate()-
-birth.getDate();
+  days+=lastMonth.getDate();
+ }
 
-if(days<0){
+ if(months<0){
 
-months--;
+  years--;
+  months+=12;
+ }
 
-let previousMonth=
-new Date(
-today.getFullYear(),
-today.getMonth(),
-0
-);
-
-days+=previousMonth.getDate();
-
-}
-
-if(months<0){
-
-years--;
-
-months+=12;
-
-}
-
-document
-.getElementById("ageResult")
-.innerHTML=
-"Tienes <strong>"+
-years+
-" años, "+
-months+
-" meses y "+
-days+
-" días.</strong>";
-
+ document.getElementById("ageResult")
+ .innerHTML=
+ `Tienes <strong>${years} años,
+ ${months} meses y ${days} días.</strong>`;
 }
 
 
-/* =========================
-   CONTADOR
-========================= */
+/* FECHAS */
+
+function calculateDateDifference(){
+
+ const a=document.getElementById("dateOne").value;
+ const b=document.getElementById("dateTwo").value;
+
+ if(!a||!b){
+
+  document.getElementById("dateResult")
+  .textContent="Selecciona las dos fechas.";
+
+  return;
+ }
+
+ const d1=new Date(a+"T00:00:00");
+ const d2=new Date(b+"T00:00:00");
+
+ const days=Math.round(
+  Math.abs(d2-d1)/(1000*60*60*24)
+ );
+
+ document.getElementById("dateResult")
+ .innerHTML=
+ `Hay <strong>${days} días</strong> entre las fechas.`;
+}
+
+
+/* CONTADOR */
 
 function countText(){
 
-let text=
-document
-.getElementById("textCounter")
-.value;
+ const text=
+ document.getElementById("textCounter").value;
 
-let words=
-text.trim()
-?text.trim().split(/\s+/).length
-:0;
+ const words=text.trim()
+ ?text.trim().split(/\s+/).length:0;
 
-let chars=text.length;
+ const chars=text.length;
 
-let noSpaces=
-text.replace(/\s/g,"").length;
+ const noSpaces=text.replace(/\s/g,"").length;
 
-document
-.getElementById("counterResult")
-.innerHTML=
-"Palabras: <strong>"+
-words+
-"</strong><br>"+
-"Caracteres: <strong>"+
-chars+
-"</strong><br>"+
-"Sin espacios: <strong>"+
-noSpaces+
-"</strong>";
-
+ document.getElementById("counterResult")
+ .innerHTML=
+ `Palabras: <strong>${words}</strong><br>
+ Caracteres: <strong>${chars}</strong><br>
+ Sin espacios: <strong>${noSpaces}</strong>`;
 }
 
 
-/* =========================
-   TEXTO
-========================= */
+/* TEXTO */
 
-function toUpper(){
+function upperText(){
 
-let box=
-document.getElementById("textTransform");
+ const box=document.getElementById("transformText");
 
-box.value=
-box.value.toUpperCase();
-
+ box.value=box.value.toUpperCase();
 }
 
-function toLower(){
+function lowerText(){
 
-let box=
-document.getElementById("textTransform");
+ const box=document.getElementById("transformText");
 
-box.value=
-box.value.toLowerCase();
-
+ box.value=box.value.toLowerCase();
 }
 
 function capitalizeText(){
 
-let box=
-document.getElementById("textTransform");
+ const box=document.getElementById("transformText");
 
-box.value=
-box.value
-.toLowerCase()
-.replace(/(^\s*\w|[.!?]\s*\w)/g,
-function(c){
-return c.toUpperCase();
-});
-
+ box.value=box.value
+ .toLowerCase()
+ .replace(/(^\s*\w|[.!?]\s*\w)/g,
+ c=>c.toUpperCase());
 }
 
 function copyTransform(){
 
-let text=
-document.getElementById("textTransform").value;
+ const text=
+ document.getElementById("transformText").value;
 
-navigator.clipboard.writeText(text);
-
-alert("Texto copiado.");
-
+ navigator.clipboard.writeText(text)
+ .then(()=>alert("Texto copiado."));
 }
 
 
-/* =========================
-   PASSWORD
-========================= */
+/* PASSWORD */
 
 let generatedPassword="";
 
 function generatePassword(){
 
-let length=parseInt(
-document.getElementById("passLength").value
-);
+ let length=parseInt(
+  document.getElementById("passLength").value
+ );
 
-if(length<4)length=4;
+ if(length<4)length=4;
+ if(length>60)length=60;
 
-if(length>50)length=50;
+ const chars=
+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
+ "abcdefghijklmnopqrstuvwxyz"+
+ "0123456789"+
+ "!@#$%^&*()_+-=[]{}";
 
-let chars=
-"ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
-"abcdefghijklmnopqrstuvwxyz"+
-"0123456789"+
-"!@#$%^&*()_+-=[]{}";
+ generatedPassword="";
 
-generatedPassword="";
+ for(let i=0;i<length;i++){
 
-for(
-let i=0;
-i<length;
-i++
-){
+  generatedPassword+=
+  chars[Math.floor(Math.random()*chars.length)];
+ }
 
-generatedPassword+=
-chars.charAt(
-Math.floor(
-Math.random()*chars.length
-)
-);
-
-}
-
-document
-.getElementById("passwordResult")
-.textContent=
-generatedPassword;
-
+ document.getElementById("passwordResult")
+ .textContent=generatedPassword;
 }
 
 function copyPassword(){
 
-if(!generatedPassword){
+ if(!generatedPassword)generatePassword();
 
-generatePassword();
-
-}
-
-navigator.clipboard
-.writeText(generatedPassword);
-
-alert("Contraseña copiada.");
-
+ navigator.clipboard.writeText(generatedPassword)
+ .then(()=>alert("Contraseña copiada."));
 }
 
 
-/* =========================
-   RANDOM
-========================= */
+/* RANDOM */
 
 function generateRandom(){
 
-let min=parseInt(
-document.getElementById("randomMin").value
-);
+ const min=parseInt(
+  document.getElementById("randomMin").value
+ );
 
-let max=parseInt(
-document.getElementById("randomMax").value
-);
+ const max=parseInt(
+  document.getElementById("randomMax").value
+ );
 
-if(
-isNaN(min)||
-isNaN(max)||
-min>max
-){
+ if(isNaN(min)||isNaN(max)||min>max){
 
-document
-.getElementById("randomResult")
-.textContent=
-"Introduce un rango válido.";
+  document.getElementById("randomResult")
+  .textContent="Introduce un rango válido.";
 
-return;
+  return;
+ }
 
-}
+ const n=Math.floor(
+  Math.random()*(max-min+1)
+ )+min;
 
-let number=
-Math.floor(
-Math.random()*
-(max-min+1)
-)+min;
-
-document
-.getElementById("randomResult")
-.innerHTML=
-"Tu número es:<br><br>"+
-"<strong style='font-size:35px'>"+
-number+
-"</strong>";
-
+ document.getElementById("randomResult")
+ .innerHTML=
+ `Número generado:<br><br>
+ <strong style="font-size:40px">${n}</strong>`;
 }
 
 
-/* =========================
-   COLOR
-========================= */
+/* COLOR */
 
 function showColor(){
 
-let color=
-document
-.getElementById("colorPicker")
-.value;
+ const color=
+ document.getElementById("colorPicker").value;
 
-document
-.getElementById("colorPreview")
-.style.background=color;
+ document.getElementById("colorPreview")
+ .style.background=color;
 
-document
-.getElementById("colorResult")
-.textContent=
-"HEX: "+
-color.toUpperCase();
-
+ document.getElementById("colorResult")
+ .textContent=
+ "HEX: "+color.toUpperCase();
 }
 
-document
-.getElementById("colorPicker")
-.addEventListener(
-"input",
-showColor
-);
+document.getElementById("colorPicker")
+.addEventListener("input",showColor);
 
 showColor();
 
-
 function copyColor(){
 
-let color=
-document
-.getElementById("colorPicker")
-.value;
+ const color=
+ document.getElementById("colorPicker").value;
 
-navigator.clipboard.writeText(color);
-
-alert("Código copiado.");
-
+ navigator.clipboard.writeText(color)
+ .then(()=>alert("Código HEX copiado."));
 }
 
 
-/* =========================
-   DIFERENCIA DE FECHAS
-========================= */
-
-function calculateDateDifference(){
-
-let one=
-document.getElementById("dateOne").value;
-
-let two=
-document.getElementById("dateTwo").value;
-
-if(!one||!two){
-
-document
-.getElementById("dateResult")
-.textContent=
-"Selecciona las dos fechas.";
-
-return;
-
-}
-
-let date1=new Date(one);
-let date2=new Date(two);
-
-let difference=
-Math.abs(date2-date1);
-
-let days=
-Math.round(
-difference/(1000*60*60*24)
-);
-
-document
-.getElementById("dateResult")
-.innerHTML=
-"Hay <strong>"+
-days+
-" días</strong> entre las fechas.";
-
-}
-
-
-/* =========================
-   CRONÓMETRO
-========================= */
+/* CRONÓMETRO */
 
 let stopwatchInterval=null;
 let stopwatchSeconds=0;
 
 function updateStopwatch(){
 
-let hours=
-Math.floor(stopwatchSeconds/3600);
+ const h=Math.floor(stopwatchSeconds/3600);
+ const m=Math.floor((stopwatchSeconds%3600)/60);
+ const s=stopwatchSeconds%60;
 
-let minutes=
-Math.floor(
-(stopwatchSeconds%3600)/60
-);
-
-let seconds=
-stopwatchSeconds%60;
-
-document
-.getElementById("stopwatchDisplay")
-.textContent=
-String(hours).padStart(2,"0")+
-":"+
-String(minutes).padStart(2,"0")+
-":"+
-String(seconds).padStart(2,"0");
-
+ document.getElementById("stopwatchDisplay")
+ .textContent=
+ `${String(h).padStart(2,"0")}:`+
+ `${String(m).padStart(2,"0")}:`+
+ `${String(s).padStart(2,"0")}`;
 }
 
 function startStopwatch(){
 
-if(stopwatchInterval)return;
+ if(stopwatchInterval)return;
 
-stopwatchInterval=
-setInterval(()=>{
+ stopwatchInterval=setInterval(()=>{
 
-stopwatchSeconds++;
+  stopwatchSeconds++;
+  updateStopwatch();
 
-updateStopwatch();
-
-},1000);
-
+ },1000);
 }
 
 function pauseStopwatch(){
 
-clearInterval(stopwatchInterval);
-
-stopwatchInterval=null;
-
+ clearInterval(stopwatchInterval);
+ stopwatchInterval=null;
 }
 
 function resetStopwatch(){
 
-pauseStopwatch();
+ pauseStopwatch();
 
-stopwatchSeconds=0;
+ stopwatchSeconds=0;
 
-updateStopwatch();
-
+ updateStopwatch();
 }
 
 
-/* =========================
-   TEMPORIZADOR
-========================= */
+/* TEMPORIZADOR */
 
 let timerInterval=null;
 let timerTotal=60;
 
 function updateTimer(){
 
-let minutes=
-Math.floor(timerTotal/60);
+ const m=Math.floor(timerTotal/60);
+ const s=timerTotal%60;
 
-let seconds=
-timerTotal%60;
-
-document
-.getElementById("timerDisplay")
-.textContent=
-String(minutes).padStart(2,"0")+
-":"+
-String(seconds).padStart(2,"0");
-
+ document.getElementById("timerDisplay")
+ .textContent=
+ `${String(m).padStart(2,"0")}:`+
+ `${String(s).padStart(2,"0")}`;
 }
 
 function startTimer(){
 
-if(timerInterval)return;
+ if(timerInterval)return;
 
-if(timerTotal<=0){
+ if(timerTotal<=0){
 
-let minutes=parseInt(
-document.getElementById("timerMinutes").value
-)||0;
+  const m=parseInt(
+   document.getElementById("timerMinutes").value
+  )||0;
 
-let seconds=parseInt(
-document.getElementById("timerSeconds").value
-)||0;
+  const s=parseInt(
+   document.getElementById("timerSeconds").value
+  )||0;
 
-timerTotal=
-minutes*60+
-seconds;
+  timerTotal=m*60+s;
+ }
 
-}
+ if(timerTotal<=0)return;
 
-if(timerTotal<=0)return;
+ timerInterval=setInterval(()=>{
 
-timerInterval=
-setInterval(()=>{
+  timerTotal--;
 
-timerTotal--;
+  updateTimer();
 
-updateTimer();
+  if(timerTotal<=0){
 
-if(timerTotal<=0){
+   clearInterval(timerInterval);
+   timerInterval=null;
 
-clearInterval(timerInterval);
+   alert("⏰ ¡Tiempo terminado!");
+  }
 
-timerInterval=null;
-
-alert("⏰ ¡Tiempo terminado!");
-
-}
-
-},1000);
-
+ },1000);
 }
 
 function pauseTimer(){
 
-clearInterval(timerInterval);
-
-timerInterval=null;
-
+ clearInterval(timerInterval);
+ timerInterval=null;
 }
 
 function resetTimer(){
 
-pauseTimer();
+ pauseTimer();
 
-let minutes=parseInt(
-document.getElementById("timerMinutes").value
-)||0;
+ const m=parseInt(
+  document.getElementById("timerMinutes").value
+ )||0;
 
-let seconds=parseInt(
-document.getElementById("timerSeconds").value
-)||0;
+ const s=parseInt(
+  document.getElementById("timerSeconds").value
+ )||0;
 
-timerTotal=
-minutes*60+
-seconds;
+ timerTotal=m*60+s;
 
-updateTimer();
-
+ updateTimer();
 }
 
+
+/* INICIALIZACIÓN */
+
+loadFavorites();
+updateStopwatch();
 updateTimer();
 
 </script>
