@@ -1,598 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HerramientasGratis - Herramientas útiles y gratis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HerramientasGratis - Herramientas online gratis</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header {
+    background: #2563eb;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
 
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #2563eb;
-    }
+header p {
+    font-size: 17px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 65px 20px 45px;
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: white;
-    }
+.search {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+.search input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 16px;
+}
 
-    .hero p {
-      font-size: 19px;
-      opacity: 0.95;
-      margin-bottom: 25px;
-    }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
 
-    .search {
-      width: min(600px, 100%);
-      padding: 15px 18px;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      outline: none;
-    }
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+.tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
 
-    .section-title {
-      font-size: 27px;
-      margin-bottom: 20px;
-    }
+.tool {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.2s;
+}
 
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
+.tool:hover {
+    transform: translateY(-5px);
+}
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+.tool .icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-    }
+.tool h3 {
+    margin-bottom: 10px;
+}
 
-    .icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
+.tool p {
+    color: #6b7280;
+    margin-bottom: 15px;
+}
 
-    .card h3 {
-      margin-bottom: 9px;
-      font-size: 20px;
-    }
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-    .card p {
-      color: #6b7280;
-      margin-bottom: 18px;
-      line-height: 1.5;
-    }
+button:hover {
+    background: #1d4ed8;
+}
 
-    button {
-      border: none;
-      background: #2563eb;
-      color: white;
-      padding: 11px 17px;
-      border-radius: 9px;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    button:hover {
-      background: #1d4ed8;
-    }
-
-    .tool-box {
-      display: none;
-      margin-top: 35px;
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-    }
-
-    .tool-box.active {
-      display: block;
-    }
-
-    .tool-box h2 {
-      margin-bottom: 20px;
-    }
-
-    textarea,
-    input,
-    select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #d1d5db;
-      border-radius: 9px;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-
-    textarea {
-      min-height: 180px;
-      resize: vertical;
-    }
-
-    .result {
-      margin-top: 15px;
-      padding: 15px;
-      background: #f3f4f6;
-      border-radius: 9px;
-      line-height: 1.7;
-    }
-
-    .close {
-      float: right;
-      background: #6b7280;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 30px 20px;
-      text-align: center;
-      background: #111827;
-      color: white;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero {
-        padding-top: 45px;
-      }
-    }
-  </style>
+footer {
+    margin-top: 40px;
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">🛠️ HerramientasGratis</div>
-    <div>100% Gratis</div>
-  </div>
+    <h1>🛠️ HerramientasGratis</h1>
+    <p>Herramientas online gratuitas, rápidas y fáciles de usar</p>
 </header>
 
-<section class="hero">
-  <h1>Herramientas útiles y gratis</h1>
-  <p>Soluciones rápidas para tus tareas diarias.</p>
+<div class="search">
+    <input type="text" id="buscador" placeholder="🔎 Buscar una herramienta...">
+</div>
 
-  <input
-    class="search"
-    id="search"
-    type="text"
-    placeholder="🔎 Buscar una herramienta..."
-    onkeyup="buscarHerramienta()"
-  >
-</section>
+<div class="container">
 
-<main class="container">
+    <h2>🚀 Nuestras herramientas</h2>
 
-  <h2 class="section-title">Todas las herramientas</h2>
+    <div class="tools" id="listaHerramientas">
 
-  <div class="tools">
+        <div class="tool">
+            <div class="icon">🧮</div>
+            <h3>Calculadora</h3>
+            <p>Realiza cálculos de forma rápida.</p>
+            <button onclick="alert('Próximamente tendremos una calculadora completa 🚀')">
+                Abrir
+            </button>
+        </div>
 
-    <div class="card" data-name="contador palabras texto">
-      <div class="icon">📝</div>
-      <h3>Contador de palabras</h3>
-      <p>Cuenta palabras y caracteres de cualquier texto.</p>
-      <button onclick="abrirHerramienta('contador')">Abrir herramienta</button>
+        <div class="tool">
+            <div class="icon">🔐</div>
+            <h3>Generador de contraseñas</h3>
+            <p>Crea contraseñas seguras.</p>
+            <button onclick="generarPassword()">Generar</button>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🔤</div>
+            <h3>Contador de palabras</h3>
+            <p>Cuenta palabras y caracteres.</p>
+            <button onclick="contador()">Abrir</button>
+        </div>
+
+        <div class="tool">
+            <div class="icon">📱</div>
+            <h3>Código QR</h3>
+            <p>Genera códigos QR fácilmente.</p>
+            <button onclick="alert('El generador QR estará disponible próximamente 📱')">
+                Abrir
+            </button>
+        </div>
+
+        <div class="tool">
+            <div class="icon">🖼️</div>
+            <h3>Herramientas de imágenes</h3>
+            <p>Trabaja con tus imágenes online.</p>
+            <button onclick="alert('Herramientas de imágenes próximamente 🖼️')">
+                Abrir
+            </button>
+        </div>
+
+        <div class="tool">
+            <div class="icon">📄</div>
+            <h3>Herramientas PDF</h3>
+            <p>Próximamente podrás trabajar con PDF.</p>
+            <button onclick="alert('Herramientas PDF próximamente 📄')">
+                Abrir
+            </button>
+        </div>
+
     </div>
-
-    <div class="card" data-name="generador contraseña seguridad">
-      <div class="icon">🔐</div>
-      <h3>Generador de contraseñas</h3>
-      <p>Crea contraseñas aleatorias y seguras.</p>
-      <button onclick="abrirHerramienta('password')">Abrir herramienta</button>
-    </div>
-
-    <div class="card" data-name="calculadora matematicas">
-      <div class="icon">🔢</div>
-      <h3>Calculadora</h3>
-      <p>Realiza cálculos matemáticos rápidamente.</p>
-      <button onclick="abrirHerramienta('calculadora')">Abrir herramienta</button>
-    </div>
-
-    <div class="card" data-name="convertidor unidades conversion">
-      <div class="icon">🔄</div>
-      <h3>Conversor de unidades</h3>
-      <p>Convierte kilómetros, millas, metros y más.</p>
-      <button onclick="abrirHerramienta('unidades')">Abrir herramienta</button>
-    </div>
-
-    <div class="card" data-name="comprimir imagen imagenes">
-      <div class="icon">🖼️</div>
-      <h3>Comprimir imagen</h3>
-      <p>Reduce el tamaño de una imagen directamente en tu navegador.</p>
-      <button onclick="abrirHerramienta('imagen')">Abrir herramienta</button>
-    </div>
-
-    <div class="card" data-name="codigo qr qr">
-      <div class="icon">📱</div>
-      <h3>Generador QR</h3>
-      <p>Crea códigos QR fácilmente.</p>
-      <button onclick="abrirHerramienta('qr')">Abrir herramienta</button>
-    </div>
-
-  </div>
-
-  <!-- CONTADOR -->
-  <div id="contador" class="tool-box">
-    <button class="close" onclick="cerrarHerramientas()">Cerrar</button>
-    <h2>📝 Contador de palabras</h2>
-
-    <textarea id="texto" placeholder="Escribe o pega tu texto aquí..." oninput="contar()"></textarea>
-
-    <div class="result">
-      <strong>Palabras:</strong> <span id="palabras">0</span><br>
-      <strong>Caracteres:</strong> <span id="caracteres">0</span><br>
-      <strong>Caracteres sin espacios:</strong> <span id="sinEspacios">0</span>
-    </div>
-  </div>
-
-  <!-- PASSWORD -->
-  <div id="password" class="tool-box">
-    <button class="close" onclick="cerrarHerramientas()">Cerrar</button>
-    <h2>🔐 Generador de contraseñas</h2>
-
-    <label>Longitud</label>
-    <input id="longitud" type="number" min="4" max="50" value="16">
-
-    <button onclick="generarPassword()">Generar contraseña</button>
-
-    <div class="result">
-      <strong id="passwordResultado">Haz clic en generar.</strong>
-    </div>
-  </div>
-
-  <!-- CALCULADORA -->
-  <div id="calculadora" class="tool-box">
-    <button class="close" onclick="cerrarHerramientas()">Cerrar</button>
-    <h2>🔢 Calculadora</h2>
-
-    <input id="calculo" type="text" placeholder="Ejemplo: 25 * 4 + 10">
-
-    <button onclick="calcular()">Calcular</button>
-
-    <div class="result">
-      Resultado: <strong id="resultadoCalculo">0</strong>
-    </div>
-  </div>
-
-  <!-- UNIDADES -->
-  <div id="unidades" class="tool-box">
-    <button class="close" onclick="cerrarHerramientas()">Cerrar</button>
-    <h2>🔄 Conversor de unidades</h2>
-
-    <input id="valorUnidad" type="number" placeholder="Valor">
-
-    <select id="tipoUnidad">
-      <option value="km-millas">Kilómetros → Millas</option>
-      <option value="millas-km">Millas → Kilómetros</option>
-      <option value="metros-pies">Metros → Pies</option>
-      <option value="pies-metros">Pies → Metros</option>
-      <option value="kg-lb">Kilogramos → Libras</option>
-      <option value="lb-kg">Libras → Kilogramos</option>
-    </select>
-
-    <button onclick="convertir()">Convertir</button>
-
-    <div class="result">
-      Resultado: <strong id="resultadoUnidad">0</strong>
-    </div>
-  </div>
-
-  <!-- IMAGEN -->
-  <div id="imagen" class="tool-box">
-    <button class="close" onclick="cerrarHerramientas()">Cerrar</button>
-    <h2>🖼️ Comprimir imagen</h2>
-
-    <input id="archivoImagen" type="file" accept="image/*">
-
-    <label>Calidad</label>
-    <input id="calidad" type="range" min="0.1" max="1" value="0.7" step="0.1">
-
-    <button onclick="comprimirImagen()">Comprimir imagen</button>
-
-    <div class="result" id="resultadoImagen">
-      Selecciona una imagen para comenzar.
-    </div>
-  </div>
-
-  <!-- QR -->
-  <div id="qr" class="tool-box">
-    <button class="close" onclick="cerrarHerramientas()">Cerrar</button>
-    <h2>📱 Generador de código QR</h2>
-
-    <input id="textoQR" type="text" placeholder="Escribe un enlace o texto">
-
-    <button onclick="generarQR()">Generar QR</button>
-
-    <div class="result" id="resultadoQR"></div>
-  </div>
-
-</main>
+</div>
 
 <footer>
-  <p>© 2026 HerramientasGratis — Herramientas útiles y gratuitas.</p>
+    <p>© 2026 HerramientasGratis | Herramientas online gratuitas</p>
 </footer>
 
 <script>
 
-function abrirHerramienta(id) {
-  document.querySelectorAll('.tool-box').forEach(box => {
-    box.classList.remove('active');
-  });
-
-  const herramienta = document.getElementById(id);
-
-  if (herramienta) {
-    herramienta.classList.add('active');
-    herramienta.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  }
-}
-
-function cerrarHerramientas() {
-  document.querySelectorAll('.tool-box').forEach(box => {
-    box.classList.remove('active');
-  });
-}
-
-function contar() {
-  const texto = document.getElementById('texto').value;
-
-  const palabras = texto.trim()
-    ? texto.trim().split(/\s+/).length
-    : 0;
-
-  document.getElementById('palabras').textContent = palabras;
-  document.getElementById('caracteres').textContent = texto.length;
-  document.getElementById('sinEspacios').textContent =
-    texto.replace(/\s/g, '').length;
-}
-
 function generarPassword() {
-  const longitud = parseInt(document.getElementById('longitud').value);
+    let caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+    let password = "";
 
-  const caracteres =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=';
-
-  let resultado = '';
-
-  for (let i = 0; i < longitud; i++) {
-    resultado += caracteres.charAt(
-      Math.floor(Math.random() * caracteres.length)
-    );
-  }
-
-  document.getElementById('passwordResultado').textContent = resultado;
-}
-
-function calcular() {
-  const expresion = document.getElementById('calculo').value;
-
-  try {
-    const resultado = Function(
-      '"use strict"; return (' + expresion + ')'
-    )();
-
-    document.getElementById('resultadoCalculo').textContent = resultado;
-  } catch {
-    document.getElementById('resultadoCalculo').textContent =
-      'Expresión no válida';
-  }
-}
-
-function convertir() {
-  const valor = parseFloat(
-    document.getElementById('valorUnidad').value
-  );
-
-  const tipo = document.getElementById('tipoUnidad').value;
-
-  if (isNaN(valor)) {
-    document.getElementById('resultadoUnidad').textContent =
-      'Introduce un valor';
-    return;
-  }
-
-  let resultado;
-
-  switch (tipo) {
-    case 'km-millas':
-      resultado = valor * 0.621371;
-      break;
-
-    case 'millas-km':
-      resultado = valor * 1.60934;
-      break;
-
-    case 'metros-pies':
-      resultado = valor * 3.28084;
-      break;
-
-    case 'pies-metros':
-      resultado = valor * 0.3048;
-      break;
-
-    case 'kg-lb':
-      resultado = valor * 2.20462;
-      break;
-
-    case 'lb-kg':
-      resultado = valor * 0.453592;
-      break;
-  }
-
-  document.getElementById('resultadoUnidad').textContent =
-    resultado.toFixed(4);
-}
-
-function comprimirImagen() {
-  const archivo = document.getElementById('archivoImagen').files[0];
-
-  if (!archivo) {
-    document.getElementById('resultadoImagen').textContent =
-      'Primero selecciona una imagen.';
-    return;
-  }
-
-  const calidad = parseFloat(
-    document.getElementById('calidad').value
-  );
-
-  const lector = new FileReader();
-
-  lector.onload = function(evento) {
-    const imagen = new Image();
-
-    imagen.onload = function() {
-
-      const canvas = document.createElement('canvas');
-
-      const maximo = 1600;
-
-      let ancho = imagen.width;
-      let alto = imagen.height;
-
-      if (ancho > maximo) {
-        alto = alto * maximo / ancho;
-        ancho = maximo;
-      }
-
-      canvas.width = ancho;
-      canvas.height = alto;
-
-      const contexto = canvas.getContext('2d');
-
-      contexto.drawImage(
-        imagen,
-        0,
-        0,
-        ancho,
-        alto
-      );
-
-      canvas.toBlob(function(blob) {
-
-        const url = URL.createObjectURL(blob);
-
-        document.getElementById('resultadoImagen').innerHTML =
-          '<strong>Imagen comprimida correctamente.</strong><br><br>' +
-          'Tamaño original: ' +
-          (archivo.size / 1024).toFixed(1) +
-          ' KB<br>' +
-          'Nuevo tamaño: ' +
-          (blob.size / 1024).toFixed(1) +
-          ' KB<br><br>' +
-          '<a href="' + url +
-          '" download="imagen-comprimida.jpg">' +
-          '<button>⬇️ Descargar imagen</button>' +
-          '</a>';
-
-      }, 'image/jpeg', calidad);
-
-    };
-
-    imagen.src = evento.target.result;
-  };
-
-  lector.readAsDataURL(archivo);
-}
-
-function generarQR() {
-  const texto = document.getElementById('textoQR').value.trim();
-
-  if (!texto) {
-    document.getElementById('resultadoQR').textContent =
-      'Escribe un texto o enlace.';
-    return;
-  }
-
-  const url =
-    'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' +
-    encodeURIComponent(texto);
-
-  document.getElementById('resultadoQR').innerHTML =
-    '<img src="' + url +
-    '" alt="Código QR" style="max-width:250px;">' +
-    '<br><br>' +
-    '<a href="' + url +
-    '" target="_blank">' +
-    '<button>Ver QR</button>' +
-    '</a>';
-}
-
-function buscarHerramienta() {
-  const busqueda =
-    document.getElementById('search').value.toLowerCase();
-
-  document.querySelectorAll('.card').forEach(card => {
-
-    const nombre =
-      card.dataset.name.toLowerCase();
-
-    if (nombre.includes(busqueda)) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
+    for (let i = 0; i < 12; i++) {
+        password += caracteres.charAt(
+            Math.floor(Math.random() * caracteres.length)
+        );
     }
 
-  });
+    alert("Tu contraseña segura es:\n\n" + password);
 }
+
+function contador() {
+    let texto = prompt("Escribe o pega tu texto:");
+
+    if (texto !== null) {
+        let palabras = texto.trim() === "" ? 0 : texto.trim().split(/\s+/).length;
+        let caracteres = texto.length;
+
+        alert(
+            "Palabras: " + palabras +
+            "\nCaracteres: " + caracteres
+        );
+    }
+}
+
+document.getElementById("buscador").addEventListener("input", function() {
+
+    let busqueda = this.value.toLowerCase();
+    let herramientas = document.querySelectorAll(".tool");
+
+    herramientas.forEach(function(herramienta) {
+
+        let texto = herramienta.innerText.toLowerCase();
+
+        if (texto.includes(busqueda)) {
+            herramienta.style.display = "block";
+        } else {
+            herramienta.style.display = "none";
+        }
+
+    });
+
+});
 
 </script>
 
