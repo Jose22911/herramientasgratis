@@ -3,614 +3,890 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HerramientasGratis 6.0</title>
-
-<meta name="description" content="HerramientasGratis - herramientas online gratuitas, rápidas y fáciles de usar.">
 <meta name="theme-color" content="#2563eb">
 
+<title>HerramientasGratis 7.0</title>
+
+<meta name="description"
+content="HerramientasGratis: herramientas online gratuitas para texto, cálculos, conversiones, seguridad, productividad y mucho más.">
+
 <style>
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 :root{
-    --bg:#f4f7fb;
-    --card:#ffffff;
-    --text:#172033;
-    --muted:#64748b;
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --border:#e2e8f0;
-    --success:#16a34a;
-    --danger:#dc2626;
-    --shadow:0 10px 30px rgba(15,23,42,.08);
+--bg:#f5f7fb;
+--card:#ffffff;
+--text:#172033;
+--muted:#64748b;
+--primary:#2563eb;
+--primary2:#7c3aed;
+--border:#e2e8f0;
+--success:#16a34a;
+--danger:#dc2626;
+--warning:#f59e0b;
+--shadow:0 10px 30px rgba(15,23,42,.08);
 }
 
 body.dark{
-    --bg:#0f172a;
-    --card:#1e293b;
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --border:#334155;
-    --shadow:0 10px 30px rgba(0,0,0,.25);
+--bg:#0f172a;
+--card:#1e293b;
+--text:#f8fafc;
+--muted:#94a3b8;
+--border:#334155;
+--shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    min-height:100vh;
-    transition:.25s;
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+transition:.25s;
 }
 
-button,input,textarea,select{
-    font:inherit;
+button,
+input,
+textarea,
+select{
+font:inherit;
 }
 
 button{
-    cursor:pointer;
+cursor:pointer;
 }
 
 header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    padding:18px 20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-.header-content{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
+.header{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:bold;
+font-size:23px;
+font-weight:bold;
+white-space:nowrap;
 }
 
 .logo span{
-    color:#facc15;
+color:#facc15;
 }
 
 .header-actions{
-    display:flex;
-    gap:8px;
+display:flex;
+gap:8px;
 }
 
-.icon-btn{
-    border:0;
-    background:rgba(255,255,255,.18);
-    color:white;
-    width:42px;
-    height:42px;
-    border-radius:12px;
-    font-size:20px;
+.icon-button{
+width:42px;
+height:42px;
+border:0;
+border-radius:12px;
+background:rgba(255,255,255,.18);
+color:white;
+font-size:20px;
 }
 
 .hero{
-    max-width:1100px;
-    margin:40px auto 25px;
-    padding:20px;
-    text-align:center;
+max-width:1100px;
+margin:auto;
+padding:50px 20px 30px;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+background:#dbeafe;
+color:#1d4ed8;
+padding:7px 13px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+body.dark .badge{
+background:#172554;
+color:#93c5fd;
 }
 
 .hero h1{
-    font-size:42px;
-    margin-bottom:12px;
+font-size:46px;
+line-height:1.1;
+margin-bottom:15px;
 }
 
 .hero h1 span{
-    color:var(--primary);
+color:var(--primary);
 }
 
 .hero p{
-    color:var(--muted);
-    font-size:18px;
-    margin-bottom:25px;
+color:var(--muted);
+font-size:18px;
+max-width:700px;
+margin:0 auto 25px;
+line-height:1.6;
 }
 
-.search-box{
-    max-width:650px;
-    margin:auto;
-    position:relative;
+.search{
+max-width:680px;
+margin:auto;
+position:relative;
 }
 
-.search-box input{
-    width:100%;
-    padding:17px 50px 17px 20px;
-    border:2px solid var(--border);
-    border-radius:15px;
-    outline:none;
-    background:var(--card);
-    color:var(--text);
-    font-size:16px;
+.search input{
+width:100%;
+padding:17px 55px 17px 20px;
+border:2px solid var(--border);
+border-radius:16px;
+background:var(--card);
+color:var(--text);
+outline:none;
+font-size:16px;
+box-shadow:var(--shadow);
 }
 
-.search-box input:focus{
-    border-color:var(--primary);
+.search input:focus{
+border-color:var(--primary);
 }
 
-.search-icon{
-    position:absolute;
-    right:18px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:21px;
+.search span{
+position:absolute;
+right:18px;
+top:50%;
+transform:translateY(-50%);
+font-size:21px;
 }
 
 .container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px 50px;
+max-width:1200px;
+margin:auto;
+padding:0 20px 60px;
+}
+
+.quick-stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin:10px 0 30px;
+}
+
+.stat{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:16px;
+padding:18px;
+text-align:center;
+box-shadow:var(--shadow);
+}
+
+.stat-number{
+font-size:25px;
+font-weight:bold;
+color:var(--primary);
+}
+
+.stat-label{
+font-size:13px;
+color:var(--muted);
+margin-top:5px;
 }
 
 .categories{
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    padding:5px 0 20px;
+display:flex;
+gap:9px;
+overflow-x:auto;
+padding:5px 0 22px;
+scrollbar-width:none;
 }
 
-.category-btn{
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    padding:10px 17px;
-    border-radius:30px;
-    white-space:nowrap;
+.categories::-webkit-scrollbar{
+display:none;
 }
 
-.category-btn.active,
-.category-btn:hover{
-    background:var(--primary);
-    color:white;
-    border-color:var(--primary);
+.category{
+border:1px solid var(--border);
+background:var(--card);
+color:var(--text);
+padding:10px 16px;
+border-radius:30px;
+white-space:nowrap;
 }
 
-.section-title{
-    margin:25px 0 18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.category:hover,
+.category.active{
+background:var(--primary);
+color:white;
+border-color:var(--primary);
 }
 
-.section-title h2{
-    font-size:25px;
+.section{
+margin-top:25px;
 }
 
-.tool-count{
-    color:var(--muted);
-    font-size:14px;
+.section-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-bottom:17px;
 }
 
-.tools-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.section-header h2{
+font-size:25px;
 }
 
-.tool-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:20px;
-    box-shadow:var(--shadow);
-    transition:.2s;
-    position:relative;
+.section-header span{
+color:var(--muted);
+font-size:14px;
 }
 
-.tool-card:hover{
-    transform:translateY(-4px);
+.tools{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
-.tool-top{
-    display:flex;
-    align-items:center;
-    gap:13px;
-    margin-bottom:12px;
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+padding:20px;
+box-shadow:var(--shadow);
+position:relative;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card-top{
+display:flex;
+gap:13px;
+align-items:center;
+padding-right:30px;
 }
 
 .tool-icon{
-    width:48px;
-    height:48px;
-    border-radius:13px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#eff6ff;
-    font-size:25px;
+width:50px;
+height:50px;
+border-radius:14px;
+background:#eff6ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+flex-shrink:0;
 }
 
 body.dark .tool-icon{
-    background:#172554;
+background:#172554;
 }
 
 .tool-name{
-    font-size:18px;
-    font-weight:bold;
+font-size:18px;
+font-weight:bold;
 }
 
-.tool-description{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.5;
-    min-height:42px;
+.tool-category{
+font-size:12px;
+color:var(--muted);
+margin-top:3px;
 }
 
-.tool-actions{
-    display:flex;
-    gap:8px;
-    margin-top:16px;
+.card-description{
+color:var(--muted);
+font-size:14px;
+line-height:1.5;
+margin:15px 0;
+min-height:42px;
 }
 
-.primary-btn,
-.secondary-btn,
-.danger-btn{
-    border:0;
-    padding:10px 14px;
-    border-radius:10px;
-    font-weight:bold;
+.card-actions{
+display:flex;
+gap:8px;
 }
 
-.primary-btn{
-    background:var(--primary);
-    color:white;
+.primary{
+border:0;
+background:var(--primary);
+color:white;
+padding:10px 14px;
+border-radius:10px;
+font-weight:bold;
 }
 
-.primary-btn:hover{
-    background:var(--primary-dark);
+.primary:hover{
+background:#1d4ed8;
 }
 
-.secondary-btn{
-    background:#e2e8f0;
-    color:#172033;
+.secondary{
+border:0;
+background:#e2e8f0;
+color:#172033;
+padding:10px 14px;
+border-radius:10px;
+font-weight:bold;
 }
 
-body.dark .secondary-btn{
-    background:#334155;
-    color:white;
+body.dark .secondary{
+background:#334155;
+color:white;
 }
 
-.danger-btn{
-    background:#fee2e2;
-    color:#b91c1c;
+.star{
+position:absolute;
+right:17px;
+top:17px;
+background:none;
+border:0;
+font-size:24px;
+color:#94a3b8;
 }
 
-.favorite{
-    position:absolute;
-    top:18px;
-    right:18px;
-    background:none;
-    border:0;
-    font-size:23px;
+.star.active{
+color:#f59e0b;
 }
 
-.favorite.active{
-    color:#f59e0b;
+.history-list{
+display:flex;
+gap:10px;
+overflow-x:auto;
+padding-bottom:5px;
+}
+
+.history-item{
+min-width:170px;
+background:var(--card);
+border:1px solid var(--border);
+padding:14px;
+border-radius:13px;
+cursor:pointer;
+}
+
+.history-item:hover{
+border-color:var(--primary);
+}
+
+.history-icon{
+font-size:25px;
+margin-bottom:7px;
+}
+
+.history-name{
+font-weight:bold;
+font-size:14px;
 }
 
 .empty{
-    text-align:center;
-    padding:50px 20px;
-    color:var(--muted);
-    display:none;
+display:none;
+text-align:center;
+padding:50px 20px;
+color:var(--muted);
 }
 
 .modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    z-index:2000;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:3000;
 }
 
 .modal.show{
-    display:flex;
+display:flex;
 }
 
 .modal-box{
-    background:var(--card);
-    width:100%;
-    max-width:650px;
-    max-height:90vh;
-    overflow:auto;
-    border-radius:20px;
-    padding:25px;
-    position:relative;
+width:100%;
+max-width:680px;
+max-height:90vh;
+overflow:auto;
+background:var(--card);
+border-radius:22px;
+padding:25px;
 }
 
 .modal-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.modal-header h2{
+font-size:22px;
 }
 
 .close{
-    border:0;
-    background:none;
-    font-size:27px;
-    color:var(--text);
+border:0;
+background:none;
+color:var(--text);
+font-size:28px;
 }
 
-.form-group{
-    margin-bottom:15px;
+.form{
+margin-bottom:15px;
 }
 
-.form-group label{
-    display:block;
-    margin-bottom:7px;
-    font-weight:bold;
+.form label{
+display:block;
+font-weight:bold;
+margin-bottom:7px;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    padding:12px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    background:var(--bg);
-    color:var(--text);
-    outline:none;
+.form input,
+.form textarea,
+.form select{
+width:100%;
+padding:12px;
+border:1px solid var(--border);
+border-radius:10px;
+background:var(--bg);
+color:var(--text);
+outline:none;
 }
 
-.form-group textarea{
-    min-height:130px;
-    resize:vertical;
-}
-
-.result{
-    margin-top:18px;
-    padding:16px;
-    background:var(--bg);
-    border:1px solid var(--border);
-    border-radius:12px;
-    word-break:break-word;
-}
-
-.result.big{
-    font-size:30px;
-    text-align:center;
-    font-weight:bold;
+.form textarea{
+min-height:130px;
+resize:vertical;
 }
 
 .row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
 
-.button-row{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:12px;
+.buttons{
+display:flex;
+gap:9px;
+flex-wrap:wrap;
+margin-top:10px;
 }
 
-.calc{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
+.result{
+margin-top:17px;
+padding:16px;
+background:var(--bg);
+border:1px solid var(--border);
+border-radius:12px;
+word-break:break-word;
+}
+
+.result-big{
+font-size:30px;
+font-weight:bold;
+text-align:center;
 }
 
 .calc-display{
-    width:100%;
-    padding:18px;
-    font-size:26px;
-    text-align:right;
-    border:1px solid var(--border);
-    border-radius:12px;
-    background:var(--bg);
-    color:var(--text);
-    margin-bottom:10px;
+width:100%;
+padding:18px;
+font-size:26px;
+text-align:right;
+border:1px solid var(--border);
+border-radius:12px;
+background:var(--bg);
+color:var(--text);
+margin-bottom:10px;
+}
+
+.calc{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
 }
 
 .calc button{
-    padding:16px 5px;
-    border:0;
-    border-radius:10px;
-    background:#e2e8f0;
-    color:#172033;
-    font-weight:bold;
+padding:16px 5px;
+border:0;
+border-radius:10px;
+background:#e2e8f0;
+color:#172033;
+font-weight:bold;
 }
 
 body.dark .calc button{
-    background:#334155;
-    color:white;
+background:#334155;
+color:white;
 }
 
 .calc .operator{
-    background:var(--primary);
-    color:white;
+background:var(--primary);
+color:white;
 }
 
 .timer{
-    font-size:55px;
-    text-align:center;
-    font-weight:bold;
-    margin:20px 0;
+font-size:55px;
+font-weight:bold;
+text-align:center;
+margin:25px 0;
 }
 
 .color-preview{
-    height:100px;
-    border-radius:15px;
-    margin-top:15px;
-    border:1px solid var(--border);
+height:110px;
+border-radius:15px;
+margin-top:15px;
+border:1px solid var(--border);
 }
 
 footer{
-    background:#0f172a;
-    color:#cbd5e1;
-    text-align:center;
-    padding:30px 20px;
-    margin-top:30px;
+background:#0f172a;
+color:#cbd5e1;
+text-align:center;
+padding:35px 20px;
 }
 
 footer strong{
-    color:white;
+color:white;
+font-size:18px;
+}
+
+footer p{
+margin:7px;
 }
 
 .toast{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    background:#172033;
-    color:white;
-    padding:13px 18px;
-    border-radius:10px;
-    opacity:0;
-    transform:translateY(20px);
-    transition:.3s;
-    z-index:5000;
+position:fixed;
+right:20px;
+bottom:20px;
+background:#172033;
+color:white;
+padding:13px 18px;
+border-radius:11px;
+opacity:0;
+transform:translateY(20px);
+transition:.3s;
+z-index:5000;
 }
 
 .toast.show{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
-@media(max-width:900px){
-    .tools-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+@media(max-width:950px){
+
+.tools{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero h1{
+font-size:39px;
+}
+
 }
 
 @media(max-width:600px){
-    .header-content{
-        flex-direction:row;
-    }
 
-    .logo{
-        font-size:20px;
-    }
-
-    .hero{
-        margin-top:25px;
-    }
-
-    .hero h1{
-        font-size:31px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .tools-grid{
-        grid-template-columns:1fr;
-    }
-
-    .row{
-        grid-template-columns:1fr;
-    }
-
-    .modal-box{
-        padding:18px;
-    }
+.header{
+padding:13px 15px;
 }
+
+.logo{
+font-size:19px;
+}
+
+.hero{
+padding:35px 15px 25px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.container{
+padding:0 15px 40px;
+}
+
+.quick-stats{
+grid-template-columns:1fr;
+}
+
+.tools{
+grid-template-columns:1fr;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+.modal-box{
+padding:18px;
+}
+
+.timer{
+font-size:43px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="header-content">
+
+<div class="header">
 
 <div class="logo">
 🛠️ Herramientas<span>Gratis</span>
 </div>
 
 <div class="header-actions">
-<button class="icon-btn" onclick="toggleDark()" title="Modo oscuro">🌙</button>
-<button class="icon-btn" onclick="showFavorites()" title="Favoritos">⭐</button>
+
+<button class="icon-button"
+onclick="toggleDark()"
+title="Modo oscuro">
+🌙
+</button>
+
+<button class="icon-button"
+onclick="showFavoriteTools()"
+title="Favoritos">
+⭐
+</button>
+
 </div>
 
 </div>
+
 </header>
+
 
 <section class="hero">
 
-<h1>Tus herramientas <span>gratis</span> en un solo lugar</h1>
+<div class="badge">
+✨ HerramientasGratis 7.0
+</div>
 
-<p>Rápidas, fáciles y sin registros.</p>
+<h1>
+Todo lo que necesitas,
+<span>gratis.</span>
+</h1>
 
-<div class="search-box">
+<p>
+Herramientas online rápidas, sencillas y gratuitas.
+Sin registros y directamente desde tu navegador.
+</p>
+
+<div class="search">
+
 <input
-type="text"
 id="search"
-placeholder="Buscar una herramienta..."
-oninput="searchTools()">
-<span class="search-icon">🔎</span>
+type="text"
+placeholder="🔎 Buscar una herramienta..."
+oninput="renderTools()">
+
+<span>🔍</span>
+
 </div>
 
 </section>
 
+
 <main class="container">
+
+
+<div class="quick-stats">
+
+<div class="stat">
+<div class="stat-number" id="totalTools">0</div>
+<div class="stat-label">Herramientas disponibles</div>
+</div>
+
+<div class="stat">
+<div class="stat-number" id="favoriteCount">0</div>
+<div class="stat-label">Favoritos</div>
+</div>
+
+<div class="stat">
+<div class="stat-number" id="historyCount">0</div>
+<div class="stat-label">Usadas recientemente</div>
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="section-header">
+<h2>🗂️ Categorías</h2>
+</div>
 
 <div class="categories">
 
-<button class="category-btn active" onclick="filterCategory('Todas',this)">Todas</button>
-<button class="category-btn" onclick="filterCategory('Texto',this)">📝 Texto</button>
-<button class="category-btn" onclick="filterCategory('Calculadoras',this)">🧮 Calculadoras</button>
-<button class="category-btn" onclick="filterCategory('Productividad',this)">⚡ Productividad</button>
-<button class="category-btn" onclick="filterCategory('Seguridad',this)">🔐 Seguridad</button>
-<button class="category-btn" onclick="filterCategory('Conversores',this)">🔄 Conversores</button>
-<button class="category-btn" onclick="filterCategory('Tiempo',this)">⏱️ Tiempo</button>
+<button class="category active"
+onclick="setCategory('Todas',this)">
+Todas
+</button>
+
+<button class="category"
+onclick="setCategory('Texto',this)">
+📝 Texto
+</button>
+
+<button class="category"
+onclick="setCategory('Calculadoras',this)">
+🧮 Calculadoras
+</button>
+
+<button class="category"
+onclick="setCategory('Seguridad',this)">
+🔐 Seguridad
+</button>
+
+<button class="category"
+onclick="setCategory('Conversores',this)">
+🔄 Conversores
+</button>
+
+<button class="category"
+onclick="setCategory('Productividad',this)">
+⚡ Productividad
+</button>
+
+<button class="category"
+onclick="setCategory('Tiempo',this)">
+⏱️ Tiempo
+</button>
+
+<button class="category"
+onclick="setCategory('Diseño',this)">
+🎨 Diseño
+</button>
+
 </div>
 
-<div class="section-title">
-<h2>Herramientas</h2>
-<span class="tool-count" id="toolCount"></span>
 </div>
 
-<div class="tools-grid" id="toolsGrid"></div>
+
+<div class="section">
+
+<div class="section-header">
+
+<h2 id="sectionTitle">
+🔥 Herramientas
+</h2>
+
+<span id="toolCount"></span>
+
+</div>
+
+<div class="tools" id="tools"></div>
 
 <div class="empty" id="empty">
+
 <h2>😕 No encontramos herramientas</h2>
-<p>Prueba con otro término de búsqueda.</p>
+
+<p>
+Prueba con otra palabra.
+</p>
+
 </div>
+
+</div>
+
+
+<div class="section">
+
+<div class="section-header">
+
+<h2>🕘 Utilizadas recientemente</h2>
+
+<button class="secondary"
+onclick="clearHistory()">
+Limpiar
+</button>
+
+</div>
+
+<div class="history-list"
+id="historyList">
+</div>
+
+</div>
+
 
 </main>
 
+
 <footer>
-<p><strong>HerramientasGratis 6.0</strong></p>
-<p>Herramientas online gratuitas para todos.</p>
-<p style="margin-top:10px;">© 2026 HerramientasGratis</p>
+
+<p>
+<strong>🛠️ HerramientasGratis</strong>
+</p>
+
+<p>
+Herramientas online gratuitas para todos.
+</p>
+
+<p>
+© 2026 HerramientasGratis 7.0
+</p>
+
 </footer>
+
 
 <div class="modal" id="modal">
 
 <div class="modal-box">
 
 <div class="modal-header">
+
 <h2 id="modalTitle"></h2>
-<button class="close" onclick="closeModal()">✕</button>
+
+<button class="close"
+onclick="closeModal()">
+✕
+</button>
+
 </div>
 
 <div id="modalContent"></div>
 
 </div>
+
 </div>
+
 
 <div class="toast" id="toast"></div>
 
+
 <script>
 
-const tools = [
+/* =========================
+   DATOS
+========================= */
+
+const tools=[
 
 {
 id:"calculadora",
@@ -626,7 +902,7 @@ id:"porcentaje",
 name:"Calculadora de porcentaje",
 icon:"📊",
 category:"Calculadoras",
-description:"Calcula porcentajes de manera sencilla.",
+description:"Calcula porcentajes fácilmente.",
 action:percentage
 },
 
@@ -635,7 +911,7 @@ id:"descuento",
 name:"Calculadora de descuentos",
 icon:"💰",
 category:"Calculadoras",
-description:"Calcula cuánto pagarás después de un descuento.",
+description:"Calcula descuentos y precio final.",
 action:discount
 },
 
@@ -644,7 +920,7 @@ id:"edad",
 name:"Calculadora de edad",
 icon:"🎂",
 category:"Calculadoras",
-description:"Calcula tu edad exacta.",
+description:"Calcula tu edad en años.",
 action:ageCalculator
 },
 
@@ -662,16 +938,16 @@ id:"mayusculas",
 name:"Mayúsculas y minúsculas",
 icon:"🔤",
 category:"Texto",
-description:"Convierte texto entre mayúsculas y minúsculas.",
+description:"Convierte textos rápidamente.",
 action:textCase
 },
 
 {
 id:"limpiar",
-name:"Limpiar texto",
+name:"Limpiador de texto",
 icon:"🧹",
 category:"Texto",
-description:"Elimina espacios y líneas innecesarias.",
+description:"Limpia espacios y líneas innecesarias.",
 action:cleanText
 },
 
@@ -680,7 +956,7 @@ id:"copiar",
 name:"Copiar texto",
 icon:"📋",
 category:"Texto",
-description:"Escribe texto y cópialo rápidamente.",
+description:"Escribe y copia texto rápidamente.",
 action:copyTool
 },
 
@@ -689,7 +965,7 @@ id:"password",
 name:"Generador de contraseñas",
 icon:"🔐",
 category:"Seguridad",
-description:"Crea contraseñas seguras y aleatorias.",
+description:"Genera contraseñas aleatorias.",
 action:passwordGenerator
 },
 
@@ -707,7 +983,7 @@ id:"url",
 name:"Codificador de URL",
 icon:"🔗",
 category:"Productividad",
-description:"Codifica y decodifica textos para URLs.",
+description:"Codifica o decodifica texto.",
 action:urlEncoder
 },
 
@@ -715,8 +991,8 @@ action:urlEncoder
 id:"color",
 name:"Selector de colores",
 icon:"🎨",
-category:"Productividad",
-description:"Elige un color y obtén su código HEX.",
+category:"Diseño",
+description:"Selecciona un color y obtén su HEX.",
 action:colorPicker
 },
 
@@ -734,7 +1010,7 @@ id:"unidades",
 name:"Conversor de unidades",
 icon:"📏",
 category:"Conversores",
-description:"Convierte kilómetros, metros, millas y más.",
+description:"Convierte metros, kilómetros, millas y más.",
 action:units
 },
 
@@ -743,7 +1019,7 @@ id:"cronometro",
 name:"Cronómetro",
 icon:"⏱️",
 category:"Tiempo",
-description:"Cronómetro online sencillo.",
+description:"Mide el tiempo fácilmente.",
 action:stopwatch
 },
 
@@ -758,94 +1034,306 @@ action:timer
 
 ];
 
-let currentCategory="Todas";
-let favorites=JSON.parse(localStorage.getItem("hgFavorites")||"[]");
+
+/* =========================
+   VARIABLES
+========================= */
+
+let category="Todas";
+
+let favorites=
+JSON.parse(localStorage.getItem("hg7Favorites")||"[]");
+
+let history=
+JSON.parse(localStorage.getItem("hg7History")||"[]");
+
+
+/* =========================
+   FAVORITOS
+========================= */
 
 function saveFavorites(){
-localStorage.setItem("hgFavorites",JSON.stringify(favorites));
+
+localStorage.setItem(
+"hg7Favorites",
+JSON.stringify(favorites)
+);
+
 }
 
 function isFavorite(id){
+
 return favorites.includes(id);
+
 }
 
 function toggleFavorite(id,event){
-if(event) event.stopPropagation();
+
+if(event)
+event.stopPropagation();
 
 if(isFavorite(id)){
-favorites=favorites.filter(x=>x!==id);
+
+favorites=
+favorites.filter(x=>x!==id);
+
 showToast("Eliminado de favoritos");
+
 }else{
+
 favorites.push(id);
+
 showToast("⭐ Añadido a favoritos");
+
 }
 
 saveFavorites();
+
 renderTools();
+
+updateStats();
+
 }
 
-function renderTools(){
 
-const grid=document.getElementById("toolsGrid");
-const search=document.getElementById("search").value.toLowerCase();
+function showFavoriteTools(){
 
-let filtered=tools.filter(tool=>{
+category="Todas";
 
-const categoryOK=
-currentCategory==="Todas" ||
-tool.category===currentCategory;
+document.getElementById("search").value="";
 
-const searchOK=
-tool.name.toLowerCase().includes(search) ||
-tool.description.toLowerCase().includes(search) ||
-tool.category.toLowerCase().includes(search);
+document.getElementById("sectionTitle").textContent=
+"⭐ Mis favoritos";
 
-return categoryOK && searchOK;
+document.querySelectorAll(".category")
+.forEach(x=>x.classList.remove("active"));
+
+document.querySelector(".category")
+.classList.add("active");
+
+renderFavoriteCards();
+
+}
+
+
+function renderFavoriteCards(){
+
+const container=
+document.getElementById("tools");
+
+const fav=
+tools.filter(x=>favorites.includes(x.id));
+
+container.innerHTML="";
+
+fav.forEach(tool=>{
+container.appendChild(createCard(tool));
 });
 
-grid.innerHTML="";
+document.getElementById("toolCount").textContent=
+fav.length+" favoritos";
 
-filtered.forEach(tool=>{
+document.getElementById("empty").style.display=
+fav.length?"none":"block";
 
-const card=document.createElement("div");
-card.className="tool-card";
+}
+
+
+/* =========================
+   HISTORIAL
+========================= */
+
+function addHistory(id){
+
+history=
+history.filter(x=>x!==id);
+
+history.unshift(id);
+
+history=history.slice(0,6);
+
+localStorage.setItem(
+"hg7History",
+JSON.stringify(history)
+);
+
+renderHistory();
+
+updateStats();
+
+}
+
+
+function renderHistory(){
+
+const box=
+document.getElementById("historyList");
+
+box.innerHTML="";
+
+history.forEach(id=>{
+
+const tool=
+tools.find(x=>x.id===id);
+
+if(!tool)return;
+
+const item=
+document.createElement("div");
+
+item.className="history-item";
+
+item.innerHTML=`
+
+<div class="history-icon">
+${tool.icon}
+</div>
+
+<div class="history-name">
+${tool.name}
+</div>
+
+`;
+
+item.onclick=()=>{
+openTool(tool.id);
+};
+
+box.appendChild(item);
+
+});
+
+if(!history.length){
+
+box.innerHTML=`
+<div style="color:var(--muted)">
+Todavía no has utilizado herramientas.
+</div>
+`;
+
+}
+
+}
+
+
+function clearHistory(){
+
+history=[];
+
+localStorage.setItem(
+"hg7History",
+"[]"
+);
+
+renderHistory();
+
+updateStats();
+
+showToast("Historial eliminado");
+
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+function createCard(tool){
+
+const card=
+document.createElement("div");
+
+card.className="card";
 
 card.innerHTML=`
 
 <button
-class="favorite ${isFavorite(tool.id)?"active":""}"
-onclick="toggleFavorite('${tool.id}',event)"
-title="Favorito">
+class="star ${isFavorite(tool.id)?"active":""}"
+onclick="toggleFavorite('${tool.id}',event)">
 ${isFavorite(tool.id)?"★":"☆"}
 </button>
 
-<div class="tool-top">
+<div class="card-top">
 
-<div class="tool-icon">${tool.icon}</div>
+<div class="tool-icon">
+${tool.icon}
+</div>
 
 <div>
-<div class="tool-name">${tool.name}</div>
-<small style="color:var(--muted)">${tool.category}</small>
+
+<div class="tool-name">
+${tool.name}
+</div>
+
+<div class="tool-category">
+${tool.category}
 </div>
 
 </div>
 
-<p class="tool-description">
+</div>
+
+<p class="card-description">
 ${tool.description}
 </p>
 
-<div class="tool-actions">
+<div class="card-actions">
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="openTool('${tool.id}')">
-Abrir herramienta
+Abrir
+</button>
+
+<button
+class="secondary"
+onclick="shareTool('${tool.id}')">
+Compartir
 </button>
 
 </div>
 `;
 
-grid.appendChild(card);
+return card;
 
+}
+
+
+/* =========================
+   RENDER
+========================= */
+
+function renderTools(){
+
+const container=
+document.getElementById("tools");
+
+const search=
+document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+let filtered=
+tools.filter(tool=>{
+
+const categoryOK=
+category==="Todas"||
+tool.category===category;
+
+const searchOK=
+tool.name.toLowerCase().includes(search)||
+tool.description.toLowerCase().includes(search)||
+tool.category.toLowerCase().includes(search);
+
+return categoryOK&&searchOK;
+
+});
+
+container.innerHTML="";
+
+filtered.forEach(tool=>{
+container.appendChild(createCard(tool));
 });
 
 document.getElementById("toolCount").textContent=
@@ -854,13 +1342,42 @@ filtered.length+" herramientas";
 document.getElementById("empty").style.display=
 filtered.length?"none":"block";
 
+document.getElementById("sectionTitle").textContent=
+search?
+"🔎 Resultados de búsqueda":
+"🔥 Herramientas";
+
 }
+
+
+function setCategory(value,button){
+
+category=value;
+
+document.querySelectorAll(".category")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+document.getElementById("search").value="";
+
+renderTools();
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
 
 function openTool(id){
 
-const tool=tools.find(x=>x.id===id);
+const tool=
+tools.find(x=>x.id===id);
 
 if(!tool)return;
+
+addHistory(id);
 
 document.getElementById("modalTitle").textContent=
 tool.icon+" "+tool.name;
@@ -869,155 +1386,145 @@ document.getElementById("modalContent").innerHTML="";
 
 tool.action();
 
-document.getElementById("modal").classList.add("show");
+document.getElementById("modal")
+.classList.add("show");
+
 }
+
 
 function closeModal(){
-document.getElementById("modal").classList.remove("show");
+
+document.getElementById("modal")
+.classList.remove("show");
+
 }
 
-document.getElementById("modal").addEventListener("click",function(e){
 
-if(e.target===this){
+document.getElementById("modal")
+.addEventListener("click",function(e){
+
+if(e.target===this)
 closeModal();
-}
 
 });
 
-function filterCategory(category,button){
 
-currentCategory=category;
+/* =========================
+   COMPARTIR
+========================= */
 
-document.querySelectorAll(".category-btn")
-.forEach(x=>x.classList.remove("active"));
+async function shareTool(id){
 
-button.classList.add("active");
+const tool=
+tools.find(x=>x.id===id);
 
-renderTools();
+const url=
+window.location.href.split("#")[0]+"#"+id;
 
-}
+try{
 
-function searchTools(){
-renderTools();
-}
+if(navigator.share){
 
-function showFavorites(){
+await navigator.share({
 
-currentCategory="Todas";
+title:tool.name+
+" - HerramientasGratis",
 
-document.querySelectorAll(".category-btn")
-.forEach(x=>x.classList.remove("active"));
+text:
+"Prueba esta herramienta gratis: "+
+tool.name,
 
-document.querySelector(".category-btn").classList.add("active");
-
-const grid=document.getElementById("toolsGrid");
-
-const favTools=tools.filter(x=>favorites.includes(x.id));
-
-grid.innerHTML="";
-
-favTools.forEach(tool=>{
-
-const card=document.createElement("div");
-
-card.className="tool-card";
-
-card.innerHTML=`
-
-<button
-class="favorite active"
-onclick="toggleFavorite('${tool.id}',event)">
-★
-</button>
-
-<div class="tool-top">
-
-<div class="tool-icon">${tool.icon}</div>
-
-<div>
-<div class="tool-name">${tool.name}</div>
-<small style="color:var(--muted)">${tool.category}</small>
-</div>
-
-</div>
-
-<p class="tool-description">
-${tool.description}
-</p>
-
-<div class="tool-actions">
-
-<button class="primary-btn"
-onclick="openTool('${tool.id}')">
-Abrir herramienta
-</button>
-
-</div>
-`;
-
-grid.appendChild(card);
+url:url
 
 });
 
-document.getElementById("toolCount").textContent=
-favTools.length+" favoritos";
+}else{
 
-document.getElementById("empty").style.display=
-favTools.length?"none":"block";
+await navigator.clipboard.writeText(url);
 
-if(!favTools.length){
-
-document.getElementById("empty").innerHTML=`
-<h2>⭐ No tienes favoritos todavía</h2>
-<p>Presiona la estrella de una herramienta para guardarla.</p>
-`;
+showToast("🔗 Enlace copiado");
 
 }
 
-window.scrollTo({
-top:document.querySelector(".container").offsetTop-80,
-behavior:"smooth"
-});
+}catch{}
 
 }
 
-function showToast(message){
 
-const toast=document.getElementById("toast");
-
-toast.textContent=message;
-
-toast.classList.add("show");
-
-setTimeout(()=>{
-toast.classList.remove("show");
-},2000);
-
-}
+/* =========================
+   MODO OSCURO
+========================= */
 
 function toggleDark(){
 
 document.body.classList.toggle("dark");
 
 localStorage.setItem(
-"hgDark",
+"hg7Dark",
 document.body.classList.contains("dark")
 );
 
 }
 
-if(localStorage.getItem("hgDark")==="true"){
+if(localStorage.getItem("hg7Dark")==="true"){
+
 document.body.classList.add("dark");
+
 }
 
 
-/* CALCULADORA */
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+function updateStats(){
+
+document.getElementById("totalTools")
+.textContent=tools.length;
+
+document.getElementById("favoriteCount")
+.textContent=favorites.length;
+
+document.getElementById("historyCount")
+.textContent=history.length;
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+const toast=
+document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2000);
+
+}
+
+
+/* =========================
+   CALCULADORA
+========================= */
+
+let calcExpression="";
 
 function calculator(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<input id="calcDisplay"
+<input
+id="calcDisplay"
 class="calc-display"
 readonly
 value="0">
@@ -1046,103 +1553,142 @@ value="0">
 
 <button onclick="calcInput('0')">0</button>
 <button onclick="calcInput('.')">.</button>
-<button style="grid-column:span 2" class="operator"
+<button
+class="operator"
+style="grid-column:span 2"
 onclick="calcResult()">=</button>
 
 </div>
 `;
 
+calcExpression="";
+
 }
 
-let calcExpression="";
 
 function calcInput(value){
 
-if(calcExpression==="Error") calcExpression="";
-
 calcExpression+=value;
 
-document.getElementById("calcDisplay").value=
-calcExpression;
+document.getElementById("calcDisplay")
+.value=calcExpression;
 
 }
+
 
 function calcClear(){
 
 calcExpression="";
 
-document.getElementById("calcDisplay").value="0";
+document.getElementById("calcDisplay")
+.value="0";
 
 }
+
 
 function calcBack(){
 
-calcExpression=calcExpression.slice(0,-1);
+calcExpression=
+calcExpression.slice(0,-1);
 
-document.getElementById("calcDisplay").value=
+document.getElementById("calcDisplay")
+.value=
 calcExpression||"0";
 
 }
+
 
 function calcResult(){
 
 try{
 
-let expression=calcExpression.replace(/%/g,"/100");
+const expression=
+calcExpression.replace(/%/g,"/100");
 
-if(!/^[0-9+\-*/().\s]+$/.test(expression)){
+if(!/^[0-9+\-*/().\s]+$/.test(expression))
 throw new Error();
-}
 
-let result=Function(
-'"use strict";return ('+expression+')'
+const result=
+Function(
+'"use strict";return ('+
+expression+
+')'
 )();
 
 calcExpression=String(result);
 
-document.getElementById("calcDisplay").value=
-calcExpression;
+document.getElementById("calcDisplay")
+.value=calcExpression;
 
 }catch{
 
-calcExpression="Error";
+calcExpression="";
 
-document.getElementById("calcDisplay").value="Error";
+document.getElementById("calcDisplay")
+.value="Error";
 
 }
 
 }
 
 
-/* PORCENTAJE */
+/* =========================
+   PORCENTAJE
+========================= */
 
 function percentage(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
+
 <label>Valor</label>
-<input id="percentValue" type="number" placeholder="Ej: 500">
+
+<input
+id="percentValue"
+type="number"
+placeholder="500">
+
 </div>
 
-<div class="form-group">
-<label>Porcentaje (%)</label>
-<input id="percentNumber" type="number" placeholder="Ej: 20">
+<div class="form">
+
+<label>Porcentaje</label>
+
+<input
+id="percentNumber"
+type="number"
+placeholder="20">
+
 </div>
 
-<button class="primary-btn" onclick="calculatePercent()">
+<button
+class="primary"
+onclick="calculatePercent()">
 Calcular
 </button>
 
-<div class="result big" id="percentResult">Resultado</div>
+<div
+class="result result-big"
+id="percentResult">
+Resultado
+</div>
 `;
 
 }
 
+
 function calculatePercent(){
 
-const value=parseFloat(document.getElementById("percentValue").value);
-const percent=parseFloat(document.getElementById("percentNumber").value);
+const value=
+parseFloat(
+document.getElementById("percentValue").value
+);
+
+const percent=
+parseFloat(
+document.getElementById("percentNumber").value
+);
 
 if(isNaN(value)||isNaN(percent)){
 
@@ -1152,180 +1698,268 @@ return;
 
 }
 
-document.getElementById("percentResult").textContent=
-(value*percent/100).toLocaleString("es-CO");
+document.getElementById("percentResult")
+.textContent=
+(value*percent/100)
+.toLocaleString("es-CO");
 
 }
 
 
-/* DESCUENTO */
+/* =========================
+   DESCUENTO
+========================= */
 
 function discount(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
-<label>Precio original</label>
-<input id="discountPrice" type="number" placeholder="100000">
+<div class="form">
+
+<label>Precio</label>
+
+<input
+id="discountPrice"
+type="number"
+placeholder="100000">
+
 </div>
 
-<div class="form-group">
-<label>Descuento (%)</label>
-<input id="discountPercent" type="number" placeholder="20">
+<div class="form">
+
+<label>Descuento %</label>
+
+<input
+id="discountPercent"
+type="number"
+placeholder="20">
+
 </div>
 
-<button class="primary-btn" onclick="calculateDiscount()">
-Calcular descuento
+<button
+class="primary"
+onclick="calculateDiscount()">
+Calcular
 </button>
 
-<div class="result" id="discountResult">
+<div
+class="result"
+id="discountResult">
 Resultado
 </div>
 `;
 
 }
 
+
 function calculateDiscount(){
 
-const price=parseFloat(document.getElementById("discountPrice").value);
-const percent=parseFloat(document.getElementById("discountPercent").value);
+const price=
+parseFloat(
+document.getElementById("discountPrice").value
+);
 
-if(isNaN(price)||isNaN(percent))return;
+const percent=
+parseFloat(
+document.getElementById("discountPercent").value
+);
 
-const saving=price*percent/100;
-const finalPrice=price-saving;
+if(isNaN(price)||isNaN(percent))
+return;
+
+const saving=
+price*percent/100;
+
+const finalPrice=
+price-saving;
 
 document.getElementById("discountResult").innerHTML=`
-<strong>Ahorro:</strong> ${saving.toLocaleString("es-CO")}<br>
-<strong>Precio final:</strong> ${finalPrice.toLocaleString("es-CO")}
+
+<strong>Ahorro:</strong>
+${saving.toLocaleString("es-CO")}
+
+<br><br>
+
+<strong>Precio final:</strong>
+${finalPrice.toLocaleString("es-CO")}
+
 `;
 
 }
 
 
-/* EDAD */
+/* =========================
+   EDAD
+========================= */
 
 function ageCalculator(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
+
 <label>Fecha de nacimiento</label>
-<input id="birthDate" type="date">
+
+<input
+id="birthDate"
+type="date">
+
 </div>
 
-<button class="primary-btn" onclick="calculateAge()">
+<button
+class="primary"
+onclick="calculateAge()">
 Calcular edad
 </button>
 
-<div class="result big" id="ageResult">
+<div
+class="result result-big"
+id="ageResult">
 Edad
 </div>
 `;
 
 }
 
+
 function calculateAge(){
 
-const birth=new Date(document.getElementById("birthDate").value);
+const birth=
+new Date(
+document.getElementById("birthDate").value
+);
 
-if(isNaN(birth))return;
+if(isNaN(birth))
+return;
 
 const today=new Date();
 
-let age=today.getFullYear()-birth.getFullYear();
+let age=
+today.getFullYear()-
+birth.getFullYear();
 
-const month=today.getMonth()-birth.getMonth();
+const month=
+today.getMonth()-
+birth.getMonth();
 
-if(month<0 ||
-(month===0 && today.getDate()<birth.getDate())){
+if(
+month<0||
+(month===0&&
+today.getDate()<birth.getDate())
+){
 
 age--;
 
 }
 
-document.getElementById("ageResult").textContent=
-age+" años";
+document.getElementById("ageResult")
+.textContent=age+" años";
 
 }
 
 
-/* CONTADOR */
+/* =========================
+   CONTADOR
+========================= */
 
 function wordCounter(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
-<textarea id="counterText"
+<textarea
+id="counterText"
 oninput="updateCounter()"
-placeholder="Escribe o pega tu texto aquí..."></textarea>
+placeholder="Escribe o pega tu texto..."></textarea>
 
 </div>
 
-<div class="result" id="counterResult">
+<div
+class="result"
+id="counterResult">
+
 Palabras: 0<br>
 Caracteres: 0<br>
-Caracteres sin espacios: 0<br>
+Sin espacios: 0<br>
 Líneas: 0
+
 </div>
 `;
 
 }
 
+
 function updateCounter(){
 
-const text=document.getElementById("counterText").value;
+const text=
+document.getElementById("counterText")
+.value;
 
-const words=text.trim()
+const words=
+text.trim()
 ?text.trim().split(/\s+/).length
 :0;
 
 const chars=text.length;
 
-const noSpaces=text.replace(/\s/g,"").length;
+const noSpaces=
+text.replace(/\s/g,"").length;
 
-const lines=text?text.split("\n").length:0;
+const lines=
+text?text.split("\n").length:0;
 
-document.getElementById("counterResult").innerHTML=`
-Palabras: <strong>${words}</strong><br>
-Caracteres: <strong>${chars}</strong><br>
-Caracteres sin espacios: <strong>${noSpaces}</strong><br>
-Líneas: <strong>${lines}</strong>
+document.getElementById("counterResult")
+.innerHTML=`
+
+Palabras:
+<strong>${words}</strong><br>
+
+Caracteres:
+<strong>${chars}</strong><br>
+
+Sin espacios:
+<strong>${noSpaces}</strong><br>
+
+Líneas:
+<strong>${lines}</strong>
+
 `;
 
 }
 
 
-/* MAYUSCULAS */
+/* =========================
+   TEXTO
+========================= */
 
 function textCase(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
-<textarea id="caseText"
+<textarea
+id="caseText"
 placeholder="Escribe tu texto..."></textarea>
 
 </div>
 
-<div class="button-row">
+<div class="buttons">
 
-<button class="primary-btn"
-onclick="convertUpper()">
+<button class="primary"
+onclick="upperText()">
 MAYÚSCULAS
 </button>
 
-<button class="secondary-btn"
-onclick="convertLower()">
+<button class="secondary"
+onclick="lowerText()">
 minúsculas
 </button>
 
-<button class="secondary-btn"
-onclick="convertCapitalize()">
-Primera letra
+<button class="secondary"
+onclick="capitalizeText()">
+Primera Letra
 </button>
 
 </div>
@@ -1333,96 +1967,125 @@ Primera letra
 
 }
 
-function convertUpper(){
 
-const el=document.getElementById("caseText");
+function upperText(){
 
-el.value=el.value.toUpperCase();
+const el=
+document.getElementById("caseText");
 
-}
-
-function convertLower(){
-
-const el=document.getElementById("caseText");
-
-el.value=el.value.toLowerCase();
-
-}
-
-function convertCapitalize(){
-
-const el=document.getElementById("caseText");
-
-el.value=el.value.toLowerCase()
-.replace(/(^|\s)\S/g,l=>l.toUpperCase());
+el.value=
+el.value.toUpperCase();
 
 }
 
 
-/* LIMPIAR TEXTO */
+function lowerText(){
+
+const el=
+document.getElementById("caseText");
+
+el.value=
+el.value.toLowerCase();
+
+}
+
+
+function capitalizeText(){
+
+const el=
+document.getElementById("caseText");
+
+el.value=
+el.value
+.toLowerCase()
+.replace(
+/(^|\s)\S/g,
+x=>x.toUpperCase()
+);
+
+}
+
+
+/* =========================
+   LIMPIAR TEXTO
+========================= */
 
 function cleanText(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
-<textarea id="cleanInput"
-placeholder="Pega aquí tu texto..."></textarea>
+<textarea
+id="cleanInput"
+placeholder="Pega tu texto aquí..."></textarea>
 
 </div>
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="performClean()">
 Limpiar texto
 </button>
 
-<div class="form-group" style="margin-top:15px">
+<div class="form"
+style="margin-top:15px">
 
-<textarea id="cleanOutput"
+<textarea
+id="cleanOutput"
 readonly
 placeholder="Resultado..."></textarea>
 
 </div>
 
-<button class="secondary-btn"
+<button
+class="secondary"
 onclick="copyElement('cleanOutput')">
-📋 Copiar resultado
+📋 Copiar
 </button>
 `;
 
 }
 
+
 function performClean(){
 
-const text=document.getElementById("cleanInput").value;
+const text=
+document.getElementById("cleanInput")
+.value;
 
-const clean=text
+const clean=
+text
 .split("\n")
 .map(x=>x.trim())
-.filter(x=>x.length>0)
+.filter(x=>x)
 .join("\n")
 .replace(/[ \t]+/g," ");
 
-document.getElementById("cleanOutput").value=clean;
+document.getElementById("cleanOutput")
+.value=clean;
 
 }
 
 
-/* COPIAR */
+/* =========================
+   COPIAR
+========================= */
 
 function copyTool(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
-<textarea id="copyText"
-placeholder="Escribe el texto que quieres copiar..."></textarea>
+<textarea
+id="copyText"
+placeholder="Escribe el texto..."></textarea>
 
 </div>
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="copyElement('copyText')">
 📋 Copiar texto
 </button>
@@ -1430,13 +2093,15 @@ onclick="copyElement('copyText')">
 
 }
 
+
 async function copyElement(id){
 
-const text=document.getElementById(id).value;
+const text=
+document.getElementById(id).value;
 
 if(!text){
 
-showToast("No hay texto para copiar");
+showToast("No hay texto");
 
 return;
 
@@ -1446,7 +2111,7 @@ try{
 
 await navigator.clipboard.writeText(text);
 
-showToast("✅ Texto copiado");
+showToast("✅ Copiado");
 
 }catch{
 
@@ -1457,17 +2122,20 @@ showToast("No se pudo copiar");
 }
 
 
-/* PASSWORD */
+/* =========================
+   CONTRASEÑAS
+========================= */
 
 function passwordGenerator(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
 <label>Longitud</label>
 
-<input id="passLength"
+<input
+id="passLength"
 type="number"
 min="4"
 max="100"
@@ -1475,43 +2143,59 @@ value="16">
 
 </div>
 
-<div class="form-group">
+<div class="form">
 
 <label>
-<input id="passNumbers" type="checkbox" checked>
+<input
+id="passNumbers"
+type="checkbox"
+checked>
  Incluir números
 </label>
 
+<br>
+
 <label>
-<input id="passSymbols" type="checkbox" checked>
+<input
+id="passSymbols"
+type="checkbox"
+checked>
  Incluir símbolos
 </label>
 
 </div>
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="generatePassword()">
 Generar contraseña
 </button>
 
-<div class="result" id="passwordResult">
-Tu contraseña aparecerá aquí.
+<div
+class="result"
+id="passwordResult">
 </div>
 
-<button class="secondary-btn"
-onclick="copyPassword()"
-style="margin-top:10px">
+<div class="buttons">
+
+<button
+class="secondary"
+onclick="copyPassword()">
 📋 Copiar
 </button>
+
+</div>
 `;
 
 generatePassword();
 
 }
 
+
 function generatePassword(){
 
-let length=parseInt(
+let length=
+parseInt(
 document.getElementById("passLength").value
 )||16;
 
@@ -1519,38 +2203,58 @@ let chars=
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
 "abcdefghijklmnopqrstuvwxyz";
 
-if(document.getElementById("passNumbers").checked)
+if(
+document.getElementById("passNumbers")
+.checked
+){
+
 chars+="0123456789";
 
-if(document.getElementById("passSymbols").checked)
+}
+
+if(
+document.getElementById("passSymbols")
+.checked
+){
+
 chars+="!@#$%^&*()_+-=[]{}";
+
+}
 
 let password="";
 
 for(let i=0;i<length;i++){
 
-password+=chars[
-Math.floor(Math.random()*chars.length)
+password+=
+chars[
+Math.floor(
+Math.random()*chars.length
+)
 ];
 
 }
 
-document.getElementById("passwordResult").textContent=password;
+document.getElementById("passwordResult")
+.textContent=password;
 
 }
 
+
 function copyPassword(){
 
-const text=document.getElementById("passwordResult").textContent;
-
-navigator.clipboard.writeText(text);
+navigator.clipboard.writeText(
+document.getElementById("passwordResult")
+.textContent
+);
 
 showToast("🔐 Contraseña copiada");
 
 }
 
 
-/* RANDOM */
+/* =========================
+   RANDOM
+========================= */
 
 function randomNumber(){
 
@@ -1558,24 +2262,38 @@ document.getElementById("modalContent").innerHTML=`
 
 <div class="row">
 
-<div class="form-group">
+<div class="form">
+
 <label>Mínimo</label>
-<input id="randomMin" type="number" value="1">
+
+<input
+id="randomMin"
+type="number"
+value="1">
+
 </div>
 
-<div class="form-group">
+<div class="form">
+
 <label>Máximo</label>
-<input id="randomMax" type="number" value="100">
-</div>
+
+<input
+id="randomMax"
+type="number"
+value="100">
 
 </div>
 
-<button class="primary-btn"
+</div>
+
+<button
+class="primary"
 onclick="generateRandom()">
 Generar
 </button>
 
-<div class="result big"
+<div
+class="result result-big"
 id="randomResult">
 ?
 </div>
@@ -1583,11 +2301,18 @@ id="randomResult">
 
 }
 
+
 function generateRandom(){
 
-let min=parseInt(document.getElementById("randomMin").value);
+let min=
+parseInt(
+document.getElementById("randomMin").value
+);
 
-let max=parseInt(document.getElementById("randomMax").value);
+let max=
+parseInt(
+document.getElementById("randomMax").value
+);
 
 if(min>max){
 
@@ -1596,34 +2321,43 @@ if(min>max){
 }
 
 const number=
-Math.floor(Math.random()*(max-min+1))+min;
+Math.floor(
+Math.random()*
+(max-min+1)
+)+min;
 
-document.getElementById("randomResult").textContent=number;
+document.getElementById("randomResult")
+.textContent=number;
 
 }
 
 
-/* URL */
+/* =========================
+   URL
+========================= */
 
 function urlEncoder(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
-<textarea id="urlText"
-placeholder="Escribe el texto o URL..."></textarea>
+<textarea
+id="urlText"
+placeholder="Escribe texto o URL..."></textarea>
 
 </div>
 
-<div class="button-row">
+<div class="buttons">
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="encodeURL()">
 Codificar
 </button>
 
-<button class="secondary-btn"
+<button
+class="secondary"
 onclick="decodeURL()">
 Decodificar
 </button>
@@ -1633,60 +2367,71 @@ Decodificar
 
 }
 
+
 function encodeURL(){
 
-const el=document.getElementById("urlText");
+const el=
+document.getElementById("urlText");
 
-el.value=encodeURIComponent(el.value);
+el.value=
+encodeURIComponent(el.value);
 
 }
+
 
 function decodeURL(){
 
-const el=document.getElementById("urlText");
+const el=
+document.getElementById("urlText");
 
 try{
 
-el.value=decodeURIComponent(el.value);
+el.value=
+decodeURIComponent(el.value);
 
 }catch{
 
-showToast("Texto no válido");
+showToast("Texto inválido");
 
 }
 
 }
 
 
-/* COLOR */
+/* =========================
+   COLOR
+========================= */
 
 function colorPicker(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
 <label>Selecciona un color</label>
 
 <input
-type="color"
 id="colorInput"
+type="color"
 value="#2563eb"
 oninput="updateColor()"
 style="height:60px">
 
 </div>
 
-<div class="color-preview"
+<div
+class="color-preview"
 id="colorPreview">
 </div>
 
-<div class="result"
+<div
+class="result"
 id="colorCode">
 #2563EB
 </div>
 
-<button class="secondary-btn"
+<button
+class="secondary"
 onclick="copyColor()">
 📋 Copiar HEX
 </button>
@@ -1696,21 +2441,27 @@ updateColor();
 
 }
 
+
 function updateColor(){
 
-const color=document.getElementById("colorInput").value;
+const color=
+document.getElementById("colorInput")
+.value;
 
-document.getElementById("colorPreview").style.background=color;
+document.getElementById("colorPreview")
+.style.background=color;
 
-document.getElementById("colorCode").textContent=
-color.toUpperCase();
+document.getElementById("colorCode")
+.textContent=color.toUpperCase();
 
 }
+
 
 function copyColor(){
 
 navigator.clipboard.writeText(
-document.getElementById("colorCode").textContent
+document.getElementById("colorCode")
+.textContent
 );
 
 showToast("🎨 Color copiado");
@@ -1718,17 +2469,20 @@ showToast("🎨 Color copiado");
 }
 
 
-/* TEMPERATURA */
+/* =========================
+   TEMPERATURA
+========================= */
 
 function temperature(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
 <label>Valor</label>
 
-<input id="tempValue"
+<input
+id="tempValue"
 type="number"
 value="0">
 
@@ -1736,9 +2490,9 @@ value="0">
 
 <div class="row">
 
-<div class="form-group">
+<div class="form">
 
-<label>De</label>
+<label>Desde</label>
 
 <select id="tempFrom">
 
@@ -1750,9 +2504,9 @@ value="0">
 
 </div>
 
-<div class="form-group">
+<div class="form">
 
-<label>A</label>
+<label>Hacia</label>
 
 <select id="tempTo">
 
@@ -1766,12 +2520,14 @@ value="0">
 
 </div>
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="convertTemperature()">
 Convertir
 </button>
 
-<div class="result big"
+<div
+class="result result-big"
 id="tempResult">
 Resultado
 </div>
@@ -1779,49 +2535,56 @@ Resultado
 
 }
 
+
 function convertTemperature(){
 
-let value=parseFloat(
+const value=
+parseFloat(
 document.getElementById("tempValue").value
 );
 
-let from=document.getElementById("tempFrom").value;
+const from=
+document.getElementById("tempFrom").value;
 
-let to=document.getElementById("tempTo").value;
+const to=
+document.getElementById("tempTo").value;
 
-let celsius;
+let c;
 
-if(from==="C")celsius=value;
+if(from==="C")c=value;
 
-if(from==="F")celsius=(value-32)*5/9;
+if(from==="F")c=(value-32)*5/9;
 
-if(from==="K")celsius=value-273.15;
+if(from==="K")c=value-273.15;
 
 let result;
 
-if(to==="C")result=celsius;
+if(to==="C")result=c;
 
-if(to==="F")result=celsius*9/5+32;
+if(to==="F")result=c*9/5+32;
 
-if(to==="K")result=celsius+273.15;
+if(to==="K")result=c+273.15;
 
-document.getElementById("tempResult").textContent=
-result.toFixed(2);
+document.getElementById("tempResult")
+.textContent=result.toFixed(2);
 
 }
 
 
-/* UNIDADES */
+/* =========================
+   UNIDADES
+========================= */
 
 function units(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="form-group">
+<div class="form">
 
 <label>Valor</label>
 
-<input id="unitValue"
+<input
+id="unitValue"
 type="number"
 value="1">
 
@@ -1829,32 +2592,32 @@ value="1">
 
 <div class="row">
 
-<div class="form-group">
+<div class="form">
 
-<label>De</label>
+<label>Desde</label>
 
 <select id="unitFrom">
 
 <option value="m">Metros</option>
 <option value="km">Kilómetros</option>
-<option value="mi">Millas</option>
 <option value="cm">Centímetros</option>
+<option value="mi">Millas</option>
 <option value="ft">Pies</option>
 
 </select>
 
 </div>
 
-<div class="form-group">
+<div class="form">
 
-<label>A</label>
+<label>Hacia</label>
 
 <select id="unitTo">
 
 <option value="km">Kilómetros</option>
 <option value="m">Metros</option>
-<option value="mi">Millas</option>
 <option value="cm">Centímetros</option>
+<option value="mi">Millas</option>
 <option value="ft">Pies</option>
 
 </select>
@@ -1863,12 +2626,14 @@ value="1">
 
 </div>
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="convertUnits()">
 Convertir
 </button>
 
-<div class="result big"
+<div
+class="result result-big"
 id="unitResult">
 Resultado
 </div>
@@ -1876,64 +2641,79 @@ Resultado
 
 }
 
+
 function convertUnits(){
 
-const value=parseFloat(
+const value=
+parseFloat(
 document.getElementById("unitValue").value
 );
 
-const from=document.getElementById("unitFrom").value;
+const from=
+document.getElementById("unitFrom").value;
 
-const to=document.getElementById("unitTo").value;
+const to=
+document.getElementById("unitTo").value;
 
 const meters={
-
 m:1,
 km:1000,
-mi:1609.344,
 cm:.01,
+mi:1609.344,
 ft:.3048
-
 };
 
-const result=value*meters[from]/meters[to];
+const result=
+value*meters[from]/meters[to];
 
-document.getElementById("unitResult").textContent=
-result.toLocaleString("es-CO",{
+document.getElementById("unitResult")
+.textContent=
+result.toLocaleString(
+"es-CO",
+{
 maximumFractionDigits:8
-});
+}
+);
 
 }
 
 
-/* CRONOMETRO */
+/* =========================
+   CRONÓMETRO
+========================= */
 
 let stopwatchInterval=null;
+
 let stopwatchSeconds=0;
 
 function stopwatch(){
 
 document.getElementById("modalContent").innerHTML=`
 
-<div class="timer"
+<div
+class="timer"
 id="stopwatchDisplay">
 00:00:00
 </div>
 
-<div class="button-row"
+<div
+class="buttons"
 style="justify-content:center">
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="startStopwatch()">
 ▶ Iniciar
 </button>
 
-<button class="secondary-btn"
+<button
+class="secondary"
 onclick="pauseStopwatch()">
 ⏸ Pausar
 </button>
 
-<button class="danger-btn"
+<button
+class="secondary"
 onclick="resetStopwatch()">
 ↻ Reiniciar
 </button>
@@ -1945,11 +2725,14 @@ updateStopwatch();
 
 }
 
+
 function startStopwatch(){
 
-if(stopwatchInterval)return;
+if(stopwatchInterval)
+return;
 
-stopwatchInterval=setInterval(()=>{
+stopwatchInterval=
+setInterval(()=>{
 
 stopwatchSeconds++;
 
@@ -1959,6 +2742,7 @@ updateStopwatch();
 
 }
 
+
 function pauseStopwatch(){
 
 clearInterval(stopwatchInterval);
@@ -1966,6 +2750,7 @@ clearInterval(stopwatchInterval);
 stopwatchInterval=null;
 
 }
+
 
 function resetStopwatch(){
 
@@ -1977,31 +2762,39 @@ updateStopwatch();
 
 }
 
+
 function updateStopwatch(){
 
-const h=Math.floor(stopwatchSeconds/3600);
+const el=
+document.getElementById("stopwatchDisplay");
 
-const m=Math.floor(
+if(!el)return;
+
+const h=
+Math.floor(stopwatchSeconds/3600);
+
+const m=
+Math.floor(
 (stopwatchSeconds%3600)/60
 );
 
-const s=stopwatchSeconds%60;
+const s=
+stopwatchSeconds%60;
 
-const display=
+el.textContent=
 String(h).padStart(2,"0")+":"+
 String(m).padStart(2,"0")+":"+
 String(s).padStart(2,"0");
 
-const el=document.getElementById("stopwatchDisplay");
-
-if(el)el.textContent=display;
-
 }
 
 
-/* TEMPORIZADOR */
+/* =========================
+   TEMPORIZADOR
+========================= */
 
 let timerInterval=null;
+
 let timerSeconds=0;
 
 function timer(){
@@ -2010,37 +2803,57 @@ document.getElementById("modalContent").innerHTML=`
 
 <div class="row">
 
-<div class="form-group">
+<div class="form">
+
 <label>Minutos</label>
-<input id="timerMinutes" type="number" min="0" value="1">
+
+<input
+id="timerMinutes"
+type="number"
+min="0"
+value="1">
+
 </div>
 
-<div class="form-group">
+<div class="form">
+
 <label>Segundos</label>
-<input id="timerSeconds" type="number" min="0" max="59" value="0">
-</div>
+
+<input
+id="timerSecondsInput"
+type="number"
+min="0"
+max="59"
+value="0">
 
 </div>
 
-<div class="timer"
+</div>
+
+<div
+class="timer"
 id="timerDisplay">
 01:00
 </div>
 
-<div class="button-row"
+<div
+class="buttons"
 style="justify-content:center">
 
-<button class="primary-btn"
+<button
+class="primary"
 onclick="startTimer()">
 ▶ Iniciar
 </button>
 
-<button class="secondary-btn"
+<button
+class="secondary"
 onclick="pauseTimer()">
 ⏸ Pausar
 </button>
 
-<button class="danger-btn"
+<button
+class="secondary"
 onclick="resetTimer()">
 ↻ Reiniciar
 </button>
@@ -2052,11 +2865,14 @@ resetTimer();
 
 }
 
+
 function startTimer(){
 
-if(timerInterval)return;
+if(timerInterval)
+return;
 
-timerInterval=setInterval(()=>{
+timerInterval=
+setInterval(()=>{
 
 if(timerSeconds<=0){
 
@@ -2078,6 +2894,7 @@ updateTimer();
 
 }
 
+
 function pauseTimer(){
 
 clearInterval(timerInterval);
@@ -2086,33 +2903,41 @@ timerInterval=null;
 
 }
 
+
 function resetTimer(){
 
 pauseTimer();
 
-const minutes=parseInt(
+const minutes=
+parseInt(
 document.getElementById("timerMinutes")?.value
 )||0;
 
-const seconds=parseInt(
-document.getElementById("timerSeconds")?.value
+const seconds=
+parseInt(
+document.getElementById("timerSecondsInput")?.value
 )||0;
 
-timerSeconds=minutes*60+seconds;
+timerSeconds=
+minutes*60+seconds;
 
 updateTimer();
 
 }
 
+
 function updateTimer(){
 
-const el=document.getElementById("timerDisplay");
+const el=
+document.getElementById("timerDisplay");
 
 if(!el)return;
 
-const m=Math.floor(timerSeconds/60);
+const m=
+Math.floor(timerSeconds/60);
 
-const s=timerSeconds%60;
+const s=
+timerSeconds%60;
 
 el.textContent=
 String(m).padStart(2,"0")+":"+
@@ -2121,9 +2946,15 @@ String(s).padStart(2,"0");
 }
 
 
-/* INICIO */
+/* =========================
+   INICIO
+========================= */
 
 renderTools();
+
+renderHistory();
+
+updateStats();
 
 </script>
 
