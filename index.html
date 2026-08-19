@@ -11,7 +11,34 @@
 content="HerramientasGratis: herramientas online gratuitas para cálculos, conversiones, texto, productividad, seguridad, diseño y mucho más.">
 
 <meta name="robots" content="index, follow">
+<meta name="author" content="HerramientasGratis">
 
+<meta name="keywords"
+content="herramientas gratis, herramientas online, calculadora online, conversor online, herramientas gratuitas, calculadoras gratis, herramientas de texto, generador de contraseñas">
+
+<meta name="googlebot"
+content="index, follow">
+
+<meta property="og:title"
+content="HerramientasGratis | Herramientas online gratuitas">
+
+<meta property="og:description"
+content="Calculadoras, conversores, herramientas de texto, productividad y mucho más.">
+
+<meta property="og:type"
+content="website">
+
+<meta property="og:locale"
+content="es_CO">
+
+<meta name="twitter:card"
+content="summary">
+
+<meta name="twitter:title"
+content="HerramientasGratis">
+
+<meta name="twitter:description"
+content="Herramientas online gratuitas, rápidas y fáciles de utilizar.">
 <style>
 
 :root{
@@ -4979,7 +5006,1199 @@ button.style.transform=
 
 }
 
+/* =====================================================
+   HERRAMIENTASGRATIS 9.0
+   PARTE 6 — 10 NUEVAS HERRAMIENTAS
+   ===================================================== */
 
+
+/* =====================================================
+   CALCULADORA DE IVA
+   ===================================================== */
+
+function openVAT(){
+
+createModal(
+"💰 Calculadora de IVA",
+`
+
+<input
+id="vatPrice"
+type="number"
+placeholder="Precio"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="vatPercent"
+type="number"
+value="19"
+placeholder="IVA (%)"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateVAT()">
+
+Calcular IVA
+
+</button>
+
+<div
+id="vatResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculateVAT(){
+
+const price =
+parseFloat(
+document.getElementById("vatPrice").value
+);
+
+const percent =
+parseFloat(
+document.getElementById("vatPercent").value
+);
+
+if(
+isNaN(price) ||
+isNaN(percent)
+){
+
+document.getElementById(
+"vatResult"
+).textContent=
+"Introduce valores válidos.";
+
+return;
+
+}
+
+const vat =
+price*percent/100;
+
+const total =
+price+vat;
+
+document.getElementById(
+"vatResult"
+).innerHTML=
+
+"IVA: $"+
+vat.toFixed(2)+
+"<br><br>"+
+"Total: $"+
+total.toFixed(2);
+
+}
+
+
+/* =====================================================
+   CALCULADORA DE INTERÉS SIMPLE
+   ===================================================== */
+
+function openInterest(){
+
+createModal(
+"📈 Interés simple",
+`
+
+<input
+id="interestCapital"
+type="number"
+placeholder="Capital"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="interestRate"
+type="number"
+placeholder="Tasa anual (%)"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="interestTime"
+type="number"
+placeholder="Tiempo en años"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateInterest()">
+
+Calcular
+
+</button>
+
+<div
+id="interestResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculateInterest(){
+
+const capital =
+parseFloat(
+document.getElementById(
+"interestCapital"
+).value
+);
+
+const rate =
+parseFloat(
+document.getElementById(
+"interestRate"
+).value
+);
+
+const time =
+parseFloat(
+document.getElementById(
+"interestTime"
+).value
+);
+
+const interest =
+capital*(rate/100)*time;
+
+const total =
+capital+interest;
+
+document.getElementById(
+"interestResult"
+).innerHTML=
+
+"Interés: $"+
+interest.toFixed(2)+
+"<br><br>"+
+"Total: $"+
+total.toFixed(2);
+
+}
+
+
+/* =====================================================
+   CALCULADORA DE ÁREA
+   ===================================================== */
+
+function openArea(){
+
+createModal(
+"📐 Calculadora de área",
+`
+
+<select
+id="areaType"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option value="square">
+Cuadrado
+</option>
+
+<option value="rectangle">
+Rectángulo
+</option>
+
+<option value="triangle">
+Triángulo
+</option>
+
+<option value="circle">
+Círculo
+</option>
+
+</select>
+
+<input
+id="areaA"
+type="number"
+placeholder="Medida"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="areaB"
+type="number"
+placeholder="Segunda medida (si aplica)"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateArea()">
+
+Calcular área
+
+</button>
+
+<div
+id="areaResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculateArea(){
+
+const type =
+document.getElementById(
+"areaType"
+).value;
+
+const a =
+parseFloat(
+document.getElementById("areaA").value
+);
+
+const b =
+parseFloat(
+document.getElementById("areaB").value
+);
+
+let result;
+
+if(type==="square"){
+
+result=a*a;
+
+}
+
+if(type==="rectangle"){
+
+result=a*b;
+
+}
+
+if(type==="triangle"){
+
+result=(a*b)/2;
+
+}
+
+if(type==="circle"){
+
+result=Math.PI*a*a;
+
+}
+
+if(
+isNaN(result)
+){
+
+document.getElementById(
+"areaResult"
+).textContent=
+"Introduce medidas válidas.";
+
+return;
+
+}
+
+document.getElementById(
+"areaResult"
+).textContent=
+"Área = "+result.toFixed(2);
+
+}
+
+
+/* =====================================================
+   CALCULADORA DE PERÍMETRO
+   ===================================================== */
+
+function openPerimeter(){
+
+createModal(
+"📏 Calculadora de perímetro",
+`
+
+<select
+id="perimeterType"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option value="square">
+Cuadrado
+</option>
+
+<option value="rectangle">
+Rectángulo
+</option>
+
+<option value="circle">
+Círculo
+</option>
+
+</select>
+
+<input
+id="perimeterA"
+type="number"
+placeholder="Medida"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<input
+id="perimeterB"
+type="number"
+placeholder="Segunda medida"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculatePerimeter()">
+
+Calcular
+
+</button>
+
+<div
+id="perimeterResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculatePerimeter(){
+
+const type =
+document.getElementById(
+"perimeterType"
+).value;
+
+const a =
+parseFloat(
+document.getElementById(
+"perimeterA"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"perimeterB"
+).value
+);
+
+let result;
+
+if(type==="square")
+result=4*a;
+
+if(type==="rectangle")
+result=2*(a+b);
+
+if(type==="circle")
+result=2*Math.PI*a;
+
+if(isNaN(result)){
+
+document.getElementById(
+"perimeterResult"
+).textContent=
+"Introduce valores válidos.";
+
+return;
+
+}
+
+document.getElementById(
+"perimeterResult"
+).textContent=
+"Perímetro = "+
+result.toFixed(2);
+
+}
+
+
+/* =====================================================
+   CALCULADORA DE DÍAS ENTRE FECHAS
+   ===================================================== */
+
+function openDateDifference(){
+
+createModal(
+"📅 Días entre fechas",
+`
+
+<label>
+Fecha inicial
+</label>
+
+<input
+id="dateStart"
+type="date"
+style="
+width:100%;
+padding:12px;
+margin:6px 0 15px;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<label>
+Fecha final
+</label>
+
+<input
+id="dateEnd"
+type="date"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateDateDifference()">
+
+Calcular
+
+</button>
+
+<div
+id="dateDifferenceResult"
+style="
+margin-top:20px;
+padding:15px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculateDateDifference(){
+
+const start =
+new Date(
+document.getElementById(
+"dateStart"
+).value
+);
+
+const end =
+new Date(
+document.getElementById(
+"dateEnd"
+).value
+);
+
+if(
+isNaN(start) ||
+isNaN(end)
+){
+
+document.getElementById(
+"dateDifferenceResult"
+).textContent=
+"Selecciona ambas fechas.";
+
+return;
+
+}
+
+const difference =
+Math.abs(
+end-start
+);
+
+const days =
+Math.ceil(
+difference/
+(1000*60*60*24)
+);
+
+document.getElementById(
+"dateDifferenceResult"
+).textContent=
+"Hay "+days+" días de diferencia.";
+
+}
+
+
+/* =====================================================
+   CONTADOR DE DÍAS PARA UNA FECHA
+   ===================================================== */
+
+function openCountdownDate(){
+
+createModal(
+"🎯 Cuenta regresiva",
+`
+
+<label>
+Selecciona una fecha futura
+</label>
+
+<input
+id="countdownDate"
+type="datetime-local"
+style="
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="calculateCountdown()">
+
+Calcular
+
+</button>
+
+<div
+id="countdownResult"
+style="
+margin-top:20px;
+padding:20px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:900;
+text-align:center;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function calculateCountdown(){
+
+const target =
+new Date(
+document.getElementById(
+"countdownDate"
+).value
+);
+
+const now =
+new Date();
+
+const difference =
+target-now;
+
+if(
+difference<=0
+){
+
+document.getElementById(
+"countdownResult"
+).textContent=
+"La fecha ya pasó.";
+
+return;
+
+}
+
+const days =
+Math.floor(
+difference/
+86400000
+);
+
+const hours =
+Math.floor(
+difference/
+3600000
+)%24;
+
+const minutes =
+Math.floor(
+difference/
+60000
+)%60;
+
+document.getElementById(
+"countdownResult"
+).innerHTML=
+
+days+" días<br>"+
+hours+" horas<br>"+
+minutes+" minutos";
+
+}
+
+
+/* =====================================================
+   CONVERSOR DE NÚMEROS ROMANOS
+   ===================================================== */
+
+function openRoman(){
+
+createModal(
+"🏛️ Conversor a números romanos",
+`
+
+<input
+id="romanNumber"
+type="number"
+min="1"
+max="3999"
+placeholder="Número entre 1 y 3999"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+class="primary-button"
+onclick="convertRoman()">
+
+Convertir
+
+</button>
+
+<div
+id="romanResult"
+style="
+margin-top:20px;
+padding:20px;
+background:#eff6ff;
+border-radius:12px;
+font-size:1.5rem;
+font-weight:900;
+text-align:center;
+">
+
+Resultado:
+
+</div>
+
+`);
+}
+
+
+function convertRoman(){
+
+let number =
+parseInt(
+document.getElementById(
+"romanNumber"
+).value
+);
+
+if(
+number<1 ||
+number>3999 ||
+isNaN(number)
+){
+
+document.getElementById(
+"romanResult"
+).textContent=
+"Introduce un número entre 1 y 3999.";
+
+return;
+
+}
+
+const values=[
+1000,900,500,400,
+100,90,50,40,
+10,9,5,4,1
+];
+
+const symbols=[
+"M","CM","D","CD",
+"C","XC","L","XL",
+"X","IX","V","IV","I"
+];
+
+let result="";
+
+for(
+let i=0;
+i<values.length;
+i++
+){
+
+while(
+number>=values[i]
+){
+
+result+=symbols[i];
+
+number-=values[i];
+
+}
+
+}
+
+document.getElementById(
+"romanResult"
+).textContent=
+result;
+
+}
+
+
+/* =====================================================
+   GENERADOR DE COLOR RGB
+   ===================================================== */
+
+function openRGB(){
+
+createModal(
+"🎨 Generador RGB",
+`
+
+<button
+class="primary-button"
+onclick="generateRGB()">
+
+Generar color
+
+</button>
+
+<div
+id="rgbPreview"
+style="
+height:180px;
+margin-top:20px;
+border-radius:18px;
+background:rgb(37,99,235);
+">
+</div>
+
+<div
+id="rgbResult"
+style="
+margin-top:15px;
+padding:15px;
+background:#f1f5f9;
+border-radius:12px;
+font-family:monospace;
+font-weight:800;
+">
+
+RGB:
+
+</div>
+
+`);
+}
+
+
+function generateRGB(){
+
+const r =
+Math.floor(
+Math.random()*256
+);
+
+const g =
+Math.floor(
+Math.random()*256
+);
+
+const b =
+Math.floor(
+Math.random()*256
+);
+
+const rgb=
+`rgb(${r}, ${g}, ${b})`;
+
+document.getElementById(
+"rgbPreview"
+).style.background=
+rgb;
+
+document.getElementById(
+"rgbResult"
+).textContent=
+rgb;
+
+}
+
+
+/* =====================================================
+   GENERADOR DE CONTRASEÑA NUMÉRICA
+   ===================================================== */
+
+function openPIN(){
+
+createModal(
+"🔢 Generador de PIN",
+`
+
+<select
+id="pinLength"
+style="
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<option value="4">
+4 dígitos
+</option>
+
+<option value="6" selected>
+6 dígitos
+</option>
+
+<option value="8">
+8 dígitos
+</option>
+
+</select>
+
+<button
+class="primary-button"
+onclick="generatePIN()">
+
+Generar PIN
+
+</button>
+
+<div
+id="pinResult"
+style="
+margin-top:20px;
+padding:20px;
+background:#eff6ff;
+border-radius:12px;
+font-size:2rem;
+font-weight:900;
+text-align:center;
+letter-spacing:8px;
+">
+
+----
+
+</div>
+
+`);
+}
+
+
+function generatePIN(){
+
+const length =
+parseInt(
+document.getElementById(
+"pinLength"
+).value
+);
+
+let pin="";
+
+for(
+let i=0;
+i<length;
+i++
+){
+
+pin+=
+Math.floor(
+Math.random()*10
+);
+
+}
+
+document.getElementById(
+"pinResult"
+).textContent=
+pin;
+
+}
+
+
+/* =====================================================
+   NUEVAS TARJETAS
+   ===================================================== */
+
+function addPart6Tools(){
+
+const grid =
+document.getElementById(
+"toolsGrid"
+);
+
+if(!grid)
+return;
+
+const tools=[
+
+{
+icon:"💰",
+name:"Calculadora de IVA",
+category:"Calculo",
+search:"iva impuesto impuestos colombia precio",
+action:"openVAT()",
+description:"Calcula el IVA y el precio total."
+},
+
+{
+icon:"📈",
+name:"Interés simple",
+category:"Calculo",
+search:"interes tasa capital financiero",
+action:"openInterest()",
+description:"Calcula intereses simples."
+},
+
+{
+icon:"📐",
+name:"Área",
+category:"Calculo",
+search:"area cuadrado rectangulo triangulo circulo",
+action:"openArea()",
+description:"Calcula áreas de figuras geométricas."
+},
+
+{
+icon:"📏",
+name:"Perímetro",
+category:"Calculo",
+search:"perimetro cuadrado rectangulo circulo",
+action:"openPerimeter()",
+description:"Calcula el perímetro de figuras."
+},
+
+{
+icon:"📅",
+name:"Días entre fechas",
+category:"Calculo",
+search:"dias fechas calendario diferencia",
+action:"openDateDifference()",
+description:"Calcula los días entre dos fechas."
+},
+
+{
+icon:"🎯",
+name:"Cuenta regresiva",
+category:"Productividad",
+search:"cuenta regresiva fecha tiempo",
+action:"openCountdownDate()",
+description:"Calcula cuánto falta para una fecha."
+},
+
+{
+icon:"🏛️",
+name:"Números romanos",
+category:"Texto",
+search:"romanos numeros convertir",
+action:"openRoman()",
+description:"Convierte números a números romanos."
+},
+
+{
+icon:"🎨",
+name:"Generador RGB",
+category:"Productividad",
+search:"rgb color colores diseño",
+action:"openRGB()",
+description:"Genera colores RGB aleatorios."
+},
+
+{
+icon:"🔢",
+name:"Generador de PIN",
+category:"Seguridad",
+search:"pin codigo numero seguridad",
+action:"openPIN()",
+description:"Genera códigos PIN aleatorios."
+}
+
+];
+
+tools.forEach(tool=>{
+
+const article =
+document.createElement("article");
+
+article.className="tool-card";
+
+article.dataset.category=
+tool.category;
+
+article.dataset.search=
+tool.search;
+
+article.innerHTML=`
+
+<div class="tool-icon">
+${tool.icon}
+</div>
+
+<h3>
+${tool.name}
+</h3>
+
+<p>
+${tool.description}
+</p>
+
+<button
+class="tool-button"
+onclick="${tool.action}">
+
+Abrir herramienta
+
+</button>
+
+`;
+
+grid.appendChild(article);
+
+});
+
+updateToolCounter();
+
+}
+
+
+/* =====================================================
+   INICIALIZACIÓN PARTE 6
+   ===================================================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+setTimeout(()=>{
+
+addPart6Tools();
+
+updateToolCounter();
+
+animateTools();
+
+},200);
+
+});
 /* =====================================================
    INICIO GENERAL
    ===================================================== */
