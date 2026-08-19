@@ -3,675 +3,654 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HerramientasGratis - Herramientas Online Gratis</title>
+
+<meta name="description" content="HerramientasGratis: calculadoras, conversores, herramientas de texto, seguridad, productividad y mucho más. Gratis, rápido y sin registros.">
+
+<meta name="robots" content="index, follow">
+
 <meta name="theme-color" content="#2563eb">
-
-<title>HerramientasGratis 9.0</title>
-
-<meta name="description"
-content="HerramientasGratis 9.0 - herramientas online gratuitas para cálculos, texto, conversiones, seguridad, productividad, diseño y mucho más.">
 
 <style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 :root{
---bg:#f4f7fb;
---card:#ffffff;
---text:#172033;
---muted:#64748b;
---primary:#2563eb;
---primary-dark:#1d4ed8;
---secondary:#7c3aed;
---border:#e2e8f0;
---success:#16a34a;
---danger:#dc2626;
---warning:#f59e0b;
---shadow:0 10px 30px rgba(15,23,42,.08);
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --secondary:#7c3aed;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --success:#16a34a;
+    --shadow:0 10px 30px rgba(15,23,42,.08);
 }
 
 body.dark{
---bg:#0f172a;
---card:#1e293b;
---text:#f8fafc;
---muted:#94a3b8;
---border:#334155;
---shadow:0 10px 30px rgba(0,0,0,.3);
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:#334155;
+    --shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);
-color:var(--text);
-min-height:100vh;
-transition:.25s;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+    transition:.25s;
 }
 
-button,input,textarea,select{
-font:inherit;
+button,
+input,
+textarea,
+select{
+    font:inherit;
 }
 
 button{
-cursor:pointer;
+    cursor:pointer;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header{
-position:sticky;
-top:0;
-z-index:1000;
-color:white;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-box-shadow:0 5px 20px rgba(0,0,0,.18);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.18);
 }
 
 .nav{
-max-width:1250px;
-margin:auto;
-padding:14px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
+    max-width:1250px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-font-size:23px;
-font-weight:bold;
-white-space:nowrap;
+    font-size:23px;
+    font-weight:800;
+    white-space:nowrap;
 }
 
 .logo span{
-color:#facc15;
+    color:#facc15;
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    opacity:.8;
 }
 
 .nav-actions{
-display:flex;
-gap:8px;
+    display:flex;
+    gap:8px;
 }
 
 .nav-btn{
-border:0;
-background:rgba(255,255,255,.16);
-color:white;
-padding:10px 13px;
-border-radius:11px;
+    border:0;
+    background:rgba(255,255,255,.15);
+    color:white;
+    padding:9px 12px;
+    border-radius:10px;
 }
 
-.nav-btn:hover{
-background:rgba(255,255,255,.28);
-}
+/* =========================
+   HERO
+========================= */
 
 .hero{
-background:
-radial-gradient(circle at top left,rgba(37,99,235,.16),transparent 35%),
-radial-gradient(circle at top right,rgba(124,58,237,.14),transparent 35%);
+    background:
+    radial-gradient(circle at top left,rgba(37,99,235,.16),transparent 35%),
+    radial-gradient(circle at top right,rgba(124,58,237,.16),transparent 35%);
 }
 
 .hero-inner{
-max-width:1100px;
-margin:auto;
-padding:55px 20px 35px;
-text-align:center;
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    padding:75px 20px 65px;
 }
 
 .badge{
-display:inline-block;
-background:#dbeafe;
-color:#1d4ed8;
-padding:7px 14px;
-border-radius:30px;
-font-size:13px;
-font-weight:bold;
-margin-bottom:15px;
+    display:inline-block;
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:7px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
 }
 
 body.dark .badge{
-background:#172554;
-color:#93c5fd;
+    background:#172554;
+    color:#93c5fd;
 }
 
 .hero h1{
-font-size:48px;
-line-height:1.1;
-margin-bottom:15px;
+    font-size:52px;
+    line-height:1.1;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
-color:var(--primary);
+    color:var(--primary);
 }
 
 .hero p{
-max-width:720px;
-margin:0 auto 25px;
-color:var(--muted);
-line-height:1.6;
-font-size:18px;
+    max-width:720px;
+    margin:0 auto 30px;
+    color:var(--muted);
+    font-size:18px;
 }
 
 .search{
-position:relative;
-max-width:720px;
-margin:auto;
+    max-width:720px;
+    margin:auto;
+    position:relative;
 }
 
 .search input{
-width:100%;
-padding:18px 55px 18px 20px;
-border:2px solid var(--border);
-border-radius:17px;
-background:var(--card);
-color:var(--text);
-outline:none;
-box-shadow:var(--shadow);
+    width:100%;
+    padding:19px 55px 19px 22px;
+    border:2px solid var(--border);
+    border-radius:18px;
+    background:var(--card);
+    color:var(--text);
+    outline:none;
+    box-shadow:var(--shadow);
 }
 
 .search input:focus{
-border-color:var(--primary);
+    border-color:var(--primary);
 }
 
 .search-icon{
-position:absolute;
-right:18px;
-top:50%;
-transform:translateY(-50%);
-font-size:21px;
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-max-width:1250px;
-margin:auto;
-padding:0 20px 60px;
+    max-width:1250px;
+    margin:auto;
+    padding:0 20px 70px;
 }
 
+/* =========================
+   STATS
+========================= */
+
 .stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-margin:0 0 30px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:-25px;
+    position:relative;
 }
 
 .stat{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:16px;
-padding:18px;
-text-align:center;
-box-shadow:var(--shadow);
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:20px;
+    text-align:center;
+    box-shadow:var(--shadow);
 }
 
 .stat-number{
-color:var(--primary);
-font-size:27px;
-font-weight:bold;
+    font-size:28px;
+    color:var(--primary);
+    font-weight:800;
 }
 
 .stat-label{
-color:var(--muted);
-font-size:13px;
-margin-top:5px;
+    color:var(--muted);
+    font-size:13px;
 }
+
+/* =========================
+   SECTION
+========================= */
 
 .section{
-margin-top:30px;
+    margin-top:45px;
 }
 
-.section-title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:17px;
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
 }
 
-.section-title h2{
-font-size:25px;
+.section-header h2{
+    font-size:26px;
 }
 
-.section-title small{
-color:var(--muted);
-}
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories{
-display:flex;
-gap:9px;
-overflow-x:auto;
-padding-bottom:8px;
-scrollbar-width:none;
-}
-
-.categories::-webkit-scrollbar{
-display:none;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding-bottom:8px;
 }
 
 .category{
-white-space:nowrap;
-border:1px solid var(--border);
-background:var(--card);
-color:var(--text);
-padding:10px 16px;
-border-radius:30px;
+    white-space:nowrap;
+    padding:10px 16px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    border-radius:30px;
 }
 
 .category:hover,
 .category.active{
-background:var(--primary);
-color:white;
-border-color:var(--primary);
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
 }
+
+/* =========================
+   TOOLS
+========================= */
 
 .tools{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.card{
-position:relative;
-background:var(--card);
-border:1px solid var(--border);
-border-radius:18px;
-padding:20px;
-box-shadow:var(--shadow);
-transition:.2s;
+.tool{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    transition:.2s;
 }
 
-.card:hover{
-transform:translateY(-4px);
-}
-
-.favorite{
-position:absolute;
-top:14px;
-right:15px;
-border:0;
-background:none;
-font-size:24px;
-color:#94a3b8;
-}
-
-.favorite.active{
-color:#f59e0b;
-}
-
-.card-head{
-display:flex;
-align-items:center;
-gap:13px;
-padding-right:35px;
+.tool:hover{
+    transform:translateY(-5px);
 }
 
 .tool-icon{
-width:52px;
-height:52px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#eff6ff;
-border-radius:15px;
-font-size:27px;
-flex-shrink:0;
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eff6ff;
+    font-size:28px;
+    margin-bottom:15px;
 }
 
 body.dark .tool-icon{
-background:#172554;
+    background:#172554;
 }
 
-.tool-name{
-font-size:18px;
-font-weight:bold;
+.tool h3{
+    font-size:18px;
+    margin-bottom:7px;
 }
 
 .tool-category{
-color:var(--muted);
-font-size:12px;
-margin-top:4px;
+    color:var(--primary);
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.description{
-color:var(--muted);
-font-size:14px;
-line-height:1.5;
-margin:15px 0;
-min-height:42px;
+.tool p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
 }
 
-.actions{
-display:flex;
-gap:8px;
+.tool-buttons{
+    display:flex;
+    gap:8px;
 }
 
 .primary{
-border:0;
-background:var(--primary);
-color:white;
-padding:10px 14px;
-border-radius:10px;
-font-weight:bold;
+    border:0;
+    background:var(--primary);
+    color:white;
+    padding:10px 15px;
+    border-radius:10px;
+    font-weight:bold;
 }
 
 .primary:hover{
-background:var(--primary-dark);
+    background:var(--primary-dark);
 }
 
 .secondary{
-border:0;
-background:#e2e8f0;
-color:#172033;
-padding:10px 14px;
-border-radius:10px;
-font-weight:bold;
+    border:0;
+    background:#e2e8f0;
+    color:#172033;
+    padding:10px 15px;
+    border-radius:10px;
+    font-weight:bold;
 }
 
 body.dark .secondary{
-background:#334155;
-color:white;
+    background:#334155;
+    color:white;
 }
 
-.history{
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding-bottom:5px;
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.history-item{
-min-width:180px;
-background:var(--card);
-border:1px solid var(--border);
-padding:15px;
-border-radius:14px;
-cursor:pointer;
+.benefit{
+    text-align:center;
+    padding:30px 20px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
 }
 
-.history-item:hover{
-border-color:var(--primary);
+.benefit-icon{
+    font-size:38px;
+    margin-bottom:10px;
 }
 
-.history-icon{
-font-size:25px;
-margin-bottom:7px;
+.benefit h3{
+    margin-bottom:7px;
 }
 
-.history-name{
-font-weight:bold;
-font-size:14px;
+.benefit p{
+    color:var(--muted);
+    font-size:14px;
 }
 
-.empty{
-display:none;
-text-align:center;
-padding:55px 20px;
-color:var(--muted);
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    max-width:850px;
+    margin:auto;
 }
 
-.empty h2{
-margin-bottom:8px;
+.faq-item{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-bottom:10px;
+    overflow:hidden;
 }
+
+.faq-question{
+    width:100%;
+    padding:17px;
+    border:0;
+    background:none;
+    color:var(--text);
+    text-align:left;
+    font-weight:bold;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 17px 17px;
+    color:var(--muted);
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:#0f172a;
-color:#cbd5e1;
-text-align:center;
-padding:40px 20px;
+    background:#0f172a;
+    color:#cbd5e1;
+    padding:50px 20px 30px;
 }
 
-footer strong{
-color:white;
-font-size:20px;
+.footer-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
 }
 
-footer p{
-margin:8px;
+footer h3{
+    color:white;
+    margin-bottom:12px;
 }
+
+footer p,
+footer a{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+footer a{
+    display:block;
+    text-decoration:none;
+    margin-bottom:7px;
+}
+
+.footer-bottom{
+    max-width:1100px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid #334155;
+    text-align:center;
+    font-size:13px;
+}
+
+/* =========================
+   MODAL
+========================= */
 
 .modal{
-display:none;
-position:fixed;
-inset:0;
-z-index:3000;
-background:rgba(0,0,0,.65);
-align-items:center;
-justify-content:center;
-padding:20px;
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:5000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
 
 .modal.show{
-display:flex;
+    display:flex;
 }
 
 .modal-box{
-width:100%;
-max-width:720px;
-max-height:90vh;
-overflow:auto;
-background:var(--card);
-border-radius:22px;
-padding:25px;
+    width:100%;
+    max-width:650px;
+    max-height:90vh;
+    overflow:auto;
+    background:var(--card);
+    color:var(--text);
+    border-radius:20px;
+    padding:25px;
 }
 
-.modal-head{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:20px;
-}
-
-.modal-head h2{
-font-size:22px;
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
 .close{
-border:0;
-background:none;
-color:var(--text);
-font-size:28px;
+    border:0;
+    background:none;
+    color:var(--text);
+    font-size:28px;
 }
 
 .form{
-margin-bottom:15px;
+    margin-bottom:15px;
 }
 
 .form label{
-display:block;
-font-weight:bold;
-margin-bottom:7px;
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
 }
 
 .form input,
 .form textarea,
 .form select{
-width:100%;
-padding:12px;
-border:1px solid var(--border);
-border-radius:10px;
-background:var(--bg);
-color:var(--text);
-outline:none;
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--bg);
+    color:var(--text);
 }
 
 .form textarea{
-min-height:140px;
-resize:vertical;
-}
-
-.row{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.buttons{
-display:flex;
-flex-wrap:wrap;
-gap:9px;
-margin-top:10px;
+    min-height:150px;
+    resize:vertical;
 }
 
 .result{
-margin-top:17px;
-padding:16px;
-border:1px solid var(--border);
-border-radius:12px;
-background:var(--bg);
-word-break:break-word;
-line-height:1.6;
+    margin-top:15px;
+    padding:16px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
 }
 
-.result-big{
-text-align:center;
-font-size:30px;
-font-weight:bold;
+.big-result{
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
 }
 
-.calc-display{
-width:100%;
-padding:18px;
-margin-bottom:10px;
-border:1px solid var(--border);
-border-radius:12px;
-background:var(--bg);
-color:var(--text);
-text-align:right;
-font-size:27px;
-}
-
-.calc{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-}
-
-.calc button{
-border:0;
-border-radius:10px;
-padding:16px 5px;
-background:#e2e8f0;
-color:#172033;
-font-weight:bold;
-}
-
-body.dark .calc button{
-background:#334155;
-color:white;
-}
-
-.calc .operator{
-background:var(--primary);
-color:white;
-}
-
-.timer{
-text-align:center;
-font-size:55px;
-font-weight:bold;
-margin:25px 0;
-}
-
-.color-preview{
-height:110px;
-border-radius:15px;
-margin-top:15px;
-border:1px solid var(--border);
-}
-
-.toast{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:5000;
-background:#172033;
-color:white;
-padding:13px 18px;
-border-radius:11px;
-opacity:0;
-transform:translateY(20px);
-transition:.3s;
-}
-
-.toast.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.qr-box{
-text-align:center;
-padding:15px;
-}
-
-.qr-box img{
-max-width:260px;
-width:100%;
-border-radius:10px;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1000px){
 
-.tools{
-grid-template-columns:repeat(2,1fr);
+    .tools{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
 
-.stats{
-grid-template-columns:repeat(2,1fr);
-}
+@media(max-width:700px){
+
+    .menu{
+        display:none;
+    }
+
+    .hero-inner{
+        padding:50px 15px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .container{
+        padding:0 15px 50px;
+    }
+
+    .tools{
+        grid-template-columns:1fr;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
 }
 
-@media(max-width:600px){
+@media(max-width:500px){
 
-.nav{
-padding:12px 14px;
-}
+    .logo{
+        font-size:19px;
+    }
 
-.logo{
-font-size:19px;
-}
+    .nav{
+        padding:12px 14px;
+    }
 
-.nav-btn span{
-display:none;
-}
+    .stats{
+        gap:8px;
+    }
 
-.hero-inner{
-padding:38px 15px 30px;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.container{
-padding:0 15px 45px;
-}
-
-.tools{
-grid-template-columns:1fr;
-}
-
-.stats{
-grid-template-columns:1fr 1fr;
-}
-
-.row{
-grid-template-columns:1fr;
-}
-
-.modal-box{
-padding:18px;
-}
-
-.timer{
-font-size:43px;
-}
+    .stat{
+        padding:15px 8px;
+    }
 
 }
 
@@ -688,16 +667,16 @@ font-size:43px;
 🛠️ Herramientas<span>Gratis</span>
 </div>
 
+<nav class="menu">
+<a href="#herramientas">Herramientas</a>
+<a href="#categorias">Categorías</a>
+<a href="#faq">FAQ</a>
+</nav>
+
 <div class="nav-actions">
 
-<button class="nav-btn"
-onclick="scrollToSection('favoritesSection')">
-⭐ <span>Favoritos</span>
-</button>
-
-<button class="nav-btn"
-onclick="toggleDark()">
-🌙 <span>Modo</span>
+<button class="nav-btn" onclick="toggleDark()">
+🌙
 </button>
 
 </div>
@@ -706,33 +685,36 @@ onclick="toggleDark()">
 
 </header>
 
+
 <section class="hero">
 
 <div class="hero-inner">
 
 <div class="badge">
-✨ HerramientasGratis 9.0
+✨ Gratis · Rápido · Sin registros
 </div>
 
 <h1>
-Todas tus herramientas,
-<span>en un solo lugar.</span>
+Herramientas útiles,
+<span>gratis y online.</span>
 </h1>
 
 <p>
-Herramientas online gratuitas, rápidas y fáciles de usar.
-Sin registros y directamente desde tu navegador.
+Calcula, convierte, escribe, crea y resuelve tareas
+diarias con herramientas gratuitas directamente desde tu navegador.
 </p>
 
 <div class="search">
 
 <input
 id="search"
-type="text"
-placeholder="🔎 Busca una herramienta..."
-oninput="renderTools()">
+type="search"
+placeholder="🔎 ¿Qué herramienta necesitas?"
+oninput="filterTools()">
 
-<span class="search-icon">🔍</span>
+<span class="search-icon">
+🔍
+</span>
 
 </div>
 
@@ -740,77 +722,103 @@ oninput="renderTools()">
 
 </section>
 
+
 <main class="container">
 
-<div class="stats">
+
+<section class="stats">
 
 <div class="stat">
-<div class="stat-number" id="totalTools">0</div>
-<div class="stat-label">Herramientas</div>
+
+<div class="stat-number">
+30+
 </div>
+
+<div class="stat-label">
+Herramientas
+</div>
+
+</div>
+
 
 <div class="stat">
-<div class="stat-number" id="favoriteCount">0</div>
-<div class="stat-label">Favoritos</div>
+
+<div class="stat-number">
+6
 </div>
+
+<div class="stat-label">
+Categorías
+</div>
+
+</div>
+
 
 <div class="stat">
-<div class="stat-number" id="historyCount">0</div>
-<div class="stat-label">Usadas</div>
+
+<div class="stat-number">
+100%
 </div>
+
+<div class="stat-label">
+Gratis
+</div>
+
+</div>
+
 
 <div class="stat">
-<div class="stat-number">100%</div>
-<div class="stat-label">Gratis</div>
+
+<div class="stat-number">
+24/7
+</div>
+
+<div class="stat-label">
+Disponible
 </div>
 
 </div>
 
-<section class="section">
+</section>
 
-<div class="section-title">
-<h2>🗂️ Categorías</h2>
+
+<section class="section" id="categorias">
+
+<div class="section-header">
+
+<h2>
+🗂️ Categorías
+</h2>
+
 </div>
 
 <div class="categories">
 
-<button class="category active"
-onclick="setCategory('Todas',this)">
+<button class="category active" onclick="categoryFilter('Todas',this)">
 Todas
 </button>
 
-<button class="category"
-onclick="setCategory('Calculadoras',this)">
+<button class="category" onclick="categoryFilter('Calculadoras',this)">
 🧮 Calculadoras
 </button>
 
-<button class="category"
-onclick="setCategory('Texto',this)">
+<button class="category" onclick="categoryFilter('Texto',this)">
 📝 Texto
 </button>
 
-<button class="category"
-onclick="setCategory('Seguridad',this)">
-🔐 Seguridad
-</button>
-
-<button class="category"
-onclick="setCategory('Conversores',this)">
+<button class="category" onclick="categoryFilter('Conversores',this)">
 🔄 Conversores
 </button>
 
-<button class="category"
-onclick="setCategory('Productividad',this)">
+<button class="category" onclick="categoryFilter('Seguridad',this)">
+🔐 Seguridad
+</button>
+
+<button class="category" onclick="categoryFilter('Productividad',this)">
 ⚡ Productividad
 </button>
 
-<button class="category"
-onclick="setCategory('Tiempo',this)">
-⏱️ Tiempo
-</button>
-
-<button class="category"
-onclick="setCategory('Diseño',this)">
+<button class="category" onclick="categoryFilter('Diseño',this)">
 🎨 Diseño
 </button>
 
@@ -818,104 +826,626 @@ onclick="setCategory('Diseño',this)">
 
 </section>
 
-<section class="section">
 
-<div class="section-title">
+<section class="section" id="herramientas">
 
-<h2 id="sectionTitle">
+<div class="section-header">
+
+<h2>
 🔥 Herramientas populares
 </h2>
 
-<small id="toolCount"></small>
+<span id="toolCount">
+30 herramientas
+</span>
 
 </div>
 
-<div class="tools" id="tools"></div>
 
-<div class="empty" id="empty">
+<div class="tools" id="tools">
 
-<h2>😕 No encontramos resultados</h2>
+
+<div class="tool" data-category="Calculadoras" data-name="calculadora">
+
+<div class="tool-icon">🧮</div>
+
+<div class="tool-category">
+CALCULADORAS
+</div>
+
+<h3>
+Calculadora
+</h3>
 
 <p>
-Prueba otra palabra o selecciona otra categoría.
+Realiza operaciones matemáticas rápidamente.
 </p>
 
-</div>
+<div class="tool-buttons">
 
-</section>
-
-<section class="section" id="favoritesSection">
-
-<div class="section-title">
-
-<h2>⭐ Mis favoritos</h2>
-
-<button class="secondary"
-onclick="clearFavorites()">
-Limpiar
+<button class="primary" onclick="openCalculator()">
+Abrir
 </button>
 
 </div>
 
-<div class="tools" id="favoriteTools"></div>
+</div>
 
-<div class="empty" id="favoriteEmpty">
 
-<h2>⭐ Todavía no tienes favoritos</h2>
+<div class="tool" data-category="Calculadoras" data-name="porcentaje">
+
+<div class="tool-icon">📊</div>
+
+<div class="tool-category">
+CALCULADORAS
+</div>
+
+<h3>
+Calculadora de porcentaje
+</h3>
 
 <p>
-Pulsa la estrella de cualquier herramienta para agregarla.
+Calcula porcentajes de manera sencilla.
 </p>
+
+<button class="primary" onclick="openPercentage()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Calculadoras" data-name="descuento">
+
+<div class="tool-icon">💰</div>
+
+<div class="tool-category">
+CALCULADORAS
+</div>
+
+<h3>
+Calculadora de descuentos
+</h3>
+
+<p>
+Calcula descuentos y precios finales.
+</p>
+
+<button class="primary" onclick="openDiscount()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Calculadoras" data-name="edad">
+
+<div class="tool-icon">🎂</div>
+
+<div class="tool-category">
+CALCULADORAS
+</div>
+
+<h3>
+Calculadora de edad
+</h3>
+
+<p>
+Calcula tu edad exacta rápidamente.
+</p>
+
+<button class="primary" onclick="openAge()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Texto" data-name="contador palabras">
+
+<div class="tool-icon">📝</div>
+
+<div class="tool-category">
+TEXTO
+</div>
+
+<h3>
+Contador de palabras
+</h3>
+
+<p>
+Cuenta palabras, caracteres y líneas.
+</p>
+
+<button class="primary" onclick="openWordCounter()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Texto" data-name="mayusculas">
+
+<div class="tool-icon">🔤</div>
+
+<div class="tool-category">
+TEXTO
+</div>
+
+<h3>
+Conversor de texto
+</h3>
+
+<p>
+Convierte texto a mayúsculas y minúsculas.
+</p>
+
+<button class="primary" onclick="openTextCase()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Texto" data-name="limpiar texto">
+
+<div class="tool-icon">🧹</div>
+
+<div class="tool-category">
+TEXTO
+</div>
+
+<h3>
+Limpiador de texto
+</h3>
+
+<p>
+Elimina espacios y líneas innecesarias.
+</p>
+
+<button class="primary" onclick="openCleaner()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Texto" data-name="bloc texto">
+
+<div class="tool-icon">📋</div>
+
+<div class="tool-category">
+TEXTO
+</div>
+
+<h3>
+Bloc de texto
+</h3>
+
+<p>
+Escribe y copia textos rápidamente.
+</p>
+
+<button class="primary" onclick="openTextBlock()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Seguridad" data-name="contraseña">
+
+<div class="tool-icon">🔐</div>
+
+<div class="tool-category">
+SEGURIDAD
+</div>
+
+<h3>
+Generador de contraseñas
+</h3>
+
+<p>
+Crea contraseñas aleatorias y seguras.
+</p>
+
+<button class="primary" onclick="openPassword()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Productividad" data-name="numero aleatorio">
+
+<div class="tool-icon">🎲</div>
+
+<div class="tool-category">
+PRODUCTIVIDAD
+</div>
+
+<h3>
+Número aleatorio
+</h3>
+
+<p>
+Genera un número entre dos valores.
+</p>
+
+<button class="primary" onclick="openRandom()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Productividad" data-name="url">
+
+<div class="tool-icon">🔗</div>
+
+<div class="tool-category">
+PRODUCTIVIDAD
+</div>
+
+<h3>
+Codificador URL
+</h3>
+
+<p>
+Codifica y decodifica texto para URLs.
+</p>
+
+<button class="primary" onclick="openURL()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Diseño" data-name="color">
+
+<div class="tool-icon">🎨</div>
+
+<div class="tool-category">
+DISEÑO
+</div>
+
+<h3>
+Selector de colores
+</h3>
+
+<p>
+Selecciona colores y obtén su código HEX.
+</p>
+
+<button class="primary" onclick="openColor()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Conversores" data-name="temperatura">
+
+<div class="tool-icon">🌡️</div>
+
+<div class="tool-category">
+CONVERSORES
+</div>
+
+<h3>
+Conversor de temperatura
+</h3>
+
+<p>
+Convierte Celsius, Fahrenheit y Kelvin.
+</p>
+
+<button class="primary" onclick="openTemperature()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Conversores" data-name="longitud">
+
+<div class="tool-icon">📏</div>
+
+<div class="tool-category">
+CONVERSORES
+</div>
+
+<h3>
+Conversor de longitud
+</h3>
+
+<p>
+Convierte metros, kilómetros, millas y más.
+</p>
+
+<button class="primary" onclick="openLength()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Productividad" data-name="cronometro">
+
+<div class="tool-icon">⏱️</div>
+
+<div class="tool-category">
+PRODUCTIVIDAD
+</div>
+
+<h3>
+Cronómetro
+</h3>
+
+<p>
+Mide el tiempo de tus actividades.
+</p>
+
+<button class="primary" onclick="openStopwatch()">
+Abrir
+</button>
+
+</div>
+
+
+<div class="tool" data-category="Productividad" data-name="temporizador">
+
+<div class="tool-icon">⏲️</div>
+
+<div class="tool-category">
+PRODUCTIVIDAD
+</div>
+
+<h3>
+Temporizador
+</h3>
+
+<p>
+Crea cuentas regresivas fácilmente.
+</p>
+
+<button class="primary" onclick="openTimer()">
+Abrir
+</button>
+
+</div>
+
 
 </div>
 
 </section>
+
 
 <section class="section">
 
-<div class="section-title">
+<div class="section-header">
 
-<h2>🕘 Historial reciente</h2>
-
-<button class="secondary"
-onclick="clearHistory()">
-Limpiar
-</button>
+<h2>
+✨ ¿Por qué HerramientasGratis?
+</h2>
 
 </div>
 
-<div class="history" id="historyList"></div>
+<div class="benefits">
+
+<div class="benefit">
+
+<div class="benefit-icon">
+⚡
+</div>
+
+<h3>
+Rápido
+</h3>
+
+<p>
+Herramientas diseñadas para funcionar rápidamente desde cualquier dispositivo.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+🔒
+</div>
+
+<h3>
+Privacidad
+</h3>
+
+<p>
+Muchas herramientas funcionan directamente en tu navegador sin enviar tus datos.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+💯
+</div>
+
+<h3>
+Gratis
+</h3>
+
+<p>
+Utiliza nuestras herramientas sin registros ni pagos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="faq">
+
+<div class="section-header">
+
+<h2>
+❓ Preguntas frecuentes
+</h2>
+
+</div>
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button class="faq-question" onclick="toggleFAQ(this)">
+¿HerramientasGratis es gratis?
+</button>
+
+<div class="faq-answer">
+Sí. Nuestro objetivo es ofrecer herramientas útiles que puedan utilizarse gratuitamente desde el navegador.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question" onclick="toggleFAQ(this)">
+¿Necesito crear una cuenta?
+</button>
+
+<div class="faq-answer">
+No. Las herramientas principales están diseñadas para utilizarse sin crear una cuenta.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question" onclick="toggleFAQ(this)">
+¿Funciona desde el celular?
+</button>
+
+<div class="faq-answer">
+Sí. El sitio está diseñado para funcionar en teléfonos, tablets y computadores.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question" onclick="toggleFAQ(this)">
+¿Van a agregar más herramientas?
+</button>
+
+<div class="faq-answer">
+Sí. HerramientasGratis está diseñado para crecer con nuevas calculadoras, conversores y herramientas útiles.
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 </main>
 
+
 <footer>
 
-<p>
-<strong>🛠️ HerramientasGratis</strong>
-</p>
+<div class="footer-grid">
+
+<div>
+
+<h3>
+🛠️ HerramientasGratis
+</h3>
 
 <p>
-Más de 25 herramientas online gratuitas.
+Herramientas online gratuitas, sencillas y útiles para todos.
 </p>
 
-<p>
-HerramientasGratis 9.0 · © 2026
-</p>
+</div>
+
+
+<div>
+
+<h3>
+Explorar
+</h3>
+
+<a href="#herramientas">
+Herramientas
+</a>
+
+<a href="#categorias">
+Categorías
+</a>
+
+<a href="#faq">
+Preguntas frecuentes
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Información
+</h3>
+
+<a href="#">
+Sobre nosotros
+</a>
+
+<a href="#">
+Contacto
+</a>
+
+<a href="#">
+Privacidad
+</a>
+
+<a href="#">
+Términos de uso
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 HerramientasGratis · Todos los derechos reservados.
+
+</div>
 
 </footer>
+
 
 <div class="modal" id="modal">
 
 <div class="modal-box">
 
-<div class="modal-head">
+<div class="modal-header">
 
-<h2 id="modalTitle"></h2>
+<h2 id="modalTitle">
+Herramienta
+</h2>
 
-<button class="close"
-onclick="closeModal()">
+<button class="close" onclick="closeModal()">
 ✕
 </button>
 
@@ -927,914 +1457,314 @@ onclick="closeModal()">
 
 </div>
 
-<div class="toast" id="toast"></div>
 
 <script>
 
-/* ==========================================
-   LISTA DE HERRAMIENTAS
-========================================== */
-
-const tools=[
-
-{
-id:"calculadora",
-name:"Calculadora",
-icon:"🧮",
-category:"Calculadoras",
-description:"Realiza operaciones matemáticas.",
-action:calculator
-},
-
-{
-id:"porcentaje",
-name:"Calculadora de porcentaje",
-icon:"📊",
-category:"Calculadoras",
-description:"Calcula porcentajes rápidamente.",
-action:percentage
-},
-
-{
-id:"descuento",
-name:"Calculadora de descuentos",
-icon:"💰",
-category:"Calculadoras",
-description:"Calcula descuentos y precios finales.",
-action:discount
-},
-
-{
-id:"iva",
-name:"Calculadora de IVA",
-icon:"🧾",
-category:"Calculadoras",
-description:"Calcula IVA, precio base y precio final.",
-action:iva
-},
-
-{
-id:"interessimple",
-name:"Interés simple",
-icon:"🏦",
-category:"Calculadoras",
-description:"Calcula intereses simples.",
-action:simpleInterest
-},
-
-{
-id:"interescompuesto",
-name:"Interés compuesto",
-icon:"📈",
-category:"Calculadoras",
-description:"Calcula crecimiento con interés compuesto.",
-action:compoundInterest
-},
-
-{
-id:"edad",
-name:"Calculadora de edad",
-icon:"🎂",
-category:"Calculadoras",
-description:"Calcula tu edad.",
-action:ageCalculator
-},
-
-{
-id:"contador",
-name:"Contador de palabras",
-icon:"📝",
-category:"Texto",
-description:"Cuenta palabras, caracteres y líneas.",
-action:wordCounter
-},
-
-{
-id:"mayusculas",
-name:"Conversor de texto",
-icon:"🔤",
-category:"Texto",
-description:"Convierte textos entre mayúsculas y minúsculas.",
-action:textCase
-},
-
-{
-id:"limpiar",
-name:"Limpiador de texto",
-icon:"🧹",
-category:"Texto",
-description:"Elimina espacios y líneas innecesarias.",
-action:cleanText
-},
-
-{
-id:"copiar",
-name:"Bloc de texto",
-icon:"📋",
-category:"Texto",
-description:"Escribe y copia texto rápidamente.",
-action:copyTool
-},
-
-{
-id:"password",
-name:"Generador de contraseñas",
-icon:"🔐",
-category:"Seguridad",
-description:"Genera contraseñas aleatorias.",
-action:passwordGenerator
-},
-
-{
-id:"uuid",
-name:"Generador UUID",
-icon:"🆔",
-category:"Seguridad",
-description:"Genera identificadores únicos.",
-action:uuidGenerator
-},
-
-{
-id:"random",
-name:"Número aleatorio",
-icon:"🎲",
-category:"Productividad",
-description:"Genera números aleatorios.",
-action:randomNumber
-},
-
-{
-id:"url",
-name:"Codificador URL",
-icon:"🔗",
-category:"Productividad",
-description:"Codifica y decodifica URLs.",
-action:urlEncoder
-},
-
-{
-id:"romano",
-name:"Números romanos",
-icon:"🏛️",
-category:"Productividad",
-description:"Convierte números a números romanos.",
-action:romanConverter
-},
-
-{
-id:"qr",
-name:"Generador QR",
-icon:"📱",
-category:"Productividad",
-description:"Genera códigos QR desde un texto o enlace.",
-action:qrGenerator
-},
-
-{
-id:"color",
-name:"Selector de colores",
-icon:"🎨",
-category:"Diseño",
-description:"Obtén códigos HEX y RGB.",
-action:colorPicker
-},
-
-{
-id:"temperatura",
-name:"Temperatura",
-icon:"🌡️",
-category:"Conversores",
-description:"Convierte Celsius, Fahrenheit y Kelvin.",
-action:temperature
-},
-
-{
-id:"longitud",
-name:"Conversor de longitud",
-icon:"📏",
-category:"Conversores",
-description:"Convierte metros, kilómetros, millas y pies.",
-action:lengthConverter
-},
-
-{
-id:"peso",
-name:"Conversor de peso",
-icon:"⚖️",
-category:"Conversores",
-description:"Convierte kilogramos, gramos y libras.",
-action:weightConverter
-},
-
-{
-id:"almacenamiento",
-name:"Almacenamiento",
-icon:"💾",
-category:"Conversores",
-description:"Convierte KB, MB, GB y TB.",
-action:storageConverter
-},
-
-{
-id:"cronometro",
-name:"Cronómetro",
-icon:"⏱️",
-category:"Tiempo",
-description:"Mide el tiempo.",
-action:stopwatch
-},
-
-{
-id:"temporizador",
-name:"Temporizador",
-icon:"⏲️",
-category:"Tiempo",
-description:"Crea una cuenta regresiva.",
-action:timer
-},
-
-{
-id:"fechas",
-name:"Diferencia entre fechas",
-icon:"📅",
-category:"Tiempo",
-description:"Calcula los días entre dos fechas.",
-action:dateDifference
-}
-
-];
-
-
-/* ==========================================
-   ESTADO
-========================================== */
-
-let category="Todas";
-
-let favorites=
-JSON.parse(localStorage.getItem("hg9Favorites")||"[]");
-
-let history=
-JSON.parse(localStorage.getItem("hg9History")||"[]");
-
-
-/* ==========================================
-   FAVORITOS
-========================================== */
-
-function saveFavorites(){
-
-localStorage.setItem(
-"hg9Favorites",
-JSON.stringify(favorites)
-);
-
-}
-
-function isFavorite(id){
-
-return favorites.includes(id);
-
-}
-
-function toggleFavorite(id,event){
-
-if(event)event.stopPropagation();
-
-if(isFavorite(id)){
-
-favorites=favorites.filter(x=>x!==id);
-
-showToast("Eliminado de favoritos");
-
-}else{
-
-favorites.push(id);
-
-showToast("⭐ Añadido a favoritos");
-
-}
-
-saveFavorites();
-
-renderTools();
-renderFavorites();
-updateStats();
-
-}
-
-function clearFavorites(){
-
-favorites=[];
-
-saveFavorites();
-
-renderTools();
-renderFavorites();
-updateStats();
-
-showToast("Favoritos eliminados");
-
-}
-
-
-/* ==========================================
-   HISTORIAL
-========================================== */
-
-function addHistory(id){
-
-history=history.filter(x=>x!==id);
-
-history.unshift(id);
-
-history=history.slice(0,10);
-
-localStorage.setItem(
-"hg9History",
-JSON.stringify(history)
-);
-
-renderHistory();
-updateStats();
-
-}
-
-function clearHistory(){
-
-history=[];
-
-localStorage.setItem(
-"hg9History",
-"[]"
-);
-
-renderHistory();
-updateStats();
-
-showToast("Historial eliminado");
-
-}
-
-function renderHistory(){
-
-const box=document.getElementById("historyList");
-
-box.innerHTML="";
-
-if(!history.length){
-
-box.innerHTML=
-`<div style="color:var(--muted)">
-Todavía no has utilizado ninguna herramienta.
-</div>`;
-
-return;
-
-}
-
-history.forEach(id=>{
-
-const tool=tools.find(x=>x.id===id);
-
-if(!tool)return;
-
-const item=document.createElement("div");
-
-item.className="history-item";
-
-item.innerHTML=`
-
-<div class="history-icon">
-${tool.icon}
-</div>
-
-<div class="history-name">
-${tool.name}
-</div>
-
-`;
-
-item.onclick=()=>openTool(tool.id);
-
-box.appendChild(item);
-
-});
-
-}
-
-
-/* ==========================================
-   TARJETAS
-========================================== */
-
-function createCard(tool){
-
-const card=document.createElement("div");
-
-card.className="card";
-
-card.innerHTML=`
-
-<button
-class="favorite ${isFavorite(tool.id)?"active":""}"
-onclick="toggleFavorite('${tool.id}',event)">
-${isFavorite(tool.id)?"★":"☆"}
-</button>
-
-<div class="card-head">
-
-<div class="tool-icon">
-${tool.icon}
-</div>
-
-<div>
-
-<div class="tool-name">
-${tool.name}
-</div>
-
-<div class="tool-category">
-${tool.category}
-</div>
-
-</div>
-
-</div>
-
-<p class="description">
-${tool.description}
-</p>
-
-<div class="actions">
-
-<button
-class="primary"
-onclick="openTool('${tool.id}')">
-Abrir
-</button>
-
-<button
-class="secondary"
-onclick="shareTool('${tool.id}')">
-Compartir
-</button>
-
-</div>
-
-`;
-
-return card;
-
-}
-
-
-/* ==========================================
-   RENDER
-========================================== */
-
-function renderTools(){
-
-const container=document.getElementById("tools");
-
-const search=
-document.getElementById("search")
-.value
-.toLowerCase()
-.trim();
-
-const filtered=tools.filter(tool=>{
-
-const categoryOK=
-category==="Todas"||
-tool.category===category;
-
-const searchOK=
-!search||
-tool.name.toLowerCase().includes(search)||
-tool.description.toLowerCase().includes(search)||
-tool.category.toLowerCase().includes(search);
-
-return categoryOK&&searchOK;
-
-});
-
-container.innerHTML="";
-
-filtered.forEach(tool=>{
-container.appendChild(createCard(tool));
-});
-
-document.getElementById("toolCount")
-.textContent=filtered.length+" herramientas";
-
-document.getElementById("empty")
-.style.display=
-filtered.length?"none":"block";
-
-document.getElementById("sectionTitle")
-.textContent=
-search
-?"🔎 Resultados de búsqueda"
-:"🔥 Herramientas populares";
-
-}
-
-function renderFavorites(){
-
-const box=document.getElementById("favoriteTools");
-
-box.innerHTML="";
-
-const fav=
-tools.filter(tool=>favorites.includes(tool.id));
-
-fav.forEach(tool=>{
-box.appendChild(createCard(tool));
-});
-
-document.getElementById("favoriteEmpty")
-.style.display=
-fav.length?"none":"block";
-
-}
-
-
-/* ==========================================
-   CATEGORÍAS
-========================================== */
-
-function setCategory(value,button){
-
-category=value;
-
-document.querySelectorAll(".category")
-.forEach(x=>x.classList.remove("active"));
-
-button.classList.add("active");
-
-document.getElementById("search").value="";
-
-renderTools();
-
-}
-
-
-/* ==========================================
+/* =========================
    MODAL
-========================================== */
+========================= */
 
-function openTool(id){
+function openModal(title,content){
 
-const tool=tools.find(x=>x.id===id);
+document.getElementById("modalTitle").textContent=title;
 
-if(!tool)return;
+document.getElementById("modalContent").innerHTML=content;
 
-addHistory(id);
-
-document.getElementById("modalTitle")
-.textContent=tool.icon+" "+tool.name;
-
-document.getElementById("modalContent")
-.innerHTML="";
-
-tool.action();
-
-document.getElementById("modal")
-.classList.add("show");
+document.getElementById("modal").classList.add("show");
 
 }
 
 function closeModal(){
 
-document.getElementById("modal")
-.classList.remove("show");
+document.getElementById("modal").classList.remove("show");
 
 }
 
-document.getElementById("modal")
-.addEventListener("click",function(e){
+document.getElementById("modal").addEventListener("click",function(e){
 
-if(e.target===this)closeModal();
+if(e.target===this){
+closeModal();
+}
 
 });
 
 
-/* ==========================================
-   COMPARTIR
-========================================== */
-
-async function shareTool(id){
-
-const tool=tools.find(x=>x.id===id);
-
-const url=
-window.location.href.split("#")[0]+"#"+id;
-
-try{
-
-if(navigator.share){
-
-await navigator.share({
-title:tool.name+" - HerramientasGratis",
-text:"Prueba esta herramienta gratis.",
-url:url
-});
-
-}else{
-
-await navigator.clipboard.writeText(url);
-
-showToast("🔗 Enlace copiado");
-
-}
-
-}catch(e){}
-
-}
-
-
-/* ==========================================
+/* =========================
    DARK MODE
-========================================== */
+========================= */
 
 function toggleDark(){
 
 document.body.classList.toggle("dark");
 
 localStorage.setItem(
-"hg9Dark",
+"hg9dark",
 document.body.classList.contains("dark")
 );
 
 }
 
-if(localStorage.getItem("hg9Dark")==="true"){
+if(localStorage.getItem("hg9dark")==="true"){
 
 document.body.classList.add("dark");
 
 }
 
 
-/* ==========================================
-   ESTADÍSTICAS
-========================================== */
+/* =========================
+   BUSCADOR
+========================= */
 
-function updateStats(){
+let currentCategory="Todas";
 
-document.getElementById("totalTools")
-.textContent=tools.length;
+function filterTools(){
 
-document.getElementById("favoriteCount")
-.textContent=favorites.length;
+const search=document.getElementById("search").value.toLowerCase();
 
-document.getElementById("historyCount")
-.textContent=history.length;
+const cards=document.querySelectorAll(".tool");
+
+let count=0;
+
+cards.forEach(card=>{
+
+const name=card.dataset.name.toLowerCase();
+
+const category=card.dataset.category;
+
+const matchSearch=name.includes(search);
+
+const matchCategory=
+currentCategory==="Todas" ||
+category===currentCategory;
+
+if(matchSearch && matchCategory){
+
+card.style.display="block";
+
+count++;
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("toolCount").textContent=
+count+" herramientas";
 
 }
 
 
-/* ==========================================
-   UTILIDADES
-========================================== */
+function categoryFilter(category,button){
 
-function scrollToSection(id){
+currentCategory=category;
 
-document.getElementById(id)
-.scrollIntoView({behavior:"smooth"});
+document.querySelectorAll(".category").forEach(x=>{
+x.classList.remove("active");
+});
 
-}
+button.classList.add("active");
 
-function showToast(message){
-
-const toast=document.getElementById("toast");
-
-toast.textContent=message;
-
-toast.classList.add("show");
-
-setTimeout(()=>{
-toast.classList.remove("show");
-},2200);
+filterTools();
 
 }
 
 
-/* ==========================================
+/* =========================
+   FAQ
+========================= */
+
+function toggleFAQ(button){
+
+button.parentElement.classList.toggle("open");
+
+}
+
+
+/* =========================
    CALCULADORA
-========================================== */
+========================= */
 
-let calcExpression="";
+function openCalculator(){
 
-function calculator(){
-
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"🧮 Calculadora",
+`
 
 <input
-id="calcDisplay"
-class="calc-display"
+id="calc"
+class="search"
+style="width:100%;padding:15px;font-size:25px;text-align:right"
 readonly
 value="0">
 
-<div class="calc">
+<div style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-top:12px;
+">
 
-<button onclick="calcClear()">C</button>
-<button onclick="calcBack()">⌫</button>
-<button onclick="calcInput('%')">%</button>
-<button class="operator"
-onclick="calcInput('/')">÷</button>
-
-<button onclick="calcInput('7')">7</button>
-<button onclick="calcInput('8')">8</button>
-<button onclick="calcInput('9')">9</button>
-<button class="operator"
-onclick="calcInput('*')">×</button>
-
-<button onclick="calcInput('4')">4</button>
-<button onclick="calcInput('5')">5</button>
-<button onclick="calcInput('6')">6</button>
-<button class="operator"
-onclick="calcInput('-')">−</button>
-
-<button onclick="calcInput('1')">1</button>
-<button onclick="calcInput('2')">2</button>
-<button onclick="calcInput('3')">3</button>
-<button class="operator"
-onclick="calcInput('+')">+</button>
-
-<button onclick="calcInput('0')">0</button>
-<button onclick="calcInput('.')">.</button>
-
-<button class="operator"
-style="grid-column:span 2"
-onclick="calcResult()">=</button>
-
-</div>
-`;
-
-calcExpression="";
-
-}
-
-function calcInput(value){
-
-calcExpression+=value;
-
-document.getElementById("calcDisplay")
-.value=calcExpression;
-
-}
-
-function calcClear(){
-
-calcExpression="";
-
-document.getElementById("calcDisplay").value="0";
-
-}
-
-function calcBack(){
-
-calcExpression=calcExpression.slice(0,-1);
-
-document.getElementById("calcDisplay")
-.value=calcExpression||"0";
-
-}
-
-function calcResult(){
-
-try{
-
-const expression=
-calcExpression.replace(/%/g,"/100");
-
-if(!/^[0-9+\-*/().\s]+$/.test(expression))
-throw new Error();
-
-const result=
-Function('"use strict";return ('+expression+')')();
-
-calcExpression=String(result);
-
-document.getElementById("calcDisplay")
-.value=calcExpression;
-
-}catch{
-
-calcExpression="";
-
-document.getElementById("calcDisplay")
-.value="Error";
-
-}
-
-}
-
-
-/* ==========================================
-   PORCENTAJE
-========================================== */
-
-function percentage(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-<label>Valor</label>
-<input id="percentValue" type="number" placeholder="500">
-</div>
-
-<div class="form">
-<label>Porcentaje</label>
-<input id="percentNumber" type="number" placeholder="20">
-</div>
-
-<button class="primary"
-onclick="calculatePercent()">
-Calcular
+${["7","8","9","/","4","5","6","*","1","2","3","-","0",".","C","+","="]
+.map(x=>`
+<button
+class="${x==="="||["/","*","-","+"].includes(x)?"primary":"secondary"}"
+style="padding:15px"
+onclick="calcPress('${x}')">
+${x==="*"?"×":x}
 </button>
+`).join("")}
 
-<div class="result result-big"
-id="percentResult">
-Resultado
 </div>
-`;
+`
+);
+
+window.calcExpression="";
 
 }
 
-function calculatePercent(){
 
-const value=parseFloat(
-document.getElementById("percentValue").value
-);
+function calcPress(value){
 
-const percent=parseFloat(
-document.getElementById("percentNumber").value
-);
+const display=document.getElementById("calc");
 
-if(isNaN(value)||isNaN(percent)){
+if(value==="C"){
 
-showToast("Completa los campos");
+window.calcExpression="";
+
+display.value="0";
 
 return;
 
 }
 
-document.getElementById("percentResult")
-.textContent=
+if(value==="="){
+
+try{
+
+if(!/^[0-9+\-*/.() ]+$/.test(window.calcExpression)){
+throw new Error();
+}
+
+display.value=
+Function(
+'"use strict";return ('+
+window.calcExpression+
+')'
+)();
+
+window.calcExpression=display.value;
+
+}catch{
+
+display.value="Error";
+
+window.calcExpression="";
+
+}
+
+return;
+
+}
+
+window.calcExpression+=value;
+
+display.value=window.calcExpression;
+
+}
+
+
+/* =========================
+   PORCENTAJE
+========================= */
+
+function openPercentage(){
+
+openModal(
+"📊 Calculadora de porcentaje",
+`
+
+<div class="form">
+<label>Valor</label>
+<input id="pvalue" type="number" placeholder="500">
+</div>
+
+<div class="form">
+<label>Porcentaje</label>
+<input id="ppercent" type="number" placeholder="20">
+</div>
+
+<button class="primary" onclick="calculatePercentage()">
+Calcular
+</button>
+
+<div class="result big-result" id="presult">
+Resultado
+</div>
+`
+);
+
+}
+
+
+function calculatePercentage(){
+
+const value=parseFloat(document.getElementById("pvalue").value);
+
+const percent=parseFloat(document.getElementById("ppercent").value);
+
+if(isNaN(value)||isNaN(percent)){
+
+return;
+
+}
+
+document.getElementById("presult").textContent=
 (value*percent/100).toLocaleString("es-CO");
 
 }
 
 
-/* ==========================================
+/* =========================
    DESCUENTO
-========================================== */
+========================= */
 
-function discount(){
+function openDiscount(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"💰 Calculadora de descuentos",
+`
 
 <div class="form">
 <label>Precio</label>
-<input id="discountPrice"
-type="number"
-placeholder="100000">
+<input id="dprice" type="number">
 </div>
 
 <div class="form">
 <label>Descuento %</label>
-<input id="discountPercent"
-type="number"
-placeholder="20">
+<input id="dpercent" type="number">
 </div>
 
-<button class="primary"
-onclick="calculateDiscount()">
+<button class="primary" onclick="calculateDiscount()">
 Calcular
 </button>
 
-<div class="result"
-id="discountResult">
+<div class="result" id="dresult">
 Resultado
 </div>
-`;
+`
+);
 
 }
 
+
 function calculateDiscount(){
 
-const price=parseFloat(
-document.getElementById("discountPrice").value
-);
+const price=parseFloat(document.getElementById("dprice").value);
 
-const percent=parseFloat(
-document.getElementById("discountPercent").value
-);
+const percent=parseFloat(document.getElementById("dpercent").value);
 
 if(isNaN(price)||isNaN(percent))return;
 
@@ -1842,789 +1772,402 @@ const saving=price*percent/100;
 
 const finalPrice=price-saving;
 
-document.getElementById("discountResult")
-.innerHTML=`
-
-<strong>Ahorro:</strong>
-${saving.toLocaleString("es-CO")}
-
+document.getElementById("dresult").innerHTML=
+`
+<strong>Ahorro:</strong> ${saving.toLocaleString("es-CO")}
 <br><br>
-
-<strong>Precio final:</strong>
-${finalPrice.toLocaleString("es-CO")}
-
+<strong>Precio final:</strong> ${finalPrice.toLocaleString("es-CO")}
 `;
 
 }
 
 
-/* ==========================================
-   IVA
-========================================== */
-
-function iva(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-<label>Precio</label>
-<input id="ivaPrice"
-type="number"
-placeholder="100000">
-</div>
-
-<div class="form">
-<label>IVA (%)</label>
-<input id="ivaPercent"
-type="number"
-value="19">
-</div>
-
-<button class="primary"
-onclick="calculateIVA()">
-Calcular IVA
-</button>
-
-<div class="result"
-id="ivaResult">
-Resultado
-</div>
-`;
-
-}
-
-function calculateIVA(){
-
-const price=parseFloat(
-document.getElementById("ivaPrice").value
-);
-
-const percent=parseFloat(
-document.getElementById("ivaPercent").value
-);
-
-if(isNaN(price)||isNaN(percent))return;
-
-const tax=price*percent/100;
-
-const total=price+tax;
-
-document.getElementById("ivaResult")
-.innerHTML=`
-
-Precio base:
-<strong>${price.toLocaleString("es-CO")}</strong>
-
-<br>
-
-IVA:
-<strong>${tax.toLocaleString("es-CO")}</strong>
-
-<br>
-
-Precio final:
-<strong>${total.toLocaleString("es-CO")}</strong>
-
-`;
-
-}
-
-
-/* ==========================================
-   INTERÉS SIMPLE
-========================================== */
-
-function simpleInterest(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-<label>Capital</label>
-<input id="simpleCapital"
-type="number"
-placeholder="1000000">
-</div>
-
-<div class="form">
-<label>Tasa anual (%)</label>
-<input id="simpleRate"
-type="number"
-placeholder="10">
-</div>
-
-<div class="form">
-<label>Tiempo (años)</label>
-<input id="simpleYears"
-type="number"
-placeholder="2">
-</div>
-
-<button class="primary"
-onclick="calculateSimpleInterest()">
-Calcular
-</button>
-
-<div class="result"
-id="simpleResult">
-Resultado
-</div>
-`;
-
-}
-
-function calculateSimpleInterest(){
-
-const capital=parseFloat(
-document.getElementById("simpleCapital").value
-);
-
-const rate=parseFloat(
-document.getElementById("simpleRate").value
-);
-
-const years=parseFloat(
-document.getElementById("simpleYears").value
-);
-
-if([capital,rate,years].some(isNaN))return;
-
-const interest=capital*(rate/100)*years;
-
-const total=capital+interest;
-
-document.getElementById("simpleResult")
-.innerHTML=`
-
-Interés:
-<strong>${interest.toLocaleString("es-CO")}</strong>
-
-<br>
-
-Total:
-<strong>${total.toLocaleString("es-CO")}</strong>
-
-`;
-
-}
-
-
-/* ==========================================
-   INTERÉS COMPUESTO
-========================================== */
-
-function compoundInterest(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-<label>Capital inicial</label>
-<input id="compoundCapital"
-type="number"
-value="1000000">
-</div>
-
-<div class="form">
-<label>Tasa anual (%)</label>
-<input id="compoundRate"
-type="number"
-value="10">
-</div>
-
-<div class="form">
-<label>Años</label>
-<input id="compoundYears"
-type="number"
-value="5">
-</div>
-
-<div class="form">
-<label>Capitalizaciones por año</label>
-<select id="compoundFrequency">
-<option value="1">Anual</option>
-<option value="2">Semestral</option>
-<option value="4">Trimestral</option>
-<option value="12">Mensual</option>
-</select>
-</div>
-
-<button class="primary"
-onclick="calculateCompound()">
-Calcular
-</button>
-
-<div class="result"
-id="compoundResult">
-Resultado
-</div>
-`;
-
-}
-
-function calculateCompound(){
-
-const p=parseFloat(
-document.getElementById("compoundCapital").value
-);
-
-const r=parseFloat(
-document.getElementById("compoundRate").value
-)/100;
-
-const t=parseFloat(
-document.getElementById("compoundYears").value
-);
-
-const n=parseInt(
-document.getElementById("compoundFrequency").value
-);
-
-if([p,r,t,n].some(isNaN))return;
-
-const total=
-p*Math.pow(1+r/n,n*t);
-
-const interest=total-p;
-
-document.getElementById("compoundResult")
-.innerHTML=`
-
-Ganancia:
-<strong>${interest.toLocaleString("es-CO")}</strong>
-
-<br>
-
-Monto final:
-<strong>${total.toLocaleString("es-CO")}</strong>
-
-`;
-
-}
-
-
-/* ==========================================
+/* =========================
    EDAD
-========================================== */
+========================= */
 
-function ageCalculator(){
+function openAge(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"🎂 Calculadora de edad",
+`
 
 <div class="form">
 <label>Fecha de nacimiento</label>
-<input id="birthDate" type="date">
+<input id="birth" type="date">
 </div>
 
-<button class="primary"
-onclick="calculateAge()">
-Calcular edad
+<button class="primary" onclick="calculateAge()">
+Calcular
 </button>
 
-<div class="result result-big"
-id="ageResult">
+<div class="result big-result" id="ageresult">
 Edad
 </div>
-`;
+`
+);
 
 }
 
+
 function calculateAge(){
 
-const value=
-document.getElementById("birthDate").value;
+const birth=new Date(document.getElementById("birth").value);
 
-if(!value)return;
-
-const birth=new Date(value+"T00:00:00");
+if(isNaN(birth))return;
 
 const today=new Date();
 
 let age=
-today.getFullYear()-birth.getFullYear();
+today.getFullYear()-
+birth.getFullYear();
 
 const month=
-today.getMonth()-birth.getMonth();
+today.getMonth()-
+birth.getMonth();
 
 if(
-month<0||
-(month===0&&today.getDate()<birth.getDate())
+month<0 ||
+(month===0 && today.getDate()<birth.getDate())
 ){
+
 age--;
-}
-
-document.getElementById("ageResult")
-.textContent=age+" años";
 
 }
 
+document.getElementById("ageresult").textContent=
+age+" años";
 
-/* ==========================================
-   TEXTO
-========================================== */
+}
 
-function wordCounter(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+/* =========================
+   CONTADOR
+========================= */
+
+function openWordCounter(){
+
+openModal(
+"📝 Contador de palabras",
+`
 
 <textarea
-id="counterText"
+id="counter"
+placeholder="Escribe o pega tu texto..."
 oninput="updateCounter()"
-placeholder="Escribe o pega tu texto..."></textarea>
+style="width:100%;min-height:180px;padding:12px">
+</textarea>
 
-<div class="result"
-id="counterResult">
-
+<div class="result" id="counterResult">
 Palabras: 0<br>
 Caracteres: 0<br>
-Sin espacios: 0<br>
 Líneas: 0
-
 </div>
-`;
+`
+);
 
 }
+
 
 function updateCounter(){
 
-const text=
-document.getElementById("counterText").value;
+const text=document.getElementById("counter").value;
 
 const words=
-text.trim()?text.trim().split(/\s+/).length:0;
+text.trim()?
+text.trim().split(/\s+/).length:0;
 
 const chars=text.length;
 
-const noSpaces=text.replace(/\s/g,"").length;
+const lines=
+text?text.split("\n").length:0;
 
-const lines=text?text.split("\n").length:0;
-
-document.getElementById("counterResult")
-.innerHTML=`
-
+document.getElementById("counterResult").innerHTML=
+`
 Palabras: <strong>${words}</strong><br>
 Caracteres: <strong>${chars}</strong><br>
-Sin espacios: <strong>${noSpaces}</strong><br>
 Líneas: <strong>${lines}</strong>
-
 `;
 
 }
 
-function textCase(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+/* =========================
+   MAYÚSCULAS
+========================= */
+
+function openTextCase(){
+
+openModal(
+"🔤 Conversor de texto",
+`
 
 <textarea
 id="caseText"
-placeholder="Escribe tu texto..."></textarea>
+style="width:100%;min-height:180px;padding:12px"
+placeholder="Escribe tu texto...">
+</textarea>
 
-<div class="buttons">
+<br><br>
 
 <button class="primary"
-onclick="upperText()">
+onclick="document.getElementById('caseText').value=document.getElementById('caseText').value.toUpperCase()">
 MAYÚSCULAS
 </button>
 
 <button class="secondary"
-onclick="lowerText()">
+onclick="document.getElementById('caseText').value=document.getElementById('caseText').value.toLowerCase()">
 minúsculas
 </button>
+`
+);
 
-<button class="secondary"
-onclick="capitalizeText()">
-Primera Letra
+}
+
+
+/* =========================
+   LIMPIADOR
+========================= */
+
+function openCleaner(){
+
+openModal(
+"🧹 Limpiador de texto",
+`
+
+<textarea
+id="cleanText"
+style="width:100%;min-height:180px;padding:12px"
+placeholder="Pega tu texto...">
+</textarea>
+
+<br><br>
+
+<button class="primary" onclick="cleanText()">
+Limpiar
 </button>
 
+<div class="result">
+<textarea
+id="cleanResult"
+style="width:100%;min-height:150px;padding:10px">
+</textarea>
 </div>
-`;
+`
+);
 
 }
 
-function upperText(){
-
-document.getElementById("caseText")
-.value=
-document.getElementById("caseText")
-.value.toUpperCase();
-
-}
-
-function lowerText(){
-
-document.getElementById("caseText")
-.value=
-document.getElementById("caseText")
-.value.toLowerCase();
-
-}
-
-function capitalizeText(){
-
-const el=document.getElementById("caseText");
-
-el.value=
-el.value
-.toLowerCase()
-.replace(/(^|\s)\S/g,
-x=>x.toUpperCase());
-
-}
 
 function cleanText(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+const input=document.getElementById("cleanText").value;
 
-<textarea
-id="cleanInput"
-placeholder="Pega tu texto aquí..."></textarea>
-
-<button class="primary"
-onclick="performClean()">
-Limpiar texto
-</button>
-
-<textarea
-id="cleanOutput"
-readonly
-placeholder="Resultado..."
-style="margin-top:15px">
-</textarea>
-
-<button class="secondary"
-onclick="copyElement('cleanOutput')">
-📋 Copiar
-</button>
-`;
-
-}
-
-function performClean(){
-
-const text=
-document.getElementById("cleanInput").value;
-
-const clean=
-text
+const result=input
 .split("\n")
 .map(x=>x.trim())
-.filter(x=>x)
+.filter(Boolean)
 .join("\n")
 .replace(/[ \t]+/g," ");
 
-document.getElementById("cleanOutput")
-.value=clean;
+document.getElementById("cleanResult").value=result;
 
 }
 
-function copyTool(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+/* =========================
+   BLOC
+========================= */
+
+function openTextBlock(){
+
+openModal(
+"📋 Bloc de texto",
+`
 
 <textarea
-id="copyText"
-placeholder="Escribe tu texto..."></textarea>
+id="blockText"
+style="width:100%;min-height:220px;padding:12px"
+placeholder="Escribe aquí...">
+</textarea>
 
-<button class="primary"
-onclick="copyElement('copyText')">
-📋 Copiar texto
+<br><br>
+
+<button class="primary" onclick="copyText('blockText')">
+📋 Copiar
 </button>
-`;
-
-}
-
-async function copyElement(id){
-
-const el=document.getElementById(id);
-
-if(!el.value){
-
-showToast("No hay texto");
-
-return;
-
-}
-
-try{
-
-await navigator.clipboard.writeText(el.value);
-
-showToast("✅ Copiado");
-
-}catch{
-
-showToast("No se pudo copiar");
-
-}
+`
+);
 
 }
 
 
-/* ==========================================
+function copyText(id){
+
+navigator.clipboard.writeText(
+document.getElementById(id).value
+);
+
+alert("Texto copiado");
+
+}
+
+
+/* =========================
    CONTRASEÑA
-========================================== */
+========================= */
 
-function passwordGenerator(){
+function openPassword(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"🔐 Generador de contraseñas",
+`
 
 <div class="form">
+
 <label>Longitud</label>
-<input id="passLength"
+
+<input
+id="passLength"
 type="number"
+value="16"
 min="4"
-max="100"
-value="16">
-</div>
-
-<div class="form">
-
-<label>
-<input id="passNumbers"
-type="checkbox"
-checked>
-Números
-</label>
-
-<br>
-
-<label>
-<input id="passSymbols"
-type="checkbox"
-checked>
-Símbolos
-</label>
+max="100">
 
 </div>
 
-<button class="primary"
-onclick="generatePassword()">
+<button class="primary" onclick="generatePassword()">
 Generar
 </button>
 
-<div class="result"
-id="passwordResult"></div>
+<div class="result" id="passwordResult"></div>
 
-<button class="secondary"
-onclick="copyPassword()">
+<br>
+
+<button class="secondary" onclick="copyTextContent('passwordResult')">
 📋 Copiar
 </button>
-`;
+`
+);
 
 generatePassword();
 
 }
 
+
 function generatePassword(){
 
-let length=parseInt(
-document.getElementById("passLength").value
-)||16;
+let length=
+parseInt(document.getElementById("passLength").value)||16;
 
-length=Math.max(4,Math.min(100,length));
-
-let chars=
-"ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
-"abcdefghijklmnopqrstuvwxyz";
-
-if(document.getElementById("passNumbers").checked)
-chars+="0123456789";
-
-if(document.getElementById("passSymbols").checked)
-chars+="!@#$%^&*()_+-=[]{}";
+const chars=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
 
 let password="";
 
 for(let i=0;i<length;i++){
 
-password+=
-chars[Math.floor(Math.random()*chars.length)];
+password+=chars[
+Math.floor(Math.random()*chars.length)
+];
 
 }
 
-document.getElementById("passwordResult")
-.textContent=password;
-
-}
-
-function copyPassword(){
-
-navigator.clipboard.writeText(
-document.getElementById("passwordResult").textContent
-);
-
-showToast("🔐 Contraseña copiada");
+document.getElementById("passwordResult").textContent=password;
 
 }
 
 
-/* ==========================================
-   UUID
-========================================== */
-
-function uuidGenerator(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<button class="primary"
-onclick="generateUUID()">
-Generar UUID
-</button>
-
-<div class="result"
-id="uuidResult">
-Pulsa generar
-</div>
-
-<button class="secondary"
-onclick="copyElementText('uuidResult')">
-📋 Copiar
-</button>
-`;
-
-generateUUID();
-
-}
-
-function generateUUID(){
-
-let uuid;
-
-if(crypto.randomUUID){
-
-uuid=crypto.randomUUID();
-
-}else{
-
-uuid=
-"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
-.replace(/[xy]/g,c=>{
-
-const r=Math.random()*16|0;
-const v=c==="x"?r:(r&3|8);
-
-return v.toString(16);
-
-});
-
-}
-
-document.getElementById("uuidResult")
-.textContent=uuid;
-
-}
-
-function copyElementText(id){
+function copyTextContent(id){
 
 navigator.clipboard.writeText(
 document.getElementById(id).textContent
 );
 
-showToast("📋 Copiado");
+alert("Copiado");
 
 }
 
 
-/* ==========================================
-   ALEATORIO
-========================================== */
+/* =========================
+   RANDOM
+========================= */
 
-function randomNumber(){
+function openRandom(){
 
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="row">
+openModal(
+"🎲 Número aleatorio",
+`
 
 <div class="form">
 <label>Mínimo</label>
-<input id="randomMin"
-type="number"
-value="1">
+<input id="randomMin" type="number" value="1">
 </div>
 
 <div class="form">
 <label>Máximo</label>
-<input id="randomMax"
-type="number"
-value="100">
+<input id="randomMax" type="number" value="100">
 </div>
 
-</div>
-
-<button class="primary"
-onclick="generateRandom()">
+<button class="primary" onclick="generateRandom()">
 Generar
 </button>
 
-<div class="result result-big"
-id="randomResult">
+<div class="result big-result" id="randomResult">
 ?
 </div>
-`;
+`
+);
 
 }
 
+
 function generateRandom(){
 
-let min=parseInt(
-document.getElementById("randomMin").value
-);
+let min=parseInt(document.getElementById("randomMin").value);
 
-let max=parseInt(
-document.getElementById("randomMax").value
-);
-
-if(isNaN(min)||isNaN(max))return;
+let max=parseInt(document.getElementById("randomMax").value);
 
 if(min>max)[min,max]=[max,min];
 
 const number=
 Math.floor(Math.random()*(max-min+1))+min;
 
-document.getElementById("randomResult")
-.textContent=number;
+document.getElementById("randomResult").textContent=number;
 
 }
 
 
-/* ==========================================
+/* =========================
    URL
-========================================== */
+========================= */
 
-function urlEncoder(){
+function openURL(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"🔗 Codificador URL",
+`
 
 <textarea
 id="urlText"
-placeholder="Escribe texto o URL..."></textarea>
+style="width:100%;min-height:150px;padding:12px"
+placeholder="Texto o URL">
+</textarea>
 
-<div class="buttons">
+<br><br>
 
-<button class="primary"
-onclick="encodeURL()">
+<button class="primary" onclick="encodeURL()">
 Codificar
 </button>
 
-<button class="secondary"
-onclick="decodeURL()">
+<button class="secondary" onclick="decodeURL()">
 Decodificar
 </button>
-
-</div>
-`;
+`
+);
 
 }
+
 
 function encodeURL(){
 
@@ -2633,6 +2176,7 @@ const el=document.getElementById("urlText");
 el.value=encodeURIComponent(el.value);
 
 }
+
 
 function decodeURL(){
 
@@ -2644,244 +2188,70 @@ el.value=decodeURIComponent(el.value);
 
 }catch{
 
-showToast("Texto inválido");
+alert("Texto inválido");
 
 }
 
 }
 
 
-/* ==========================================
-   ROMANOS
-========================================== */
-
-function romanConverter(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-
-<label>Número del 1 al 3999</label>
-
-<input id="romanNumber"
-type="number"
-min="1"
-max="3999"
-value="2026">
-
-</div>
-
-<button class="primary"
-onclick="convertRoman()">
-Convertir
-</button>
-
-<div class="result result-big"
-id="romanResult">
-MMXXVI
-</div>
-`;
-
-}
-
-function convertRoman(){
-
-let n=parseInt(
-document.getElementById("romanNumber").value
-);
-
-if(n<1||n>3999){
-
-showToast("Usa un número entre 1 y 3999");
-
-return;
-
-}
-
-const values=[
-[1000,"M"],
-[900,"CM"],
-[500,"D"],
-[400,"CD"],
-[100,"C"],
-[90,"XC"],
-[50,"L"],
-[40,"XL"],
-[10,"X"],
-[9,"IX"],
-[5,"V"],
-[4,"IV"],
-[1,"I"]
-];
-
-let result="";
-
-for(const [value,symbol] of values){
-
-while(n>=value){
-
-result+=symbol;
-n-=value;
-
-}
-
-}
-
-document.getElementById("romanResult")
-.textContent=result;
-
-}
-
-
-/* ==========================================
-   QR
-========================================== */
-
-function qrGenerator(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-
-<label>Texto o enlace</label>
-
-<input
-id="qrText"
-type="text"
-placeholder="https://ejemplo.com">
-
-</div>
-
-<button class="primary"
-onclick="generateQR()">
-Generar QR
-</button>
-
-<div class="qr-box"
-id="qrResult">
-</div>
-`;
-
-}
-
-function generateQR(){
-
-const text=
-document.getElementById("qrText").value.trim();
-
-if(!text){
-
-showToast("Escribe un texto o enlace");
-
-return;
-
-}
-
-const encoded=encodeURIComponent(text);
-
-document.getElementById("qrResult")
-.innerHTML=`
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encoded}"
-alt="Código QR">
-
-<p style="margin-top:10px;color:var(--muted)">
-Código QR generado
-</p>
-`;
-
-}
-
-
-/* ==========================================
+/* =========================
    COLOR
-========================================== */
+========================= */
 
-function colorPicker(){
+function openColor(){
 
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-
-<label>Selecciona un color</label>
+openModal(
+"🎨 Selector de colores",
+`
 
 <input
 id="colorInput"
 type="color"
 value="#2563eb"
-oninput="updateColor()"
-style="height:60px">
-
-</div>
+style="width:100%;height:70px">
 
 <div
-class="color-preview"
-id="colorPreview">
+id="colorPreview"
+style="height:120px;border-radius:15px;margin-top:15px">
 </div>
 
-<div class="result"
-id="colorCode">
+<div class="result" id="colorCode">
 #2563EB
 </div>
+`
+);
 
-<button class="secondary"
-onclick="copyElementText('colorCode')">
-📋 Copiar HEX
-</button>
+const input=document.getElementById("colorInput");
 
-`;
+input.addEventListener("input",function(){
 
-updateColor();
+document.getElementById("colorPreview").style.background=this.value;
 
-}
+document.getElementById("colorCode").textContent=
+this.value.toUpperCase();
 
-function updateColor(){
+});
 
-const color=
-document.getElementById("colorInput").value;
-
-document.getElementById("colorPreview")
-.style.background=color;
-
-const r=parseInt(color.slice(1,3),16);
-const g=parseInt(color.slice(3,5),16);
-const b=parseInt(color.slice(5,7),16);
-
-document.getElementById("colorCode")
-.innerHTML=`
-
-<strong>${color.toUpperCase()}</strong>
-
-<br>
-
-RGB(${r}, ${g}, ${b})
-
-`;
+input.dispatchEvent(new Event("input"));
 
 }
 
 
-/* ==========================================
+/* =========================
    TEMPERATURA
-========================================== */
+========================= */
 
-function temperature(){
+function openTemperature(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"🌡️ Conversor de temperatura",
+`
 
 <div class="form">
 <label>Valor</label>
-<input id="tempValue"
-type="number"
-value="0">
+<input id="tempValue" type="number" value="0">
 </div>
-
-<div class="row">
 
 <div class="form">
 <label>Desde</label>
@@ -2909,72 +2279,66 @@ value="0">
 
 </div>
 
-</div>
-
-<button class="primary"
-onclick="convertTemperature()">
+<button class="primary" onclick="convertTemperature()">
 Convertir
 </button>
 
-<div class="result result-big"
-id="tempResult">
+<div class="result big-result" id="tempResult">
 Resultado
 </div>
-`;
+`
+);
 
 }
 
+
 function convertTemperature(){
 
-const value=parseFloat(
-document.getElementById("tempValue").value
-);
+const value=parseFloat(document.getElementById("tempValue").value);
 
-const from=
-document.getElementById("tempFrom").value;
+const from=document.getElementById("tempFrom").value;
 
-const to=
-document.getElementById("tempTo").value;
-
-if(isNaN(value))return;
+const to=document.getElementById("tempTo").value;
 
 let c;
 
 if(from==="C")c=value;
+
 if(from==="F")c=(value-32)*5/9;
+
 if(from==="K")c=value-273.15;
 
 let result;
 
 if(to==="C")result=c;
+
 if(to==="F")result=c*9/5+32;
+
 if(to==="K")result=c+273.15;
 
-document.getElementById("tempResult")
-.textContent=result.toFixed(2);
+document.getElementById("tempResult").textContent=
+result.toFixed(2);
 
 }
 
 
-/* ==========================================
+/* =========================
    LONGITUD
-========================================== */
+========================= */
 
-function lengthConverter(){
+function openLength(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"📏 Conversor de longitud",
+`
 
 <div class="form">
 <label>Valor</label>
-<input id="lengthValue"
-type="number"
-value="1">
+<input id="lengthValue" type="number" value="1">
 </div>
 
-<div class="row">
-
 <div class="form">
+
 <label>Desde</label>
 
 <select id="lengthFrom">
@@ -2982,12 +2346,11 @@ value="1">
 <option value="m">Metros</option>
 <option value="km">Kilómetros</option>
 <option value="cm">Centímetros</option>
-<option value="mm">Milímetros</option>
 <option value="mi">Millas</option>
 <option value="ft">Pies</option>
-<option value="in">Pulgadas</option>
 
 </select>
+
 </div>
 
 <div class="form">
@@ -2999,305 +2362,89 @@ value="1">
 <option value="km">Kilómetros</option>
 <option value="m">Metros</option>
 <option value="cm">Centímetros</option>
-<option value="mm">Milímetros</option>
 <option value="mi">Millas</option>
 <option value="ft">Pies</option>
-<option value="in">Pulgadas</option>
 
 </select>
-</div>
 
 </div>
 
-<button class="primary"
-onclick="convertLength()">
+<button class="primary" onclick="convertLength()">
 Convertir
 </button>
 
-<div class="result result-big"
-id="lengthResult">
+<div class="result big-result" id="lengthResult">
 Resultado
 </div>
-`;
+`
+);
 
 }
 
+
 function convertLength(){
 
-const value=parseFloat(
-document.getElementById("lengthValue").value
-);
+const value=parseFloat(document.getElementById("lengthValue").value);
 
-const from=
-document.getElementById("lengthFrom").value;
+const from=document.getElementById("lengthFrom").value;
 
-const to=
-document.getElementById("lengthTo").value;
-
-if(isNaN(value))return;
+const to=document.getElementById("lengthTo").value;
 
 const units={
 m:1,
 km:1000,
 cm:.01,
-mm:.001,
 mi:1609.344,
-ft:.3048,
-in:.0254
+ft:.3048
 };
 
 const result=
 value*units[from]/units[to];
 
-document.getElementById("lengthResult")
-.textContent=
-result.toLocaleString("es-CO",{
-maximumFractionDigits:10
-});
+document.getElementById("lengthResult").textContent=
+result.toLocaleString("es-CO");
 
 }
 
 
-/* ==========================================
-   PESO
-========================================== */
-
-function weightConverter(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-<label>Valor</label>
-<input id="weightValue"
-type="number"
-value="1">
-</div>
-
-<div class="row">
-
-<div class="form">
-<label>Desde</label>
-
-<select id="weightFrom">
-
-<option value="kg">Kilogramos</option>
-<option value="g">Gramos</option>
-<option value="lb">Libras</option>
-<option value="oz">Onzas</option>
-<option value="t">Toneladas</option>
-
-</select>
-</div>
-
-<div class="form">
-
-<label>Hacia</label>
-
-<select id="weightTo">
-
-<option value="g">Gramos</option>
-<option value="kg">Kilogramos</option>
-<option value="lb">Libras</option>
-<option value="oz">Onzas</option>
-<option value="t">Toneladas</option>
-
-</select>
-</div>
-
-</div>
-
-<button class="primary"
-onclick="convertWeight()">
-Convertir
-</button>
-
-<div class="result result-big"
-id="weightResult">
-Resultado
-</div>
-`;
-
-}
-
-function convertWeight(){
-
-const value=parseFloat(
-document.getElementById("weightValue").value
-);
-
-const from=
-document.getElementById("weightFrom").value;
-
-const to=
-document.getElementById("weightTo").value;
-
-if(isNaN(value))return;
-
-const units={
-kg:1,
-g:.001,
-lb:.45359237,
-oz:.0283495231,
-t:1000
-};
-
-const result=
-value*units[from]/units[to];
-
-document.getElementById("weightResult")
-.textContent=
-result.toLocaleString("es-CO",{
-maximumFractionDigits:10
-});
-
-}
-
-
-/* ==========================================
-   ALMACENAMIENTO
-========================================== */
-
-function storageConverter(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-
-<label>Valor</label>
-
-<input
-id="storageValue"
-type="number"
-value="1">
-
-</div>
-
-<div class="row">
-
-<div class="form">
-
-<label>Desde</label>
-
-<select id="storageFrom">
-
-<option value="B">Bytes</option>
-<option value="KB">KB</option>
-<option value="MB">MB</option>
-<option value="GB">GB</option>
-<option value="TB">TB</option>
-
-</select>
-
-</div>
-
-<div class="form">
-
-<label>Hacia</label>
-
-<select id="storageTo">
-
-<option value="MB">MB</option>
-<option value="B">Bytes</option>
-<option value="KB">KB</option>
-<option value="GB">GB</option>
-<option value="TB">TB</option>
-
-</select>
-
-</div>
-
-</div>
-
-<button class="primary"
-onclick="convertStorage()">
-Convertir
-</button>
-
-<div class="result result-big"
-id="storageResult">
-Resultado
-</div>
-`;
-
-}
-
-function convertStorage(){
-
-const value=parseFloat(
-document.getElementById("storageValue").value
-);
-
-const from=
-document.getElementById("storageFrom").value;
-
-const to=
-document.getElementById("storageTo").value;
-
-if(isNaN(value))return;
-
-const units={
-B:1,
-KB:1024,
-MB:1024**2,
-GB:1024**3,
-TB:1024**4
-};
-
-const result=
-value*units[from]/units[to];
-
-document.getElementById("storageResult")
-.textContent=
-result.toLocaleString("es-CO",{
-maximumFractionDigits:10
-});
-
-}
-
-
-/* ==========================================
+/* =========================
    CRONÓMETRO
-========================================== */
+========================= */
 
-let stopwatchInterval=null;
 let stopwatchSeconds=0;
+let stopwatchInterval=null;
 
-function stopwatch(){
+function openStopwatch(){
 
-document.getElementById("modalContent")
-.innerHTML=`
+openModal(
+"⏱️ Cronómetro",
+`
 
-<div class="timer"
-id="stopwatchDisplay">
+<div
+id="stopwatch"
+class="big-result"
+style="font-size:50px;margin:25px">
 00:00:00
 </div>
 
-<div class="buttons"
-style="justify-content:center">
-
-<button class="primary"
-onclick="startStopwatch()">
+<button class="primary" onclick="startStopwatch()">
 ▶ Iniciar
 </button>
 
-<button class="secondary"
-onclick="pauseStopwatch()">
+<button class="secondary" onclick="pauseStopwatch()">
 ⏸ Pausar
 </button>
 
-<button class="secondary"
-onclick="resetStopwatch()">
+<button class="secondary" onclick="resetStopwatch()">
 ↻ Reiniciar
 </button>
-
-</div>
-`;
+`
+);
 
 updateStopwatch();
 
 }
+
 
 function startStopwatch(){
 
@@ -3313,6 +2460,7 @@ updateStopwatch();
 
 }
 
+
 function pauseStopwatch(){
 
 clearInterval(stopwatchInterval);
@@ -3320,6 +2468,7 @@ clearInterval(stopwatchInterval);
 stopwatchInterval=null;
 
 }
+
 
 function resetStopwatch(){
 
@@ -3331,21 +2480,18 @@ updateStopwatch();
 
 }
 
+
 function updateStopwatch(){
 
-const el=
-document.getElementById("stopwatchDisplay");
+const el=document.getElementById("stopwatch");
 
 if(!el)return;
 
-const h=
-Math.floor(stopwatchSeconds/3600);
+const h=Math.floor(stopwatchSeconds/3600);
 
-const m=
-Math.floor((stopwatchSeconds%3600)/60);
+const m=Math.floor((stopwatchSeconds%3600)/60);
 
-const s=
-stopwatchSeconds%60;
+const s=stopwatchSeconds%60;
 
 el.textContent=
 String(h).padStart(2,"0")+":"+
@@ -3355,68 +2501,54 @@ String(s).padStart(2,"0");
 }
 
 
-/* ==========================================
+/* =========================
    TEMPORIZADOR
-========================================== */
+========================= */
 
-let timerInterval=null;
 let timerSeconds=0;
+let timerInterval=null;
 
-function timer(){
+function openTimer(){
 
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="row">
+openModal(
+"⏲️ Temporizador",
+`
 
 <div class="form">
 <label>Minutos</label>
-<input id="timerMinutes"
-type="number"
-min="0"
-value="1">
+<input id="timerMin" type="number" value="1" min="0">
 </div>
 
 <div class="form">
 <label>Segundos</label>
-<input id="timerSecondsInput"
-type="number"
-min="0"
-max="59"
-value="0">
+<input id="timerSec" type="number" value="0" min="0" max="59">
 </div>
 
-</div>
-
-<div class="timer"
-id="timerDisplay">
+<div
+id="timerDisplay"
+class="big-result"
+style="font-size:50px;margin:25px">
 01:00
 </div>
 
-<div class="buttons"
-style="justify-content:center">
-
-<button class="primary"
-onclick="startTimer()">
+<button class="primary" onclick="startTimer()">
 ▶ Iniciar
 </button>
 
-<button class="secondary"
-onclick="pauseTimer()">
+<button class="secondary" onclick="pauseTimer()">
 ⏸ Pausar
 </button>
 
-<button class="secondary"
-onclick="resetTimer()">
+<button class="secondary" onclick="resetTimer()">
 ↻ Reiniciar
 </button>
-
-</div>
-`;
+`
+);
 
 resetTimer();
 
 }
+
 
 function startTimer(){
 
@@ -3426,11 +2558,9 @@ timerInterval=setInterval(()=>{
 
 if(timerSeconds<=0){
 
-clearInterval(timerInterval);
+pauseTimer();
 
-timerInterval=null;
-
-showToast("⏰ ¡Tiempo terminado!");
+alert("⏰ ¡Tiempo terminado!");
 
 return;
 
@@ -3444,6 +2574,7 @@ updateTimer();
 
 }
 
+
 function pauseTimer(){
 
 clearInterval(timerInterval);
@@ -3452,134 +2583,39 @@ timerInterval=null;
 
 }
 
+
 function resetTimer(){
 
 pauseTimer();
 
-const minutes=
-parseInt(
-document.getElementById("timerMinutes")?.value
-)||0;
+const min=
+parseInt(document.getElementById("timerMin")?.value)||0;
 
-const seconds=
-parseInt(
-document.getElementById("timerSecondsInput")?.value
-)||0;
+const sec=
+parseInt(document.getElementById("timerSec")?.value)||0;
 
-timerSeconds=
-minutes*60+seconds;
+timerSeconds=min*60+sec;
 
 updateTimer();
 
 }
 
+
 function updateTimer(){
 
-const el=
-document.getElementById("timerDisplay");
+const el=document.getElementById("timerDisplay");
 
 if(!el)return;
 
-const m=
-Math.floor(timerSeconds/60);
+const m=Math.floor(timerSeconds/60);
 
-const s=
-timerSeconds%60;
+const s=timerSeconds%60;
 
 el.textContent=
 String(m).padStart(2,"0")+":"+
 String(s).padStart(2,"0");
 
 }
-
-
-/* ==========================================
-   DIFERENCIA DE FECHAS
-========================================== */
-
-function dateDifference(){
-
-document.getElementById("modalContent")
-.innerHTML=`
-
-<div class="form">
-
-<label>Fecha inicial</label>
-
-<input
-id="dateStart"
-type="date">
-
-</div>
-
-<div class="form">
-
-<label>Fecha final</label>
-
-<input
-id="dateEnd"
-type="date">
-
-</div>
-
-<button class="primary"
-onclick="calculateDateDifference()">
-Calcular
-</button>
-
-<div class="result result-big"
-id="dateResult">
-Resultado
-</div>
-`;
-
-}
-
-function calculateDateDifference(){
-
-const startValue=
-document.getElementById("dateStart").value;
-
-const endValue=
-document.getElementById("dateEnd").value;
-
-if(!startValue||!endValue){
-
-showToast("Selecciona las dos fechas");
-
-return;
-
-}
-
-const start=
-new Date(startValue+"T00:00:00");
-
-const end=
-new Date(endValue+"T00:00:00");
-
-const difference=
-Math.abs(end-start);
-
-const days=
-Math.round(
-difference/(1000*60*60*24)
-);
-
-document.getElementById("dateResult")
-.innerHTML=
-days+" días";
-
-}
-
-
-/* ==========================================
-   INICIO
-========================================== */
-
-renderTools();
-renderFavorites();
-renderHistory();
-updateStats();
 
 </script>
 
