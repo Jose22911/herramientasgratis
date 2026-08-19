@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacto | HerramientasGratis</title>
+
+<meta name="description"
+content="Contacta con HerramientasGratis para enviar sugerencias, informar de problemas o compartir ideas para nuevas herramientas.">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#172033;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+padding:18px 20px;
+}
+
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.logo span{
+color:#facc15;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-weight:bold;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:55px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#64748b;
+font-size:18px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px 70px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(15,23,42,.08);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.form-group{
+margin-top:18px;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin-bottom:7px;
+}
+
+input,
+textarea{
+width:100%;
+padding:13px;
+border:1px solid #dbe2ea;
+border-radius:10px;
+font-size:16px;
+font-family:Arial,sans-serif;
+outline:none;
+}
+
+input:focus,
+textarea:focus{
+border-color:#2563eb;
+}
+
+textarea{
+min-height:150px;
+resize:vertical;
+}
+
+button{
+margin-top:20px;
+border:0;
+background:#2563eb;
+color:white;
+padding:13px 20px;
+border-radius:10px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.info{
+margin-top:30px;
+padding:20px;
+background:#eff6ff;
+border-radius:14px;
+}
+
+footer{
+background:#0f172a;
+color:#cbd5e1;
+text-align:center;
+padding:35px 20px;
+}
+
+footer a{
+color:#93c5fd;
+text-decoration:none;
+margin:0 8px;
+}
+
+@media(max-width:600px){
+
+.nav{
+flex-direction:column;
+}
+
+nav a{
+margin:0 6px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.card{
+padding:22px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+🛠️ Herramientas<span>Gratis</span>
+</div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="sobre-nosotros.html">
+Sobre nosotros
+</a>
+
+<a href="contacto.html">
+Contacto
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>📩 Contacto</h1>
+
+<p>
+¿Tienes una sugerencia, encontraste un problema
+o quieres proponernos una nueva herramienta?
+</p>
+
+</section>
+
+
+<main class="container">
+
+<div class="card">
+
+<h2>💬 Escríbenos</h2>
+
+<p>
+Nos interesa conocer tus ideas y sugerencias para
+seguir mejorando HerramientasGratis.
+</p>
+
+<form onsubmit="sendMessage(event)">
+
+<div class="form-group">
+
+<label for="name">
+Nombre
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Tu nombre"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+Correo electrónico
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="tucorreo@ejemplo.com"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="message">
+Mensaje
+</label>
+
+<textarea
+id="message"
+placeholder="Escribe tu mensaje..."
+required></textarea>
+
+</div>
+
+<button type="submit">
+📨 Enviar mensaje
+</button>
+
+</form>
+
+
+<div class="info">
+
+<strong>💡 Importante:</strong>
+
+<p>
+Este formulario prepara el mensaje para enviarlo
+desde tu aplicación de correo electrónico. No
+necesitamos almacenar tus datos en nuestra página.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>🛠️ HerramientasGratis</strong>
+</p>
+
+<p>
+Herramientas online gratuitas.
+</p>
+
+<p style="margin-top:12px">
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="sobre-nosotros.html">
+Sobre nosotros
+</a>
+
+<a href="contacto.html">
+Contacto
+</a>
+
+<a href="privacidad.html">
+Privacidad
+</a>
+
+<a href="terminos.html">
+Términos
+</a>
+
+</p>
+
+<p style="margin-top:15px">
+© 2026 HerramientasGratis
+</p>
+
+</footer>
+
+
+<script>
+
+function sendMessage(event){
+
+event.preventDefault();
+
+const name =
+document.getElementById("name").value;
+
+const email =
+document.getElementById("email").value;
+
+const message =
+document.getElementById("message").value;
+
+
+/*
+  CAMBIA ESTA DIRECCIÓN POR TU CORREO
+  CUANDO QUIERAS RECIBIR LOS MENSAJES.
+*/
+
+const destination =
+"TU-CORREO@EJEMPLO.COM";
+
+
+const subject =
+encodeURIComponent(
+"Contacto - HerramientasGratis"
+);
+
+
+const body =
+encodeURIComponent(
+"Nombre: " +
+name +
+"\n\nCorreo: " +
+email +
+"\n\nMensaje:\n" +
+message
+);
+
+
+window.location.href =
+"mailto:" +
+destination +
+"?subject=" +
+subject +
+"&body=" +
+body;
+
+}
+
+</script>
+
+</body>
+</html>
