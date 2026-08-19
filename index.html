@@ -137,9 +137,7 @@ footer {
             <div class="icon">🧮</div>
             <h3>Calculadora</h3>
             <p>Realiza cálculos de forma rápida.</p>
-            <button onclick="alert('Próximamente tendremos una calculadora completa 🚀')">
-                Abrir
-            </button>
+          <button onclick="calculadora()">Abrir</button>
         </div>
 
         <div class="tool">
@@ -237,7 +235,52 @@ document.getElementById("buscador").addEventListener("input", function() {
     });
 
 });
+function calculadora() {
+    let numero1 = prompt("Escribe el primer número:");
 
+    if (numero1 === null) return;
+
+    let operacion = prompt(
+        "¿Qué operación quieres realizar?\n\n" +
+        "+  Suma\n" +
+        "-  Resta\n" +
+        "*  Multiplicación\n" +
+        "/  División"
+    );
+
+    if (operacion === null) return;
+
+    let numero2 = prompt("Escribe el segundo número:");
+
+    if (numero2 === null) return;
+
+    numero1 = Number(numero1);
+    numero2 = Number(numero2);
+
+    let resultado;
+
+    if (operacion === "+") {
+        resultado = numero1 + numero2;
+    } else if (operacion === "-") {
+        resultado = numero1 - numero2;
+    } else if (operacion === "*") {
+        resultado = numero1 * numero2;
+    } else if (operacion === "/") {
+
+        if (numero2 === 0) {
+            alert("No se puede dividir entre cero.");
+            return;
+        }
+
+        resultado = numero1 / numero2;
+
+    } else {
+        alert("Operación no válida.");
+        return;
+    }
+
+    alert("Resultado: " + resultado);
+}
 </script>
 
 </body>
