@@ -1,4831 +1,1955 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>HerramientasGratis 6.0</title>
 
-<title>HerramientasGratis 5.0 | Herramientas online gratis</title>
-
-<meta name="description"
-content="HerramientasGratis: calculadoras, conversores, herramientas de texto, fechas, finanzas y utilidades gratuitas.">
-
-<meta name="keywords"
-content="herramientas gratis, calculadoras online, conversores, herramientas de texto">
+<meta name="description" content="HerramientasGratis - herramientas online gratuitas, rápidas y fáciles de usar.">
+<meta name="theme-color" content="#2563eb">
 
 <style>
-
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 :root{
-
---primary:#2563eb;
---secondary:#7c3aed;
---bg:#f5f7fb;
---card:#ffffff;
---text:#172033;
---muted:#64748b;
---border:#e2e8f0;
---success:#16a34a;
---danger:#dc2626;
---warning:#f59e0b;
---shadow:0 8px 25px rgba(15,23,42,.08);
-
-}
-
-body{
-
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.5;
-transition:.3s;
-
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#64748b;
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --border:#e2e8f0;
+    --success:#16a34a;
+    --danger:#dc2626;
+    --shadow:0 10px 30px rgba(15,23,42,.08);
 }
 
 body.dark{
-
---bg:#0f172a;
---card:#1e293b;
---text:#f8fafc;
---muted:#cbd5e1;
---border:#334155;
---shadow:0 8px 25px rgba(0,0,0,.3);
-
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:#334155;
+    --shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-button,
-input,
-select,
-textarea{
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    transition:.25s;
+}
 
-font:inherit;
-
+button,input,textarea,select{
+    font:inherit;
 }
 
 button{
-
-cursor:pointer;
-
+    cursor:pointer;
 }
-
-/* HEADER */
 
 header{
-
-position:sticky;
-top:0;
-z-index:1000;
-
-background:
-linear-gradient(
-135deg,
-var(--primary),
-var(--secondary)
-);
-
-color:white;
-
-box-shadow:
-0 4px 18px rgba(0,0,0,.18);
-
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-.nav{
-
-max-width:1250px;
-margin:auto;
-padding:14px 20px;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-gap:15px;
-
+.header-content{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
 }
 
 .logo{
-
-font-size:25px;
-font-weight:800;
-
+    font-size:24px;
+    font-weight:bold;
 }
 
 .logo span{
-
-color:#facc15;
-
+    color:#facc15;
 }
 
-.nav-actions{
-
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-
+.header-actions{
+    display:flex;
+    gap:8px;
 }
 
-.nav-actions button{
-
-border:0;
-
-background:
-rgba(255,255,255,.16);
-
-color:white;
-
-padding:9px 13px;
-
-border-radius:10px;
-
+.icon-btn{
+    border:0;
+    background:rgba(255,255,255,.18);
+    color:white;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    font-size:20px;
 }
-
-.nav-actions button:hover{
-
-background:
-rgba(255,255,255,.3);
-
-}
-
-/* HERO */
 
 .hero{
-
-padding:70px 20px;
-
-text-align:center;
-
-background:
-linear-gradient(
-180deg,
-#eaf1ff,
-var(--bg)
-);
-
-}
-
-.dark .hero{
-
-background:
-linear-gradient(
-180deg,
-#111827,
-var(--bg)
-);
-
+    max-width:1100px;
+    margin:40px auto 25px;
+    padding:20px;
+    text-align:center;
 }
 
 .hero h1{
-
-font-size:48px;
-line-height:1.1;
-margin-bottom:18px;
-
+    font-size:42px;
+    margin-bottom:12px;
 }
 
 .hero h1 span{
-
-color:var(--primary);
-
+    color:var(--primary);
 }
 
 .hero p{
-
-max-width:760px;
-margin:auto;
-
-color:var(--muted);
-
-font-size:18px;
-
+    color:var(--muted);
+    font-size:18px;
+    margin-bottom:25px;
 }
 
-.search{
-
-max-width:720px;
-margin:30px auto 0;
-
+.search-box{
+    max-width:650px;
+    margin:auto;
+    position:relative;
 }
 
-.search input{
-
-width:100%;
-
-padding:18px 22px;
-
-border:
-2px solid var(--border);
-
-border-radius:16px;
-
-background:var(--card);
-
-color:var(--text);
-
-outline:none;
-
-box-shadow:var(--shadow);
-
+.search-box input{
+    width:100%;
+    padding:17px 50px 17px 20px;
+    border:2px solid var(--border);
+    border-radius:15px;
+    outline:none;
+    background:var(--card);
+    color:var(--text);
+    font-size:16px;
 }
 
-.search input:focus{
-
-border-color:var(--primary);
-
+.search-box input:focus{
+    border-color:var(--primary);
 }
 
-/* STATS */
-
-.stats{
-
-max-width:1000px;
-margin:-25px auto 0;
-padding:0 20px;
-
-position:relative;
-
+.search-icon{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:21px;
 }
 
-.stats-grid{
-
-display:grid;
-grid-template-columns:
-repeat(3,1fr);
-
-gap:15px;
-
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px 50px;
 }
 
-.stat{
-
-background:var(--card);
-
-border:
-1px solid var(--border);
-
-border-radius:16px;
-
-padding:20px;
-
-text-align:center;
-
-box-shadow:var(--shadow);
-
+.categories{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:5px 0 20px;
 }
 
-.stat strong{
-
-display:block;
-
-font-size:28px;
-
-color:var(--primary);
-
+.category-btn{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    padding:10px 17px;
+    border-radius:30px;
+    white-space:nowrap;
 }
 
-.stat span{
-
-color:var(--muted);
-
-font-size:14px;
-
-}
-
-/* MAIN */
-
-main{
-
-max-width:1250px;
-margin:auto;
-
-padding:50px 20px;
-
-}
-
-.section{
-
-margin-bottom:45px;
-
+.category-btn.active,
+.category-btn:hover{
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
 }
 
 .section-title{
-
-text-align:center;
-margin-bottom:25px;
-
+    margin:25px 0 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .section-title h2{
-
-font-size:30px;
-
+    font-size:25px;
 }
 
-.section-title p{
-
-color:var(--muted);
-
+.tool-count{
+    color:var(--muted);
+    font-size:14px;
 }
 
-/* CATEGORIES */
-
-.categories{
-
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-
-gap:9px;
-
-margin-bottom:30px;
-
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.category{
-
-border:
-1px solid var(--border);
-
-background:var(--card);
-
-color:var(--text);
-
-padding:10px 15px;
-
-border-radius:25px;
-
+.tool-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:var(--shadow);
+    transition:.2s;
+    position:relative;
 }
 
-.category.active,
-.category:hover{
-
-background:var(--primary);
-
-color:white;
-
-border-color:var(--primary);
-
-}
-
-/* TOOLS */
-
-.tools{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(245px,1fr));
-
-gap:20px;
-
-}
-
-.tool{
-
-position:relative;
-
-background:var(--card);
-
-border:
-1px solid var(--border);
-
-border-radius:18px;
-
-padding:22px;
-
-box-shadow:var(--shadow);
-
-transition:.2s;
-
-}
-
-.tool:hover{
-
-transform:translateY(-5px);
-
-border-color:var(--primary);
-
+.tool-card:hover{
+    transform:translateY(-4px);
 }
 
 .tool-top{
-
-display:flex;
-justify-content:space-between;
-gap:10px;
-
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:12px;
 }
 
-.icon{
-
-font-size:38px;
-margin-bottom:8px;
-
+.tool-icon{
+    width:48px;
+    height:48px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eff6ff;
+    font-size:25px;
 }
 
-.tool h3{
-
-margin-bottom:6px;
-
+body.dark .tool-icon{
+    background:#172554;
 }
 
-.tool p{
+.tool-name{
+    font-size:18px;
+    font-weight:bold;
+}
 
-color:var(--muted);
+.tool-description{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.5;
+    min-height:42px;
+}
 
-font-size:14px;
+.tool-actions{
+    display:flex;
+    gap:8px;
+    margin-top:16px;
+}
 
+.primary-btn,
+.secondary-btn,
+.danger-btn{
+    border:0;
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.primary-btn{
+    background:var(--primary);
+    color:white;
+}
+
+.primary-btn:hover{
+    background:var(--primary-dark);
+}
+
+.secondary-btn{
+    background:#e2e8f0;
+    color:#172033;
+}
+
+body.dark .secondary-btn{
+    background:#334155;
+    color:white;
+}
+
+.danger-btn{
+    background:#fee2e2;
+    color:#b91c1c;
 }
 
 .favorite{
-
-position:relative;
-z-index:10;
-
-border:0;
-background:transparent;
-
-font-size:26px;
-
-color:#94a3b8;
-
+    position:absolute;
+    top:18px;
+    right:18px;
+    background:none;
+    border:0;
+    font-size:23px;
 }
 
 .favorite.active{
-
-color:#ef4444;
-
+    color:#f59e0b;
 }
 
-.open-tool{
-
-position:absolute;
-inset:0;
-z-index:1;
-
+.empty{
+    text-align:center;
+    padding:50px 20px;
+    color:var(--muted);
+    display:none;
 }
 
-.badge{
-
-display:inline-block;
-
-margin-top:10px;
-
-padding:4px 8px;
-
-border-radius:7px;
-
-background:#dbeafe;
-
-color:#1d4ed8;
-
-font-size:11px;
-
-font-weight:bold;
-
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
 }
 
-/* PANELS */
-
-.tool-panel{
-
-display:none;
-
-margin-top:35px;
-
-background:var(--card);
-
-border:
-1px solid var(--border);
-
-border-radius:20px;
-
-padding:30px;
-
-box-shadow:var(--shadow);
-
+.modal.show{
+    display:flex;
 }
 
-.tool-panel.active{
-
-display:block;
-
+.modal-box{
+    background:var(--card);
+    width:100%;
+    max-width:650px;
+    max-height:90vh;
+    overflow:auto;
+    border-radius:20px;
+    padding:25px;
+    position:relative;
 }
 
-.tool-head{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-margin-bottom:25px;
-
-gap:15px;
-
-}
-
-.tool-head h2{
-
-font-size:27px;
-
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
 .close{
-
-border:0;
-
-background:var(--danger);
-
-color:white;
-
-padding:9px 15px;
-
-border-radius:9px;
-
+    border:0;
+    background:none;
+    font-size:27px;
+    color:var(--text);
 }
 
-/* FORM */
-
-.field{
-
-margin-bottom:17px;
-
+.form-group{
+    margin-bottom:15px;
 }
 
-.field label{
-
-display:block;
-
-font-weight:bold;
-
-margin-bottom:7px;
-
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:bold;
 }
 
-input,
-select,
-textarea{
-
-width:100%;
-
-padding:13px;
-
-border:
-1px solid var(--border);
-
-border-radius:10px;
-
-background:var(--card);
-
-color:var(--text);
-
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--bg);
+    color:var(--text);
+    outline:none;
 }
 
-textarea{
-
-min-height:180px;
-
-resize:vertical;
-
-}
-
-.btn{
-
-border:0;
-
-padding:11px 17px;
-
-border-radius:10px;
-
-background:var(--primary);
-
-color:white;
-
-margin:4px;
-
-}
-
-.btn.green{
-
-background:var(--success);
-
-}
-
-.btn.red{
-
-background:var(--danger);
-
-}
-
-.btn.orange{
-
-background:var(--warning);
-
+.form-group textarea{
+    min-height:130px;
+    resize:vertical;
 }
 
 .result{
-
-margin-top:18px;
-
-padding:18px;
-
-background:var(--bg);
-
-border:
-1px solid var(--border);
-
-border-radius:12px;
-
-font-size:17px;
-
-word-break:break-word;
-
+    margin-top:18px;
+    padding:16px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    word-break:break-word;
 }
 
-/* CALCULATOR */
+.result.big{
+    font-size:30px;
+    text-align:center;
+    font-weight:bold;
+}
 
-.calculator{
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
 
-max-width:380px;
-margin:auto;
+.button-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
 
+.calc{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
 }
 
 .calc-display{
-
-text-align:right;
-font-size:28px;
-margin-bottom:10px;
-
+    width:100%;
+    padding:18px;
+    font-size:26px;
+    text-align:right;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--bg);
+    color:var(--text);
+    margin-bottom:10px;
 }
 
-.calc-grid{
-
-display:grid;
-grid-template-columns:
-repeat(4,1fr);
-
-gap:8px;
-
+.calc button{
+    padding:16px 5px;
+    border:0;
+    border-radius:10px;
+    background:#e2e8f0;
+    color:#172033;
+    font-weight:bold;
 }
 
-.calc-grid button{
-
-border:0;
-
-padding:19px 5px;
-
-border-radius:10px;
-
-background:var(--bg);
-
-color:var(--text);
-
-font-size:19px;
-
+body.dark .calc button{
+    background:#334155;
+    color:white;
 }
 
-/* TIMER */
-
-.timer-display{
-
-text-align:center;
-
-font-size:50px;
-
-font-weight:bold;
-
-margin:20px;
-
+.calc .operator{
+    background:var(--primary);
+    color:white;
 }
 
-/* COLOR */
+.timer{
+    font-size:55px;
+    text-align:center;
+    font-weight:bold;
+    margin:20px 0;
+}
 
 .color-preview{
-
-height:110px;
-
-border-radius:15px;
-
-margin:15px 0;
-
-border:
-1px solid var(--border);
-
+    height:100px;
+    border-radius:15px;
+    margin-top:15px;
+    border:1px solid var(--border);
 }
-
-/* EMPTY */
-
-.no-results{
-
-display:none;
-
-text-align:center;
-
-padding:40px;
-
-color:var(--muted);
-
-}
-
-.favorite-info{
-
-display:none;
-
-text-align:center;
-
-padding:30px;
-
-margin-bottom:25px;
-
-background:var(--card);
-
-border:
-1px solid var(--border);
-
-border-radius:16px;
-
-}
-
-/* FOOTER */
 
 footer{
-
-background:#111827;
-
-color:white;
-
-text-align:center;
-
-padding:45px 20px;
-
+    background:#0f172a;
+    color:#cbd5e1;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:30px;
 }
 
-footer p{
-
-color:#cbd5e1;
-margin-top:8px;
-
+footer strong{
+    color:white;
 }
 
-.footer-tags{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:8px;
-
-margin-top:18px;
-
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#172033;
+    color:white;
+    padding:13px 18px;
+    border-radius:10px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:.3s;
+    z-index:5000;
 }
 
-.footer-tags span{
-
-background:#1f2937;
-
-padding:7px 10px;
-
-border-radius:8px;
-
-font-size:13px;
-
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* MOBILE */
-
-@media(max-width:700px){
-
-.nav{
-
-flex-direction:column;
-
+@media(max-width:900px){
+    .tools-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-.hero{
+@media(max-width:600px){
+    .header-content{
+        flex-direction:row;
+    }
 
-padding:50px 18px;
+    .logo{
+        font-size:20px;
+    }
 
+    .hero{
+        margin-top:25px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .tools-grid{
+        grid-template-columns:1fr;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .modal-box{
+        padding:18px;
+    }
 }
-
-.hero h1{
-
-font-size:34px;
-
-}
-
-.stats-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.tool-panel{
-
-padding:20px;
-
-}
-
-.tool-head{
-
-flex-direction:column;
-align-items:flex-start;
-
-}
-
-.timer-display{
-
-font-size:40px;
-
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-
 <header>
-
-<div class="nav">
+<div class="header-content">
 
 <div class="logo">
-
 🛠️ Herramientas<span>Gratis</span>
-
 </div>
 
-<div class="nav-actions">
-
-<button onclick="goTools()">
-🧰 Herramientas
-</button>
-
-<button onclick="showFavorites()">
-❤️ Favoritos
-</button>
-
-<button onclick="toggleDark()">
-🌙
-</button>
-
+<div class="header-actions">
+<button class="icon-btn" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+<button class="icon-btn" onclick="showFavorites()" title="Favoritos">⭐</button>
 </div>
 
 </div>
-
 </header>
-
 
 <section class="hero">
 
-<h1>
+<h1>Tus herramientas <span>gratis</span> en un solo lugar</h1>
 
-Herramientas útiles,
-<span>gratis.</span>
+<p>Rápidas, fáciles y sin registros.</p>
 
-</h1>
-
-<p>
-
-Más de 30 herramientas online para cálculos,
-conversiones, texto, fechas, finanzas y mucho más.
-
-</p>
-
-<div class="search">
-
+<div class="search-box">
 <input
+type="text"
 id="search"
-placeholder="🔎 Buscar una herramienta..."
+placeholder="Buscar una herramienta..."
 oninput="searchTools()">
-
+<span class="search-icon">🔎</span>
 </div>
 
 </section>
 
-
-<section class="stats">
-
-<div class="stats-grid">
-
-<div class="stat">
-
-<strong id="toolCount">0</strong>
-
-<span>Herramientas</span>
-
-</div>
-
-<div class="stat">
-
-<strong>100%</strong>
-
-<span>Gratis</span>
-
-</div>
-
-<div class="stat">
-
-<strong>📱</strong>
-
-<span>Celular y PC</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-<main>
-
-<section
-class="section"
-id="toolsSection">
-
-<div class="section-title">
-
-<h2>
-🧰 Todas nuestras herramientas
-</h2>
-
-<p>
-Selecciona una herramienta para comenzar.
-</p>
-
-</div>
-
+<main class="container">
 
 <div class="categories">
 
-<button
-class="category active"
-onclick="filterCategory('all',this)">
-Todas
-</button>
+<button class="category-btn active" onclick="filterCategory('Todas',this)">Todas</button>
+<button class="category-btn" onclick="filterCategory('Texto',this)">📝 Texto</button>
+<button class="category-btn" onclick="filterCategory('Calculadoras',this)">🧮 Calculadoras</button>
+<button class="category-btn" onclick="filterCategory('Productividad',this)">⚡ Productividad</button>
+<button class="category-btn" onclick="filterCategory('Seguridad',this)">🔐 Seguridad</button>
+<button class="category-btn" onclick="filterCategory('Conversores',this)">🔄 Conversores</button>
+<button class="category-btn" onclick="filterCategory('Tiempo',this)">⏱️ Tiempo</button>
+</div>
+
+<div class="section-title">
+<h2>Herramientas</h2>
+<span class="tool-count" id="toolCount"></span>
+</div>
+
+<div class="tools-grid" id="toolsGrid"></div>
+
+<div class="empty" id="empty">
+<h2>😕 No encontramos herramientas</h2>
+<p>Prueba con otro término de búsqueda.</p>
+</div>
+
+</main>
+
+<footer>
+<p><strong>HerramientasGratis 6.0</strong></p>
+<p>Herramientas online gratuitas para todos.</p>
+<p style="margin-top:10px;">© 2026 HerramientasGratis</p>
+</footer>
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+<h2 id="modalTitle"></h2>
+<button class="close" onclick="closeModal()">✕</button>
+</div>
+
+<div id="modalContent"></div>
+
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+const tools = [
+
+{
+id:"calculadora",
+name:"Calculadora",
+icon:"🧮",
+category:"Calculadoras",
+description:"Realiza operaciones matemáticas rápidamente.",
+action:calculator
+},
+
+{
+id:"porcentaje",
+name:"Calculadora de porcentaje",
+icon:"📊",
+category:"Calculadoras",
+description:"Calcula porcentajes de manera sencilla.",
+action:percentage
+},
+
+{
+id:"descuento",
+name:"Calculadora de descuentos",
+icon:"💰",
+category:"Calculadoras",
+description:"Calcula cuánto pagarás después de un descuento.",
+action:discount
+},
+
+{
+id:"edad",
+name:"Calculadora de edad",
+icon:"🎂",
+category:"Calculadoras",
+description:"Calcula tu edad exacta.",
+action:ageCalculator
+},
+
+{
+id:"contador",
+name:"Contador de palabras",
+icon:"📝",
+category:"Texto",
+description:"Cuenta palabras, caracteres y líneas.",
+action:wordCounter
+},
+
+{
+id:"mayusculas",
+name:"Mayúsculas y minúsculas",
+icon:"🔤",
+category:"Texto",
+description:"Convierte texto entre mayúsculas y minúsculas.",
+action:textCase
+},
+
+{
+id:"limpiar",
+name:"Limpiar texto",
+icon:"🧹",
+category:"Texto",
+description:"Elimina espacios y líneas innecesarias.",
+action:cleanText
+},
+
+{
+id:"copiar",
+name:"Copiar texto",
+icon:"📋",
+category:"Texto",
+description:"Escribe texto y cópialo rápidamente.",
+action:copyTool
+},
+
+{
+id:"password",
+name:"Generador de contraseñas",
+icon:"🔐",
+category:"Seguridad",
+description:"Crea contraseñas seguras y aleatorias.",
+action:passwordGenerator
+},
+
+{
+id:"random",
+name:"Número aleatorio",
+icon:"🎲",
+category:"Productividad",
+description:"Genera números aleatorios.",
+action:randomNumber
+},
+
+{
+id:"url",
+name:"Codificador de URL",
+icon:"🔗",
+category:"Productividad",
+description:"Codifica y decodifica textos para URLs.",
+action:urlEncoder
+},
+
+{
+id:"color",
+name:"Selector de colores",
+icon:"🎨",
+category:"Productividad",
+description:"Elige un color y obtén su código HEX.",
+action:colorPicker
+},
+
+{
+id:"temperatura",
+name:"Conversor de temperatura",
+icon:"🌡️",
+category:"Conversores",
+description:"Convierte Celsius, Fahrenheit y Kelvin.",
+action:temperature
+},
+
+{
+id:"unidades",
+name:"Conversor de unidades",
+icon:"📏",
+category:"Conversores",
+description:"Convierte kilómetros, metros, millas y más.",
+action:units
+},
+
+{
+id:"cronometro",
+name:"Cronómetro",
+icon:"⏱️",
+category:"Tiempo",
+description:"Cronómetro online sencillo.",
+action:stopwatch
+},
+
+{
+id:"temporizador",
+name:"Temporizador",
+icon:"⏲️",
+category:"Tiempo",
+description:"Cuenta regresiva personalizada.",
+action:timer
+}
+
+];
+
+let currentCategory="Todas";
+let favorites=JSON.parse(localStorage.getItem("hgFavorites")||"[]");
+
+function saveFavorites(){
+localStorage.setItem("hgFavorites",JSON.stringify(favorites));
+}
+
+function isFavorite(id){
+return favorites.includes(id);
+}
+
+function toggleFavorite(id,event){
+if(event) event.stopPropagation();
+
+if(isFavorite(id)){
+favorites=favorites.filter(x=>x!==id);
+showToast("Eliminado de favoritos");
+}else{
+favorites.push(id);
+showToast("⭐ Añadido a favoritos");
+}
+
+saveFavorites();
+renderTools();
+}
+
+function renderTools(){
+
+const grid=document.getElementById("toolsGrid");
+const search=document.getElementById("search").value.toLowerCase();
+
+let filtered=tools.filter(tool=>{
+
+const categoryOK=
+currentCategory==="Todas" ||
+tool.category===currentCategory;
+
+const searchOK=
+tool.name.toLowerCase().includes(search) ||
+tool.description.toLowerCase().includes(search) ||
+tool.category.toLowerCase().includes(search);
+
+return categoryOK && searchOK;
+});
+
+grid.innerHTML="";
+
+filtered.forEach(tool=>{
+
+const card=document.createElement("div");
+card.className="tool-card";
+
+card.innerHTML=`
 
 <button
-class="category"
-onclick="filterCategory('math',this)">
-🧮 Matemáticas
+class="favorite ${isFavorite(tool.id)?"active":""}"
+onclick="toggleFavorite('${tool.id}',event)"
+title="Favorito">
+${isFavorite(tool.id)?"★":"☆"}
 </button>
 
-<button
-class="category"
-onclick="filterCategory('finance',this)">
-💰 Finanzas
-</button>
+<div class="tool-top">
 
-<button
-class="category"
-onclick="filterCategory('convert',this)">
-🔄 Conversores
-</button>
+<div class="tool-icon">${tool.icon}</div>
 
-<button
-class="category"
-onclick="filterCategory('text',this)">
-📝 Texto
-</button>
-
-<button
-class="category"
-onclick="filterCategory('date',this)">
-📅 Fechas
-</button>
-
-<button
-class="category"
-onclick="filterCategory('utility',this)">
-🛠️ Utilidades
-</button>
+<div>
+<div class="tool-name">${tool.name}</div>
+<small style="color:var(--muted)">${tool.category}</small>
+</div>
 
 </div>
 
-
-<div
-class="favorite-info"
-id="favoriteInfo">
-
-<h3>❤️ Tus favoritos</h3>
-
-<p>
-Las herramientas que marques con ❤️ aparecerán aquí.
+<p class="tool-description">
+${tool.description}
 </p>
 
-</div>
+<div class="tool-actions">
 
-
-<div
-class="tools"
-id="tools">
-
-
-<!-- 1 -->
-
-<div class="tool"
-data-category="math"
-data-name="calculadora matematicas operaciones">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🧮</div>
-
-<h3>Calculadora</h3>
-
-<p>Operaciones matemáticas.</p>
-
-<span class="badge">POPULAR</span>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="calculator"
-onclick="toggleFavorite(event,'calculator')">
-♡
+<button class="primary-btn"
+onclick="openTool('${tool.id}')">
+Abrir herramienta
 </button>
 
 </div>
+`;
 
-<div
-class="open-tool"
-onclick="openTool('calculator')">
-</div>
+grid.appendChild(card);
 
-</div>
+});
 
+document.getElementById("toolCount").textContent=
+filtered.length+" herramientas";
 
-<!-- 2 -->
+document.getElementById("empty").style.display=
+filtered.length?"none":"block";
 
-<div class="tool"
-data-category="math"
-data-name="porcentaje descuento aumento porcentaje">
+}
+
+function openTool(id){
+
+const tool=tools.find(x=>x.id===id);
+
+if(!tool)return;
+
+document.getElementById("modalTitle").textContent=
+tool.icon+" "+tool.name;
+
+document.getElementById("modalContent").innerHTML="";
+
+tool.action();
+
+document.getElementById("modal").classList.add("show");
+}
+
+function closeModal(){
+document.getElementById("modal").classList.remove("show");
+}
+
+document.getElementById("modal").addEventListener("click",function(e){
+
+if(e.target===this){
+closeModal();
+}
+
+});
+
+function filterCategory(category,button){
+
+currentCategory=category;
+
+document.querySelectorAll(".category-btn")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+renderTools();
+
+}
+
+function searchTools(){
+renderTools();
+}
+
+function showFavorites(){
+
+currentCategory="Todas";
+
+document.querySelectorAll(".category-btn")
+.forEach(x=>x.classList.remove("active"));
+
+document.querySelector(".category-btn").classList.add("active");
+
+const grid=document.getElementById("toolsGrid");
+
+const favTools=tools.filter(x=>favorites.includes(x.id));
+
+grid.innerHTML="";
+
+favTools.forEach(tool=>{
+
+const card=document.createElement("div");
+
+card.className="tool-card";
+
+card.innerHTML=`
+
+<button
+class="favorite active"
+onclick="toggleFavorite('${tool.id}',event)">
+★
+</button>
 
 <div class="tool-top">
 
+<div class="tool-icon">${tool.icon}</div>
+
 <div>
-
-<div class="icon">📊</div>
-
-<h3>Porcentajes</h3>
-
-<p>Calcula porcentajes y descuentos.</p>
+<div class="tool-name">${tool.name}</div>
+<small style="color:var(--muted)">${tool.category}</small>
+</div>
 
 </div>
 
-<button
-class="favorite"
-data-tool-id="percentage"
-onclick="toggleFavorite(event,'percentage')">
-♡
+<p class="tool-description">
+${tool.description}
+</p>
+
+<div class="tool-actions">
+
+<button class="primary-btn"
+onclick="openTool('${tool.id}')">
+Abrir herramienta
 </button>
 
 </div>
+`;
 
-<div
-class="open-tool"
-onclick="openTool('percentage')">
-</div>
+grid.appendChild(card);
 
-</div>
+});
 
+document.getElementById("toolCount").textContent=
+favTools.length+" favoritos";
 
-<!-- 3 -->
+document.getElementById("empty").style.display=
+favTools.length?"none":"block";
 
-<div class="tool"
-data-category="math"
-data-name="regla de tres">
+if(!favTools.length){
 
-<div class="tool-top">
+document.getElementById("empty").innerHTML=`
+<h2>⭐ No tienes favoritos todavía</h2>
+<p>Presiona la estrella de una herramienta para guardarla.</p>
+`;
 
-<div>
+}
 
-<div class="icon">📐</div>
+window.scrollTo({
+top:document.querySelector(".container").offsetTop-80,
+behavior:"smooth"
+});
 
-<h3>Regla de tres</h3>
+}
 
-<p>Resuelve proporciones fácilmente.</p>
+function showToast(message){
 
-</div>
+const toast=document.getElementById("toast");
 
-<button
-class="favorite"
-data-tool-id="rule3"
-onclick="toggleFavorite(event,'rule3')">
-♡
-</button>
+toast.textContent=message;
 
-</div>
+toast.classList.add("show");
 
-<div
-class="open-tool"
-onclick="openTool('rule3')">
-</div>
+setTimeout(()=>{
+toast.classList.remove("show");
+},2000);
 
-</div>
+}
 
+function toggleDark(){
 
-<!-- 4 -->
+document.body.classList.toggle("dark");
 
-<div class="tool"
-data-category="math"
-data-name="promedio media promedio notas">
+localStorage.setItem(
+"hgDark",
+document.body.classList.contains("dark")
+);
 
-<div class="tool-top">
+}
 
-<div>
+if(localStorage.getItem("hgDark")==="true"){
+document.body.classList.add("dark");
+}
 
-<div class="icon">📈</div>
 
-<h3>Promedio</h3>
+/* CALCULADORA */
 
-<p>Calcula la media de números.</p>
+function calculator(){
 
-</div>
+document.getElementById("modalContent").innerHTML=`
 
-<button
-class="favorite"
-data-tool-id="average"
-onclick="toggleFavorite(event,'average')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('average')">
-</div>
-
-</div>
-
-
-<!-- 5 -->
-
-<div class="tool"
-data-category="math"
-data-name="factorial numero factorial">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🎯</div>
-
-<h3>Factorial</h3>
-
-<p>Calcula el factorial de un número.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="factorial"
-onclick="toggleFavorite(event,'factorial')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('factorial')">
-</div>
-
-</div>
-
-
-<!-- 6 -->
-
-<div class="tool"
-data-category="math"
-data-name="par impar numero">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🔢</div>
-
-<h3>Par o impar</h3>
-
-<p>Comprueba si un número es par.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="even"
-onclick="toggleFavorite(event,'even')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('even')">
-</div>
-
-</div>
-
-
-<!-- 7 -->
-
-<div class="tool"
-data-category="finance"
-data-name="interes simple dinero">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🏦</div>
-
-<h3>Interés simple</h3>
-
-<p>Calcula intereses financieros.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="interest"
-onclick="toggleFavorite(event,'interest')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('interest')">
-</div>
-
-</div>
-
-
-<!-- 8 -->
-
-<div class="tool"
-data-category="finance"
-data-name="propina restaurante cuenta">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🍽️</div>
-
-<h3>Propina</h3>
-
-<p>Calcula propina y división de cuenta.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="tip"
-onclick="toggleFavorite(event,'tip')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('tip')">
-</div>
-
-</div>
-
-
-<!-- 9 -->
-
-<div class="tool"
-data-category="finance"
-data-name="moneda dolar peso euro conversion">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">💱</div>
-
-<h3>Conversor de moneda</h3>
-
-<p>Convierte monedas con una tasa personalizada.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="currency"
-onclick="toggleFavorite(event,'currency')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('currency')">
-</div>
-
-</div>
-
-
-<!-- 10 -->
-
-<div class="tool"
-data-category="finance"
-data-name="vivienda cuota hipoteca">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🏠</div>
-
-<h3>Cuota de préstamo</h3>
-
-<p>Calcula una cuota mensual estimada.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="loan"
-onclick="toggleFavorite(event,'loan')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('loan')">
-</div>
-
-</div>
-
-
-<!-- 11 -->
-
-<div class="tool"
-data-category="finance"
-data-name="combustible gasolina carro viaje">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🚗</div>
-
-<h3>Combustible</h3>
-
-<p>Calcula consumo y costo de viaje.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="fuel"
-onclick="toggleFavorite(event,'fuel')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('fuel')">
-</div>
-
-</div>
-
-
-<!-- 12 -->
-
-<div class="tool"
-data-category="convert"
-data-name="longitud metros kilometros centimetros">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">📏</div>
-
-<h3>Longitud</h3>
-
-<p>Convierte unidades de longitud.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="length"
-onclick="toggleFavorite(event,'length')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('length')">
-</div>
-
-</div>
-
-
-<!-- 13 -->
-
-<div class="tool"
-data-category="convert"
-data-name="peso kilos gramos libras">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">⚖️</div>
-
-<h3>Peso</h3>
-
-<p>Convierte peso y masa.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="weight"
-onclick="toggleFavorite(event,'weight')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('weight')">
-</div>
-
-</div>
-
-
-<!-- 14 -->
-
-<div class="tool"
-data-category="convert"
-data-name="temperatura celsius fahrenheit kelvin">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🌡️</div>
-
-<h3>Temperatura</h3>
-
-<p>Celsius, Fahrenheit y Kelvin.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="temperature"
-onclick="toggleFavorite(event,'temperature')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('temperature')">
-</div>
-
-</div>
-
-
-<!-- 15 -->
-
-<div class="tool"
-data-category="convert"
-data-name="volumen litros mililitros metros cubicos">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">📦</div>
-
-<h3>Volumen</h3>
-
-<p>Convierte unidades de volumen.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="volume"
-onclick="toggleFavorite(event,'volume')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('volume')">
-</div>
-
-</div>
-
-
-<!-- 16 -->
-
-<div class="tool"
-data-category="date"
-data-name="edad nacimiento cumpleaños">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🎂</div>
-
-<h3>Edad</h3>
-
-<p>Calcula tu edad exacta.</p>
-
-<span class="badge">POPULAR</span>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="age"
-onclick="toggleFavorite(event,'age')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('age')">
-</div>
-
-</div>
-
-
-<!-- 17 -->
-
-<div class="tool"
-data-category="date"
-data-name="dias fechas diferencia">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">📅</div>
-
-<h3>Días entre fechas</h3>
-
-<p>Calcula la diferencia entre fechas.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="dateDifference"
-onclick="toggleFavorite(event,'dateDifference')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('dateDifference')">
-</div>
-
-</div>
-
-
-<!-- 18 -->
-
-<div class="tool"
-data-category="text"
-data-name="contador palabras caracteres">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">📝</div>
-
-<h3>Contador de palabras</h3>
-
-<p>Cuenta palabras y caracteres.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="counter"
-onclick="toggleFavorite(event,'counter')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('counter')">
-</div>
-
-</div>
-
-
-<!-- 19 -->
-
-<div class="tool"
-data-category="text"
-data-name="mayusculas minusculas texto">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🔤</div>
-
-<h3>Convertidor de texto</h3>
-
-<p>Mayúsculas y minúsculas.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="textTransform"
-onclick="toggleFavorite(event,'textTransform')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('textTransform')">
-</div>
-
-</div>
-
-
-<!-- 20 -->
-
-<div class="tool"
-data-category="text"
-data-name="texto inverso invertir">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🔄</div>
-
-<h3>Texto inverso</h3>
-
-<p>Invierte cualquier texto.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="reverse"
-onclick="toggleFavorite(event,'reverse')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('reverse')">
-</div>
-
-</div>
-
-
-<!-- 21 -->
-
-<div class="tool"
-data-category="text"
-data-name="espacios limpiar texto">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🧹</div>
-
-<h3>Limpiar espacios</h3>
-
-<p>Elimina espacios innecesarios.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="spaces"
-onclick="toggleFavorite(event,'spaces')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('spaces')">
-</div>
-
-</div>
-
-
-<!-- 22 -->
-
-<div class="tool"
-data-category="utility"
-data-name="password contraseña seguridad">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🔐</div>
-
-<h3>Contraseña segura</h3>
-
-<p>Genera contraseñas aleatorias.</p>
-
-<span class="badge">POPULAR</span>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="password"
-onclick="toggleFavorite(event,'password')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('password')">
-</div>
-
-</div>
-
-
-<!-- 23 -->
-
-<div class="tool"
-data-category="utility"
-data-name="numero aleatorio random">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🎲</div>
-
-<h3>Número aleatorio</h3>
-
-<p>Genera números al azar.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="random"
-onclick="toggleFavorite(event,'random')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('random')">
-</div>
-
-</div>
-
-
-<!-- 24 -->
-
-<div class="tool"
-data-category="utility"
-data-name="colores color hex diseño">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🎨</div>
-
-<h3>Selector de colores</h3>
-
-<p>Obtén códigos HEX.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="color"
-onclick="toggleFavorite(event,'color')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('color')">
-</div>
-
-</div>
-
-
-<!-- 25 -->
-
-<div class="tool"
-data-category="utility"
-data-name="cronometro tiempo">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">⏱️</div>
-
-<h3>Cronómetro</h3>
-
-<p>Mide el tiempo.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="stopwatch"
-onclick="toggleFavorite(event,'stopwatch')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('stopwatch')">
-</div>
-
-</div>
-
-
-<!-- 26 -->
-
-<div class="tool"
-data-category="utility"
-data-name="temporizador timer cuenta atras">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">⏲️</div>
-
-<h3>Temporizador</h3>
-
-<p>Cuenta regresiva.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="timer"
-onclick="toggleFavorite(event,'timer')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('timer')">
-</div>
-
-</div>
-
-
-<!-- 27 -->
-
-<div class="tool"
-data-category="math"
-data-name="area rectangulo">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">▭</div>
-
-<h3>Área de rectángulo</h3>
-
-<p>Calcula área y perímetro.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="rectangle"
-onclick="toggleFavorite(event,'rectangle')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('rectangle')">
-</div>
-
-</div>
-
-
-<!-- 28 -->
-
-<div class="tool"
-data-category="math"
-data-name="area circulo radio">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🔵</div>
-
-<h3>Área de círculo</h3>
-
-<p>Calcula área y circunferencia.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="circle"
-onclick="toggleFavorite(event,'circle')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('circle')">
-</div>
-
-</div>
-
-
-<!-- 29 -->
-
-<div class="tool"
-data-category="math"
-data-name="area triangulo">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🔺</div>
-
-<h3>Área de triángulo</h3>
-
-<p>Calcula el área.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="triangle"
-onclick="toggleFavorite(event,'triangle')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('triangle')">
-</div>
-
-</div>
-
-
-<!-- 30 -->
-
-<div class="tool"
-data-category="utility"
-data-name="imc peso altura salud">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🏃</div>
-
-<h3>Calculadora IMC</h3>
-
-<p>Calcula el índice de masa corporal.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="bmi"
-onclick="toggleFavorite(event,'bmi')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('bmi')">
-</div>
-
-</div>
-
-
-<!-- 31 -->
-
-<div class="tool"
-data-category="utility"
-data-name="agua consumo agua">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">💧</div>
-
-<h3>Consumo de agua</h3>
-
-<p>Estimación diaria de hidratación.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="water"
-onclick="toggleFavorite(event,'water')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('water')">
-</div>
-
-</div>
-
-
-<!-- 32 -->
-
-<div class="tool"
-data-category="utility"
-data-name="electricidad potencia energia">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">⚡</div>
-
-<h3>Electricidad</h3>
-
-<p>Calcula potencia, voltaje y corriente.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="electric"
-onclick="toggleFavorite(event,'electric')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('electric')">
-</div>
-
-</div>
-
-
-<!-- 33 -->
-
-<div class="tool"
-data-category="math"
-data-name="numeros romanos romano">
-
-<div class="tool-top">
-
-<div>
-
-<div class="icon">🏛️</div>
-
-<h3>Números romanos</h3>
-
-<p>Convierte números a romanos.</p>
-
-</div>
-
-<button
-class="favorite"
-data-tool-id="roman"
-onclick="toggleFavorite(event,'roman')">
-♡
-</button>
-
-</div>
-
-<div
-class="open-tool"
-onclick="openTool('roman')">
-</div>
-
-</div>
-
-
-</div>
-
-
-<div
-class="no-results"
-id="noResults">
-
-<h3>😕 No encontramos resultados</h3>
-
-<p>Prueba otra palabra o categoría.</p>
-
-</div>
-
-</section>
-
-
-<!-- PANEL CALCULADORA -->
-
-<div class="tool-panel" id="calculator">
-
-<div class="tool-head">
-
-<h2>🧮 Calculadora</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="calculator">
-
-<input
+<input id="calcDisplay"
 class="calc-display"
-id="calcDisplay"
 readonly
 value="0">
 
-<div class="calc-grid">
+<div class="calc">
 
 <button onclick="calcClear()">C</button>
-<button onclick="calcDelete()">⌫</button>
-<button onclick="calcInput('/')">÷</button>
-<button onclick="calcInput('*')">×</button>
+<button onclick="calcBack()">⌫</button>
+<button onclick="calcInput('%')">%</button>
+<button class="operator" onclick="calcInput('/')">÷</button>
 
 <button onclick="calcInput('7')">7</button>
 <button onclick="calcInput('8')">8</button>
 <button onclick="calcInput('9')">9</button>
-<button onclick="calcInput('-')">−</button>
+<button class="operator" onclick="calcInput('*')">×</button>
 
 <button onclick="calcInput('4')">4</button>
 <button onclick="calcInput('5')">5</button>
 <button onclick="calcInput('6')">6</button>
-<button onclick="calcInput('+')">+</button>
+<button class="operator" onclick="calcInput('-')">−</button>
 
 <button onclick="calcInput('1')">1</button>
 <button onclick="calcInput('2')">2</button>
 <button onclick="calcInput('3')">3</button>
-<button onclick="calculate()">=</button>
+<button class="operator" onclick="calcInput('+')">+</button>
 
 <button onclick="calcInput('0')">0</button>
 <button onclick="calcInput('.')">.</button>
+<button style="grid-column:span 2" class="operator"
+onclick="calcResult()">=</button>
 
 </div>
+`;
 
-</div>
+}
 
-</div>
+let calcExpression="";
+
+function calcInput(value){
+
+if(calcExpression==="Error") calcExpression="";
+
+calcExpression+=value;
+
+document.getElementById("calcDisplay").value=
+calcExpression;
+
+}
+
+function calcClear(){
+
+calcExpression="";
+
+document.getElementById("calcDisplay").value="0";
+
+}
+
+function calcBack(){
+
+calcExpression=calcExpression.slice(0,-1);
+
+document.getElementById("calcDisplay").value=
+calcExpression||"0";
+
+}
+
+function calcResult(){
+
+try{
+
+let expression=calcExpression.replace(/%/g,"/100");
+
+if(!/^[0-9+\-*/().\s]+$/.test(expression)){
+throw new Error();
+}
+
+let result=Function(
+'"use strict";return ('+expression+')'
+)();
+
+calcExpression=String(result);
+
+document.getElementById("calcDisplay").value=
+calcExpression;
+
+}catch{
+
+calcExpression="Error";
+
+document.getElementById("calcDisplay").value="Error";
+
+}
+
+}
 
 
-<!-- PORCENTAJES -->
+/* PORCENTAJE */
 
-<div class="tool-panel" id="percentage">
+function percentage(){
 
-<div class="tool-head">
+document.getElementById("modalContent").innerHTML=`
 
-<h2>📊 Porcentajes</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-
-<label>Porcentaje</label>
-
-<input
-type="number"
-id="percentValue"
-value="20">
-
-</div>
-
-<div class="field">
-
+<div class="form-group">
 <label>Valor</label>
-
-<input
-type="number"
-id="baseValue"
-value="500">
-
+<input id="percentValue" type="number" placeholder="Ej: 500">
 </div>
 
-<button
-class="btn"
-onclick="calculatePercentage()">
+<div class="form-group">
+<label>Porcentaje (%)</label>
+<input id="percentNumber" type="number" placeholder="Ej: 20">
+</div>
+
+<button class="primary-btn" onclick="calculatePercent()">
 Calcular
 </button>
 
-<div
-class="result"
-id="percentageResult">
-Resultado aquí.
+<div class="result big" id="percentResult">Resultado</div>
+`;
+
+}
+
+function calculatePercent(){
+
+const value=parseFloat(document.getElementById("percentValue").value);
+const percent=parseFloat(document.getElementById("percentNumber").value);
+
+if(isNaN(value)||isNaN(percent)){
+
+showToast("Completa los campos");
+
+return;
+
+}
+
+document.getElementById("percentResult").textContent=
+(value*percent/100).toLocaleString("es-CO");
+
+}
+
+
+/* DESCUENTO */
+
+function discount(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+<label>Precio original</label>
+<input id="discountPrice" type="number" placeholder="100000">
 </div>
 
+<div class="form-group">
+<label>Descuento (%)</label>
+<input id="discountPercent" type="number" placeholder="20">
 </div>
 
-
-<!-- REGLA DE TRES -->
-
-<div class="tool-panel" id="rule3">
-
-<div class="tool-head">
-
-<h2>📐 Regla de tres</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>A</label>
-<input type="number" id="ruleA">
-</div>
-
-<div class="field">
-<label>B</label>
-<input type="number" id="ruleB">
-</div>
-
-<div class="field">
-<label>C</label>
-<input type="number" id="ruleC">
-</div>
-
-<button class="btn" onclick="calculateRule3()">
-Calcular X
+<button class="primary-btn" onclick="calculateDiscount()">
+Calcular descuento
 </button>
 
-<div class="result" id="ruleResult">
-Resultado aquí.
+<div class="result" id="discountResult">
+Resultado
 </div>
+`;
 
-</div>
-
-
-<!-- PROMEDIO -->
-
-<div class="tool-panel" id="average">
-
-<div class="tool-head">
-
-<h2>📈 Promedio</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-
-<label>
-Números separados por coma
-</label>
-
-<input
-id="averageValues"
-placeholder="5, 8, 10, 7">
-
-</div>
-
-<button
-class="btn"
-onclick="calculateAverage()">
-Calcular
-</button>
-
-<div
-class="result"
-id="averageResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- FACTORIAL -->
-
-<div class="tool-panel" id="factorial">
-
-<div class="tool-head">
-
-<h2>🎯 Factorial</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-
-<label>Número entero</label>
-
-<input
-type="number"
-id="factorialValue"
-min="0"
-value="5">
-
-</div>
-
-<button class="btn" onclick="calculateFactorial()">
-Calcular
-</button>
-
-<div class="result" id="factorialResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- PAR IMPAR -->
-
-<div class="tool-panel" id="even">
-
-<div class="tool-head">
-
-<h2>🔢 Par o impar</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-
-<label>Número</label>
-
-<input
-type="number"
-id="evenValue">
-
-</div>
-
-<button class="btn" onclick="checkEven()">
-Comprobar
-</button>
-
-<div class="result" id="evenResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- INTERES -->
-
-<div class="tool-panel" id="interest">
-
-<div class="tool-head">
-
-<h2>🏦 Interés simple</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Capital</label>
-<input type="number" id="interestCapital">
-</div>
-
-<div class="field">
-<label>Tasa anual (%)</label>
-<input type="number" id="interestRate">
-</div>
-
-<div class="field">
-<label>Años</label>
-<input type="number" id="interestYears">
-</div>
-
-<button class="btn" onclick="calculateInterest()">
-Calcular
-</button>
-
-<div class="result" id="interestResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- PROPINA -->
-
-<div class="tool-panel" id="tip">
-
-<div class="tool-head">
-
-<h2>🍽️ Propina</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Cuenta</label>
-<input type="number" id="bill">
-</div>
-
-<div class="field">
-<label>Propina (%)</label>
-<input type="number" id="tipPercent" value="10">
-</div>
-
-<div class="field">
-<label>Personas</label>
-<input type="number" id="people" value="1">
-</div>
-
-<button class="btn" onclick="calculateTip()">
-Calcular
-</button>
-
-<div class="result" id="tipResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- MONEDA -->
-
-<div class="tool-panel" id="currency">
-
-<div class="tool-head">
-
-<h2>💱 Conversor de moneda</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-
-<label>Cantidad</label>
-
-<input
-type="number"
-id="currencyAmount"
-value="1">
-
-</div>
-
-<div class="field">
-
-<label>Tasa de conversión</label>
-
-<input
-type="number"
-id="currencyRate"
-value="4000"
-step="0.01">
-
-</div>
-
-<div class="field">
-
-<label>
-Ejemplo: 1 USD = 4000 COP
-</label>
-
-</div>
-
-<button
-class="btn"
-onclick="convertCurrency()">
-Convertir
-</button>
-
-<div class="result" id="currencyResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- PRESTAMO -->
-
-<div class="tool-panel" id="loan">
-
-<div class="tool-head">
-
-<h2>🏠 Cuota de préstamo</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Capital</label>
-<input type="number" id="loanAmount">
-</div>
-
-<div class="field">
-<label>Tasa mensual (%)</label>
-<input type="number" id="loanRate" step="0.01" value="1">
-</div>
-
-<div class="field">
-<label>Número de meses</label>
-<input type="number" id="loanMonths" value="12">
-</div>
-
-<button class="btn" onclick="calculateLoan()">
-Calcular
-</button>
+}
 
-<div class="result" id="loanResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- COMBUSTIBLE -->
-
-<div class="tool-panel" id="fuel">
-
-<div class="tool-head">
-
-<h2>🚗 Combustible</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Distancia (km)</label>
-<input type="number" id="fuelDistance">
-</div>
-
-<div class="field">
-<label>Rendimiento (km/L)</label>
-<input type="number" id="fuelEfficiency" value="12">
-</div>
-
-<div class="field">
-<label>Precio por litro</label>
-<input type="number" id="fuelPrice">
-</div>
-
-<button class="btn" onclick="calculateFuel()">
-Calcular
-</button>
-
-<div class="result" id="fuelResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- LONGITUD -->
-
-<div class="tool-panel" id="length">
-
-<div class="tool-head">
-
-<h2>📏 Longitud</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Valor</label>
-<input type="number" id="lengthValue" value="1">
-</div>
-
-<div class="field">
-<label>Desde</label>
-
-<select id="lengthFrom">
-
-<option value="km">Kilómetros</option>
-<option value="m">Metros</option>
-<option value="cm">Centímetros</option>
-<option value="mm">Milímetros</option>
-<option value="mile">Millas</option>
-
-</select>
-
-</div>
-
-<div class="field">
-<label>Hasta</label>
-
-<select id="lengthTo">
-
-<option value="km">Kilómetros</option>
-<option value="m">Metros</option>
-<option value="cm">Centímetros</option>
-<option value="mm">Milímetros</option>
-<option value="mile">Millas</option>
-
-</select>
-
-</div>
-
-<button class="btn" onclick="convertLength()">
-Convertir
-</button>
-
-<div class="result" id="lengthResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- PESO -->
-
-<div class="tool-panel" id="weight">
-
-<div class="tool-head">
-
-<h2>⚖️ Peso</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Valor</label>
-<input type="number" id="weightValue" value="1">
-</div>
-
-<div class="field">
-
-<label>Desde</label>
-
-<select id="weightFrom">
-
-<option value="kg">Kilogramos</option>
-<option value="g">Gramos</option>
-<option value="lb">Libras</option>
-<option value="oz">Onzas</option>
-
-</select>
-
-</div>
-
-<div class="field">
-
-<label>Hasta</label>
+function calculateDiscount(){
 
-<select id="weightTo">
+const price=parseFloat(document.getElementById("discountPrice").value);
+const percent=parseFloat(document.getElementById("discountPercent").value);
 
-<option value="kg">Kilogramos</option>
-<option value="g">Gramos</option>
-<option value="lb">Libras</option>
-<option value="oz">Onzas</option>
+if(isNaN(price)||isNaN(percent))return;
 
-</select>
+const saving=price*percent/100;
+const finalPrice=price-saving;
 
-</div>
-
-<button class="btn" onclick="convertWeight()">
-Convertir
-</button>
-
-<div class="result" id="weightResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- TEMPERATURA -->
-
-<div class="tool-panel" id="temperature">
-
-<div class="tool-head">
-
-<h2>🌡️ Temperatura</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Valor</label>
-<input type="number" id="tempValue" value="0">
-</div>
-
-<div class="field">
-
-<label>Desde</label>
-
-<select id="tempFrom">
-
-<option value="c">Celsius</option>
-<option value="f">Fahrenheit</option>
-<option value="k">Kelvin</option>
-
-</select>
-
-</div>
-
-<div class="field">
-
-<label>Hasta</label>
-
-<select id="tempTo">
-
-<option value="c">Celsius</option>
-<option value="f">Fahrenheit</option>
-<option value="k">Kelvin</option>
-
-</select>
-
-</div>
-
-<button class="btn" onclick="convertTemperature()">
-Convertir
-</button>
-
-<div class="result" id="tempResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- VOLUMEN -->
-
-<div class="tool-panel" id="volume">
-
-<div class="tool-head">
-
-<h2>📦 Volumen</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Valor</label>
-<input type="number" id="volumeValue" value="1">
-</div>
-
-<div class="field">
-
-<label>Desde</label>
-
-<select id="volumeFrom">
-
-<option value="l">Litros</option>
-<option value="ml">Mililitros</option>
-<option value="m3">Metros cúbicos</option>
-
-</select>
-
-</div>
-
-<div class="field">
-
-<label>Hasta</label>
-
-<select id="volumeTo">
-
-<option value="l">Litros</option>
-<option value="ml">Mililitros</option>
-<option value="m3">Metros cúbicos</option>
-
-</select>
-
-</div>
+document.getElementById("discountResult").innerHTML=`
+<strong>Ahorro:</strong> ${saving.toLocaleString("es-CO")}<br>
+<strong>Precio final:</strong> ${finalPrice.toLocaleString("es-CO")}
+`;
 
-<button class="btn" onclick="convertVolume()">
-Convertir
-</button>
+}
 
-<div class="result" id="volumeResult">
-Resultado aquí.
-</div>
-
-</div>
-
 
-<!-- EDAD -->
+/* EDAD */
 
-<div class="tool-panel" id="age">
-
-<div class="tool-head">
-
-<h2>🎂 Edad</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
+function ageCalculator(){
 
-<div class="field">
+document.getElementById("modalContent").innerHTML=`
 
+<div class="form-group">
 <label>Fecha de nacimiento</label>
-
-<input
-type="date"
-id="birthDate">
-
+<input id="birthDate" type="date">
 </div>
 
-<button class="btn" onclick="calculateAge()">
+<button class="primary-btn" onclick="calculateAge()">
 Calcular edad
 </button>
 
-<div class="result" id="ageResult">
-Resultado aquí.
+<div class="result big" id="ageResult">
+Edad
 </div>
+`;
 
-</div>
+}
 
+function calculateAge(){
 
-<!-- FECHAS -->
+const birth=new Date(document.getElementById("birthDate").value);
 
-<div class="tool-panel" id="dateDifference">
+if(isNaN(birth))return;
 
-<div class="tool-head">
+const today=new Date();
 
-<h2>📅 Días entre fechas</h2>
+let age=today.getFullYear()-birth.getFullYear();
 
-<button class="close" onclick="closeTools()">Cerrar</button>
+const month=today.getMonth()-birth.getMonth();
 
-</div>
+if(month<0 ||
+(month===0 && today.getDate()<birth.getDate())){
 
-<div class="field">
-<label>Fecha inicial</label>
-<input type="date" id="dateOne">
-</div>
+age--;
 
-<div class="field">
-<label>Fecha final</label>
-<input type="date" id="dateTwo">
-</div>
+}
 
-<button class="btn" onclick="calculateDateDifference()">
-Calcular
-</button>
+document.getElementById("ageResult").textContent=
+age+" años";
 
-<div class="result" id="dateResult">
-Resultado aquí.
-</div>
-
-</div>
+}
 
 
-<!-- CONTADOR -->
+/* CONTADOR */
 
-<div class="tool-panel" id="counter">
+function wordCounter(){
 
-<div class="tool-head">
+document.getElementById("modalContent").innerHTML=`
 
-<h2>📝 Contador de palabras</h2>
+<div class="form-group">
 
-<button class="close" onclick="closeTools()">Cerrar</button>
+<textarea id="counterText"
+oninput="updateCounter()"
+placeholder="Escribe o pega tu texto aquí..."></textarea>
 
 </div>
 
-<textarea
-id="textCounter"
-placeholder="Escribe o pega tu texto..."
-oninput="countText()"></textarea>
-
-<div
-class="result"
-id="counterResult">
-
+<div class="result" id="counterResult">
 Palabras: 0<br>
 Caracteres: 0<br>
-Sin espacios: 0
+Caracteres sin espacios: 0<br>
+Líneas: 0
+</div>
+`;
+
+}
+
+function updateCounter(){
+
+const text=document.getElementById("counterText").value;
+
+const words=text.trim()
+?text.trim().split(/\s+/).length
+:0;
+
+const chars=text.length;
+
+const noSpaces=text.replace(/\s/g,"").length;
+
+const lines=text?text.split("\n").length:0;
+
+document.getElementById("counterResult").innerHTML=`
+Palabras: <strong>${words}</strong><br>
+Caracteres: <strong>${chars}</strong><br>
+Caracteres sin espacios: <strong>${noSpaces}</strong><br>
+Líneas: <strong>${lines}</strong>
+`;
+
+}
+
+
+/* MAYUSCULAS */
+
+function textCase(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+
+<textarea id="caseText"
+placeholder="Escribe tu texto..."></textarea>
 
 </div>
 
-</div>
+<div class="button-row">
 
-
-<!-- TEXTO -->
-
-<div class="tool-panel" id="textTransform">
-
-<div class="tool-head">
-
-<h2>🔤 Convertidor de texto</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<textarea
-id="transformText"
-placeholder="Escribe o pega tu texto..."></textarea>
-
-<button class="btn" onclick="upperText()">
+<button class="primary-btn"
+onclick="convertUpper()">
 MAYÚSCULAS
 </button>
 
-<button class="btn" onclick="lowerText()">
+<button class="secondary-btn"
+onclick="convertLower()">
 minúsculas
 </button>
 
-<button class="btn orange" onclick="capitalizeText()">
+<button class="secondary-btn"
+onclick="convertCapitalize()">
 Primera letra
 </button>
 
-<button class="btn green" onclick="copyTransform()">
-📋 Copiar
-</button>
-
 </div>
+`;
+
+}
+
+function convertUpper(){
+
+const el=document.getElementById("caseText");
+
+el.value=el.value.toUpperCase();
+
+}
+
+function convertLower(){
+
+const el=document.getElementById("caseText");
+
+el.value=el.value.toLowerCase();
+
+}
+
+function convertCapitalize(){
+
+const el=document.getElementById("caseText");
+
+el.value=el.value.toLowerCase()
+.replace(/(^|\s)\S/g,l=>l.toUpperCase());
+
+}
 
 
-<!-- INVERSO -->
+/* LIMPIAR TEXTO */
 
-<div class="tool-panel" id="reverse">
+function cleanText(){
 
-<div class="tool-head">
+document.getElementById("modalContent").innerHTML=`
 
-<h2>🔄 Texto inverso</h2>
+<div class="form-group">
 
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<textarea
-id="reverseText"
-placeholder="Escribe un texto..."></textarea>
-
-<button class="btn" onclick="reverseText()">
-Invertir texto
-</button>
-
-<div class="result" id="reverseResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- ESPACIOS -->
-
-<div class="tool-panel" id="spaces">
-
-<div class="tool-head">
-
-<h2>🧹 Limpiar espacios</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<textarea
-id="spacesText"
+<textarea id="cleanInput"
 placeholder="Pega aquí tu texto..."></textarea>
 
-<button class="btn" onclick="cleanSpaces()">
-Limpiar
+</div>
+
+<button class="primary-btn"
+onclick="performClean()">
+Limpiar texto
 </button>
 
-<div class="result" id="spacesResult">
-Resultado aquí.
-</div>
+<div class="form-group" style="margin-top:15px">
+
+<textarea id="cleanOutput"
+readonly
+placeholder="Resultado..."></textarea>
 
 </div>
 
+<button class="secondary-btn"
+onclick="copyElement('cleanOutput')">
+📋 Copiar resultado
+</button>
+`;
 
-<!-- PASSWORD -->
+}
 
-<div class="tool-panel" id="password">
+function performClean(){
 
-<div class="tool-head">
+const text=document.getElementById("cleanInput").value;
 
-<h2>🔐 Contraseña segura</h2>
+const clean=text
+.split("\n")
+.map(x=>x.trim())
+.filter(x=>x.length>0)
+.join("\n")
+.replace(/[ \t]+/g," ");
 
-<button class="close" onclick="closeTools()">Cerrar</button>
+document.getElementById("cleanOutput").value=clean;
+
+}
+
+
+/* COPIAR */
+
+function copyTool(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+
+<textarea id="copyText"
+placeholder="Escribe el texto que quieres copiar..."></textarea>
 
 </div>
 
-<div class="field">
+<button class="primary-btn"
+onclick="copyElement('copyText')">
+📋 Copiar texto
+</button>
+`;
+
+}
+
+async function copyElement(id){
+
+const text=document.getElementById(id).value;
+
+if(!text){
+
+showToast("No hay texto para copiar");
+
+return;
+
+}
+
+try{
+
+await navigator.clipboard.writeText(text);
+
+showToast("✅ Texto copiado");
+
+}catch{
+
+showToast("No se pudo copiar");
+
+}
+
+}
+
+
+/* PASSWORD */
+
+function passwordGenerator(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
 
 <label>Longitud</label>
 
-<input
+<input id="passLength"
 type="number"
-id="passLength"
-value="16"
 min="4"
-max="60">
+max="100"
+value="16">
 
 </div>
 
-<button class="btn" onclick="generatePassword()">
-Generar
-</button>
+<div class="form-group">
 
-<button class="btn green" onclick="copyPassword()">
-📋 Copiar
+<label>
+<input id="passNumbers" type="checkbox" checked>
+ Incluir números
+</label>
+
+<label>
+<input id="passSymbols" type="checkbox" checked>
+ Incluir símbolos
+</label>
+
+</div>
+
+<button class="primary-btn"
+onclick="generatePassword()">
+Generar contraseña
 </button>
 
 <div class="result" id="passwordResult">
 Tu contraseña aparecerá aquí.
 </div>
 
-</div>
-
-
-<!-- RANDOM -->
-
-<div class="tool-panel" id="random">
-
-<div class="tool-head">
-
-<h2>🎲 Número aleatorio</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Mínimo</label>
-<input type="number" id="randomMin" value="1">
-</div>
-
-<div class="field">
-<label>Máximo</label>
-<input type="number" id="randomMax" value="100">
-</div>
-
-<button class="btn" onclick="generateRandom()">
-Generar
-</button>
-
-<div class="result" id="randomResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- COLOR -->
-
-<div class="tool-panel" id="color">
-
-<div class="tool-head">
-
-<h2>🎨 Colores</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<input
-type="color"
-id="colorPicker"
-value="#2563eb"
-style="height:70px;cursor:pointer">
-
-<div
-class="color-preview"
-id="colorPreview">
-</div>
-
-<div class="result" id="colorResult">
-HEX: #2563EB
-</div>
-
-<button class="btn green" onclick="copyColor()">
+<button class="secondary-btn"
+onclick="copyPassword()"
+style="margin-top:10px">
 📋 Copiar
 </button>
+`;
 
-</div>
-
-
-<!-- CRONOMETRO -->
-
-<div class="tool-panel" id="stopwatch">
-
-<div class="tool-head">
-
-<h2>⏱️ Cronómetro</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div
-class="timer-display"
-id="stopwatchDisplay">
-00:00:00
-</div>
-
-<div style="text-align:center">
-
-<button class="btn green" onclick="startStopwatch()">
-▶ Iniciar
-</button>
-
-<button class="btn orange" onclick="pauseStopwatch()">
-⏸ Pausar
-</button>
-
-<button class="btn red" onclick="resetStopwatch()">
-↻ Reiniciar
-</button>
-
-</div>
-
-</div>
-
-
-<!-- TEMPORIZADOR -->
-
-<div class="tool-panel" id="timer">
-
-<div class="tool-head">
-
-<h2>⏲️ Temporizador</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Minutos</label>
-<input type="number" id="timerMinutes" value="1">
-</div>
-
-<div class="field">
-<label>Segundos</label>
-<input type="number" id="timerSeconds" value="0">
-</div>
-
-<div
-class="timer-display"
-id="timerDisplay">
-01:00
-</div>
-
-<div style="text-align:center">
-
-<button class="btn green" onclick="startTimer()">
-▶ Iniciar
-</button>
-
-<button class="btn orange" onclick="pauseTimer()">
-⏸ Pausar
-</button>
-
-<button class="btn red" onclick="resetTimer()">
-↻ Reiniciar
-</button>
-
-</div>
-
-</div>
-
-
-<!-- RECTANGULO -->
-
-<div class="tool-panel" id="rectangle">
-
-<div class="tool-head">
-
-<h2>▭ Área de rectángulo</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Largo</label>
-<input type="number" id="rectLength">
-</div>
-
-<div class="field">
-<label>Ancho</label>
-<input type="number" id="rectWidth">
-</div>
-
-<button class="btn" onclick="calculateRectangle()">
-Calcular
-</button>
-
-<div class="result" id="rectangleResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- CIRCULO -->
-
-<div class="tool-panel" id="circle">
-
-<div class="tool-head">
-
-<h2>🔵 Área de círculo</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Radio</label>
-<input type="number" id="circleRadius">
-</div>
-
-<button class="btn" onclick="calculateCircle()">
-Calcular
-</button>
-
-<div class="result" id="circleResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- TRIANGULO -->
-
-<div class="tool-panel" id="triangle">
-
-<div class="tool-head">
-
-<h2>🔺 Área de triángulo</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Base</label>
-<input type="number" id="triangleBase">
-</div>
-
-<div class="field">
-<label>Altura</label>
-<input type="number" id="triangleHeight">
-</div>
-
-<button class="btn" onclick="calculateTriangle()">
-Calcular
-</button>
-
-<div class="result" id="triangleResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- IMC -->
-
-<div class="tool-panel" id="bmi">
-
-<div class="tool-head">
-
-<h2>🏃 Calculadora IMC</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Peso (kg)</label>
-<input type="number" id="bmiWeight">
-</div>
-
-<div class="field">
-<label>Altura (metros)</label>
-<input type="number" id="bmiHeight" step="0.01">
-</div>
-
-<button class="btn" onclick="calculateBMI()">
-Calcular
-</button>
-
-<div class="result" id="bmiResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- AGUA -->
-
-<div class="tool-panel" id="water">
-
-<div class="tool-head">
-
-<h2>💧 Consumo de agua</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Peso (kg)</label>
-<input type="number" id="waterWeight">
-</div>
-
-<button class="btn" onclick="calculateWater()">
-Calcular
-</button>
-
-<div class="result" id="waterResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- ELECTRICIDAD -->
-
-<div class="tool-panel" id="electric">
-
-<div class="tool-head">
-
-<h2>⚡ Electricidad</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Voltaje (V)</label>
-<input type="number" id="electricVoltage">
-</div>
-
-<div class="field">
-<label>Corriente (A)</label>
-<input type="number" id="electricCurrent">
-</div>
-
-<button class="btn" onclick="calculateElectric()">
-Calcular potencia
-</button>
-
-<div class="result" id="electricResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-<!-- ROMANOS -->
-
-<div class="tool-panel" id="roman">
-
-<div class="tool-head">
-
-<h2>🏛️ Números romanos</h2>
-
-<button class="close" onclick="closeTools()">Cerrar</button>
-
-</div>
-
-<div class="field">
-<label>Número</label>
-<input
-type="number"
-id="romanValue"
-min="1"
-max="3999"
-value="2026">
-</div>
-
-<button class="btn" onclick="convertRoman()">
-Convertir
-</button>
-
-<div class="result" id="romanResult">
-Resultado aquí.
-</div>
-
-</div>
-
-
-</main>
-
-
-<footer>
-
-<h2>🛠️ HerramientasGratis</h2>
-
-<p>
-Herramientas rápidas, útiles y gratuitas.
-</p>
-
-<div class="footer-tags">
-
-<span>🧮 Matemáticas</span>
-<span>💰 Finanzas</span>
-<span>🔄 Conversores</span>
-<span>📝 Texto</span>
-<span>📅 Fechas</span>
-<span>🛠️ Utilidades</span>
-
-</div>
-
-<p style="margin-top:22px">
-© 2026 HerramientasGratis
-</p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-GENERAL
-========================= */
-
-const STORAGE_KEY =
-"herramientasgratis_favoritos";
-
-document.getElementById("toolCount")
-.textContent =
-document.querySelectorAll(".tool").length;
-
-
-/* =========================
-NAVEGACIÓN
-========================= */
-
-function goTools(){
-
-document.getElementById("toolsSection")
-.scrollIntoView({
-behavior:"smooth"
-});
+generatePassword();
 
 }
-
-
-function openTool(id){
-
-closeTools();
-
-const panel =
-document.getElementById(id);
-
-if(!panel)return;
-
-panel.classList.add("active");
-
-setTimeout(()=>{
-
-panel.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-},100);
-
-}
-
-
-function closeTools(){
-
-document
-.querySelectorAll(".tool-panel")
-.forEach(panel=>{
-panel.classList.remove("active");
-});
-
-}
-
-
-/* =========================
-BUSCADOR
-========================= */
-
-function searchTools(){
-
-const query =
-document.getElementById("search")
-.value
-.toLowerCase()
-.trim();
-
-let visible=0;
-
-document
-.querySelectorAll(".tool")
-.forEach(card=>{
-
-const name =
-(card.dataset.name||"")
-.toLowerCase();
-
-if(name.includes(query)){
-
-card.style.display="block";
-visible++;
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-document.getElementById("noResults")
-.style.display =
-visible===0?"block":"none";
-
-document.getElementById("favoriteInfo")
-.style.display="none";
-
-}
-
-
-/* =========================
-CATEGORÍAS
-========================= */
-
-function filterCategory(category,button){
-
-document
-.querySelectorAll(".category")
-.forEach(b=>{
-b.classList.remove("active");
-});
-
-button.classList.add("active");
-
-let visible=0;
-
-document
-.querySelectorAll(".tool")
-.forEach(card=>{
-
-if(
-category==="all" ||
-card.dataset.category===category
-){
-
-card.style.display="block";
-visible++;
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-document.getElementById("noResults")
-.style.display =
-visible===0?"block":"none";
-
-document.getElementById("favoriteInfo")
-.style.display="none";
-
-}
-
-
-/* =========================
-MODO OSCURO
-========================= */
-
-function toggleDark(){
-
-document.body
-.classList.toggle("dark");
-
-localStorage.setItem(
-"herramientasgratis_dark",
-document.body.classList.contains("dark")
-);
-
-}
-
-if(
-localStorage.getItem("herramientasgratis_dark")
-==="true"
-){
-
-document.body.classList.add("dark");
-
-}
-
-
-/* =========================
-FAVORITOS
-========================= */
-
-function getFavorites(){
-
-try{
-
-return JSON.parse(
-localStorage.getItem(STORAGE_KEY)
-)||[];
-
-}catch(e){
-
-return [];
-
-}
-
-}
-
-
-function saveFavorites(list){
-
-localStorage.setItem(
-STORAGE_KEY,
-JSON.stringify(list)
-);
-
-}
-
-
-function toggleFavorite(event,id){
-
-event.preventDefault();
-event.stopPropagation();
-
-let favorites=getFavorites();
-
-if(favorites.includes(id)){
-
-favorites=favorites.filter(
-x=>x!==id
-);
-
-}else{
-
-favorites.push(id);
-
-}
-
-saveFavorites(favorites);
-
-updateFavoriteButtons();
-
-}
-
-
-function updateFavoriteButtons(){
-
-const favorites=getFavorites();
-
-document
-.querySelectorAll(".favorite")
-.forEach(button=>{
-
-const id=
-button.dataset.toolId;
-
-if(favorites.includes(id)){
-
-button.classList.add("active");
-button.textContent="♥";
-
-}else{
-
-button.classList.remove("active");
-button.textContent="♡";
-
-}
-
-});
-
-}
-
-
-function showFavorites(){
-
-const favorites=getFavorites();
-
-document
-.querySelectorAll(".category")
-.forEach(b=>{
-b.classList.remove("active");
-});
-
-document.getElementById("search")
-.value="";
-
-let visible=0;
-
-document
-.querySelectorAll(".tool")
-.forEach(card=>{
-
-const button =
-card.querySelector(".favorite");
-
-const id =
-button?.dataset.toolId;
-
-if(favorites.includes(id)){
-
-card.style.display="block";
-visible++;
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-document.getElementById("favoriteInfo")
-.style.display="block";
-
-document.getElementById("noResults")
-.style.display =
-visible===0?"block":"none";
-
-document.getElementById("toolsSection")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* =========================
-CALCULADORA
-========================= */
-
-let expression="";
-
-function calcInput(value){
-
-expression+=value;
-
-document.getElementById(
-"calcDisplay"
-).value=expression;
-
-}
-
-
-function calcClear(){
-
-expression="";
-
-document.getElementById(
-"calcDisplay"
-).value="0";
-
-}
-
-
-function calcDelete(){
-
-expression=
-expression.slice(0,-1);
-
-document.getElementById(
-"calcDisplay"
-).value=
-expression||"0";
-
-}
-
-
-function calculate(){
-
-try{
-
-if(!expression)return;
-
-const result=
-Function(
-'"use strict";return ('+
-expression+
-')'
-)();
-
-expression=String(result);
-
-document.getElementById(
-"calcDisplay"
-).value=result;
-
-}catch(e){
-
-expression="";
-
-document.getElementById(
-"calcDisplay"
-).value="Error";
-
-}
-
-}
-
-
-/* =========================
-PORCENTAJES
-========================= */
-
-function calculatePercentage(){
-
-const p=parseFloat(
-document.getElementById("percentValue").value
-);
-
-const value=parseFloat(
-document.getElementById("baseValue").value
-);
-
-if(isNaN(p)||isNaN(value))return;
-
-const result=value*p/100;
-
-document.getElementById(
-"percentageResult"
-).innerHTML=
-
-`${p}% de ${value} =
-<strong>${result.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-REGLA DE 3
-========================= */
-
-function calculateRule3(){
-
-const a=parseFloat(
-document.getElementById("ruleA").value
-);
-
-const b=parseFloat(
-document.getElementById("ruleB").value
-);
-
-const c=parseFloat(
-document.getElementById("ruleC").value
-);
-
-if([a,b,c].some(isNaN)||a===0)return;
-
-const x=b*c/a;
-
-document.getElementById(
-"ruleResult"
-).innerHTML=
-
-`X =
-<strong>${x.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-PROMEDIO
-========================= */
-
-function calculateAverage(){
-
-const values=
-document.getElementById("averageValues")
-.value
-.split(",")
-.map(x=>parseFloat(x.trim()))
-.filter(x=>!isNaN(x));
-
-if(!values.length)return;
-
-const sum=
-values.reduce((a,b)=>a+b,0);
-
-const avg=sum/values.length;
-
-document.getElementById(
-"averageResult"
-).innerHTML=
-
-`Promedio:
-<strong>${avg.toFixed(2)}</strong>`;
-
-}
-
-
-/* =========================
-FACTORIAL
-========================= */
-
-function calculateFactorial(){
-
-let n=parseInt(
-document.getElementById("factorialValue").value
-);
-
-if(isNaN(n)||n<0||n>170)return;
-
-let result=1;
-
-for(let i=2;i<=n;i++){
-
-result*=i;
-
-}
-
-document.getElementById(
-"factorialResult"
-).innerHTML=
-
-`${n}! =
-<strong>${result}</strong>`;
-
-}
-
-
-/* =========================
-PAR IMPAR
-========================= */
-
-function checkEven(){
-
-const n=parseInt(
-document.getElementById("evenValue").value
-);
-
-if(isNaN(n))return;
-
-document.getElementById(
-"evenResult"
-).innerHTML=
-
-`El número
-<strong>${n}</strong>
-es
-<strong>${n%2===0?"PAR":"IMPAR"}</strong>.`;
-
-}
-
-
-/* =========================
-INTERÉS
-========================= */
-
-function calculateInterest(){
-
-const capital=parseFloat(
-document.getElementById("interestCapital").value
-);
-
-const rate=parseFloat(
-document.getElementById("interestRate").value
-);
-
-const years=parseFloat(
-document.getElementById("interestYears").value
-);
-
-if([capital,rate,years].some(isNaN))return;
-
-const interest=
-capital*(rate/100)*years;
-
-const total=
-capital+interest;
-
-document.getElementById(
-"interestResult"
-).innerHTML=
-
-`Interés:
-<strong>${interest.toLocaleString("es-CO")}</strong>
-<br><br>
-Total:
-<strong>${total.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-PROPINA
-========================= */
-
-function calculateTip(){
-
-const bill=parseFloat(
-document.getElementById("bill").value
-);
-
-const percent=parseFloat(
-document.getElementById("tipPercent").value
-);
-
-const people=parseInt(
-document.getElementById("people").value
-);
-
-if(
-isNaN(bill)||
-isNaN(percent)||
-isNaN(people)||
-people<1
-)return;
-
-const tip=bill*percent/100;
-
-const total=bill+tip;
-
-const each=total/people;
-
-document.getElementById(
-"tipResult"
-).innerHTML=
-
-`Propina:
-<strong>${tip.toLocaleString("es-CO")}</strong>
-<br>
-Total:
-<strong>${total.toLocaleString("es-CO")}</strong>
-<br>
-Por persona:
-<strong>${each.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-MONEDA
-========================= */
-
-function convertCurrency(){
-
-const amount=parseFloat(
-document.getElementById("currencyAmount").value
-);
-
-const rate=parseFloat(
-document.getElementById("currencyRate").value
-);
-
-if(isNaN(amount)||isNaN(rate))return;
-
-const result=amount*rate;
-
-document.getElementById(
-"currencyResult"
-).innerHTML=
-
-`${amount} × ${rate} =
-<strong>${result.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-PRÉSTAMO
-========================= */
-
-function calculateLoan(){
-
-const P=parseFloat(
-document.getElementById("loanAmount").value
-);
-
-const annual=parseFloat(
-document.getElementById("loanRate").value
-);
-
-const n=parseInt(
-document.getElementById("loanMonths").value
-);
-
-if([P,annual,n].some(isNaN)||n<=0)return;
-
-const r=annual/100;
-
-let payment;
-
-if(r===0){
-
-payment=P/n;
-
-}else{
-
-payment=
-P*r*Math.pow(1+r,n)/
-(Math.pow(1+r,n)-1);
-
-}
-
-document.getElementById(
-"loanResult"
-).innerHTML=
-
-`Cuota mensual estimada:
-<strong>${payment.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-COMBUSTIBLE
-========================= */
-
-function calculateFuel(){
-
-const distance=parseFloat(
-document.getElementById("fuelDistance").value
-);
-
-const efficiency=parseFloat(
-document.getElementById("fuelEfficiency").value
-);
-
-const price=parseFloat(
-document.getElementById("fuelPrice").value
-);
-
-if(
-[distance,efficiency,price]
-.some(isNaN)||
-efficiency<=0
-)return;
-
-const liters=
-distance/efficiency;
-
-const cost=
-liters*price;
-
-document.getElementById(
-"fuelResult"
-).innerHTML=
-
-`Combustible:
-<strong>${liters.toFixed(2)} litros</strong>
-<br>
-Costo aproximado:
-<strong>${cost.toLocaleString("es-CO")}</strong>`;
-
-}
-
-
-/* =========================
-LONGITUD
-========================= */
-
-function convertLength(){
-
-const value=parseFloat(
-document.getElementById("lengthValue").value
-);
-
-const from=
-document.getElementById("lengthFrom").value;
-
-const to=
-document.getElementById("lengthTo").value;
-
-const factor={
-km:1000,
-m:1,
-cm:.01,
-mm:.001,
-mile:1609.344
-};
-
-if(isNaN(value))return;
-
-const result=
-value*factor[from]/factor[to];
-
-document.getElementById(
-"lengthResult"
-).textContent=
-`${value} ${from} = ${result} ${to}`;
-
-}
-
-
-/* =========================
-PESO
-========================= */
-
-function convertWeight(){
-
-const value=parseFloat(
-document.getElementById("weightValue").value
-);
-
-const from=
-document.getElementById("weightFrom").value;
-
-const to=
-document.getElementById("weightTo").value;
-
-const factor={
-kg:1,
-g:.001,
-lb:.45359237,
-oz:.0283495231
-};
-
-if(isNaN(value))return;
-
-const result=
-value*factor[from]/factor[to];
-
-document.getElementById(
-"weightResult"
-).textContent=
-`${value} ${from} = ${result} ${to}`;
-
-}
-
-
-/* =========================
-TEMPERATURA
-========================= */
-
-function convertTemperature(){
-
-const value=parseFloat(
-document.getElementById("tempValue").value
-);
-
-const from=
-document.getElementById("tempFrom").value;
-
-const to=
-document.getElementById("tempTo").value;
-
-if(isNaN(value))return;
-
-let c;
-
-if(from==="c")c=value;
-
-else if(from==="f")
-c=(value-32)*5/9;
-
-else
-c=value-273.15;
-
-let result;
-
-if(to==="c")
-result=c;
-
-else if(to==="f")
-result=c*9/5+32;
-
-else
-result=c+273.15;
-
-document.getElementById(
-"tempResult"
-).textContent=
-
-`${value}° ${from.toUpperCase()} =
-${result.toFixed(2)}° ${to.toUpperCase()}`;
-
-}
-
-
-/* =========================
-VOLUMEN
-========================= */
-
-function convertVolume(){
-
-const value=parseFloat(
-document.getElementById("volumeValue").value
-);
-
-const from=
-document.getElementById("volumeFrom").value;
-
-const to=
-document.getElementById("volumeTo").value;
-
-const factor={
-l:1,
-ml:.001,
-m3:1000
-};
-
-if(isNaN(value))return;
-
-const result=
-value*factor[from]/factor[to];
-
-document.getElementById(
-"volumeResult"
-).textContent=
-`${value} ${from} = ${result} ${to}`;
-
-}
-
-
-/* =========================
-EDAD
-========================= */
-
-function calculateAge(){
-
-const value=
-document.getElementById("birthDate").value;
-
-if(!value)return;
-
-const birth=
-new Date(value+"T00:00:00");
-
-const today=new Date();
-
-let years=
-today.getFullYear()-
-birth.getFullYear();
-
-let months=
-today.getMonth()-
-birth.getMonth();
-
-let days=
-today.getDate()-
-birth.getDate();
-
-if(days<0){
-
-months--;
-
-const previous=
-new Date(
-today.getFullYear(),
-today.getMonth(),
-0
-);
-
-days+=previous.getDate();
-
-}
-
-if(months<0){
-
-years--;
-months+=12;
-
-}
-
-document.getElementById(
-"ageResult"
-).innerHTML=
-
-`Tienes
-<strong>
-${years} años,
-${months} meses y
-${days} días.
-</strong>`;
-
-}
-
-
-/* =========================
-FECHAS
-========================= */
-
-function calculateDateDifference(){
-
-const a=document.getElementById(
-"dateOne"
-).value;
-
-const b=document.getElementById(
-"dateTwo"
-).value;
-
-if(!a||!b)return;
-
-const d1=
-new Date(a+"T00:00:00");
-
-const d2=
-new Date(b+"T00:00:00");
-
-const days=
-Math.round(
-Math.abs(d2-d1)/
-86400000
-);
-
-document.getElementById(
-"dateResult"
-).innerHTML=
-
-`Hay
-<strong>${days} días</strong>
-entre las fechas.`;
-
-}
-
-
-/* =========================
-CONTADOR
-========================= */
-
-function countText(){
-
-const text=
-document.getElementById(
-"textCounter"
-).value;
-
-const words=
-text.trim()
-?text.trim().split(/\s+/).length
-:0;
-
-const chars=text.length;
-
-const noSpaces=
-text.replace(/\s/g,"").length;
-
-document.getElementById(
-"counterResult"
-).innerHTML=
-
-`Palabras:
-<strong>${words}</strong>
-<br>
-Caracteres:
-<strong>${chars}</strong>
-<br>
-Sin espacios:
-<strong>${noSpaces}</strong>`;
-
-}
-
-
-/* =========================
-TEXTO
-========================= */
-
-function upperText(){
-
-document.getElementById(
-"transformText"
-).value=
-document.getElementById(
-"transformText"
-).value.toUpperCase();
-
-}
-
-
-function lowerText(){
-
-document.getElementById(
-"transformText"
-).value=
-document.getElementById(
-"transformText"
-).value.toLowerCase();
-
-}
-
-
-function capitalizeText(){
-
-const box=
-document.getElementById(
-"transformText"
-);
-
-box.value=
-box.value
-.toLowerCase()
-.replace(
-/(^\s*\w|[.!?]\s*\w)/g,
-x=>x.toUpperCase()
-);
-
-}
-
-
-function copyTransform(){
-
-copyText(
-document.getElementById(
-"transformText"
-).value
-);
-
-}
-
-
-/* =========================
-INVERSO
-========================= */
-
-function reverseText(){
-
-const text=
-document.getElementById(
-"reverseText"
-).value;
-
-document.getElementById(
-"reverseResult"
-).textContent=
-text.split("").reverse().join("");
-
-}
-
-
-/* =========================
-ESPACIOS
-========================= */
-
-function cleanSpaces(){
-
-const text=
-document.getElementById(
-"spacesText"
-).value;
-
-document.getElementById(
-"spacesResult"
-).textContent=
-text.replace(/\s+/g," ").trim();
-
-}
-
-
-/* =========================
-PASSWORD
-========================= */
-
-let generatedPassword="";
 
 function generatePassword(){
 
 let length=parseInt(
-document.getElementById(
-"passLength"
-).value
-);
+document.getElementById("passLength").value
+)||16;
 
-if(isNaN(length))length=16;
-
-length=Math.max(
-4,
-Math.min(60,length)
-);
-
-const chars=
+let chars=
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
-"abcdefghijklmnopqrstuvwxyz"+
-"0123456789"+
-"!@#$%^&*()_+-=[]{}";
+"abcdefghijklmnopqrstuvwxyz";
 
-generatedPassword="";
+if(document.getElementById("passNumbers").checked)
+chars+="0123456789";
+
+if(document.getElementById("passSymbols").checked)
+chars+="!@#$%^&*()_+-=[]{}";
+
+let password="";
 
 for(let i=0;i<length;i++){
 
-generatedPassword+=
-chars[
-Math.floor(
-Math.random()*chars.length
-)
+password+=chars[
+Math.floor(Math.random()*chars.length)
 ];
 
 }
 
-document.getElementById(
-"passwordResult"
-).textContent=
-generatedPassword;
+document.getElementById("passwordResult").textContent=password;
 
 }
-
 
 function copyPassword(){
 
-if(!generatedPassword)
-generatePassword();
+const text=document.getElementById("passwordResult").textContent;
 
-copyText(generatedPassword);
+navigator.clipboard.writeText(text);
+
+showToast("🔐 Contraseña copiada");
 
 }
 
 
-/* =========================
-RANDOM
-========================= */
+/* RANDOM */
+
+function randomNumber(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="row">
+
+<div class="form-group">
+<label>Mínimo</label>
+<input id="randomMin" type="number" value="1">
+</div>
+
+<div class="form-group">
+<label>Máximo</label>
+<input id="randomMax" type="number" value="100">
+</div>
+
+</div>
+
+<button class="primary-btn"
+onclick="generateRandom()">
+Generar
+</button>
+
+<div class="result big"
+id="randomResult">
+?
+</div>
+`;
+
+}
 
 function generateRandom(){
 
-const min=parseInt(
-document.getElementById("randomMin").value
-);
+let min=parseInt(document.getElementById("randomMin").value);
 
-const max=parseInt(
-document.getElementById("randomMax").value
-);
+let max=parseInt(document.getElementById("randomMax").value);
 
-if(
-isNaN(min)||
-isNaN(max)||
-min>max
-)return;
+if(min>max){
 
-const n=
-Math.floor(
-Math.random()*(max-min+1)
-)+min;
+[min,max]=[max,min];
 
-document.getElementById(
-"randomResult"
-).innerHTML=
+}
 
-`Número:
-<strong style="font-size:40px">
-${n}
-</strong>`;
+const number=
+Math.floor(Math.random()*(max-min+1))+min;
+
+document.getElementById("randomResult").textContent=number;
 
 }
 
 
-/* =========================
-COLOR
-========================= */
+/* URL */
+
+function urlEncoder(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+
+<textarea id="urlText"
+placeholder="Escribe el texto o URL..."></textarea>
+
+</div>
+
+<div class="button-row">
+
+<button class="primary-btn"
+onclick="encodeURL()">
+Codificar
+</button>
+
+<button class="secondary-btn"
+onclick="decodeURL()">
+Decodificar
+</button>
+
+</div>
+`;
+
+}
+
+function encodeURL(){
+
+const el=document.getElementById("urlText");
+
+el.value=encodeURIComponent(el.value);
+
+}
+
+function decodeURL(){
+
+const el=document.getElementById("urlText");
+
+try{
+
+el.value=decodeURIComponent(el.value);
+
+}catch{
+
+showToast("Texto no válido");
+
+}
+
+}
+
+
+/* COLOR */
+
+function colorPicker(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+
+<label>Selecciona un color</label>
+
+<input
+type="color"
+id="colorInput"
+value="#2563eb"
+oninput="updateColor()"
+style="height:60px">
+
+</div>
+
+<div class="color-preview"
+id="colorPreview">
+</div>
+
+<div class="result"
+id="colorCode">
+#2563EB
+</div>
+
+<button class="secondary-btn"
+onclick="copyColor()">
+📋 Copiar HEX
+</button>
+`;
+
+updateColor();
+
+}
 
 function updateColor(){
 
-const color=
-document.getElementById(
-"colorPicker"
-).value;
+const color=document.getElementById("colorInput").value;
 
-document.getElementById(
-"colorPreview"
-).style.background=color;
+document.getElementById("colorPreview").style.background=color;
 
-document.getElementById(
-"colorResult"
-).textContent=
-"HEX: "+
+document.getElementById("colorCode").textContent=
 color.toUpperCase();
 
 }
 
-document.getElementById(
-"colorPicker"
-).addEventListener(
-"input",
-updateColor
-);
-
-
 function copyColor(){
 
-copyText(
-document.getElementById(
-"colorPicker"
-).value
+navigator.clipboard.writeText(
+document.getElementById("colorCode").textContent
 );
+
+showToast("🎨 Color copiado");
 
 }
 
 
-/* =========================
-CRONÓMETRO
-========================= */
+/* TEMPERATURA */
+
+function temperature(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+
+<label>Valor</label>
+
+<input id="tempValue"
+type="number"
+value="0">
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>De</label>
+
+<select id="tempFrom">
+
+<option value="C">Celsius</option>
+<option value="F">Fahrenheit</option>
+<option value="K">Kelvin</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>A</label>
+
+<select id="tempTo">
+
+<option value="F">Fahrenheit</option>
+<option value="C">Celsius</option>
+<option value="K">Kelvin</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="primary-btn"
+onclick="convertTemperature()">
+Convertir
+</button>
+
+<div class="result big"
+id="tempResult">
+Resultado
+</div>
+`;
+
+}
+
+function convertTemperature(){
+
+let value=parseFloat(
+document.getElementById("tempValue").value
+);
+
+let from=document.getElementById("tempFrom").value;
+
+let to=document.getElementById("tempTo").value;
+
+let celsius;
+
+if(from==="C")celsius=value;
+
+if(from==="F")celsius=(value-32)*5/9;
+
+if(from==="K")celsius=value-273.15;
+
+let result;
+
+if(to==="C")result=celsius;
+
+if(to==="F")result=celsius*9/5+32;
+
+if(to==="K")result=celsius+273.15;
+
+document.getElementById("tempResult").textContent=
+result.toFixed(2);
+
+}
+
+
+/* UNIDADES */
+
+function units(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="form-group">
+
+<label>Valor</label>
+
+<input id="unitValue"
+type="number"
+value="1">
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>De</label>
+
+<select id="unitFrom">
+
+<option value="m">Metros</option>
+<option value="km">Kilómetros</option>
+<option value="mi">Millas</option>
+<option value="cm">Centímetros</option>
+<option value="ft">Pies</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>A</label>
+
+<select id="unitTo">
+
+<option value="km">Kilómetros</option>
+<option value="m">Metros</option>
+<option value="mi">Millas</option>
+<option value="cm">Centímetros</option>
+<option value="ft">Pies</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="primary-btn"
+onclick="convertUnits()">
+Convertir
+</button>
+
+<div class="result big"
+id="unitResult">
+Resultado
+</div>
+`;
+
+}
+
+function convertUnits(){
+
+const value=parseFloat(
+document.getElementById("unitValue").value
+);
+
+const from=document.getElementById("unitFrom").value;
+
+const to=document.getElementById("unitTo").value;
+
+const meters={
+
+m:1,
+km:1000,
+mi:1609.344,
+cm:.01,
+ft:.3048
+
+};
+
+const result=value*meters[from]/meters[to];
+
+document.getElementById("unitResult").textContent=
+result.toLocaleString("es-CO",{
+maximumFractionDigits:8
+});
+
+}
+
+
+/* CRONOMETRO */
 
 let stopwatchInterval=null;
-
 let stopwatchSeconds=0;
 
+function stopwatch(){
 
-function updateStopwatch(){
+document.getElementById("modalContent").innerHTML=`
 
-const h=
-Math.floor(
-stopwatchSeconds/3600
-);
+<div class="timer"
+id="stopwatchDisplay">
+00:00:00
+</div>
 
-const m=
-Math.floor(
-(stopwatchSeconds%3600)/60
-);
+<div class="button-row"
+style="justify-content:center">
 
-const s=
-stopwatchSeconds%60;
+<button class="primary-btn"
+onclick="startStopwatch()">
+▶ Iniciar
+</button>
 
-document.getElementById(
-"stopwatchDisplay"
-).textContent=
+<button class="secondary-btn"
+onclick="pauseStopwatch()">
+⏸ Pausar
+</button>
 
-String(h).padStart(2,"0")+
-":"+
-String(m).padStart(2,"0")+
-":"+
-String(s).padStart(2,"0");
+<button class="danger-btn"
+onclick="resetStopwatch()">
+↻ Reiniciar
+</button>
+
+</div>
+`;
+
+updateStopwatch();
 
 }
-
 
 function startStopwatch(){
 
 if(stopwatchInterval)return;
 
-stopwatchInterval=
-setInterval(()=>{
+stopwatchInterval=setInterval(()=>{
 
 stopwatchSeconds++;
 
@@ -4835,17 +1959,13 @@ updateStopwatch();
 
 }
 
-
 function pauseStopwatch(){
 
-clearInterval(
-stopwatchInterval
-);
+clearInterval(stopwatchInterval);
 
 stopwatchInterval=null;
 
 }
-
 
 function resetStopwatch(){
 
@@ -4857,80 +1977,106 @@ updateStopwatch();
 
 }
 
+function updateStopwatch(){
 
-/* =========================
-TEMPORIZADOR
-========================= */
+const h=Math.floor(stopwatchSeconds/3600);
 
-let timerInterval=null;
+const m=Math.floor(
+(stopwatchSeconds%3600)/60
+);
 
-let timerTotal=60;
+const s=stopwatchSeconds%60;
 
-
-function updateTimer(){
-
-const m=
-Math.floor(timerTotal/60);
-
-const s=
-timerTotal%60;
-
-document.getElementById(
-"timerDisplay"
-).textContent=
-
-String(m).padStart(2,"0")+
-":"+
+const display=
+String(h).padStart(2,"0")+":"+
+String(m).padStart(2,"0")+":"+
 String(s).padStart(2,"0");
+
+const el=document.getElementById("stopwatchDisplay");
+
+if(el)el.textContent=display;
 
 }
 
+
+/* TEMPORIZADOR */
+
+let timerInterval=null;
+let timerSeconds=0;
+
+function timer(){
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="row">
+
+<div class="form-group">
+<label>Minutos</label>
+<input id="timerMinutes" type="number" min="0" value="1">
+</div>
+
+<div class="form-group">
+<label>Segundos</label>
+<input id="timerSeconds" type="number" min="0" max="59" value="0">
+</div>
+
+</div>
+
+<div class="timer"
+id="timerDisplay">
+01:00
+</div>
+
+<div class="button-row"
+style="justify-content:center">
+
+<button class="primary-btn"
+onclick="startTimer()">
+▶ Iniciar
+</button>
+
+<button class="secondary-btn"
+onclick="pauseTimer()">
+⏸ Pausar
+</button>
+
+<button class="danger-btn"
+onclick="resetTimer()">
+↻ Reiniciar
+</button>
+
+</div>
+`;
+
+resetTimer();
+
+}
 
 function startTimer(){
 
 if(timerInterval)return;
 
-if(timerTotal<=0){
+timerInterval=setInterval(()=>{
 
-const m=parseInt(
-document.getElementById(
-"timerMinutes"
-).value
-)||0;
-
-const s=parseInt(
-document.getElementById(
-"timerSeconds"
-).value
-)||0;
-
-timerTotal=m*60+s;
-
-}
-
-if(timerTotal<=0)return;
-
-timerInterval=
-setInterval(()=>{
-
-timerTotal--;
-
-updateTimer();
-
-if(timerTotal<=0){
+if(timerSeconds<=0){
 
 clearInterval(timerInterval);
 
 timerInterval=null;
 
-alert("⏰ ¡Tiempo terminado!");
+showToast("⏰ ¡Tiempo terminado!");
+
+return;
 
 }
+
+timerSeconds--;
+
+updateTimer();
 
 },1000);
 
 }
-
 
 function pauseTimer(){
 
@@ -4940,380 +2086,44 @@ timerInterval=null;
 
 }
 
-
 function resetTimer(){
 
 pauseTimer();
 
-const m=parseInt(
-document.getElementById(
-"timerMinutes"
-).value
+const minutes=parseInt(
+document.getElementById("timerMinutes")?.value
 )||0;
 
-const s=parseInt(
-document.getElementById(
-"timerSeconds"
-).value
+const seconds=parseInt(
+document.getElementById("timerSeconds")?.value
 )||0;
 
-timerTotal=m*60+s;
+timerSeconds=minutes*60+seconds;
 
 updateTimer();
 
 }
 
+function updateTimer(){
 
-/* =========================
-RECTÁNGULO
-========================= */
+const el=document.getElementById("timerDisplay");
 
-function calculateRectangle(){
+if(!el)return;
 
-const l=parseFloat(
-document.getElementById(
-"rectLength"
-).value
-);
+const m=Math.floor(timerSeconds/60);
 
-const w=parseFloat(
-document.getElementById(
-"rectWidth"
-).value
-);
+const s=timerSeconds%60;
 
-if(isNaN(l)||isNaN(w))return;
-
-const area=l*w;
-
-const perimeter=2*(l+w);
-
-document.getElementById(
-"rectangleResult"
-).innerHTML=
-
-`Área:
-<strong>${area}</strong>
-<br>
-Perímetro:
-<strong>${perimeter}</strong>`;
+el.textContent=
+String(m).padStart(2,"0")+":"+
+String(s).padStart(2,"0");
 
 }
 
 
-/* =========================
-CÍRCULO
-========================= */
+/* INICIO */
 
-function calculateCircle(){
-
-const r=parseFloat(
-document.getElementById(
-"circleRadius"
-).value
-);
-
-if(isNaN(r))return;
-
-const area=Math.PI*r*r;
-
-const circumference=2*Math.PI*r;
-
-document.getElementById(
-"circleResult"
-).innerHTML=
-
-`Área:
-<strong>${area.toFixed(2)}</strong>
-<br>
-Circunferencia:
-<strong>${circumference.toFixed(2)}</strong>`;
-
-}
-
-
-/* =========================
-TRIÁNGULO
-========================= */
-
-function calculateTriangle(){
-
-const b=parseFloat(
-document.getElementById(
-"triangleBase"
-).value
-);
-
-const h=parseFloat(
-document.getElementById(
-"triangleHeight"
-).value
-);
-
-if(isNaN(b)||isNaN(h))return;
-
-const area=b*h/2;
-
-document.getElementById(
-"triangleResult"
-).innerHTML=
-
-`Área:
-<strong>${area}</strong>`;
-
-}
-
-
-/* =========================
-IMC
-========================= */
-
-function calculateBMI(){
-
-const weight=parseFloat(
-document.getElementById(
-"bmiWeight"
-).value
-);
-
-const height=parseFloat(
-document.getElementById(
-"bmiHeight"
-).value
-);
-
-if(
-isNaN(weight)||
-isNaN(height)||
-height<=0
-)return;
-
-const bmi=
-weight/(height*height);
-
-let category;
-
-if(bmi<18.5)
-category="bajo peso";
-
-else if(bmi<25)
-category="rango normal";
-
-else if(bmi<30)
-category="sobrepeso";
-
-else
-category="obesidad";
-
-document.getElementById(
-"bmiResult"
-).innerHTML=
-
-`IMC:
-<strong>${bmi.toFixed(1)}</strong>
-<br>
-Categoría orientativa:
-<strong>${category}</strong>
-<br><br>
-<small>
-El IMC es una medida orientativa y no sustituye una evaluación profesional.
-</small>`;
-
-}
-
-
-/* =========================
-AGUA
-========================= */
-
-function calculateWater(){
-
-const weight=parseFloat(
-document.getElementById(
-"waterWeight"
-).value
-);
-
-if(isNaN(weight)||weight<=0)return;
-
-const liters=
-weight*0.035;
-
-document.getElementById(
-"waterResult"
-).innerHTML=
-
-`Estimación:
-<strong>${liters.toFixed(2)} litros diarios</strong>
-<br><br>
-<small>
-Es una estimación general. Las necesidades reales pueden variar.
-</small>`;
-
-}
-
-
-/* =========================
-ELECTRICIDAD
-========================= */
-
-function calculateElectric(){
-
-const voltage=parseFloat(
-document.getElementById(
-"electricVoltage"
-).value
-);
-
-const current=parseFloat(
-document.getElementById(
-"electricCurrent"
-).value
-);
-
-if(
-isNaN(voltage)||
-isNaN(current)
-)return;
-
-const power=
-voltage*current;
-
-document.getElementById(
-"electricResult"
-).innerHTML=
-
-`Potencia:
-<strong>${power.toFixed(2)} W</strong>`;
-
-}
-
-
-/* =========================
-ROMANOS
-========================= */
-
-function convertRoman(){
-
-let num=parseInt(
-document.getElementById(
-"romanValue"
-).value
-);
-
-if(
-isNaN(num)||
-num<1||
-num>3999
-)return;
-
-const values=[
-[1000,"M"],
-[900,"CM"],
-[500,"D"],
-[400,"CD"],
-[100,"C"],
-[90,"XC"],
-[50,"L"],
-[40,"XL"],
-[10,"X"],
-[9,"IX"],
-[5,"V"],
-[4,"IV"],
-[1,"I"]
-];
-
-let result="";
-
-for(
-const [value,symbol]
-of values
-){
-
-while(num>=value){
-
-result+=symbol;
-
-num-=value;
-
-}
-
-}
-
-document.getElementById(
-"romanResult"
-).innerHTML=
-
-`Resultado:
-<strong style="font-size:30px">
-${result}
-</strong>`;
-
-}
-
-
-/* =========================
-COPIAR
-========================= */
-
-function copyText(text){
-
-if(!text)return;
-
-if(
-navigator.clipboard &&
-window.isSecureContext
-){
-
-navigator.clipboard
-.writeText(text)
-.catch(()=>fallbackCopy(text));
-
-}else{
-
-fallbackCopy(text);
-
-}
-
-}
-
-
-function fallbackCopy(text){
-
-const area=
-document.createElement("textarea");
-
-area.value=text;
-
-area.style.position="fixed";
-area.style.left="-9999px";
-
-document.body.appendChild(area);
-
-area.select();
-
-try{
-
-document.execCommand("copy");
-
-}catch(e){}
-
-document.body.removeChild(area);
-
-}
-
-
-/* =========================
-INICIALIZAR
-========================= */
-
-updateFavoriteButtons();
-
-updateColor();
-
-updateStopwatch();
-
-updateTimer();
+renderTools();
 
 </script>
 
