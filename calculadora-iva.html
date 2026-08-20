@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora de IVA Online Gratis | HerramientasGratis</title>
+
+<meta name="description"
+content="Calculadora de IVA online gratis. Calcula el IVA y el precio total de un producto de forma rápida y sencilla.">
+
+<meta name="robots"
+content="index, follow">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f8fafc;
+color:#0f172a;
+line-height:1.6;
+}
+
+header{
+background:#fff;
+border-bottom:1px solid #e2e8f0;
+padding:18px 20px;
+}
+
+.header-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:900;
+color:#2563eb;
+text-decoration:none;
+}
+
+nav a{
+text-decoration:none;
+color:#334155;
+font-weight:600;
+margin-left:18px;
+}
+
+.hero{
+padding:70px 20px 40px;
+text-align:center;
+}
+
+.hero h1{
+font-size:clamp(2rem,5vw,3.5rem);
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#64748b;
+font-size:1.1rem;
+}
+
+.calculator{
+max-width:600px;
+margin:30px auto 70px;
+padding:30px;
+background:#fff;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(15,23,42,.08);
+}
+
+.field{
+margin-bottom:18px;
+}
+
+label{
+display:block;
+font-weight:700;
+margin-bottom:7px;
+}
+
+input{
+width:100%;
+padding:14px;
+border:1px solid #cbd5e1;
+border-radius:10px;
+font-size:1rem;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:#fff;
+font-size:1rem;
+font-weight:800;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+padding:20px;
+background:#eff6ff;
+border-radius:12px;
+font-weight:800;
+}
+
+.content{
+max-width:900px;
+margin:auto;
+padding:0 20px 70px;
+}
+
+.content h2{
+margin:35px 0 12px;
+}
+
+.content p{
+margin-bottom:15px;
+color:#475569;
+}
+
+footer{
+background:#0f172a;
+color:#fff;
+padding:35px 20px;
+text-align:center;
+}
+
+footer a{
+color:#fff;
+margin:0 8px;
+}
+
+@media(max-width:700px){
+
+nav{
+display:none;
+}
+
+.calculator{
+margin-left:15px;
+margin-right:15px;
+padding:22px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a
+class="logo"
+href="index.html">
+
+🛠️ HerramientasGratis
+
+</a>
+
+<nav>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="index.html#herramientas">
+Herramientas
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+Calculadora de IVA
+</h1>
+
+<p>
+Calcula el IVA y el precio total de un producto rápidamente.
+</p>
+
+</section>
+
+
+<section class="calculator">
+
+<div class="field">
+
+<label for="price">
+Precio
+</label>
+
+<input
+id="price"
+type="number"
+placeholder="Ejemplo: 100000">
+
+</div>
+
+
+<div class="field">
+
+<label for="iva">
+IVA (%)
+</label>
+
+<input
+id="iva"
+type="number"
+value="19"
+placeholder="Ejemplo: 19">
+
+</div>
+
+
+<button
+onclick="calculateIVA()">
+
+Calcular IVA
+
+</button>
+
+
+<div
+class="result"
+id="result">
+
+Resultado:
+
+</div>
+
+</section>
+
+
+<section class="content">
+
+<h2>
+¿Qué es el IVA?
+</h2>
+
+<p>
+El IVA es un impuesto aplicado al consumo de determinados bienes
+y servicios. El porcentaje puede variar dependiendo del país,
+producto o situación.
+</p>
+
+<h2>
+¿Cómo calcular el IVA?
+</h2>
+
+<p>
+Para calcular el IVA de un precio, multiplica el precio por el
+porcentaje de IVA y divide el resultado entre 100.
+</p>
+
+<p>
+Por ejemplo, si un producto cuesta 100.000 y el IVA es del 19%:
+</p>
+
+<p>
+100.000 × 19 ÷ 100 = 19.000
+</p>
+
+<h2>
+Calculadora de IVA online
+
+</h2>
+
+<p>
+Esta herramienta permite calcular rápidamente el valor del IVA
+y el precio total. Funciona directamente desde el navegador y
+puede utilizarse desde computadores, tabletas y celulares.
+</p>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 HerramientasGratis
+</p>
+
+<br>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="index.html#privacidad">
+Privacidad
+</a>
+
+<a href="index.html#terminos">
+Términos
+</a>
+
+</footer>
+
+
+<script>
+
+function calculateIVA(){
+
+const price =
+parseFloat(
+document.getElementById("price").value
+);
+
+const iva =
+parseFloat(
+document.getElementById("iva").value
+);
+
+if(
+isNaN(price) ||
+isNaN(iva)
+){
+
+document.getElementById(
+"result"
+).textContent =
+"Introduce valores válidos.";
+
+return;
+
+}
+
+const tax =
+price * iva / 100;
+
+const total =
+price + tax;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+"IVA: $"+
+tax.toLocaleString("es-CO",{
+minimumFractionDigits:2
+})+
+
+"<br><br>"+
+
+"Precio total: $"+
+total.toLocaleString("es-CO",{
+minimumFractionDigits:2
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
