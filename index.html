@@ -664,7 +664,37 @@ letter-spacing:-2px;
 }
 
 }
+.tool-link{
 
+display:inline-block;
+
+margin-top:12px;
+
+padding:9px 14px;
+
+border-radius:9px;
+
+background:#eff6ff;
+
+color:#2563eb;
+
+text-decoration:none;
+
+font-size:.9rem;
+
+font-weight:800;
+
+transition:.2s;
+
+}
+
+.tool-link:hover{
+
+background:#dbeafe;
+
+transform:translateY(-2px);
+
+}
 </style>
 </head>
 
@@ -899,6 +929,13 @@ Realiza operaciones matemáticas básicas rápidamente.
 </p>
 
 <button
+   <a
+href="calculadora-porcentaje.html"
+class="tool-link">
+
+🌐 Calculadora de porcentaje
+
+</a>
 class="tool-button"
 onclick="openCalculator()">
 
@@ -959,6 +996,13 @@ Resuelve reglas de tres simples.
 </p>
 
 <button
+   <a
+href="regla-de-tres.html"
+class="tool-link">
+
+🌐 Regla de tres completa
+
+</a>
 class="tool-button"
 onclick="openRuleThree()">
 
@@ -1656,7 +1700,13 @@ Usar calculadora
 <div class="info-card">
 
 <h3>💰 Calculadora de IVA</h3>
+<a
+href="calculadora-iva.html"
+class="tool-link">
 
+🌐 Calculadora de IVA completa
+
+</a>
 <p>
 Calcula el valor del IVA y el precio total de un producto de manera
 rápida.
