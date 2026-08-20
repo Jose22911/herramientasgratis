@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora de Porcentaje Online Gratis | HerramientasGratis</title>
+
+<meta name="description"
+content="Calculadora de porcentaje online gratis. Calcula porcentajes de forma rápida y sencilla desde tu celular o computador.">
+
+<meta name="robots"
+content="index, follow">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:#f8fafc;
+
+color:#0f172a;
+
+line-height:1.6;
+
+}
+
+header{
+
+background:#ffffff;
+
+border-bottom:
+1px solid #e2e8f0;
+
+padding:18px 20px;
+
+position:sticky;
+
+top:0;
+
+z-index:10;
+
+}
+
+.header-container{
+
+max-width:1100px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+}
+
+.logo{
+
+font-size:1.4rem;
+
+font-weight:900;
+
+color:#2563eb;
+
+text-decoration:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:#334155;
+
+font-weight:600;
+
+margin-left:18px;
+
+}
+
+.hero{
+
+padding:70px 20px 40px;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:
+clamp(2rem,5vw,3.5rem);
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+max-width:700px;
+
+margin:auto;
+
+color:#64748b;
+
+font-size:1.1rem;
+
+}
+
+.calculator{
+
+max-width:600px;
+
+margin:30px auto 70px;
+
+padding:30px;
+
+background:#ffffff;
+
+border-radius:20px;
+
+box-shadow:
+0 15px 40px rgba(15,23,42,.08);
+
+}
+
+.field{
+
+margin-bottom:18px;
+
+}
+
+label{
+
+display:block;
+
+font-weight:700;
+
+margin-bottom:7px;
+
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+border:
+1px solid #cbd5e1;
+
+border-radius:10px;
+
+font-size:1rem;
+
+}
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:10px;
+
+background:#2563eb;
+
+color:#ffffff;
+
+font-size:1rem;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:.9;
+
+}
+
+.result{
+
+margin-top:20px;
+
+padding:20px;
+
+background:#eff6ff;
+
+border-radius:12px;
+
+text-align:center;
+
+font-size:1.3rem;
+
+font-weight:900;
+
+}
+
+.content{
+
+max-width:900px;
+
+margin:auto;
+
+padding:0 20px 70px;
+
+}
+
+.content h2{
+
+margin:
+35px 0 12px;
+
+}
+
+.content p{
+
+margin-bottom:15px;
+
+color:#475569;
+
+}
+
+footer{
+
+background:#0f172a;
+
+color:#ffffff;
+
+padding:35px 20px;
+
+text-align:center;
+
+}
+
+footer a{
+
+color:#ffffff;
+
+margin:0 8px;
+
+}
+
+@media(max-width:700px){
+
+nav{
+
+display:none;
+
+}
+
+.calculator{
+
+margin-left:15px;
+
+margin-right:15px;
+
+padding:22px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a
+class="logo"
+href="index.html">
+
+🛠️ HerramientasGratis
+
+</a>
+
+<nav>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="index.html#herramientas">
+Herramientas
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+Calculadora de Porcentaje
+</h1>
+
+<p>
+
+Calcula fácilmente cuánto representa un porcentaje
+de una cantidad.
+
+</p>
+
+</section>
+
+
+<section class="calculator">
+
+<div class="field">
+
+<label for="number">
+Cantidad
+</label>
+
+<input
+id="number"
+type="number"
+placeholder="Ejemplo: 500">
+
+</div>
+
+
+<div class="field">
+
+<label for="percentage">
+Porcentaje
+</label>
+
+<input
+id="percentage"
+type="number"
+placeholder="Ejemplo: 20">
+
+</div>
+
+
+<button
+onclick="calculatePercentage()">
+
+Calcular porcentaje
+
+</button>
+
+
+<div
+class="result"
+id="result">
+
+Resultado:
+
+</div>
+
+</section>
+
+
+<section class="content">
+
+<h2>
+¿Cómo calcular un porcentaje?
+</h2>
+
+<p>
+
+Para calcular un porcentaje debes multiplicar la cantidad
+por el porcentaje y dividir el resultado entre 100.
+
+</p>
+
+<p>
+
+Por ejemplo, el 20% de 500 se calcula así:
+
+</p>
+
+<p>
+
+500 × 20 ÷ 100 = 100
+
+</p>
+
+<h2>
+¿Para qué sirve una calculadora de porcentaje?
+</h2>
+
+<p>
+
+Una calculadora de porcentaje puede ser útil para calcular
+descuentos, aumentos, impuestos, propinas, estadísticas,
+notas y diferentes operaciones de la vida cotidiana.
+
+</p>
+
+<h2>
+Calculadora de porcentaje gratis
+</h2>
+
+<p>
+
+Esta herramienta funciona directamente desde el navegador
+y puede utilizarse desde computadores, teléfonos y tabletas.
+
+</p>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 HerramientasGratis
+</p>
+
+<br>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="index.html#privacidad">
+Privacidad
+</a>
+
+<a href="index.html#terminos">
+Términos
+</a>
+
+</footer>
+
+
+<script>
+
+function calculatePercentage(){
+
+const number =
+parseFloat(
+document.getElementById("number").value
+);
+
+const percentage =
+parseFloat(
+document.getElementById("percentage").value
+);
+
+if(
+isNaN(number) ||
+isNaN(percentage)
+){
+
+document.getElementById(
+"result"
+).textContent=
+"Introduce valores válidos.";
+
+return;
+
+}
+
+const result =
+number * percentage / 100;
+
+document.getElementById(
+"result"
+).textContent=
+"Resultado: "+result;
+
+}
+
+</script>
+
+</body>
+
+</html>
